@@ -170,7 +170,8 @@ class FormatConverter:
         Returns:
             Complete Clash configuration dictionary.
         """
-        config = dict(template)
+        import copy
+        config = copy.deepcopy(template)
         config["proxies"] = proxies
 
         # Distribute proxies into tier groups
@@ -179,10 +180,18 @@ class FormatConverter:
 
         if "proxy-groups" in config:
             for group in config["proxy-groups"]:
-                if group.get("proxies") == "AUTO_FILL":
-                    group["proxies"] = proxy_names
-                elif isinstance(group.get("proxies"), list):
-                    # Handle tier groups
+                proxies_field = group.get("proxies", [])
+
+                # Check for AUTO_FILL marker (string or list containing it)
+                if proxies_field == "AUTO_FILL":
+                    group["proxies"] = list(proxy_names)
+                elif isinstance(proxies_field, list) and "AUTO_FILL" in proxies_field:
+                    # Replace AUTO_FILL with all proxy names, keep others (e.g., "Proxy")
+                    new_proxies = [p for p in proxies_field if p != "AUTO_FILL"]
+                    new_proxies.extend(proxy_names)
+                    group["proxies"] = new_proxies
+                elif isinstance(proxies_field, list) and len(proxies_field) == 0:
+                    # Empty list = Tier group, fill with allocated proxies
                     name = group.get("name", "")
                     if name.startswith("Tier"):
                         try:
@@ -191,8 +200,6 @@ class FormatConverter:
                             end = start + tier_size if tier_num < tier_count else len(proxy_names)
                             group["proxies"] = proxy_names[start:end]
                         except (ValueError, IndexError):
-                            group["proxies"] = proxy_names
-                    elif "ALL" in name.upper():
-                        group["proxies"] = proxy_names
+                            group["proxies"] = list(proxy_names)
 
         return config
