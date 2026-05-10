@@ -1,0 +1,199 @@
+"""GeoIP-based proxy naming."""
+
+import logging
+import socket
+from typing import Dict, Any, Optional
+
+logger = logging.getLogger(__name__)
+
+# Country code to emoji mapping
+COUNTRY_EMOJI = {
+    "US": "\U0001F1FA\U0001F1F8",
+    "CN": "\U0001F1E8\U0001F1F3",
+    "HK": "\U0001F1ED\U0001F1F0",
+    "JP": "\U0001F1EF\U0001F1F5",
+    "KR": "\U0001F1F0\U0001F1F7",
+    "SG": "\U0001F1F8\U0001F1EC",
+    "TW": "\U0001F1F9\U0001F1FC",
+    "GB": "\U0001F1EC\U0001F1E7",
+    "DE": "\U0001F1E9\U0001F1EA",
+    "FR": "\U0001F1EB\U0001F1F7",
+    "RU": "\U0001F1F7\U0001F1FA",
+    "AU": "\U0001F1E6\U0001F1FA",
+    "CA": "\U0001F1E8\U0001F1E6",
+    "NL": "\U0001F1F3\U0001F1F1",
+    "SE": "\U0001F1F8\U0001F1EA",
+    "NO": "\U0001F1F3\U0001F1F4",
+    "FI": "\U0001F1EB\U0001F1EE",
+    "DK": "\U0001F1E9\U0001F1F0",
+    "PL": "\U0001F1F5\U0001F1F1",
+    "CZ": "\U0001F1E8\U0001F1FF",
+    "CH": "\U0001F1E8\U0001F1ED",
+    "IT": "\U0001F1EE\U0001F1F9",
+    "ES": "\U0001F1EA\U0001F1F8",
+    "PT": "\U0001F1F5\U0001F1F9",
+    "BR": "\U0001F1E7\U0001F1F7",
+    "IN": "\U0001F1EE\U0001F1F3",
+    "ID": "\U0001F1EE\U0001F1E9",
+    "TH": "\U0001F1F9\U0001F1ED",
+    "VN": "\U0001F1FB\U0001F1F3",
+    "MY": "\U0001F1F2\U0001F1FE",
+    "PH": "\U0001F1F5\U0001F1ED",
+    "TR": "\U0001F1F9\U0001F1F7",
+    "AE": "\U0001F1E6\U0001F1EA",
+    "SA": "\U0001F1F8\U0001F1E6",
+    "IL": "\U0001F1EE\U0001F1F1",
+    "EG": "\U0001F1EA\U0001F1EC",
+    "ZA": "\U0001F1FF\U0001F1E6",
+    "NG": "\U0001F1F3\U0001F1EC",
+    "KE": "\U0001F1F0\U0001F1EA",
+    "AR": "\U0001F1E6\U0001F1F7",
+    "CL": "\U0001F1E8\U0001F1F1",
+    "MX": "\U0001F1F2\U0001F1FD",
+    "CO": "\U0001F1E8\U0001F1F4",
+    "PE": "\U0001F1F5\U0001F1EA",
+    "VE": "\U0001F1FB\U0001F1EA",
+}
+
+# Special server name replacements
+SERVER_REPLACE = {
+    "CLOUDFLARE": "RELAY",
+    "CF": "RELAY",
+    "PRIVATE": "RELAY",
+    "RACKSPACE": "RELAY",
+}
+
+
+class GeoNamer:
+    """GeoIP-based proxy naming using Country.mmdb."""
+
+    def __init__(self, settings: dict, mmdb_path: str = ""):
+        self.settings = settings
+        self.mmdb_path = mmdb_path or settings.get("paths", {}).get("country_mmdb", ".cache/Country.mmdb")
+        self.namer_config = settings.get("namer", {})
+        self.exclude_countries = settings.get("collector", {}).get("validate", {}).get(
+            "exclude_countries", ["IL"]
+        )
+        self.geo_reader = None
+        self._load_geoip()
+
+    def _load_geoip(self) -> None:
+        """Load GeoIP database."""
+        try:
+            import geoip2.database
+            if self.mmdb_path and __import__("os").path.exists(self.mmdb_path):
+                self.geo_reader = geoip2.database.Reader(self.mmdb_path)
+                logger.info("GeoIP database loaded from %s", self.mmdb_path)
+            else:
+                logger.warning("GeoIP database not found at %s", self.mmdb_path)
+        except ImportError:
+            logger.warning("geoip2 module not installed, GeoIP naming disabled")
+        except Exception as e:
+            logger.error("Failed to load GeoIP database: %s", e)
+
+    def close(self) -> None:
+        """Close GeoIP database reader."""
+        if self.geo_reader:
+            self.geo_reader.close()
+            self.geo_reader = None
+
+    def get_country_code(self, ip: str) -> Optional[str]:
+        """Get country code for an IP address.
+
+        Args:
+            ip: IP address string.
+
+        Returns:
+            2-letter country code or None.
+        """
+        if not self.geo_reader:
+            return None
+
+        try:
+            response = self.geo_reader.country(ip)
+            return response.country.iso_code
+        except Exception:
+            return None
+
+    def _resolve_hostname(self, server: str) -> Optional[str]:
+        """Resolve hostname to IP address.
+
+        Args:
+            server: Server hostname or IP.
+
+        Returns:
+            IP address string or None.
+        """
+        # Already an IP
+        try:
+            socket.inet_aton(server)
+            return server
+        except socket.error:
+            pass
+
+        # Try resolving hostname
+        try:
+            ip = socket.gethostbyname(server)
+            return ip
+        except socket.gaierror:
+            logger.debug("Could not resolve hostname: %s", server)
+            return None
+
+    def rename_proxies(self, proxies: list) -> list:
+        """Rename proxy nodes with GeoIP-based names.
+
+        Format: {emoji}{country_code}-{ip}-{index:04d}
+
+        Args:
+            proxies: List of proxy dictionaries.
+
+        Returns:
+            Renamed proxy list (some may be excluded).
+        """
+        if not self.geo_reader:
+            logger.warning("GeoIP not available, skipping rename")
+            return proxies
+
+        result = []
+        index = 1
+        excluded = 0
+
+        for proxy in proxies:
+            server = proxy.get("server", "")
+            if not server:
+                continue
+
+            # Resolve IP
+            ip = self._resolve_hostname(server)
+            if not ip:
+                logger.debug("Could not resolve %s, skipping", server)
+                excluded += 1
+                continue
+
+            # Get country
+            country_code = self.get_country_code(ip)
+            if not country_code:
+                logger.debug("No country for %s (%s), skipping", server, ip)
+                excluded += 1
+                continue
+
+            # Skip excluded countries
+            if country_code.upper() in self.exclude_countries:
+                logger.debug("Skipping excluded country: %s", country_code)
+                excluded += 1
+                continue
+
+            # Build name
+            emoji = COUNTRY_EMOJI.get(country_code.upper(), "")
+            old_name = proxy.get("name", "")
+            new_name = f"{emoji}{country_code.upper()}-{ip}-{index:04d}"
+            proxy["name"] = new_name
+
+            result.append(proxy)
+            index += 1
+
+        if excluded > 0:
+            logger.info("Excluded %d proxies (GeoIP or country filter)", excluded)
+        logger.info("Renamed %d proxies", len(result))
+
+        return result

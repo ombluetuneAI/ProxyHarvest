@@ -1,0 +1,14 @@
+{
+  "group": "V2RayAggregator",
+  "speedtestMode": "all",
+  "pingUrl": "https://www.gstatic.com/generate_204",
+  "downloadUrl": "https://download.microsoft.com/download/2/7/A/27AF1BE6-DD20-4CB4-B154-EBAB8A7D4A7E/officedeploymenttool_18129-20030.exe",
+  "filter": "all",
+  "pingMethod": "http",
+  "sortMethod": "speed",
+  "concurrency": 16,
+  "timeout": 10,
+  "bufferSize": 32768,
+  "retryAttempts": 2,
+  "retryDelay": 1
+}

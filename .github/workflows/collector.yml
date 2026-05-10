@@ -1,0 +1,39 @@
+name: Collect & SpeedTest & Filter
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0,12 * * *'
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install Python Dependencies
+        run: pip install -r requirements.txt
+
+      - name: Ensure Tools Ready
+        run: |
+          chmod +x tools/subconverter/linux64/subconverter 2>/dev/null || true
+          chmod +x tools/singtools/linux/singtools 2>/dev/null || true
+
+      - name: Run Full Pipeline
+        run: python scripts/run.py all
+        env:
+          TZ: Asia/Shanghai
+
+      - name: Commit & Push Results
+        run: |
+          git config user.email "actions@github.com"
+          git config user.name "GitHub Actions"
+          git pull origin main --rebase || true
+          git add output/ README.md
+          git commit -m "Updated $(date '+%Y-%m-%d %H:%M:%S')" || echo "No changes to commit"
+          git push
