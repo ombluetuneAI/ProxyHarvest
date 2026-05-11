@@ -199,7 +199,7 @@ proxies:
   ws-path: /jike1
   ws-headers:
     Host: jike-cccn2.jiserver.xyz
-- name: 🇺🇸US-76.223.54.146-0022
+- name: 🇺🇸US-13.248.169.48-0022
   server: jike1-gzyd.jiserver.xyz
   port: 39571
   type: vmess
@@ -211,7 +211,7 @@ proxies:
   ws-path: /jike1
   ws-headers:
     Host: jike1-gzyd.jiserver.xyz
-- name: 🇺🇸US-76.223.54.146-0023
+- name: 🇺🇸US-13.248.169.48-0023
   server: jike1-gzyd.jiserver.xyz
   port: 38555
   type: vmess
@@ -223,7 +223,7 @@ proxies:
   ws-path: /jike1
   ws-headers:
     Host: jike1-gzyd.jiserver.xyz
-- name: 🇺🇸US-76.223.54.146-0024
+- name: 🇺🇸US-13.248.169.48-0024
   server: jike1-gzyd.jiserver.xyz
   port: 39561
   type: vmess
@@ -235,7 +235,7 @@ proxies:
   ws-path: /jike1
   ws-headers:
     Host: jike1-gzyd.jiserver.xyz
-- name: 🇺🇸US-76.223.54.146-0025
+- name: 🇺🇸US-13.248.169.48-0025
   server: jike1-gzyd.jiserver.xyz
   port: 39601
   type: vmess
@@ -247,7 +247,7 @@ proxies:
   ws-path: /jike1
   ws-headers:
     Host: jike1-gzyd.jiserver.xyz
-- name: 🇺🇸US-76.223.54.146-0026
+- name: 🇺🇸US-13.248.169.48-0026
   server: jike1-gzyd.jiserver.xyz
   port: 29893
   type: vmess
@@ -826,7 +826,7 @@ proxies:
     public-key: wgoLhL4pRP0y6fu6He4qW_ElohCM_ANWJF3HEoUhNz4
     short-id: 9c2378562188c3cb
   client-fingerprint: random
-- name: 🇫🇷FR-185.171.202.38-0104
+- name: 🇫🇷FR-185.171.202.48-0104
   server: fr.denditop.site
   port: 443
   type: vless
@@ -1462,7 +1462,7 @@ proxies:
   host: 3556s298.okgg.top
   path: /
   flow: xtls-rprx-vision
-- name: CLOUDFLARE-172.67.219.103-0161
+- name: CLOUDFLARE-104.21.62.31-0161
   server: s842.ccgfw.top
   port: 443
   type: vmess
@@ -1507,7 +1507,7 @@ proxies:
   type: ss
   cipher: chacha20-ietf-poly1305
   password: W74XFALLLuw6m5IA
-- name: 🇮🇩ID-48.193.41.200-0166
+- name: 🇮🇩ID-70.153.151.225-0166
   server: v30.hdacd.com
   port: 30830
   type: vmess

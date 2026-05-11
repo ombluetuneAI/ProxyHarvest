@@ -17,9 +17,6 @@ class SourceUpdater:
 
     def __init__(self, settings: dict):
         self.settings = settings
-        self.aggregator_urls = settings.get("source_updater", {}).get(
-            "airport_aggregator_urls", []
-        )
         self.session = make_session(settings)
 
     def update_all(self, sources: list) -> list:
@@ -49,12 +46,6 @@ class SourceUpdater:
                     if new_url:
                         source["url"] = new_url
                         logger.info("Source #%d updated (page_release): %s", source_id, new_url)
-                elif method == "update_airports":
-                    new_url = self.update_airports(source_id)
-                    if new_url:
-                        source["url"] = new_url
-                        logger.info("Source #%d updated (update_airports): %d URLs",
-                                    source_id, new_url.count("|") + 1)
                 elif method == "auto":
                     logger.debug("Source #%d: auto, no update needed", source_id)
                 else:
@@ -147,39 +138,4 @@ class SourceUpdater:
             logger.error("Failed to find release for %s: %s", repo, e)
             return None
 
-    def update_airports(self, source_id: int) -> Optional[str]:
-        """Fetch airport URLs from aggregator sources.
 
-        Args:
-            source_id: Source ID.
-
-        Returns:
-            Pipe-separated URL string, or None.
-        """
-        urls = []
-
-        for agg_url in self.aggregator_urls:
-            try:
-                resp = self.session.get(agg_url, timeout=30)
-                resp.raise_for_status()
-                content = resp.text.strip()
-                # Each line is a URL
-                for line in content.splitlines():
-                    line = line.strip()
-                    if line and line.startswith("http"):
-                        urls.append(line)
-            except Exception as e:
-                logger.warning("Failed to fetch aggregator %s: %s", agg_url, e)
-
-        if urls:
-            # Deduplicate while preserving order
-            seen = set()
-            unique_urls = []
-            for u in urls:
-                if u not in seen:
-                    seen.add(u)
-                    unique_urls.append(u)
-            return "|".join(unique_urls)
-
-        logger.warning("No airport URLs collected for source #%d", source_id)
-        return None
