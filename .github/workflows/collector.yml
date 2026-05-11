@@ -159,6 +159,20 @@ jobs:
             echo '```' >> $GITHUB_STEP_SUMMARY
           fi
 
+      # ── Upload output as artifact ────────────────────────────
+      - name: Upload output artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: proxy-nodes-${{ github.run_number }}
+          path: |
+            output/nodes_*.yaml
+            output/nodes_*.txt
+            output/sub/
+            output/speedtest_log.txt
+          retention-days: 30
+          if-no-files-found: warn
+
       # ── Clean intermediate files before commit ────────────────
       - name: Clean intermediate files
         if: always()
