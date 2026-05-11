@@ -1,0 +1,11 @@
+{
+  "group": "V2RayAggregator",
+  "speedtestMode": "pingonly",
+  "pingUrl": "https://www.gstatic.com/generate_204",
+  "pingMethod": "http",
+  "sortMethod": "ping",
+  "concurrency": 32,
+  "timeout": 5,
+  "retryAttempts": 1,
+  "retryDelay": 1
+}

@@ -82,9 +82,11 @@ class SourceUpdater:
 
         url_map = {
             0: f"https://raw.githubusercontent.com/pojiezhiyuanjun/freev2/master/{mmdd}.txt",
-            1: f"https://nodefree.org/dy/{yyyy}/{mm}/{yyyymmdd}.yaml",
-            3: f"https://v2rayshare.com/v2rayshare/v2ray/{yyyy}/{mm}/{yyyymmdd}.txt",
-            4: f"https://clashnode.com/data/{yyyy}/{mm}/{yyyymmdd}.txt",
+            # free-nodes/v2rayfree: file format is v{YYYYMMDD}1 (try 1 and 2)
+            1: f"https://raw.githubusercontent.com/free-nodes/v2rayfree/main/v{yyyymmdd}1",
+            3: f"https://nodefree.org/dy/{yyyy}/{mm}/{yyyymmdd}.yaml",
+            4: f"https://v2rayshare.com/v2rayshare/v2ray/{yyyy}/{mm}/{yyyymmdd}.txt",
+            5: f"https://clashnode.com/data/{yyyy}/{mm}/{yyyymmdd}.txt",
         }
 
         url = url_map.get(source_id)

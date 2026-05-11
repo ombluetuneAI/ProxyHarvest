@@ -1,0 +1,11 @@
+{
+  "group": "V2RayAggregator",
+  "speedtestMode": "pingonly",
+  "pingUrl": "http://www.qualcomm.com/generate_204",
+  "pingMethod": "http",
+  "sortMethod": "ping",
+  "concurrency": 32,
+  "timeout": 8,
+  "retryAttempts": 2,
+  "retryDelay": 1
+}

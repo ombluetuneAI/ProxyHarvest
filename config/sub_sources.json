@@ -9,6 +9,22 @@
   },
   {
     "id": 1,
+    "remarks": "free-nodes/v2rayfree",
+    "site": "https://github.com/free-nodes/v2rayfree",
+    "url": "https://raw.githubusercontent.com/free-nodes/v2rayfree/main/v202605111",
+    "update_method": "change_date",
+    "enabled": true
+  },
+  {
+    "id": 2,
+    "remarks": "Pawdroid/Free-servers",
+    "site": "https://github.com/Pawdroid/Free-servers",
+    "url": "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub",
+    "update_method": "auto",
+    "enabled": true
+  },
+  {
+    "id": 3,
     "remarks": "nodefree.org",
     "site": "https://nodefree.org",
     "url": "https://nodefree.org/dy/2026/05/20260511.yaml",
@@ -16,15 +32,7 @@
     "enabled": true
   },
   {
-    "id": 2,
-    "remarks": "mianfeifq/share",
-    "site": "https://github.com/mianfeifq/share",
-    "url": "",
-    "update_method": "page_release",
-    "enabled": true
-  },
-  {
-    "id": 3,
+    "id": 4,
     "remarks": "v2rayshare.com",
     "site": "https://v2rayshare.com",
     "url": "https://v2rayshare.com/v2rayshare/v2ray/2026/05/20260511.txt",
@@ -32,19 +40,11 @@
     "enabled": true
   },
   {
-    "id": 4,
+    "id": 5,
     "remarks": "clashnode.com",
     "site": "https://clashnode.com",
     "url": "https://clashnode.com/data/2026/05/20260511.txt",
     "update_method": "change_date",
-    "enabled": true
-  },
-  {
-    "id": 5,
-    "remarks": "Mux2sub/airport-aggregator",
-    "site": "https://github.com/RenaLio/Mux2sub",
-    "url": "",
-    "update_method": "update_airports",
     "enabled": true
   }
 ]

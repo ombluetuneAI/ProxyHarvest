@@ -7,59 +7,11 @@ from typing import List, Dict, Any, Optional
 import requests
 import yaml
 
+from .constants import COUNTRY_EMOJI
 from .converter import SubConverter
 from .merger import merge_and_validate
 
 logger = logging.getLogger(__name__)
-
-# Country code to emoji mapping
-COUNTRY_EMOJI = {
-    "US": "\U0001F1FA\U0001F1F8",
-    "CN": "\U0001F1E8\U0001F1F3",
-    "HK": "\U0001F1ED\U0001F1F0",
-    "JP": "\U0001F1EF\U0001F1F5",
-    "KR": "\U0001F1F0\U0001F1F7",
-    "SG": "\U0001F1F8\U0001F1EC",
-    "TW": "\U0001F1F9\U0001F1FC",
-    "GB": "\U0001F1EC\U0001F1E7",
-    "DE": "\U0001F1E9\U0001F1EA",
-    "FR": "\U0001F1EB\U0001F1F7",
-    "RU": "\U0001F1F7\U0001F1FA",
-    "AU": "\U0001F1E6\U0001F1FA",
-    "CA": "\U0001F1E8\U0001F1E6",
-    "NL": "\U0001F1F3\U0001F1F1",
-    "SE": "\U0001F1F8\U0001F1EA",
-    "NO": "\U0001F1F3\U0001F1F4",
-    "FI": "\U0001F1EB\U0001F1EE",
-    "DK": "\U0001F1E9\U0001F1F0",
-    "PL": "\U0001F1F5\U0001F1F1",
-    "CZ": "\U0001F1E8\U0001F1FF",
-    "CH": "\U0001F1E8\U0001F1ED",
-    "IT": "\U0001F1EE\U0001F1F9",
-    "ES": "\U0001F1EA\U0001F1F8",
-    "PT": "\U0001F1F5\U0001F1F9",
-    "BR": "\U0001F1E7\U0001F1F7",
-    "IN": "\U0001F1EE\U0001F1F3",
-    "ID": "\U0001F1EE\U0001F1E9",
-    "TH": "\U0001F1F9\U0001F1ED",
-    "VN": "\U0001F1FB\U0001F1F3",
-    "MY": "\U0001F1F2\U0001F1FE",
-    "PH": "\U0001F1F5\U0001F1ED",
-    "TR": "\U0001F1F9\U0001F1F7",
-    "AE": "\U0001F1E6\U0001F1EA",
-    "SA": "\U0001F1F8\U0001F1E6",
-    "IL": "\U0001F1EE\U0001F1F1",
-    "EG": "\U0001F1EA\U0001F1EC",
-    "ZA": "\U0001F1FF\U0001F1E6",
-    "NG": "\U0001F1F3\U0001F1EC",
-    "KE": "\U0001F1F0\U0001F1EA",
-    "AR": "\U0001F1E6\U0001F1F7",
-    "CL": "\U0001F1E8\U0001F1F1",
-    "MX": "\U0001F1F2\U0001F1FD",
-    "CO": "\U0001F1E8\U0001F1F4",
-    "PE": "\U0001F1F5\U0001F1EA",
-    "VE": "\U0001F1FB\U0001F1EA",
-}
 
 
 class Collector:
@@ -141,6 +93,12 @@ class Collector:
                          retries: int = 0) -> List[Dict[str, Any]]:
         """Fetch subscription and parse as Clash YAML.
 
+        Strategy:
+        1. Try subconverter with original URL directly
+        2. If that fails, download raw content, base64-encode it,
+           save to temp file, and pass the local file to subconverter
+           (handles plain-text URI lists that subconverter can't auto-detect)
+
         Args:
             sub_url: Subscription URL.
             source_id: Source ID.
@@ -150,7 +108,7 @@ class Collector:
             List of proxy dictionaries.
         """
         try:
-            # Use subconverter to convert to clash format
+            # Strategy 1: Direct URL conversion via subconverter
             yaml_content = self.subconverter.convert(
                 url=sub_url,
                 target="clash",
@@ -159,21 +117,95 @@ class Collector:
                 timeout=self.timeout
             )
 
-            if not yaml_content:
-                if retries < self.max_retries:
-                    logger.warning("Retry %d/%d for source #%d",
-                                   retries + 1, self.max_retries, source_id)
-                    return self._fetch_and_parse(sub_url, source_id, retries + 1)
-                return []
+            if yaml_content:
+                proxies = self._parse_clash_proxies(yaml_content)
+                return proxies
 
-            proxies = self._parse_clash_proxies(yaml_content)
-            return proxies
+            # Strategy 2: Download raw content, base64-encode, re-try via local file
+            logger.info("Direct conversion failed for source #%d, trying raw download + base64 encode",
+                        source_id)
+            yaml_content = self._fetch_raw_and_convert(sub_url)
+            if yaml_content:
+                proxies = self._parse_clash_proxies(yaml_content)
+                return proxies
+
+            if retries < self.max_retries:
+                logger.warning("Retry %d/%d for source #%d",
+                               retries + 1, self.max_retries, source_id)
+                return self._fetch_and_parse(sub_url, source_id, retries + 1)
+            return []
 
         except Exception as e:
             logger.error("Failed to fetch source #%d: %s", source_id, e)
             if retries < self.max_retries:
                 return self._fetch_and_parse(sub_url, source_id, retries + 1)
             return []
+
+    def _fetch_raw_and_convert(self, sub_url: str) -> Optional[str]:
+        """Download raw subscription content, base64-encode it, and
+        convert via subconverter using a local file.
+
+        This handles sources that provide plain-text URI lists
+        (ss://, vmess://, etc.) which subconverter can't auto-detect
+        from a URL without a recognized file extension.
+
+        Args:
+            sub_url: Subscription URL to download.
+
+        Returns:
+            Converted Clash YAML content, or None.
+        """
+        import os
+        import base64
+        import tempfile
+        from .platform_utils import make_session
+
+        try:
+            session = make_session(self.settings)
+            resp = session.get(sub_url, timeout=30)
+            resp.raise_for_status()
+            raw_content = resp.text.strip()
+        except Exception as e:
+            logger.warning("Failed to download raw content from %s: %s", sub_url[:80], e)
+            return None
+
+        # Check if content looks like plain-text URIs (not already base64)
+        lines = [l.strip() for l in raw_content.splitlines() if l.strip()]
+        if not lines:
+            return None
+
+        # If first line starts with a protocol prefix, it's plain-text URIs
+        first_line = lines[0]
+        if first_line.startswith(("ss://", "vmess://", "trojan://", "vless://",
+                                  "hysteria2://", "hysteria://", "ssr://")):
+            logger.info("Detected plain-text URI list (%d lines), base64-encoding for subconverter",
+                        len(lines))
+            # Base64-encode the raw content (subconverter expects this format)
+            b64_content = base64.b64encode(raw_content.encode("utf-8")).decode("utf-8")
+        else:
+            # Already base64 or other format, try as-is
+            logger.info("Content doesn't look like plain URIs, using as-is")
+            b64_content = raw_content
+
+        # Write to temp file and convert via subconverter
+        try:
+            tmp_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), "output", "tmp")
+            os.makedirs(tmp_dir, exist_ok=True)
+            tmp_file = os.path.join(tmp_dir, "_raw_sub.txt")
+            with open(tmp_file, "w", encoding="utf-8") as f:
+                f.write(b64_content)
+
+            result = self.subconverter.convert(
+                url=tmp_file,
+                target="clash",
+                emoji=True,
+                list_mode=True,
+                timeout=self.timeout
+            )
+            return result
+        except Exception as e:
+            logger.warning("Raw download + convert failed: %s", e)
+            return None
 
     def _parse_clash_proxies(self, yaml_content: str) -> List[Dict[str, Any]]:
         """Parse Clash YAML content and extract proxies.
