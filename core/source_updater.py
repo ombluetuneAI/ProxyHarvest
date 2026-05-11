@@ -37,7 +37,7 @@ class SourceUpdater:
 
             try:
                 if method == "change_date":
-                    new_url = self.change_date(source_id)
+                    new_url = self.change_date(source)
                     if new_url:
                         source["url"] = new_url
                         logger.info("Source #%d updated (change_date): %s", source_id, new_url)
@@ -55,47 +55,79 @@ class SourceUpdater:
 
         return sources
 
-    def change_date(self, source_id: int) -> Optional[str]:
-        """Generate date-based URL for a source.
+    # Supported date placeholder tokens for url_template
+    _DATE_TOKENS = {
+        "YYYY", "YY", "MM", "DD", "MMDD", "YYYYMMDD", "YYMMDD",
+        "HH", "mm", "SS",
+    }
+
+    @staticmethod
+    def _build_date_map() -> dict:
+        """Build a dict of date placeholder → formatted value."""
+        now = datetime.now()
+        return {
+            "YYYY": now.strftime("%Y"),
+            "YY": now.strftime("%y"),
+            "MM": now.strftime("%m"),
+            "DD": now.strftime("%d"),
+            "MMDD": now.strftime("%m%d"),
+            "YYYYMMDD": now.strftime("%Y%m%d"),
+            "YYMMDD": now.strftime("%y%m%d"),
+            "HH": now.strftime("%H"),
+            "mm": now.strftime("%M"),
+            "SS": now.strftime("%S"),
+        }
+
+    def change_date(self, source: dict) -> Optional[str]:
+        """Generate date-based URL from source's url_template field.
+
+        The url_template uses curly-brace placeholders like {YYYY}, {MMDD},
+        {YYYYMMDD} etc. which are replaced with current date values.
+
+        Example url_template:
+            https://example.com/{YYYY}/{MM}/{YYYYMMDD}.txt
+            → https://example.com/2026/05/20260511.txt
 
         Args:
-            source_id: Source ID.
+            source: Source dictionary with 'url_template' field.
 
         Returns:
             Generated URL or None.
         """
-        now = datetime.now()
-        yyyy = now.strftime("%Y")
-        mm = now.strftime("%m")
-        dd = now.strftime("%d")
-        mmdd = now.strftime("%m%d")
-        yyyymmdd = now.strftime("%Y%m%d")
+        template = source.get("url_template")
+        if not template:
+            logger.warning(
+                "Source #%d has change_date method but no url_template",
+                source.get("id", -1),
+            )
+            return None
 
-        url_map = {
-            0: f"https://raw.githubusercontent.com/pojiezhiyuanjun/freev2/master/{mmdd}.txt",
-            # free-nodes/v2rayfree: file format is v{YYYYMMDD}1 (try 1 and 2)
-            1: f"https://raw.githubusercontent.com/free-nodes/v2rayfree/main/v{yyyymmdd}1",
-            3: f"https://nodefree.org/dy/{yyyy}/{mm}/{yyyymmdd}.yaml",
-            4: f"https://v2rayshare.com/v2rayshare/v2ray/{yyyy}/{mm}/{yyyymmdd}.txt",
-            5: f"https://clashnode.com/data/{yyyy}/{mm}/{yyyymmdd}.txt",
-        }
+        date_map = self._build_date_map()
 
-        url = url_map.get(source_id)
-        if url:
-            # Verify URL is accessible
-            try:
-                resp = self.session.head(url, timeout=10, allow_redirects=True)
-                if resp.status_code == 200:
-                    return url
-                else:
-                    logger.warning("change_date source #%d returned status %d", source_id, resp.status_code)
-                    return url  # Return anyway, may work later
-            except Exception as e:
-                logger.warning("change_date source #%d check failed: %s", source_id, e)
-                return url  # Return anyway
+        try:
+            url = template.format_map(date_map)
+        except KeyError as e:
+            logger.error(
+                "Source #%d url_template has unknown placeholder: %s",
+                source.get("id", -1), e,
+            )
+            return None
 
-        logger.warning("No change_date mapping for source #%d", source_id)
-        return None
+        # Verify URL is accessible
+        try:
+            resp = self.session.head(url, timeout=10, allow_redirects=True)
+            if resp.status_code != 200:
+                logger.warning(
+                    "change_date source #%d returned status %d",
+                    source.get("id", -1), resp.status_code,
+                )
+        except Exception as e:
+            logger.warning(
+                "change_date source #%d check failed: %s",
+                source.get("id", -1), e,
+            )
+
+        return url  # Return anyway, may work later
 
     def find_release(self, source_id: int, source: dict) -> Optional[str]:
         """Find latest GitHub Release URL.

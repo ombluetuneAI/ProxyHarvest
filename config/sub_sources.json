@@ -3,16 +3,18 @@
     "id": 0,
     "remarks": "pojiezhiyuanjun/freev2",
     "site": "https://github.com/pojiezhiyuanjun/freev2",
-    "url": "https://raw.githubusercontent.com/pojiezhiyuanjun/freev2/master/0511.txt",
+    "url": "",
     "update_method": "change_date",
+    "url_template": "https://raw.githubusercontent.com/pojiezhiyuanjun/freev2/master/{MMDD}.txt",
     "enabled": true
   },
   {
     "id": 1,
     "remarks": "free-nodes/v2rayfree",
     "site": "https://github.com/free-nodes/v2rayfree",
-    "url": "https://raw.githubusercontent.com/free-nodes/v2rayfree/main/v202605111",
+    "url": "",
     "update_method": "change_date",
+    "url_template": "https://raw.githubusercontent.com/free-nodes/v2rayfree/main/v{YYYYMMDD}1",
     "enabled": true
   },
   {
@@ -27,24 +29,27 @@
     "id": 3,
     "remarks": "nodefree.org",
     "site": "https://nodefree.org",
-    "url": "https://nodefree.org/dy/2026/05/20260511.yaml",
+    "url": "",
     "update_method": "change_date",
+    "url_template": "https://nodefree.org/dy/{YYYY}/{MM}/{YYYYMMDD}.yaml",
     "enabled": true
   },
   {
     "id": 4,
     "remarks": "v2rayshare.com",
     "site": "https://v2rayshare.com",
-    "url": "https://v2rayshare.com/v2rayshare/v2ray/2026/05/20260511.txt",
+    "url": "",
     "update_method": "change_date",
+    "url_template": "https://v2rayshare.com/v2rayshare/v2ray/{YYYY}/{MM}/{YYYYMMDD}.txt",
     "enabled": true
   },
   {
     "id": 5,
     "remarks": "clashnode.com",
     "site": "https://clashnode.com",
-    "url": "https://clashnode.com/data/2026/05/20260511.txt",
+    "url": "",
     "update_method": "change_date",
+    "url_template": "https://clashnode.com/data/{YYYY}/{MM}/{YYYYMMDD}.txt",
     "enabled": true
   }
 ]
