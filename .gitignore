@@ -1,8 +1,20 @@
 # Cache
 .cache/
 
-# Output
-output/
+# Output - intermediate/temporary files
+# (Final output files like nodes_*.yaml, nodes_*.txt are tracked in git)
+output/meta*.json
+output/out*.json
+output/pingonly*.json
+output/singbox_*.json
+output/speedtest_singbox.json
+output/speedtest_input*
+output/speedtest_clean.json
+output/speedtest_config*
+output/speedtest_small*
+output/test*
+output/v2rayfree_raw.txt
+output/tmp/
 
 # Python
 __pycache__/
@@ -35,3 +47,6 @@ desktop.ini
 # Temp
 *.tmp
 *.bak
+
+# Singtools config variants (only singtools_config.json is canonical)
+config/singtools_pingonly*.json

@@ -19,6 +19,8 @@ paths:
   splitted_dir: output/sub/splitted
 
 subconverter:
+  version: v0.9.2
+  repo: MetaCubeX/subconverter
   host: 127.0.0.1
   port: 25500
   startup_timeout: 15

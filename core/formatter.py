@@ -187,18 +187,32 @@ class NodeFormatter:
     def _yaml_to_mixed(self, yaml_content: str) -> str:
         """Convert Clash YAML proxies to Mixed format.
 
-        Uses subconverter API if available, otherwise does a basic
-        local conversion by encoding each proxy to its URI scheme.
+        Uses subconverter API if available, then supplements with local
+        conversion for protocols that subconverter doesn't output in mixed
+        format (e.g., vless, hysteria2).
 
         Args:
             yaml_content: YAML string with 'proxies:' key.
 
         Returns:
-            Mixed format string (ss://, vmess://, trojan://, etc.).
+            Mixed format string (ss://, vmess://, trojan://, vless://, etc.).
         """
         import tempfile
 
-        # Try subconverter first (best quality)
+        # Identify which proxy types are present
+        try:
+            data = yaml.safe_load(yaml_content)
+            proxies = data.get("proxies", []) if isinstance(data, dict) else []
+        except yaml.YAMLError:
+            proxies = []
+
+        proxy_types = set(p.get("type", "") for p in proxies)
+        # Protocols that subconverter mixed doesn't output
+        local_only_types = {"vless", "hysteria2", "hy2"}
+        needs_local = proxy_types & local_only_types
+
+        # Try subconverter first (best quality for supported protocols)
+        subconverter_result = None
         if self.subconverter and self.subconverter._is_running():
             try:
                 # Write temp YAML file for subconverter to read
@@ -214,12 +228,31 @@ class NodeFormatter:
                 os.unlink(temp_path)
 
                 if result:
-                    return result.strip()
+                    subconverter_result = result.strip()
             except Exception as e:
                 logger.warning("subconverter mixed conversion failed: %s", e)
 
-        # Fallback: basic local conversion
-        return self._local_yaml_to_mixed(yaml_content)
+        if not needs_local:
+            # All protocols supported by subconverter
+            if subconverter_result:
+                return subconverter_result
+            else:
+                return self._local_yaml_to_mixed(yaml_content)
+
+        # Need to merge: subconverter output + local vless/hysteria2 encoding
+        local_proxies = [p for p in proxies if p.get("type", "") in local_only_types]
+        local_yaml = yaml.dump({"proxies": local_proxies}, allow_unicode=True)
+        local_result = self._local_yaml_to_mixed(local_yaml)
+
+        if subconverter_result:
+            # Merge subconverter output with local encoding
+            merged = subconverter_result
+            if local_result.strip():
+                merged += "\n" + local_result.strip()
+            return merged
+        else:
+            # Fallback entirely to local conversion
+            return self._local_yaml_to_mixed(yaml_content)
 
     @staticmethod
     def _local_yaml_to_mixed(yaml_content: str) -> str:
@@ -339,6 +372,98 @@ class NodeFormatter:
                 lines.append(
                     f"ssr://{_b64.b64encode(sr.encode()).decode().rstrip('=')}"
                 )
+
+            elif ptype == "vless":
+                # vless://uuid@server:port?params#name
+                uuid = p.get("uuid", "")
+                server = p.get("server", "")
+                port = p.get("port", "")
+                params = []
+                if p.get("sni", ""):
+                    params.append(f"sni={p['sni']}")
+                # security
+                flow = p.get("flow", "")
+                tls = p.get("tls", "")
+                if tls:
+                    params.append("security=tls")
+                    if flow:
+                        params.append(f"flow={flow}")
+                else:
+                    params.append("security=none")
+                # transport
+                network = p.get("network", "tcp")
+                if network != "tcp":
+                    params.append(f"type={network}")
+                    if network == "ws":
+                        ws_opts = p.get("ws-opts", {})
+                        if ws_opts.get("path", ""):
+                            params.append(f"path={urllib.parse.quote(ws_opts['path'])}")
+                        if ws_opts.get("headers", {}).get("Host", ""):
+                            params.append(f"host={urllib.parse.quote(ws_opts['headers']['Host'])}")
+                    elif network == "grpc":
+                        grpc_opts = p.get("grpc-opts", {})
+                        if grpc_opts.get("grpc-service-name", ""):
+                            params.append(f"serviceName={urllib.parse.quote(grpc_opts['grpc-service-name'])}")
+                    elif network == "h2":
+                        h2_opts = p.get("h2-opts", {})
+                        if h2_opts.get("path", ""):
+                            params.append(f"path={urllib.parse.quote(h2_opts['path'])}")
+                        if h2_opts.get("host", []):
+                            params.append(f"host={urllib.parse.quote(','.join(h2_opts['host']))}")
+                    elif network == "http" or network == "http-post":
+                        http_opts = p.get("http-opts", {}) or p.get("http-post-opts", {})
+                        if http_opts.get("path", []):
+                            params.append(f"path={urllib.parse.quote(http_opts['path'][0])}")
+                        if http_opts.get("headers", {}).get("Host", []):
+                            params.append(f"host={urllib.parse.quote(http_opts['headers']['Host'][0])}")
+                # fp/alpn/pbk/sid
+                client_fingerprint = p.get("client-fingerprint", "")
+                if client_fingerprint:
+                    params.append(f"fp={client_fingerprint}")
+                alpn = p.get("alpn", [])
+                if alpn:
+                    params.append(f"alpn={','.join(alpn)}")
+                reality_opts = p.get("reality-opts", {})
+                if reality_opts:
+                    if reality_opts.get("public-key", ""):
+                        params.append(f"pbk={urllib.parse.quote(str(reality_opts['public-key']))}")
+                    if reality_opts.get("short-id", ""):
+                        params.append(f"sid={urllib.parse.quote(str(reality_opts['short-id']))}")
+                    if reality_opts.get("server-name", ""):
+                        params.append(f"sni={urllib.parse.quote(str(reality_opts['server-name']))}")
+
+                query = "&".join(params)
+                line = f"vless://{uuid}@{server}:{port}"
+                if query:
+                    line += f"?{query}"
+                line += f"#{name}"
+                lines.append(line)
+
+            elif ptype == "hysteria2" or ptype == "hy2":
+                # hysteria2://password@server:port?params#name
+                password = p.get("password", "")
+                server = p.get("server", "")
+                port = p.get("port", "")
+                params = []
+                if p.get("sni", ""):
+                    params.append(f"sni={urllib.parse.quote(p['sni'])}")
+                if p.get("obfs", ""):
+                    params.append(f"obfs={p['obfs']}")
+                    obfs_password = p.get("obfs-password", "")
+                    if obfs_password:
+                        params.append(f"obfs-password={urllib.parse.quote(obfs_password)}")
+                insecure = p.get("skip-cert-verify", False)
+                if insecure:
+                    params.append("insecure=1")
+                alpn = p.get("alpn", [])
+                if alpn:
+                    params.append(f"alpn={','.join(alpn)}")
+                query = "&".join(params)
+                line = f"hysteria2://{password}@{server}:{port}"
+                if query:
+                    line += f"?{query}"
+                line += f"#{name}"
+                lines.append(line)
 
             else:
                 # Unknown type, skip
