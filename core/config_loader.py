@@ -1,4 +1,4 @@
-"""Configuration loader for V2RayAggregator."""
+"""Configuration loader for ProxyHarvest."""
 
 import os
 import yaml

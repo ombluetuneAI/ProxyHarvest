@@ -1,1 +1,1 @@
-"""V2RayAggregator - Core Package"""
+"""ProxyHarvest - Core Package"""

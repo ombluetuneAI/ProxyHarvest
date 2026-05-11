@@ -1,6 +1,6 @@
-# V2RayAggregator
+# ProxyHarvest
 
-自动化的代理节点聚合、测速、筛选工具。
+自动化的代理节点采集、测速、筛选工具。
 
 ## 功能
 
@@ -76,15 +76,15 @@ python scripts/run.py update-geoip
 推送仓库到 GitHub 后，可用以下 Raw URL 作为订阅链接：
 
 ```
-https://raw.githubusercontent.com/<用户名>/V2RayAggregator/main/output/nodes_clash.yaml
-https://raw.githubusercontent.com/<用户名>/V2RayAggregator/main/output/nodes_base64.txt
-https://raw.githubusercontent.com/<用户名>/V2RayAggregator/main/output/nodes_mixed.txt
+https://raw.githubusercontent.com/<用户名>/ProxyHarvest/main/output/nodes_clash.yaml
+https://raw.githubusercontent.com/<用户名>/ProxyHarvest/main/output/nodes_base64.txt
+https://raw.githubusercontent.com/<用户名>/ProxyHarvest/main/output/nodes_mixed.txt
 ```
 
 ## 项目结构
 
 ```
-V2RayAggregator/
+ProxyHarvest/
 ├── config/                     # 配置文件
 │   ├── settings.yaml           # 全局设置
 │   ├── sub_sources.json        # 订阅源配置

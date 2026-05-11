@@ -1,4 +1,4 @@
-"""Shared constants for V2RayAggregator."""
+"""Shared constants for ProxyHarvest."""
 
 # Country code to emoji flag mapping
 COUNTRY_EMOJI = {

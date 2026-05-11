@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""V2RayAggregator - Main CLI entry point.
+"""ProxyHarvest - Main CLI entry point.
 
 Usage:
     python scripts/run.py all              # Full pipeline
@@ -249,7 +249,7 @@ def run_all(settings: dict) -> None:
     """
     logger = logging.getLogger("run.all")
     logger.info("=" * 60)
-    logger.info("V2RayAggregator - Full Pipeline")
+    logger.info("ProxyHarvest - Full Pipeline")
     logger.info("Time: %s", datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
     logger.info("=" * 60)
 

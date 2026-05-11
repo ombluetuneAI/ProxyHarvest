@@ -103,7 +103,7 @@ jobs:
       # ── Run pipeline ──────────────────────────────────────────
       - name: Run collection
         run: |
-          echo "=== Starting V2RayAggregator pipeline ==="
+          echo "=== Starting ProxyHarvest pipeline ==="
           echo "Skip speedtest: ${{ github.event.inputs.skip_speedtest }}"
           if [ "${{ github.event.inputs.skip_speedtest }}" = "true" ]; then
             python scripts/run.py collect

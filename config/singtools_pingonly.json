@@ -1,5 +1,5 @@
 {
-  "group": "V2RayAggregator",
+  "group": "ProxyHarvest",
   "speedtestMode": "pingonly",
   "pingUrl": "https://www.gstatic.com/generate_204",
   "pingMethod": "http",
