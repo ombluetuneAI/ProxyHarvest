@@ -1,55 +1,19 @@
 [
   {
     "id": 0,
-    "remarks": "pojiezhiyuanjun/freev2",
-    "site": "https://github.com/pojiezhiyuanjun/freev2",
-    "url": "",
+    "remarks": "openRunner/clash-freenode",
+    "site": "https://github.com/openRunner/clash-freenode",
+    "url": "https://free.datiya.com/uploads/20260510-clash.yaml",
+    "url_template": "https://free.datiya.com/uploads/{YYYYMMDD}-clash.yaml",
     "update_method": "change_date",
-    "url_template": "https://raw.githubusercontent.com/pojiezhiyuanjun/freev2/master/{MMDD}.txt",
-    "enabled": true
+    "enabled": false
   },
   {
-    "id": 1,
-    "remarks": "free-nodes/v2rayfree",
-    "site": "https://github.com/free-nodes/v2rayfree",
-    "url": "",
-    "update_method": "change_date",
-    "url_template": "https://raw.githubusercontent.com/free-nodes/v2rayfree/main/v{YYYYMMDD}1",
-    "enabled": true
-  },
-  {
-    "id": 2,
-    "remarks": "Pawdroid/Free-servers",
-    "site": "https://github.com/Pawdroid/Free-servers",
-    "url": "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub",
+    "id": 6,
+    "remarks": "MahsaFreeConfig",
+    "site": "https://github.com/mahsanet/MahsaFreeConfig",
+    "url": "https://raw.githubusercontent.com/mahsanet/MahsaFreeConfig/refs/heads/main/mci/sub_1.txt|https://raw.githubusercontent.com/mahsanet/MahsaFreeConfig/refs/heads/main/mci/sub_2.txt|https://raw.githubusercontent.com/mahsanet/MahsaFreeConfig/refs/heads/main/mci/sub_3.txt|https://raw.githubusercontent.com/mahsanet/MahsaFreeConfig/refs/heads/main/mci/sub_4.txt|https://raw.githubusercontent.com/mahsanet/MahsaFreeConfig/refs/heads/main/mtn/sub_1.txt|https://raw.githubusercontent.com/mahsanet/MahsaFreeConfig/refs/heads/main/mtn/sub_2.txt|https://raw.githubusercontent.com/mahsanet/MahsaFreeConfig/refs/heads/main/mtn/sub_3.txt|https://raw.githubusercontent.com/mahsanet/MahsaFreeConfig/refs/heads/main/mtn/sub_4.txt",
     "update_method": "auto",
-    "enabled": true
-  },
-  {
-    "id": 3,
-    "remarks": "nodefree.org",
-    "site": "https://nodefree.org",
-    "url": "",
-    "update_method": "change_date",
-    "url_template": "https://nodefree.org/dy/{YYYY}/{MM}/{YYYYMMDD}.yaml",
-    "enabled": true
-  },
-  {
-    "id": 4,
-    "remarks": "v2rayshare.com",
-    "site": "https://v2rayshare.com",
-    "url": "",
-    "update_method": "change_date",
-    "url_template": "https://v2rayshare.com/v2rayshare/v2ray/{YYYY}/{MM}/{YYYYMMDD}.txt",
-    "enabled": true
-  },
-  {
-    "id": 5,
-    "remarks": "clashnode.com",
-    "site": "https://clashnode.com",
-    "url": "",
-    "update_method": "change_date",
-    "url_template": "https://clashnode.com/data/{YYYY}/{MM}/{YYYYMMDD}.txt",
     "enabled": true
   }
 ]
