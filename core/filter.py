@@ -25,20 +25,22 @@ class NodeFilter:
                        output_dir: str) -> Dict[str, Any]:
         """Process speed test results and filter nodes.
 
+        Matches singtools meta.json entries to original Clash proxies by tag/name.
+
         Args:
-            speedtest_results: Output from SpeedTester.run().
+            speedtest_results: Output from SpeedTester.run() with 'meta' key.
             original_proxies: Original proxy list (Clash YAML format).
             output_dir: Directory for output files.
 
         Returns:
             Dictionary with filtered proxies and statistics.
         """
-        outbounds = speedtest_results.get("outbounds", [])
+        meta_entries = speedtest_results.get("meta", [])
 
-        # Build a mapping of tag -> speed info
+        # Build a mapping of tag -> speed info from meta.json
         speed_map = {}
-        for outbound in outbounds:
-            info = SpeedTester.extract_speed_info(outbound)
+        for entry in meta_entries:
+            info = SpeedTester.extract_speed_info(entry)
             tag = info["tag"]
             if tag:
                 speed_map[tag] = info
@@ -59,7 +61,7 @@ class NodeFilter:
         # Sort by average speed (descending)
         proxy_speeds.sort(key=lambda x: x["avg_speed"], reverse=True)
 
-        # Remove zero-speed nodes
+        # Remove zero-speed nodes (failed / unreachable)
         nonzero = [ps for ps in proxy_speeds if ps["avg_speed"] > 0]
         logger.info("Speed test: %d total, %d with speed > 0",
                      len(proxy_speeds), len(nonzero))

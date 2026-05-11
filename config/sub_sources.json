@@ -3,7 +3,7 @@
     "id": 0,
     "remarks": "pojiezhiyuanjun/freev2",
     "site": "https://github.com/pojiezhiyuanjun/freev2",
-    "url": "https://raw.githubusercontent.com/pojiezhiyuanjun/freev2/master/0510.txt",
+    "url": "https://raw.githubusercontent.com/pojiezhiyuanjun/freev2/master/0511.txt",
     "update_method": "change_date",
     "enabled": true
   },
@@ -11,7 +11,7 @@
     "id": 1,
     "remarks": "nodefree.org",
     "site": "https://nodefree.org",
-    "url": "https://nodefree.org/dy/2026/05/20260510.yaml",
+    "url": "https://nodefree.org/dy/2026/05/20260511.yaml",
     "update_method": "change_date",
     "enabled": true
   },
@@ -27,7 +27,7 @@
     "id": 3,
     "remarks": "v2rayshare.com",
     "site": "https://v2rayshare.com",
-    "url": "https://v2rayshare.com/v2rayshare/v2ray/2026/05/20260510.txt",
+    "url": "https://v2rayshare.com/v2rayshare/v2ray/2026/05/20260511.txt",
     "update_method": "change_date",
     "enabled": true
   },
@@ -35,7 +35,7 @@
     "id": 4,
     "remarks": "clashnode.com",
     "site": "https://clashnode.com",
-    "url": "https://clashnode.com/data/2026/05/20260510.txt",
+    "url": "https://clashnode.com/data/2026/05/20260511.txt",
     "update_method": "change_date",
     "enabled": true
   },

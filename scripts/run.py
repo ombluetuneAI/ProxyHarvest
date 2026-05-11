@@ -135,6 +135,9 @@ def run_collect(settings: dict) -> list:
 def run_speedtest(settings: dict, proxies: list = None) -> dict:
     """Run speed test phase.
 
+    singtools directly supports Clash YAML as input — it auto-detects the format
+    and converts internally. No subconverter sing-box conversion needed.
+
     Args:
         settings: Settings dictionary.
         proxies: List of proxy dictionaries. If None, loads from sub_merge_yaml.yml.
@@ -160,39 +163,19 @@ def run_speedtest(settings: dict, proxies: list = None) -> dict:
         logger.error("No proxies to test")
         return {}
 
-    # Start subconverter for Clash -> sing-box conversion
-    subconverter = SubConverter(settings)
-    if not subconverter.start():
-        logger.error("Failed to start subconverter for speed test input conversion")
-        return {}
+    output_dir = get_path(settings, "output_dir")
 
-    try:
-        # Save proxies as Clash YAML for subconverter to convert
-        output_dir = get_path(settings, "output_dir")
-        clash_input = os.path.join(output_dir, "speedtest_input.yaml")
+    # Save proxies as Clash YAML for singtools input
+    # singtools auto-detects Clash YAML format and converts internally
+    clash_input = os.path.join(output_dir, "speedtest_input.yaml")
+    with open(clash_input, "w", encoding="utf-8") as f:
+        yaml.dump({"proxies": proxies}, f, allow_unicode=True, sort_keys=False)
+    logger.info("Saved Clash YAML input: %d proxies -> %s", len(proxies), clash_input)
 
-        with open(clash_input, "w", encoding="utf-8") as f:
-            yaml.dump({"proxies": proxies}, f, allow_unicode=True, sort_keys=False)
-
-        # Convert Clash YAML -> sing-box JSON via subconverter
-        singbox_content = subconverter.convert(
-            url=clash_input, target="singbox", list_mode=True, timeout=120
-        )
-        if not singbox_content:
-            logger.error("Failed to convert Clash YAML to sing-box JSON")
-            return {}
-
-        singbox_input = os.path.join(output_dir, "speedtest_input.json")
-        with open(singbox_input, "w", encoding="utf-8") as f:
-            f.write(singbox_content)
-        logger.info("Saved sing-box JSON input: %s", singbox_input)
-    finally:
-        subconverter.stop()
-
-    # Run singtools
+    # Run singtools directly with Clash YAML input (no subconverter needed)
     logger.info("=== Running speed test ===")
     tester = SpeedTester(settings)
-    results = tester.run(singbox_input, output_dir)
+    results = tester.run(clash_input, output_dir)
 
     if not results:
         logger.error("Speed test produced no results")

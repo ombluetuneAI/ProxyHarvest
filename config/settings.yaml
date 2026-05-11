@@ -31,9 +31,9 @@ singtools:
   download_base: https://github.com/Kdwkakcs/singtools/releases/download/vv0.2.0
   config: config/singtools_config.json
   timeout: 600
-  detect_country: true
+  detect_country: false
   detect_remote_ip: false
-  filter: "tls,shadowsocks"
+  filter: "all"
   binary_path:
     linux: tools/singtools/linux/singtools
     windows: tools/singtools/windows/singtools.exe
