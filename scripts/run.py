@@ -107,18 +107,19 @@ def run_collect(settings: dict) -> list:
             yaml.dump({"proxies": proxies}, f, allow_unicode=True, sort_keys=False)
         logger.info("Saved %d proxies to %s", len(proxies), yaml_path)
 
-        # Save sub_merge.txt (mixed format)
+        # Save sub_merge.txt (mixed format — plain URI list)
+        from core.formatter import NodeFormatter
         from core.converter import FormatConverter
         mixed_path = os.path.join(sub_dir, "sub_merge.txt")
         yaml_content = yaml.dump({"proxies": proxies}, allow_unicode=True)
-        mixed = FormatConverter.base64_encode(yaml_content)
+        mixed = NodeFormatter._local_yaml_to_mixed(yaml_content)
         with open(mixed_path, "w", encoding="utf-8") as f:
             f.write(mixed)
 
-        # Save sub_merge_base64.txt
+        # Save sub_merge_base64.txt (base64-encoded mixed format)
         b64_path = os.path.join(sub_dir, "sub_merge_base64.txt")
         with open(b64_path, "w", encoding="utf-8") as f:
-            f.write(FormatConverter.base64_encode(yaml_content))
+            f.write(FormatConverter.base64_encode(mixed))
 
         logger.info("Collection complete: %d proxies", len(proxies))
         return proxies

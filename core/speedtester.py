@@ -63,10 +63,25 @@ class SpeedTester:
         output_file = os.path.join(output_dir, "out.json")
         meta_file = os.path.join(output_dir, "meta.json")
 
-        # Resolve config file path
-        config_file = self.singtools_config.get("config", "")
-        if config_file and not os.path.isabs(config_file):
-            config_file = str(PROJECT_ROOT / config_file)
+        # Resolve config file: explicit "config" takes precedence, otherwise
+        # auto-select based on test_mode
+        config_explicit = self.singtools_config.get("config", "")
+        if config_explicit:
+            config_file = config_explicit
+            if not os.path.isabs(config_file):
+                config_file = str(PROJECT_ROOT / config_file)
+        else:
+            test_mode = self.singtools_config.get("test_mode", "all")
+            mode_config_map = {
+                "ping":   "config/singtools_pingonly.json",
+                "speed":  "config/singtools_speedonly.json",
+                "all":    "config/singtools_config.json",
+            }
+            config_rel = mode_config_map.get(test_mode)
+            if config_rel is None:
+                logger.warning("Unknown test_mode '%s', falling back to 'all'", test_mode)
+                config_rel = mode_config_map["all"]
+            config_file = str(PROJECT_ROOT / config_rel)
         if config_file and not os.path.exists(config_file):
             logger.warning("singtools config not found: %s, using defaults", config_file)
             config_file = ""

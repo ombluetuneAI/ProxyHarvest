@@ -17,7 +17,7 @@ dns:
     geoip: true
     geoip-code: CN
 proxies:
-- name: 🇩🇪DE-89.106.83.39-0016
+- name: 🇩🇪DE-89.106.83.39-0047
   server: 89.106.83.39
   port: 443
   type: vless
@@ -49,12 +49,12 @@ proxy-groups:
 - name: Proxy
   type: select
   proxies:
-  - 🇩🇪DE-89.106.83.39-0016
+  - 🇩🇪DE-89.106.83.39-0047
   - 🇩🇪DE-89.106.83.4-0015
 - name: Auto
   type: url-test
   proxies:
-  - 🇩🇪DE-89.106.83.39-0016
+  - 🇩🇪DE-89.106.83.39-0047
   - 🇩🇪DE-89.106.83.4-0015
   url: https://www.gstatic.com/generate_204
   interval: 300
@@ -63,12 +63,12 @@ proxy-groups:
   type: select
   proxies:
   - Proxy
-  - 🇩🇪DE-89.106.83.39-0016
+  - 🇩🇪DE-89.106.83.39-0047
   - 🇩🇪DE-89.106.83.4-0015
 - name: Tier 1
   type: url-test
   proxies:
-  - 🇩🇪DE-89.106.83.39-0016
+  - 🇩🇪DE-89.106.83.39-0047
   url: https://www.gstatic.com/generate_204
   interval: 300
 - name: Tier 2

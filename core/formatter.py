@@ -501,10 +501,9 @@ class NodeFormatter:
             try:
                 yaml_content = yaml.dump({"proxies": type_proxies}, allow_unicode=True)
                 mixed = self._yaml_to_mixed(yaml_content)
-                b64 = FormatConverter.base64_encode(mixed)
 
                 with open(path, "w", encoding="utf-8") as f:
-                    f.write(b64)
+                    f.write(mixed)
                 logger.info("Written %s split: %s (%d nodes)", ptype, path, len(type_proxies))
             except Exception as e:
                 logger.error("Failed to write %s split: %s", ptype, e)
