@@ -26,11 +26,7 @@ dist/
 build/
 *.egg
 
-# Tools binaries (too large for git)
-tools/subconverter/linux64/
-tools/subconverter/windows/
-tools/singtools/linux/
-tools/singtools/windows/
+# Tools binaries — tracked in git so users don't need to download each run
 
 # IDE
 .vscode/
@@ -48,5 +44,3 @@ desktop.ini
 *.tmp
 *.bak
 
-# Singtools config variants (only singtools_config.json is canonical)
-config/singtools_pingonly*.json
