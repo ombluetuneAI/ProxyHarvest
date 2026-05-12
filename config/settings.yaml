@@ -31,11 +31,12 @@ subconverter:
 singtools:
   version: vv0.2.0
   download_base: https://github.com/Kdwkakcs/singtools/releases/download/vv0.2.0
-  config: config/singtools_config.json
   timeout: 600
   detect_country: false
   detect_remote_ip: false
   filter: "all"
+  # test_mode: ping | speed | all  (auto-selects the matching config file)
+  test_mode: ping
   binary_path:
     linux: tools/singtools/linux/singtools
     windows: tools/singtools/windows/singtools.exe

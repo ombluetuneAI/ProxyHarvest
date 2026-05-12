@@ -1,6 +1,9 @@
 # Cache
 .cache/
 
+# Local config override (user-specific settings, not tracked in git)
+config/settings.local.yaml
+
 # Output - intermediate/temporary files
 # (Final output files like nodes_*.yaml, nodes_*.txt are tracked in git)
 output/meta*.json

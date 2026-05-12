@@ -13,8 +13,29 @@ logger = logging.getLogger(__name__)
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 
+def _deep_merge(base: Dict[str, Any], override: Dict[str, Any]) -> Dict[str, Any]:
+    """Deep-merge override into base. Nested dicts are merged, other values replaced.
+
+    Args:
+        base: Base dictionary.
+        override: Override dictionary.
+
+    Returns:
+        Merged dictionary (base is modified in-place).
+    """
+    for key, val in override.items():
+        if key in base and isinstance(base[key], dict) and isinstance(val, dict):
+            _deep_merge(base[key], val)
+        else:
+            base[key] = val
+    return base
+
+
 def load_settings(settings_path: Optional[str] = None) -> Dict[str, Any]:
-    """Load global settings from settings.yaml.
+    """Load global settings from settings.yaml, with optional local override.
+
+    Loads config/settings.yaml first, then merges config/settings.local.yaml
+    on top if it exists. The local file is gitignored for user-specific settings.
 
     Args:
         settings_path: Optional explicit path. Defaults to config/settings.yaml under project root.
@@ -31,6 +52,15 @@ def load_settings(settings_path: Optional[str] = None) -> Dict[str, Any]:
 
     with open(settings_path, "r", encoding="utf-8") as f:
         settings = yaml.safe_load(f)
+
+    # Merge local override if it exists
+    local_path = settings_path.parent / "settings.local.yaml"
+    if local_path.exists():
+        with open(local_path, "r", encoding="utf-8") as f:
+            local_settings = yaml.safe_load(f)
+        if local_settings:
+            settings = _deep_merge(settings, local_settings)
+        logger.info("Local settings merged from %s", local_path)
 
     # Resolve relative paths to absolute paths based on project root
     if "paths" in settings:
