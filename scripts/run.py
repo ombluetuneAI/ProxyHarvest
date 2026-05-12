@@ -57,6 +57,16 @@ def _save_collect_summary(collector: Collector, sources: list, tmp_dir: str) -> 
         writer.writerows(rows)
     logging.getLogger("run").info("Collection summary: %s (%d sources)", path, len(rows))
 
+    # ── Print formatted table ──
+    print("\n" + "=" * 70)
+    print(" 📦  COLLECTION SUMMARY")
+    print("=" * 70)
+    print(f"| {'source_id':>10} | {'remarks':<20} | {'success':>7} | {'total':>5} | {'deduped':>7} |")
+    print("-" * 70)
+    for r in rows:
+        print(f"| {str(r['source_id']):>10} | {r['remarks']:<20} | {r['success']:>7} | {r['total_nodes']:>5} | {r['deduped_nodes']:>7} |")
+    print("=" * 70)
+
 
 # ── Helper: per-source speedtest summary CSV ───────────────────────
 def _save_speedtest_summary(pre_speed_data: dict, filtered_result: dict, sources: list,
@@ -72,12 +82,13 @@ def _save_speedtest_summary(pre_speed_data: dict, filtered_result: dict, sources
         valid_counts[sid] = valid_counts.get(sid, 0) + 1
 
     rows = []
-    for sid, total in (pre_speed_data or {}).items():
+    for sid, stats in (pre_speed_data or {}).items():
+        sid_int = int(sid) if isinstance(sid, str) else sid
         rows.append({
             "source_id": sid,
-            "remarks": id_to_remarks.get(sid, ""),
-            "deduped_nodes": total,
-            "valid_nodes": valid_counts.get(sid, 0),
+            "remarks": id_to_remarks.get(sid_int, ""),
+            "deduped_nodes": stats.get("deduped", 0) if isinstance(stats, dict) else stats,
+            "valid_nodes": valid_counts.get(sid_int, 0),
         })
     rows.sort(key=lambda r: r["source_id"])
     with open(path, "w", newline="", encoding="utf-8-sig") as f:
@@ -85,6 +96,16 @@ def _save_speedtest_summary(pre_speed_data: dict, filtered_result: dict, sources
         writer.writeheader()
         writer.writerows(rows)
     logging.getLogger("run").info("Speedtest summary: %s (%d sources)", path, len(rows))
+
+    # ── Print formatted table ──
+    print("\n" + "=" * 60)
+    print(" ⚡  SPEEDTEST SUMMARY")
+    print("=" * 60)
+    print(f"| {'source_id':>10} | {'remarks':<20} | {'deduped':>7} | {'valid':>5} |")
+    print("-" * 60)
+    for r in rows:
+        print(f"| {str(r['source_id']):>10} | {r['remarks']:<20} | {r['deduped_nodes']:>7} | {r['valid_nodes']:>5} |")
+    print("=" * 60)
 
 
 # ── Helper: strip internal _source_id marker ───────────────────────
