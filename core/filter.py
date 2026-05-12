@@ -124,9 +124,16 @@ class NodeFilter:
                 proxy = ps["proxy"]
                 name = proxy.get("name", "unknown")[:48]
                 ptype = proxy.get("type", "unknown")[:10]
-                ping = f"{ps['ping']:.0f}" if ps["ping"] else "N/A"
-                avg_speed = f"{ps['avg_speed']:.2f}" if ps["avg_speed"] else "0"
-                max_speed = f"{ps['max_speed']:.2f}" if ps["max_speed"] else "0"
+                ping = f"{ps['ping']:.0f}ms" if ps["ping"] else "N/A"
+                # Convert bytes/sec to MB/s (1 MB = 1024*1024 bytes)
+                if ps["avg_speed"]:
+                    avg_speed = f"{ps['avg_speed'] / 1048576:.2f} MB/s"
+                else:
+                    avg_speed = "0"
+                if ps["max_speed"]:
+                    max_speed = f"{ps['max_speed'] / 1048576:.2f} MB/s"
+                else:
+                    max_speed = "0"
                 f.write(f"{idx:<6}{name:<50}{ptype:<12}{ping:<10}{avg_speed:<15}{max_speed:<15}\n")
 
         logger.info("Speed log written to %s", log_path)
