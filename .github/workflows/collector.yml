@@ -14,7 +14,7 @@ on:
         default: 'false'
         type: boolean
   schedule:
-    - cron: '0 2,14 * * *'   # 02:00 & 14:00 UTC = 10:00 & 22:00 CST
+    - cron: '0 */4 * * *'   # every 4 hours UTC
   push:
     branches: [ master, main ]
     paths:
