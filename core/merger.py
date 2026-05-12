@@ -78,6 +78,18 @@ def _dedup_key(proxy: Dict[str, Any]) -> str:
             proxy.get("obfs", ""),
             proxy.get("protocol", ""),
         ])
+    elif ptype == "vless":
+        parts.extend([
+            proxy.get("network", ""),
+            str(proxy.get("tls", "")),
+            _ws_opts_key(proxy.get("ws-opts")),
+            proxy.get("flow", ""),
+        ])
+    elif ptype in ("hysteria2", "hy2"):
+        parts.extend([
+            proxy.get("obfs", ""),
+            proxy.get("sni", ""),
+        ])
     else:
         # For unknown types, use server+port+type as key
         pass

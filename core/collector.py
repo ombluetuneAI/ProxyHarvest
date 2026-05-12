@@ -1,10 +1,9 @@
 """Proxy node collector from subscription sources."""
 
+import ipaddress
 import logging
-import re
 from typing import List, Dict, Any, Optional
 
-import requests
 import yaml
 
 from .constants import COUNTRY_EMOJI
@@ -293,12 +292,16 @@ class Collector:
                 logger.debug("Skipping VMess with network=%s but no TLS", network)
                 return False
 
-        # Filter IPv6-only nodes (no IPv4)
+        # Filter IPv6-only nodes (keep hostnames and IPv4)
         server = proxy.get("server", "")
-        if ":" in server and not any(c.isdigit() and c != ":" for c in server.split(":")[0][:4]):
-            # Looks like IPv6
-            if not re.match(r"\d+\.\d+\.\d+\.\d+", server):
-                logger.debug("Skipping IPv6-only node: %s", server)
-                return False
+        if server:
+            try:
+                addr = ipaddress.ip_address(server)
+                if isinstance(addr, ipaddress.IPv6Address):
+                    logger.debug("Skipping IPv6-only node: %s", server)
+                    return False
+            except ValueError:
+                # Not a bare IP address — could be a hostname, allow through
+                pass
 
         return True

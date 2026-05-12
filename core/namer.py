@@ -1,5 +1,6 @@
 """GeoIP-based proxy naming."""
 
+import os
 import logging
 import socket
 from typing import Dict, Any, Optional
@@ -34,7 +35,7 @@ class GeoNamer:
         """Load GeoIP database."""
         try:
             import geoip2.database
-            if self.mmdb_path and __import__("os").path.exists(self.mmdb_path):
+            if self.mmdb_path and os.path.exists(self.mmdb_path):
                 self.geo_reader = geoip2.database.Reader(self.mmdb_path)
                 logger.info("GeoIP database loaded from %s", self.mmdb_path)
             else:
