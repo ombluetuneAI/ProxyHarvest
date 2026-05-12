@@ -12,6 +12,7 @@ Usage:
 
 import sys
 import os
+import csv
 import logging
 import json
 from pathlib import Path
@@ -33,6 +34,65 @@ from core.speedtester import SpeedTester
 from core.filter import NodeFilter
 from core.formatter import NodeFormatter
 from core.geoip import ensure_geoip
+
+# ── Helper: per-source collection summary CSV ──────────────────────
+def _save_collect_summary(collector: Collector, sources: list, tmp_dir: str) -> None:
+    """Save CSV 1: source_id, remarks, success, total_nodes, deduped_nodes."""
+    path = os.path.join(tmp_dir, "collect_summary.csv")
+    # Build source_id -> remarks mapping
+    id_to_remarks = {s.get("id", -1): s.get("remarks", "") for s in sources}
+    rows = []
+    for sid, stats in (collector.source_stats or {}).items():
+        rows.append({
+            "source_id": sid,
+            "remarks": id_to_remarks.get(sid, ""),
+            "success": "yes" if stats.get("success") else "no",
+            "total_nodes": stats.get("total", 0),
+            "deduped_nodes": stats.get("deduped", 0),
+        })
+    rows.sort(key=lambda r: r["source_id"])
+    with open(path, "w", newline="", encoding="utf-8-sig") as f:
+        writer = csv.DictWriter(f, fieldnames=["source_id", "remarks", "success", "total_nodes", "deduped_nodes"])
+        writer.writeheader()
+        writer.writerows(rows)
+    logging.getLogger("run").info("Collection summary: %s (%d sources)", path, len(rows))
+
+
+# ── Helper: per-source speedtest summary CSV ───────────────────────
+def _save_speedtest_summary(pre_speed_data: dict, filtered_result: dict, sources: list,
+                            tmp_dir: str) -> None:
+    """Save CSV 2: source_id, remarks, deduped_nodes, valid_nodes."""
+    path = os.path.join(tmp_dir, "speedtest_summary.csv")
+    id_to_remarks = {s.get("id", -1): s.get("remarks", "") for s in sources}
+
+    # Count valid (passed) proxies per source from the filtered all_proxies
+    valid_counts = {}
+    for p in filtered_result.get("all_proxies", []):
+        sid = p.get("_source_id", -1)
+        valid_counts[sid] = valid_counts.get(sid, 0) + 1
+
+    rows = []
+    for sid, total in (pre_speed_data or {}).items():
+        rows.append({
+            "source_id": sid,
+            "remarks": id_to_remarks.get(sid, ""),
+            "deduped_nodes": total,
+            "valid_nodes": valid_counts.get(sid, 0),
+        })
+    rows.sort(key=lambda r: r["source_id"])
+    with open(path, "w", newline="", encoding="utf-8-sig") as f:
+        writer = csv.DictWriter(f, fieldnames=["source_id", "remarks", "deduped_nodes", "valid_nodes"])
+        writer.writeheader()
+        writer.writerows(rows)
+    logging.getLogger("run").info("Speedtest summary: %s (%d sources)", path, len(rows))
+
+
+# ── Helper: strip internal _source_id marker ───────────────────────
+def _strip_source_ids(proxies: list) -> list:
+    """Remove internal _source_id field from all proxy dicts."""
+    for p in proxies:
+        p.pop("_source_id", None)
+    return proxies
 
 
 def setup_logging(settings: dict) -> None:
@@ -91,6 +151,17 @@ def run_collect(settings: dict) -> list:
             proxies = namer.rename_proxies(proxies)
         finally:
             namer.close()
+
+        # Save per-source stats for downstream speedtest CSV
+        tmp_dir = os.path.join(get_path(settings, "output_dir"), "tmp")
+        ensure_dir(tmp_dir)
+        _save_collect_summary(collector, sources, tmp_dir)
+
+        # Save pre-speedtest deduped counts as sidecar JSON
+        source_deduped_path = os.path.join(tmp_dir, "source_deduped.json")
+        with open(source_deduped_path, "w", encoding="utf-8") as f:
+            json.dump(collector.source_stats, f, ensure_ascii=False)
+        logger.info("Saved pre-speedtest source stats to %s", source_deduped_path)
 
         # 6. Save intermediate files
         logger.info("=== Phase 6: Save intermediate files ===")
@@ -182,6 +253,16 @@ def run_speedtest(settings: dict, proxies: list = None) -> dict:
     node_filter = NodeFilter(settings)
     filtered = node_filter.filter_results(results, proxies, output_dir)
 
+    # Save speedtest summary CSV if pre-speedtest data exists
+    tmp_dir = os.path.join(get_path(settings, "output_dir"), "tmp")
+    source_deduped_path = os.path.join(tmp_dir, "source_deduped.json")
+    if os.path.exists(source_deduped_path):
+        with open(source_deduped_path, "r", encoding="utf-8") as f:
+            pre_speed_data = json.load(f)
+        # Load sources for remarks
+        sources = load_sub_sources(get_path(settings, "sub_sources"))
+        _save_speedtest_summary(pre_speed_data, filtered, sources, tmp_dir)
+
     return filtered
 
 
@@ -213,6 +294,10 @@ def run_format(settings: dict, filtered_result: dict = None) -> dict:
                 data = yaml.safe_load(f)
                 proxies = data.get("proxies", [])
             filtered_result = {"top_proxies": proxies, "all_proxies": proxies}
+
+        # Strip internal _source_id before final output
+        _strip_source_ids(filtered_result.get("top_proxies", []))
+        _strip_source_ids(filtered_result.get("all_proxies", []))
 
         outputs = formatter.format_and_output(
             filtered_result.get("top_proxies", []),

@@ -30,9 +30,11 @@ class Collector:
             sources: List of source dictionaries.
 
         Returns:
-            List of collected proxy dictionaries.
+            List of collected proxy dictionaries (each tagged with _source_id).
         """
         all_proxies = []
+        # Track per-source stats: {source_id: {"total": int, "success": bool}}
+        self.source_stats = {}
 
         for source in sources:
             if not source.get("enabled", True):
@@ -51,8 +53,15 @@ class Collector:
             logger.info("Collecting from source #%d: %s", source_id, remarks)
             proxies = self._collect_from_source(url, source_id)
 
+            source_ok = bool(proxies)
+            source_total = len(proxies)
+            self.source_stats[source_id] = {"total": source_total, "success": source_ok}
+
             if proxies:
-                logger.info("Collected %d proxies from source #%d", len(proxies), source_id)
+                # Tag each proxy with its source_id
+                for p in proxies:
+                    p["_source_id"] = source_id
+                logger.info("Collected %d proxies from source #%d", source_total, source_id)
                 all_proxies.extend(proxies)
             else:
                 logger.warning("No proxies collected from source #%d", source_id)
@@ -61,6 +70,14 @@ class Collector:
         if all_proxies:
             all_proxies = merge_and_validate(all_proxies, self.validate_config)
             logger.info("Total collected: %d proxies (after dedup)", len(all_proxies))
+
+            # Count deduped nodes per source
+            dedup_counts = {}
+            for p in all_proxies:
+                sid = p.get("_source_id", -1)
+                dedup_counts[sid] = dedup_counts.get(sid, 0) + 1
+            for sid in self.source_stats:
+                self.source_stats[sid]["deduped"] = dedup_counts.get(sid, 0)
 
         return all_proxies
 
@@ -82,7 +99,7 @@ class Collector:
             if not sub_url:
                 continue
 
-            logger.info("  [%d/%d] Fetching: %s", idx + 1, len(urls), sub_url[:80])
+            logger.info("  [%d/%d] Fetching: %s", idx + 1, len(urls), sub_url)
             proxies = self._fetch_and_parse(sub_url, source_id)
             all_proxies.extend(proxies)
 
@@ -94,9 +111,8 @@ class Collector:
 
         Strategy:
         1. Try subconverter with original URL directly
-        2. If that fails, download raw content, base64-encode it,
-           save to temp file, and pass the local file to subconverter
-           (handles plain-text URI lists that subconverter can't auto-detect)
+        2. If that fails, download raw content and pass to subconverter
+           via local file (handles sources that need custom HTTP headers)
 
         Args:
             sub_url: Subscription URL.
@@ -141,12 +157,12 @@ class Collector:
             return []
 
     def _fetch_raw_and_convert(self, sub_url: str) -> Optional[str]:
-        """Download raw subscription content, base64-encode it, and
-        convert via subconverter using a local file.
+        """Download raw subscription content and convert via subconverter
+        using a local file.
 
-        This handles sources that provide plain-text URI lists
-        (ss://, vmess://, etc.) which subconverter can't auto-detect
-        from a URL without a recognized file extension.
+        This handles sources that require custom download headers
+        (User-Agent, cookies, auth) that subconverter's own HTTP client
+        doesn't provide.
 
         Args:
             sub_url: Subscription URL to download.
@@ -155,36 +171,20 @@ class Collector:
             Converted Clash YAML content, or None.
         """
         import os
-        import base64
-        import tempfile
         from .platform_utils import make_session
 
         try:
             session = make_session(self.settings)
-            resp = session.get(sub_url, timeout=30)
+            resp = session.get(sub_url, timeout=10)
             resp.raise_for_status()
             raw_content = resp.text.strip()
         except Exception as e:
-            logger.warning("Failed to download raw content from %s: %s", sub_url[:80], e)
+            logger.warning("Failed to download raw content from %s: %s", sub_url, e)
             return None
 
-        # Check if content looks like plain-text URIs (not already base64)
-        lines = [l.strip() for l in raw_content.splitlines() if l.strip()]
-        if not lines:
-            return None
-
-        # If first line starts with a protocol prefix, it's plain-text URIs
-        first_line = lines[0]
-        if first_line.startswith(("ss://", "vmess://", "trojan://", "vless://",
-                                  "hysteria2://", "hysteria://", "ssr://")):
-            logger.info("Detected plain-text URI list (%d lines), base64-encoding for subconverter",
-                        len(lines))
-            # Base64-encode the raw content (subconverter expects this format)
-            b64_content = base64.b64encode(raw_content.encode("utf-8")).decode("utf-8")
-        else:
-            # Already base64 or other format, try as-is
-            logger.info("Content doesn't look like plain URIs, using as-is")
-            b64_content = raw_content
+        # subconverter auto-detects format (plain URI, base64, YAML, etc.)
+        logger.info("Raw content fetched (%d bytes), saving to temp file for subconverter",
+                    len(raw_content))
 
         # Write to temp file and convert via subconverter
         try:
@@ -192,7 +192,7 @@ class Collector:
             os.makedirs(tmp_dir, exist_ok=True)
             tmp_file = os.path.join(tmp_dir, "_raw_sub.txt")
             with open(tmp_file, "w", encoding="utf-8") as f:
-                f.write(b64_content)
+                f.write(raw_content)
 
             result = self.subconverter.convert(
                 url=tmp_file,
