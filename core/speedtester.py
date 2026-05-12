@@ -98,7 +98,8 @@ class SpeedTester:
                 cmd,
                 cwd=str(binary_path.parent),
                 capture_output=True,
-                text=True,
+                encoding="utf-8",
+                errors="replace",
                 timeout=self.singtools_config.get("timeout", 600),
             )
 
