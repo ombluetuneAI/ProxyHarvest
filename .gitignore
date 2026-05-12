@@ -40,6 +40,10 @@ build/
 Thumbs.db
 desktop.ini
 
+# Subconverter runtime files
+tools/subconverter/*/cache/
+tools/subconverter/*/pref.toml
+
 # Temp
 *.tmp
 *.bak
