@@ -44,6 +44,7 @@ singtools:
 geoip:
   mmdb_url: https://raw.githubusercontent.com/Loyalsoldier/geoip/release/Country.mmdb
   cache_dir: .cache
+  cache_ttl_days: 7
 
 collector:
   timeout: 240
