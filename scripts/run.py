@@ -28,7 +28,6 @@ from core.platform_utils import ensure_dir, IS_WINDOWS
 from core.converter import SubConverter
 from core.source_updater import SourceUpdater
 from core.collector import Collector
-from core.merger import merge_and_validate
 from core.namer import GeoNamer
 from core.speedtester import SpeedTester
 from core.filter import NodeFilter
@@ -85,20 +84,16 @@ def run_collect(settings: dict) -> list:
             logger.warning("No proxies collected!")
             return []
 
-        # 5. Merge and deduplicate
-        logger.info("=== Phase 5: Merge and deduplicate ===")
-        proxies = merge_and_validate(proxies, settings.get("collector", {}).get("validate", {}))
-
-        # 6. GeoIP rename
-        logger.info("=== Phase 6: GeoIP rename ===")
+        # 5. GeoIP rename
+        logger.info("=== Phase 5: GeoIP rename ===")
         namer = GeoNamer(settings, mmdb_path)
         try:
             proxies = namer.rename_proxies(proxies)
         finally:
             namer.close()
 
-        # 7. Save intermediate files
-        logger.info("=== Phase 7: Save intermediate files ===")
+        # 6. Save intermediate files
+        logger.info("=== Phase 6: Save intermediate files ===")
         output_dir = get_path(settings, "output_dir")
         sub_dir = get_path(settings, "sub_dir")
         ensure_dir(output_dir)

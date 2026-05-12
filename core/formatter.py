@@ -305,6 +305,15 @@ class NodeFormatter:
 
             elif ptype == "vmess":
                 # vmess://base64(json)
+                # Determine obfuscation type for vmess:// format
+                network = p.get("network", "tcp")
+                if network == "grpc":
+                    obfs_type = "gun"
+                elif network == "tcp":
+                    obfs_type = p.get("obfs", "none") or "none"
+                else:
+                    obfs_type = "none"
+
                 vmess_obj = {
                     "v": "2",
                     "ps": p.get("name", ""),
@@ -312,8 +321,8 @@ class NodeFormatter:
                     "port": str(p.get("port", "")),
                     "id": p.get("uuid", ""),
                     "aid": str(p.get("alterId", 0)),
-                    "net": p.get("network", "tcp"),
-                    "type": p.get("network", "tcp"),
+                    "net": network,
+                    "type": obfs_type,
                     "host": "",
                     "path": "",
                     "tls": "tls" if p.get("tls", "") else "",
@@ -329,7 +338,6 @@ class NodeFormatter:
                 grpc_opts = p.get("grpc-opts", {})
                 if grpc_opts:
                     vmess_obj["path"] = grpc_opts.get("grpc-service-name", "")
-                    vmess_obj["type"] = "gun"
                 encoded = _b64.b64encode(
                     _json.dumps(vmess_obj).encode()
                 ).decode()
