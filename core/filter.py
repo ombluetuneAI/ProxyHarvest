@@ -1,4 +1,10 @@
-"""Node filtering and sorting based on speed test results."""
+"""Node filtering and sorting based on speed test results.
+
+Supports two modes:
+- speed mode: Uses avg_speed for sorting (descending), filters out zero-speed nodes.
+- ping-only mode: When no avg_speed data is present, uses ping for sorting
+  (ascending, lower is better), filters out zero-ping nodes.
+"""
 
 import os
 import json
@@ -58,35 +64,45 @@ class NodeFilter:
                 "ping": speed_info.get("ping", 0),
             })
 
-        # Sort by average speed (descending)
-        proxy_speeds.sort(key=lambda x: x["avg_speed"], reverse=True)
+        # Determine mode: ping-only vs speed
+        has_speed_data = any(ps["avg_speed"] > 0 for ps in proxy_speeds)
 
-        # Remove zero-speed nodes (failed / unreachable)
-        nonzero = [ps for ps in proxy_speeds if ps["avg_speed"] > 0]
-        logger.info("Speed test: %d total, %d with speed > 0",
-                     len(proxy_speeds), len(nonzero))
+        if has_speed_data:
+            # Speed mode: sort by avg_speed descending, filter zero-speed
+            proxy_speeds.sort(key=lambda x: x["avg_speed"], reverse=True)
+            passed = [ps for ps in proxy_speeds if ps["avg_speed"] > 0]
+            logger.info("Speed test: %d total, %d with speed > 0",
+                         len(proxy_speeds), len(passed))
+            top_proxies = passed[:self.top_n]
+            all_filtered = passed
+        else:
+            # Ping-only mode: sort by ping ascending, filter zero-ping
+            proxy_speeds.sort(key=lambda x: x["ping"] if x["ping"] > 0 else 999999)
+            passed = [ps for ps in proxy_speeds if ps["ping"] > 0]
+            logger.info("Ping test: %d total, %d with ping > 0",
+                         len(proxy_speeds), len(passed))
+            top_proxies = passed[:self.top_n]
+            all_filtered = passed
 
-        # Take top N
-        top_proxies = nonzero[:self.top_n]
-        all_with_speed = nonzero  # All non-zero for "all" output
-
-        # Generate speed log
+        # Generate log (top nodes)
         self._write_speed_log(top_proxies, output_dir)
 
         result = {
             "top_proxies": [ps["proxy"] for ps in top_proxies],
-            "all_proxies": [ps["proxy"] for ps in all_with_speed],
+            "all_proxies": [ps["proxy"] for ps in all_filtered],
             "top_proxy_speeds": top_proxies,
-            "all_proxy_speeds": all_with_speed,
+            "all_proxy_speeds": all_filtered,
             "stats": {
                 "total_tested": len(proxy_speeds),
-                "nonzero_speed": len(nonzero),
+                "passed": len(passed),
                 "top_n": len(top_proxies),
+                "mode": "speed" if has_speed_data else "ping",
             },
         }
 
-        logger.info("Filtered: %d top nodes from %d tested",
-                     len(top_proxies), len(proxy_speeds))
+        logger.info("Filtered: %d top nodes from %d tested (mode=%s)",
+                     len(top_proxies), len(proxy_speeds),
+                     "speed" if has_speed_data else "ping")
 
         return result
 
