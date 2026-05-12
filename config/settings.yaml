@@ -36,7 +36,7 @@ singtools:
   detect_remote_ip: false
   filter: "all"
   # test_mode: ping | speed | all  (auto-selects the matching config file)
-  test_mode: ping
+  test_mode: all
   binary_path:
     linux: tools/singtools/linux/singtools
     windows: tools/singtools/windows/singtools.exe

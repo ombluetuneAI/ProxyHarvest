@@ -29,7 +29,9 @@ dist/
 build/
 *.egg
 
-# Tools binaries — tracked in git so users don't need to download each run
+# Tools binaries — excluded from git, use scripts/setup.ps1 to install
+tools/subconverter/
+tools/singtools/
 
 # IDE
 .vscode/

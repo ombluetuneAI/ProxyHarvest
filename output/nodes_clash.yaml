@@ -17,6 +17,18 @@ dns:
     geoip: true
     geoip-code: CN
 proxies:
+- name: CLOUDFLARE-162.159.44.27-0056
+  server: saas.sin.fan
+  port: 443
+  type: trojan
+  password: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  sni: sni.111000.dynv6.net
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /?proxyip=ip.111000.de5.net:443
+    headers:
+      Host: sni.111000.dynv6.net
 - name: 🇩🇪DE-89.106.83.39-0047
   server: 89.106.83.39
   port: 443
@@ -31,31 +43,33 @@ proxies:
     public-key: V6FabatADtcX7aO9KMjGCadJC4LuQ_5nRViab-z-nFQ
     short-id: 23000000
   client-fingerprint: random
-- name: 🇩🇪DE-89.106.83.4-0015
-  server: 89.106.83.4
-  port: 443
-  type: vless
+- name: CLOUDFLARE-104.17.77.77-0032
+  server: 104.17.77.77
+  port: 8443
+  type: vmess
+  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  alterId: 0
+  cipher: auto
   tls: true
-  uuid: 629d2ccc-3a2a-4dd3-83d2-86b25fc8783e
-  servername: www.apple.com
-  host: www.apple.com
-  path: /
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: V6FabatADtcX7aO9KMjGCadJC4LuQ_5nRViab-z-nFQ
-    short-id: 23
-  client-fingerprint: random
+  servername: v2ray1.dozapp.xyz
+  network: ws
+  ws-opts:
+    path: /lMnsZUN4/
+    headers:
+      Host: v2ray1.dozapp.xyz
 proxy-groups:
 - name: Proxy
   type: select
   proxies:
+  - CLOUDFLARE-162.159.44.27-0056
   - 🇩🇪DE-89.106.83.39-0047
-  - 🇩🇪DE-89.106.83.4-0015
+  - CLOUDFLARE-104.17.77.77-0032
 - name: Auto
   type: url-test
   proxies:
+  - CLOUDFLARE-162.159.44.27-0056
   - 🇩🇪DE-89.106.83.39-0047
-  - 🇩🇪DE-89.106.83.4-0015
+  - CLOUDFLARE-104.17.77.77-0032
   url: https://www.gstatic.com/generate_204
   interval: 300
   tolerance: 100
@@ -63,23 +77,25 @@ proxy-groups:
   type: select
   proxies:
   - Proxy
+  - CLOUDFLARE-162.159.44.27-0056
   - 🇩🇪DE-89.106.83.39-0047
-  - 🇩🇪DE-89.106.83.4-0015
+  - CLOUDFLARE-104.17.77.77-0032
 - name: Tier 1
   type: url-test
   proxies:
-  - 🇩🇪DE-89.106.83.39-0047
+  - CLOUDFLARE-162.159.44.27-0056
   url: https://www.gstatic.com/generate_204
   interval: 300
 - name: Tier 2
   type: url-test
   proxies:
-  - 🇩🇪DE-89.106.83.4-0015
+  - 🇩🇪DE-89.106.83.39-0047
   url: https://www.gstatic.com/generate_204
   interval: 300
 - name: Tier 3
   type: url-test
-  proxies: []
+  proxies:
+  - CLOUDFLARE-104.17.77.77-0032
   url: https://www.gstatic.com/generate_204
   interval: 300
 - name: Tier 4

@@ -1,2 +1,1 @@
 vless://629d2ccc-3a2a-4dd3-83d2-86b25fc8783e@89.106.83.39:443?security=tls&flow=xtls-rprx-vision&fp=random&pbk=V6FabatADtcX7aO9KMjGCadJC4LuQ_5nRViab-z-nFQ&sid=23000000#%F0%9F%87%A9%F0%9F%87%AADE-89.106.83.39-0047
-vless://629d2ccc-3a2a-4dd3-83d2-86b25fc8783e@89.106.83.4:443?security=tls&flow=xtls-rprx-vision&fp=random&pbk=V6FabatADtcX7aO9KMjGCadJC4LuQ_5nRViab-z-nFQ&sid=23#%F0%9F%87%A9%F0%9F%87%AADE-89.106.83.4-0015
