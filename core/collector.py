@@ -84,6 +84,9 @@ class Collector:
     def _collect_from_source(self, url: str, source_id: int) -> List[Dict[str, Any]]:
         """Collect proxies from a single source URL (may contain multiple URLs separated by |).
 
+        Subconverter natively supports pipe-separated URLs, so we pass them
+        through directly instead of splitting and fetching individually.
+
         Args:
             url: Subscription URL(s), pipe-separated.
             source_id: Source ID for logging.
@@ -91,19 +94,11 @@ class Collector:
         Returns:
             List of proxy dictionaries.
         """
-        all_proxies = []
-        urls = url.split("|")
+        url_count = len([u for u in url.split("|") if u.strip()])
+        if url_count > 1:
+            logger.info("  Passing %d pipe-separated URLs to subconverter", url_count)
 
-        for idx, sub_url in enumerate(urls):
-            sub_url = sub_url.strip()
-            if not sub_url:
-                continue
-
-            logger.info("  [%d/%d] Fetching: %s", idx + 1, len(urls), sub_url)
-            proxies = self._fetch_and_parse(sub_url, source_id)
-            all_proxies.extend(proxies)
-
-        return all_proxies
+        return self._fetch_and_parse(url, source_id)
 
     def _fetch_and_parse(self, sub_url: str, source_id: int,
                          retries: int = 0) -> List[Dict[str, Any]]:
