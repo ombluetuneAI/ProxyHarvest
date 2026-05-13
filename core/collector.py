@@ -121,7 +121,7 @@ class Collector:
             # Strategy 1: Direct URL conversion via subconverter
             yaml_content = self.subconverter.convert(
                 url=sub_url,
-                target="clash",
+                target="clashr",
                 emoji=True,
                 list_mode=True,
                 timeout=self.timeout
@@ -191,7 +191,7 @@ class Collector:
 
             result = self.subconverter.convert(
                 url=tmp_file,
-                target="clash",
+                target="clashr",
                 emoji=True,
                 list_mode=True,
                 timeout=self.timeout
