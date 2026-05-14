@@ -158,14 +158,12 @@ class FormatConverter:
 
     @staticmethod
     def build_clash_config(template: Dict[str, Any],
-                           proxies: List[Dict[str, Any]],
-                           tier_count: int = 4) -> Dict[str, Any]:
+                           proxies: List[Dict[str, Any]]) -> Dict[str, Any]:
         """Build complete Clash configuration from template and proxies.
 
         Args:
             template: Clash template dictionary.
             proxies: List of proxy dictionaries.
-            tier_count: Number of tier groups.
 
         Returns:
             Complete Clash configuration dictionary.
@@ -174,32 +172,19 @@ class FormatConverter:
         config = copy.deepcopy(template)
         config["proxies"] = proxies
 
-        # Distribute proxies into tier groups
         proxy_names = [p["name"] for p in proxies]
-        tier_size = max(1, len(proxy_names) // tier_count)
 
         if "proxy-groups" in config:
             for group in config["proxy-groups"]:
                 proxies_field = group.get("proxies", [])
 
-                # Check for AUTO_FILL marker (string or list containing it)
+                # Replace AUTO_FILL marker with all proxy names
                 if proxies_field == "AUTO_FILL":
                     group["proxies"] = list(proxy_names)
                 elif isinstance(proxies_field, list) and "AUTO_FILL" in proxies_field:
-                    # Replace AUTO_FILL with all proxy names, keep others (e.g., "Proxy")
+                    # Keep non-AUTO_FILL entries (e.g., "♻️ 自动选择", "DIRECT") and append all proxies
                     new_proxies = [p for p in proxies_field if p != "AUTO_FILL"]
                     new_proxies.extend(proxy_names)
                     group["proxies"] = new_proxies
-                elif isinstance(proxies_field, list) and len(proxies_field) == 0:
-                    # Empty list = Tier group, fill with allocated proxies
-                    name = group.get("name", "")
-                    if name.startswith("Tier"):
-                        try:
-                            tier_num = int(name.replace("Tier ", "").replace("Tier", "").strip())
-                            start = (tier_num - 1) * tier_size
-                            end = start + tier_size if tier_num < tier_count else len(proxy_names)
-                            group["proxies"] = proxy_names[start:end]
-                        except (ValueError, IndexError):
-                            group["proxies"] = list(proxy_names)
 
         return config

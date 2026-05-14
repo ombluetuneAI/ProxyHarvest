@@ -1,23 +1,20 @@
-# Clash Configuration Template
-# Proxy groups with "AUTO_FILL" will be replaced with actual proxies
-# Tier groups will receive evenly distributed proxies
-
 mixed-port: 7890
 allow-lan: false
 mode: rule
 log-level: info
-external-controller: 127.0.0.1:9090
+unified-delay: true
+external-controller: "127.0.0.1:9090"
 
 dns:
   enable: true
   enhanced-mode: fake-ip
   fake-ip-range: 198.18.0.1/16
   nameserver:
-    - https://dns.alidns.com/dns-query
-    - https://doh.pub/dns-query
+    - 223.5.5.5
+    - 119.29.29.29
   fallback:
-    - https://dns.google/dns-query
-    - https://cloudflare-dns.com/dns-query
+    - 8.8.8.8
+    - 1.1.1.1
   fallback-filter:
     geoip: true
     geoip-code: CN
@@ -25,85 +22,30 @@ dns:
 proxies: []
 
 proxy-groups:
-  - name: "Proxy"
+  - name: "🚀 节点选择"
     type: select
     proxies:
+      - "♻️ 自动选择"
       - "AUTO_FILL"
-
-  - name: "Auto"
-    type: url-test
-    proxies:
-      - "AUTO_FILL"
-    url: "https://www.gstatic.com/generate_204"
-    interval: 300
-    tolerance: 100
-
-  - name: "Streaming"
-    type: select
-    proxies:
-      - "Proxy"
-      - "AUTO_FILL"
-
-  - name: "Tier 1"
-    type: url-test
-    proxies: []
-    url: "https://www.gstatic.com/generate_204"
-    interval: 300
-
-  - name: "Tier 2"
-    type: url-test
-    proxies: []
-    url: "https://www.gstatic.com/generate_204"
-    interval: 300
-
-  - name: "Tier 3"
-    type: url-test
-    proxies: []
-    url: "https://www.gstatic.com/generate_204"
-    interval: 300
-
-  - name: "Tier 4"
-    type: url-test
-    proxies: []
-    url: "https://www.gstatic.com/generate_204"
-    interval: 300
-
-  - name: "Direct"
-    type: select
-    proxies:
       - DIRECT
 
-  - name: "Reject"
-    type: select
+  - name: "♻️ 自动选择"
+    type: url-test
     proxies:
-      - REJECT
+      - "AUTO_FILL"
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
+    tolerance: 50
 
 rules:
-  - DOMAIN-SUFFIX,google.com,Proxy
-  - DOMAIN-SUFFIX,google.co.jp,Proxy
-  - DOMAIN-SUFFIX,googleapis.com,Proxy
-  - DOMAIN-SUFFIX,googleusercontent.com,Proxy
-  - DOMAIN-SUFFIX,youtube.com,Proxy
-  - DOMAIN-SUFFIX,ytimg.com,Proxy
-  - DOMAIN-SUFFIX,googlevideo.com,Proxy
-  - DOMAIN-SUFFIX,github.com,Proxy
-  - DOMAIN-SUFFIX,githubusercontent.com,Proxy
-  - DOMAIN-SUFFIX,twitter.com,Proxy
-  - DOMAIN-SUFFIX,x.com,Proxy
-  - DOMAIN-SUFFIX,twimg.com,Proxy
-  - DOMAIN-SUFFIX,t.co,Proxy
-  - DOMAIN-SUFFIX,facebook.com,Proxy
-  - DOMAIN-SUFFIX,instagram.com,Proxy
-  - DOMAIN-SUFFIX,whatsapp.com,Proxy
-  - DOMAIN-SUFFIX,telegram.org,Proxy
-  - DOMAIN-SUFFIX,t.me,Proxy
-  - DOMAIN-SUFFIX,openai.com,Proxy
-  - DOMAIN-SUFFIX,chatgpt.com,Proxy
-  - DOMAIN-SUFFIX,claude.ai,Proxy
-  - DOMAIN-SUFFIX,anthropic.com,Proxy
-  - DOMAIN-KEYWORD,netflix,Streaming
-  - DOMAIN-KEYWORD,disney,Streaming
-  - DOMAIN-KEYWORD,spotify,Streaming
-  - DOMAIN-KEYWORD,twitch,Streaming
-  - GEOIP,CN,Direct
-  - MATCH,Proxy
+  # ----- 国内直连 -----
+  - DOMAIN-SUFFIX,cn,DIRECT
+  - DOMAIN-SUFFIX,chat.z.ai,DIRECT
+  - GEOIP,CN,DIRECT
+
+  # ----- 部分可正常访问的国外域名直连 -----
+  - DOMAIN-SUFFIX,edge.microsoft.com,DIRECT
+  - DOMAIN-SUFFIX,c.bing.com,DIRECT
+
+  # ----- 其他走代理 -----
+  - MATCH,🚀 节点选择
