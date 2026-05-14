@@ -1,0 +1,92 @@
+name: Generate Clash Config from anaer/Sub
+
+on:
+  workflow_dispatch:
+    inputs:
+      force_push:
+        description: 'Force push even if no changes'
+        required: false
+        default: 'false'
+        type: boolean
+  schedule:
+    - cron: '0 */8 * * *'   # every 8 hours UTC
+
+env:
+  PYTHON_VERSION: '3.11'
+  TZ: Asia/Shanghai
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      # ── Checkout ──────────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ── Python setup ──────────────────────────────────────────
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install pyyaml requests
+
+      # ── Generate clash.yaml ───────────────────────────────────
+      - name: Generate Clash config from remote proxies
+        id: generate
+        run: |
+          python scripts/generate_clash.py
+          echo "NODE_COUNT=$(grep -c '^\s*- name:' output/clash.yaml || echo 0)" >> $GITHUB_OUTPUT
+
+      # ── Summary ───────────────────────────────────────────────
+      - name: Add job summary
+        if: always()
+        run: |
+          echo "## Clash Config from anaer/Sub" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Nodes**: ${{ steps.generate.outputs.NODE_COUNT }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Output**: \`output/clash.yaml\`" >> $GITHUB_STEP_SUMMARY
+          if [ -f output/clash.yaml ]; then
+            SIZE=$(du -h output/clash.yaml | cut -f1)
+            echo "- **Size**: ${SIZE}" >> $GITHUB_STEP_SUMMARY
+          fi
+
+      # ── Upload as artifact ────────────────────────────────────
+      - name: Upload artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: clash-config-${{ github.run_number }}
+          path: output/clash.yaml
+          retention-days: 30
+          if-no-files-found: warn
+
+      # ── Commit and push ───────────────────────────────────────
+      - name: Commit & Push
+        if: always()
+        run: |
+          git config user.email "clash_gen@github.com"
+          git config user.name "Clash Gen"
+
+          git add output/clash.yaml
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            if [ "${{ github.event.inputs.force_push }}" = "true" ]; then
+              git commit --allow-empty -m "chore: clash config check $(date '+%Y-%m-%d %H:%M:%S') [no changes]"
+            else
+              exit 0
+            fi
+          else
+            git commit -m "update: clash config from anaer/Sub $(date '+%Y-%m-%d %H:%M:%S')"
+          fi
+
+          git push
