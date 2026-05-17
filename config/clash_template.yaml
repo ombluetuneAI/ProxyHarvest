@@ -46,6 +46,9 @@ rules:
   # ----- 部分可正常访问的国外域名直连 -----
   - DOMAIN-SUFFIX,edge.microsoft.com,DIRECT
   - DOMAIN-SUFFIX,c.bing.com,DIRECT
+  - DOMAIN-SUFFIX,video.twimg.com,DIRECT
+  - DOMAIN-SUFFIX,trycloudflare.com,DIRECT
+  - DOMAIN-SUFFIX,cdnjs.cloudflare.com,DIRECT
 
   # ----- 其他走代理 -----
   - MATCH,🚀 节点选择
