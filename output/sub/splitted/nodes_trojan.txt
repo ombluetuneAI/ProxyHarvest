@@ -1,6 +1,2 @@
-trojan://humanity@172.66.44.211:443?allowInsecure=0&sni=www.multiplydose.com&ws=1&wspath=%2Fassignment#CLOUDFLARE-172.66.44.211-0084
-trojan://humanity@172.66.47.45:443?allowInsecure=0&sni=www.multiplydose.com&ws=1&wspath=%2Fassignment#CLOUDFLARE-172.66.47.45-0085
-trojan://humanity@104.17.131.88:443?allowInsecure=0&sni=www.gossipglove.com&ws=1&wspath=%2Fassignment#CLOUDFLARE-104.17.131.88-0088
-trojan://humanity@208.103.161.110:443?allowInsecure=1&sni=www.creationlong.org&ws=1&wspath=%2Fassignment#%F0%9F%87%BA%F0%9F%87%B8%20US-208.103.161.110-0097
-trojan://humanity@185.18.250.252:443?allowInsecure=0&sni=www.gossipglove.com&ws=1&wspath=%2Fassignment#CLOUDFLARE-185.18.250.252-0099
-trojan://humanity@104.18.32.47:443?allowInsecure=0&sni=www.calmlunch.com&ws=1&wspath=%2Fassignment#CLOUDFLARE-104.18.32.47-0092
+trojan://humanity@104.18.32.47:443?allowInsecure=1&sni=www.multiplydose.com&ws=1&wspath=%2Fassignment#CLOUDFLARE-104.18.32.47-0068
+trojan://humanity@v1.dabache.top:443?allowInsecure=0&sni=www.multiplydose.com&ws=1&wspath=%2Fassignment#CLOUDFLARE-172.66.44.211-0334
