@@ -1,3 +1,4 @@
-trojan://humanity@208.103.161.110:443?allowInsecure=0&sni=www.creationlong.org&ws=1&wspath=%2Fassignment#%F0%9F%87%BA%F0%9F%87%B8%20US-208.103.161.110-0076
-trojan://tunnel-ljlcf@tr-1.stunnel.cc:8441?allowInsecure=0#TR-193.124.46.134-0183
-trojan://e5c22f63-e473-496a-beff-fdc5655008c1@tvhinet.lajichang.xyz:2096?allowInsecure=1&sni=bing.com#%F0%9F%87%A8%F0%9F%87%B3%20TW-218.173.195.183-0357
+trojan://humanity@chat.openai.com:443?allowInsecure=0&sni=www.calmlunch.com&ws=1&wspath=%2Fassignment#CLOUDFLARE-104.18.37.228-0073
+trojan://humanity@185.18.250.252:443?allowInsecure=0&sni=www.multiplydose.com&ws=1&wspath=%2Fassignment#CLOUDFLARE-185.18.250.252-0089
+trojan://e5c22f63-e473-496a-beff-fdc5655008c1@tvhinet.lajichang.xyz:2096?allowInsecure=1&sni=bing.com#%F0%9F%87%A8%F0%9F%87%B3%20TW-218.173.195.183-0367
+trojan://tunnel-ljlcf@tr-1.stunnel.cc:8441?allowInsecure=0#TR-193.124.46.134-0194

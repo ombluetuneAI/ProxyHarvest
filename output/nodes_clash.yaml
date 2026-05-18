@@ -18,7 +18,20 @@ dns:
     geoip: true
     geoip-code: CN
 proxies:
-- name: CLOUDFLARE-162.159.33.40-0003
+- name: CLOUDFLARE-162.159.33.40-0018
+  server: 162.159.33.40
+  port: 443
+  type: vless
+  tls: true
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  servername: sni.latonyamadeline.ndjp.net
+  network: ws
+  ws-opts:
+    path: /?https%3A%2F%2Ft.me%2Fwangcai2%F0%9F%87%A8%F0%9F%87%B3=
+    headers:
+      Host: sni.latonyamadeline.ndjp.net
+  skip-cert-verify: false
+- name: CLOUDFLARE-162.159.33.40-0019
   server: 162.159.33.40
   port: 443
   type: vless
@@ -31,7 +44,7 @@ proxies:
     headers:
       Host: sni.latonyamadeline.ndjp.net
   skip-cert-verify: true
-- name: CLOUDFLARE-172.64.158.90-0004
+- name: CLOUDFLARE-172.64.158.90-0020
   server: 172.64.158.90
   port: 443
   type: vless
@@ -43,7 +56,7 @@ proxies:
     path: /?https://t.me/wangcai2🇨🇳=
     headers:
       Host: sni.latonyamadeline.ndjp.net
-- name: CLOUDFLARE-104.16.58.115-0005
+- name: CLOUDFLARE-104.16.58.115-0021
   server: 104.16.58.115
   port: 443
   type: vless
@@ -56,8 +69,8 @@ proxies:
     headers:
       Host: sni.latonyamadeline.ndjp.net
   skip-cert-verify: false
-- name: CLOUDFLARE-104.16.58.115-0006
-  server: 104.16.58.115
+- name: CLOUDFLARE-104.17.4.195-0023
+  server: 104.17.4.195
   port: 443
   type: vless
   tls: true
@@ -68,19 +81,7 @@ proxies:
     path: /?https%3A%2F%2Ft.me%2Fwangcai2%F0%9F%87%A8%F0%9F%87%B3=
     headers:
       Host: sni.latonyamadeline.ndjp.net
-- name: CLOUDFLARE-104.19.38.35-0008
-  server: 104.19.38.35
-  port: 443
-  type: vless
-  tls: true
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  servername: sni.latonyamadeline.ndjp.net
-  network: ws
-  ws-opts:
-    path: /?https%3A%2F%2Ft.me%2Fwangcai2%F0%9F%87%A8%F0%9F%87%B3=
-    headers:
-      Host: sni.latonyamadeline.ndjp.net
-- name: CLOUDFLARE-104.18.251.45-0009
+- name: CLOUDFLARE-104.18.251.45-0025
   server: 104.18.251.45
   port: 443
   type: vless
@@ -92,7 +93,7 @@ proxies:
     path: /?https%3A%2F%2Ft.me%2Fwangcai2%F0%9F%87%A8%F0%9F%87%B3=
     headers:
       Host: sni.latonyamadeline.ndjp.net
-- name: CLOUDFLARE-104.18.173.103-0010
+- name: CLOUDFLARE-104.18.173.103-0026
   server: 104.18.173.103
   port: 443
   type: vless
@@ -104,7 +105,19 @@ proxies:
     path: /?https%3A%2F%2Ft.me%2Fwangcai2%F0%9F%87%A8%F0%9F%87%B3=
     headers:
       Host: sni.latonyamadeline.ndjp.net
-- name: CLOUDFLARE-104.18.191.0-0012
+- name: CLOUDFLARE-104.17.48.197-0027
+  server: 104.17.48.197
+  port: 443
+  type: vless
+  tls: true
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  servername: sni.latonyamadeline.ndjp.net
+  network: ws
+  ws-opts:
+    path: /?https%3A%2F%2Ft.me%2Fwangcai2%F0%9F%87%A8%F0%9F%87%B3=
+    headers:
+      Host: sni.latonyamadeline.ndjp.net
+- name: CLOUDFLARE-104.18.191.0-0028
   server: 104.18.191.0
   port: 443
   type: vless
@@ -116,117 +129,43 @@ proxies:
     path: /?https%3A%2F%2Ft.me%2Fwangcai2%F0%9F%87%A8%F0%9F%87%B3=
     headers:
       Host: sni.latonyamadeline.ndjp.net
-- name: CLOUDFLARE-66.81.247.231-0042
-  server: 66.81.247.231
+- name: CLOUDFLARE-104.19.35.169-0029
+  server: 104.19.35.169
   port: 443
   type: vless
   tls: true
-  uuid: 981fca81-5be1-41f8-ac9b-d138e8109943
-  servername: babayaga-6i7.pages.dev
-  network: ws
-  ws-opts:
-    path: /?Telegram%F0%9F%87%A8%F0%9F%87%B3%40WangCai2=
-    headers:
-      Host: babayaga-6i7.pages.dev
-- name: CLOUDFLARE-45.194.53.238-0049
-  server: 45.194.53.238
-  port: 2096
-  type: vless
-  tls: true
   uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  servername: sni.jpmj.dev
+  servername: sni.latonyamadeline.ndjp.net
   network: ws
   ws-opts:
-    path: /
+    path: /?https%3A%2F%2Ft.me%2Fwangcai2%F0%9F%87%A8%F0%9F%87%B3=
     headers:
-      Host: sni.jpmj.dev
-  skip-cert-verify: true
-- name: 🇺🇸US-192.0.63.138-0051
-  server: 192.0.63.138
-  port: 2096
-  type: vless
-  tls: true
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  servername: sni.111000.indevs.in
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: sni.111000.indevs.in
-  skip-cert-verify: true
-- name: CLOUDFLARE-176.124.223.138-0053
-  server: 176.124.223.138
-  port: 2096
-  type: vless
-  tls: true
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  servername: sni.111000.indevs.in
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: sni.111000.indevs.in
-  skip-cert-verify: true
-- name: CLOUDFLARE-185.146.173.20-0054
-  server: 185.146.173.20
+      Host: sni.latonyamadeline.ndjp.net
+- name: CLOUDFLARE-162.159.153.70-0030
+  server: 162.159.153.70
   port: 443
   type: vless
   tls: true
-  uuid: 8c4604ef-749c-4b56-adf1-7da405002a21
-  servername: qyi.fqjd663.ggff.net
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: qyi.fqjd663.ggff.net
-  skip-cert-verify: true
-- name: CLOUDFLARE-104.16.250.22-0055
-  server: 104.16.250.22
-  port: 2096
-  type: vless
-  tls: true
   uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  servername: sni.111000.indevs.in
+  servername: sni.latonyamadeline.ndjp.net
   network: ws
   ws-opts:
-    path: /
+    path: /?https%3A%2F%2Ft.me%2Fwangcai2%F0%9F%87%A8%F0%9F%87%B3=
     headers:
-      Host: sni.111000.indevs.in
-  skip-cert-verify: true
-- name: CLOUDFLARE-167.68.5.191-0335
-  server: 167.68.5.191
-  port: 2096
-  type: vless
-  tls: true
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  servername: sni.my111000.tech
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: sni.my111000.tech
-  skip-cert-verify: true
-- name: CLOUDFLARE-104.18.40.47-0521
-  server: dnew.cc
+      Host: sni.latonyamadeline.ndjp.net
+- name: CLOUDFLARE-172.64.158.90-0031
+  server: 172.64.158.90
   port: 443
   type: vless
   tls: true
-  uuid: ce069292-c8bf-40dd-a6b1-87818a1e64e9
-  servername: 3-abf.pages.dev
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  servername: sni.latonyamadeline.ndjp.net
   network: ws
   ws-opts:
-    path: /
+    path: /?https%3A%2F%2Ft.me%2Fwangcai2%F0%9F%87%A8%F0%9F%87%B3=
     headers:
-      Host: 3-abf.pages.dev
-- name: 🇬🇧GB-152.233.28.198-0017
-  server: uk1.fromblancwithlove.com
-  port: 8443
-  type: vless
-  tls: true
-  uuid: 394f6981-a782-4779-9a85-e6cf22935d93
-  host: uk1.fromblancwithlove.com
-  path: /
-- name: 🇩🇪DE-89.106.95.193-0019
+      Host: sni.latonyamadeline.ndjp.net
+- name: 🇩🇪DE-89.106.95.193-0034
   server: 89.106.95.193
   port: 443
   type: vless
@@ -240,54 +179,7 @@ proxies:
     public-key: V6FabatADtcX7aO9KMjGCadJC4LuQ_5nRViab-z-nFQ
     short-id: 23
   client-fingerprint: random
-- name: 🇬🇧GB-152.233.28.198-0023
-  server: 152.233.28.198
-  port: 8443
-  type: vless
-  tls: true
-  uuid: 394f6981-a782-4779-9a85-e6cf22935d93
-  servername: uk1.fromblancwithlove.com
-  host: uk1.fromblancwithlove.com
-  path: /
-- name: 🇺🇸US-208.103.161.110-0076
-  server: 208.103.161.110
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.creationlong.org
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.creationlong.org
-- name: 🇫🇷FR-51.77.214.109-0052
-  server: 51.77.214.109
-  port: 2053
-  type: vless
-  tls: true
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  servername: sni.111000.indevs.in
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: sni.111000.indevs.in
-- name: 🇩🇪DE-89.106.95.206-0018
-  server: 89.106.95.206
-  port: 443
-  type: vless
-  tls: true
-  uuid: 629d2ccc-3a2a-4dd3-83d2-86b25fc8783e
-  servername: www.apple.com
-  host: www.apple.com
-  path: /
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: V6FabatADtcX7aO9KMjGCadJC4LuQ_5nRViab-z-nFQ
-    short-id: 23
-  client-fingerprint: random
-- name: 🇩🇪DE-89.106.95.203-0020
+- name: 🇩🇪DE-89.106.95.203-0035
   server: 89.106.95.203
   port: 443
   type: vless
@@ -301,43 +193,204 @@ proxies:
     public-key: V6FabatADtcX7aO9KMjGCadJC4LuQ_5nRViab-z-nFQ
     short-id: 23
   client-fingerprint: random
-- name: 🇳🇱NL-212.34.142.191-0044
-  server: 212.34.142.191
+- name: CLOUDFLARE-104.20.6.134-0059
+  server: 104.20.6.134
+  port: 443
+  type: vless
+  tls: true
+  uuid: a01daac7-1e65-4645-854d-b47d226f6b08
+  servername: y6-3cj.PAgES.DEV
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: y6-3cj.PAgES.DEV
+  skip-cert-verify: true
+- name: CLOUDFLARE-45.131.210.138-0061
+  server: 45.131.210.138
+  port: 2096
+  type: vless
+  tls: true
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  servername: sni.111000.indevs.in
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: sni.111000.indevs.in
+  skip-cert-verify: true
+- name: 🇺🇸US-45.40.154.191-0062
+  server: 45.40.154.191
+  port: 2096
+  type: vless
+  tls: true
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  servername: sni.my111000.tech
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: sni.my111000.tech
+  skip-cert-verify: true
+- name: CLOUDFLARE-45.12.30.138-0063
+  server: 45.12.30.138
+  port: 2096
+  type: vless
+  tls: true
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  servername: sni.111000.indevs.in
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: sni.111000.indevs.in
+  skip-cert-verify: true
+- name: CLOUDFLARE-164.38.155.138-0064
+  server: 164.38.155.138
+  port: 2096
+  type: vless
+  tls: true
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  servername: sni.111000.indevs.in
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: sni.111000.indevs.in
+  skip-cert-verify: true
+- name: 🇫🇷FR-57.128.176.82-0065
+  server: 57.128.176.82
   port: 8443
   type: vless
   tls: true
-  uuid: a5e746f7-328f-4b65-a65f-e2e2a4a5b1a9
-  servername: tradingview.com
-  host: tradingview.com
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  servername: sni.111000.indevs.in
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: sni.111000.indevs.in
+- name: 🇬🇧GB-57.129.137.241-0068
+  server: 57.129.137.241
+  port: 443
+  type: vless
+  tls: true
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  servername: sni.111000.v6.navy
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: sni.111000.v6.navy
+  skip-cert-verify: true
+- name: 🇺🇸US-135.84.72.18-0071
+  server: 135.84.72.18
+  port: 443
+  type: vless
+  tls: true
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  servername: sni.111000.dynv6.net
+  network: ws
+  ws-opts:
+    path: /?Telegram%F0%9F%87%A8%F0%9F%87%B3%40WangCai2=
+    headers:
+      Host: sni.111000.dynv6.net
+  skip-cert-verify: true
+- name: CLOUDFLARE-104.18.37.228-0073
+  server: chat.openai.com
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+- name: 🇳🇱NL-77.246.109.191-0080
+  server: 77.246.109.191
+  port: 34045
+  type: vless
+  tls: true
+  uuid: d8dd94fd-540e-461d-b5d4-acebef02c22a
+  servername: visit-this-invitation-link-to-join-tg-enkelte-notif.ekt.me
+  host: visit-this-invitation-link-to-join-tg-enkelte-notif.ekt.me
+  path: /
+  reality-opts:
+    public-key: cDaDzPr3PlS3NM8lreHZbdo-Mhqz8vMBzMSkHXhGIUA
+    short-id: e8ab71d0
+  client-fingerprint: random
+- name: CLOUDFLARE-185.18.250.252-0089
+  server: 185.18.250.252
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.multiplydose.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.multiplydose.com
+- name: 🇩🇪DE-159.195.82.187-0340
+  server: 159.195.82.187
+  port: 9443
+  type: vless
+  tls: true
+  uuid: 4649d681-7f26-4959-a3f2-02eb8866230f
+  servername: yahoo.com
+  host: yahoo.com
   path: /
   flow: xtls-rprx-vision
   reality-opts:
-    public-key: wNcFqVd4_PkgJbfgJJeouSU6Pn_Swuce4q4Chw5T0hY
-    short-id: f7aa9e61197d3ac6
+    public-key: wAYsJ6RJXFy94w_WaTIhp1ZfCePAPoZmP27RarvUqXg
+    short-id: 2344766a270a6298
   client-fingerprint: random
-- name: CLOUDFLARE-104.17.77.77-0027
-  server: 104.17.77.77
-  port: 8443
-  type: vmess
-  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
-  alterId: 0
-  cipher: auto
+- name: CLOUDFLARE-104.18.21.69-0456
+  server: www.visa.com.hk
+  port: 443
+  type: vless
   tls: true
-  servername: v2ray1.dozapp.xyz
+  uuid: ae0dd58e-e222-40bf-84ae-365a97532737
+  servername: pagescm.freen22.cc.cd
   network: ws
   ws-opts:
-    path: /lMnsZUN4/
+    path: /cp/dramafp=chrome
     headers:
-      Host: v2ray1.dozapp.xyz
-- name: 🇩🇪DE-202.61.205.86-0460
-  server: 202.61.205.86
-  port: 4433
-  type: hysteria2
-  ports: 4433
-  password: 2545ab46-6306-4f2b-badd-5531f384d55f
-  sni: de1.xiaoliyu.cyou
-  skip-cert-verify: true
-- name: 🇵🇱PL-92.118.205.177-0522
+      Host: pagescm.freen22.cc.cd
+  skip-cert-verify: false
+- name: CLOUDFLARE-104.18.33.45-0509
+  server: openai.com
+  port: 443
+  type: vless
+  tls: true
+  uuid: ce069292-c8bf-40dd-a6b1-87818a1e64e9
+  servername: 1-jk1.pages.dev
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: 1-jk1.pages.dev
+- name: CLOUDFLARE-104.18.40.47-0510
+  server: dnew.cc
+  port: 443
+  type: vless
+  tls: true
+  uuid: ce069292-c8bf-40dd-a6b1-87818a1e64e9
+  servername: 3-abf.pages.dev
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: 3-abf.pages.dev
+- name: 🇬🇧GB-152.233.28.198-0032
+  server: uk1.fromblancwithlove.com
+  port: 8443
+  type: vless
+  tls: true
+  uuid: 394f6981-a782-4779-9a85-e6cf22935d93
+  host: uk1.fromblancwithlove.com
+  path: /
+- name: 🇵🇱PL-92.118.205.177-0511
   server: 92.118.205.177
   port: 443
   type: vless
@@ -349,56 +402,7 @@ proxies:
     path: /
     headers:
       Host: 3-7v4.pages.dev
-- name: 🇭🇰HK-212.192.13.242-0322
-  server: 212.192.13.242
-  port: 4433
-  type: hysteria2
-  ports: 4433
-  password: 2545ab46-6306-4f2b-badd-5531f384d55f
-  sni: hk1.xiaoliyu.cyou
-  skip-cert-verify: true
-- name: 🇰🇷KR-3.35.50.171-0482
-  server: vpn-kr-002.fastervpn.world
-  port: 443
-  type: hysteria2
-  ports: 443
-  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-  sni: vpn-kr-002.fastervpn.world
-  skip-cert-verify: true
-- name: 🇹🇷TR-193.124.46.134-0183
-  server: tr-1.stunnel.cc
-  port: 8441
-  type: trojan
-  password: tunnel-ljlcf
-- name: 🇭🇰HK-202.146.222.30-0463
-  server: 202.146.222.30
-  port: 443
-  type: hysteria2
-  ports: 443
-  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-  sni: https://t.me/WangCai2🇨🇳
-  skip-cert-verify: true
-- name: 🇪🇪EE-185.36.140.105-0525
-  server: 185.36.140.105
-  port: 443
-  type: vless
-  tls: true
-  uuid: ce069292-c8bf-40dd-a6b1-87818a1e64e9
-  servername: 3-7gj.pages.dev
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: 3-7gj.pages.dev
-- name: 🇹🇼TW-160.187.100.109-0358
-  server: 160.187.100.109
-  port: 443
-  type: hysteria2
-  ports: 443
-  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
-  sni: https://t.me/WangCai2🇨🇳
-  skip-cert-verify: true
-- name: 🇪🇪EE-185.36.140.105-0524
+- name: 🇪🇪EE-185.36.140.105-0513
   server: 185.36.140.105
   port: 443
   type: vless
@@ -410,22 +414,70 @@ proxies:
     path: /
     headers:
       Host: 1-jk1.pages.dev
-- name: 🇹🇼TW-218.173.195.183-0357
+- name: 🇪🇪EE-185.36.140.105-0514
+  server: 185.36.140.105
+  port: 443
+  type: vless
+  tls: true
+  uuid: ce069292-c8bf-40dd-a6b1-87818a1e64e9
+  servername: 3-7gj.pages.dev
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: 3-7gj.pages.dev
+- name: 🇭🇰HK-212.192.13.242-0463
+  server: 212.192.13.242
+  port: 4433
+  type: hysteria2
+  ports: 4433
+  password: 2545ab46-6306-4f2b-badd-5531f384d55f
+  sni: hk1.xiaoliyu.cyou
+  skip-cert-verify: true
+- name: 🇰🇷KR-3.36.52.102-0471
+  server: vpn-kr-002.fastervpn.world
+  port: 443
+  type: hysteria2
+  ports: 443
+  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+  sni: vpn-kr-002.fastervpn.world
+  skip-cert-verify: true
+- name: 🇦🇺AU-13.239.240.45-0473
+  server: vpn-au-002.fastervpn.world
+  port: 443
+  type: hysteria2
+  ports: 443
+  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+  sni: vpn-au-002.fastervpn.world
+  skip-cert-verify: true
+- name: 🇸🇬SG-46.250.230.93-0056
+  server: 46.250.230.93
+  port: 8443
+  type: vless
+  tls: true
+  uuid: 981fca81-5be1-41f8-ac9b-d138e8109943
+  servername: babayaga-6i7.pages.dev
+  network: ws
+  ws-opts:
+    path: /?ed=2560&Telegram🇨🇳@WangCai2
+    headers:
+      Host: babayaga-6i7.pages.dev
+- name: 🇹🇼TW-218.173.195.183-0367
   server: tvhinet.lajichang.xyz
   port: 2096
   type: trojan
   password: e5c22f63-e473-496a-beff-fdc5655008c1
   sni: bing.com
   skip-cert-verify: true
-- name: 🇮🇳IN-68.233.103.254-0337
-  server: 68.233.103.254
-  port: 4433
+- name: 🇹🇼TW-160.187.100.109-0368
+  server: 160.187.100.109
+  port: 443
   type: hysteria2
-  ports: 4433
-  password: 2545ab46-6306-4f2b-badd-5531f384d55f
-  sni: ln4.xiaoliyu.cyou
+  ports: 443
+  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+  sni: https://t.me/WangCai2🇨🇳
   skip-cert-verify: true
-- name: 🇦🇺AU-3.107.6.213-0483
+- name: 🇦🇺AU-54.153.223.26-0472
   server: vpn-au-001.fastervpn.world
   port: 443
   type: hysteria2
@@ -433,7 +485,20 @@ proxies:
   password: qQe1z5kU8kN6SlKnDt9Ru3Qp
   sni: vpn-au-001.fastervpn.world
   skip-cert-verify: true
-- name: 🇩🇪DE-194.154.30.150-0022
+- name: 🇹🇷TR-193.124.46.134-0194
+  server: tr-1.stunnel.cc
+  port: 8441
+  type: trojan
+  password: tunnel-ljlcf
+- name: 🇮🇳IN-13.233.127.26-0467
+  server: 13.233.127.26
+  port: 443
+  type: hysteria2
+  ports: 443
+  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+  sni: https://t.me/WangCai2🇨🇳
+  skip-cert-verify: true
+- name: 🇩🇪DE-194.154.30.150-0037
   server: 194.154.30.150
   port: 443
   type: vless
@@ -446,91 +511,141 @@ proxies:
     headers:
       Host: sni.latonyamadeline.ndjp.net
   skip-cert-verify: true
+- name: 🇩🇪DE-202.61.205.86-0462
+  server: 202.61.205.86
+  port: 4433
+  type: hysteria2
+  ports: 4433
+  password: 2545ab46-6306-4f2b-badd-5531f384d55f
+  sni: de1.xiaoliyu.cyou
+  skip-cert-verify: true
+- name: 🇭🇰HK-202.146.222.30-0468
+  server: 202.146.222.30
+  port: 443
+  type: hysteria2
+  ports: 443
+  password: qQe1z5kU8kN6SlKnDt9Ru3Qp
+  sni: https://t.me/WangCai2🇨🇳
+  skip-cert-verify: true
+- name: 🇮🇳IN-68.233.103.254-0464
+  server: 68.233.103.254
+  port: 4433
+  type: hysteria2
+  ports: 4433
+  password: 2545ab46-6306-4f2b-badd-5531f384d55f
+  sni: ln4.xiaoliyu.cyou
+  skip-cert-verify: true
+- name: 🇩🇪DE-185.228.139.247-0461
+  server: 185.228.139.247
+  port: 4433
+  type: hysteria2
+  ports: 4433
+  password: 2545ab46-6306-4f2b-badd-5531f384d55f
+  sni: de2.xiaoliyu.cyou
+  skip-cert-verify: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - CLOUDFLARE-162.159.33.40-0003
-  - CLOUDFLARE-172.64.158.90-0004
-  - CLOUDFLARE-104.16.58.115-0005
-  - CLOUDFLARE-104.16.58.115-0006
-  - CLOUDFLARE-104.19.38.35-0008
-  - CLOUDFLARE-104.18.251.45-0009
-  - CLOUDFLARE-104.18.173.103-0010
-  - CLOUDFLARE-104.18.191.0-0012
-  - CLOUDFLARE-66.81.247.231-0042
-  - CLOUDFLARE-45.194.53.238-0049
-  - 🇺🇸US-192.0.63.138-0051
-  - CLOUDFLARE-176.124.223.138-0053
-  - CLOUDFLARE-185.146.173.20-0054
-  - CLOUDFLARE-104.16.250.22-0055
-  - CLOUDFLARE-167.68.5.191-0335
-  - CLOUDFLARE-104.18.40.47-0521
-  - 🇬🇧GB-152.233.28.198-0017
-  - 🇩🇪DE-89.106.95.193-0019
-  - 🇬🇧GB-152.233.28.198-0023
-  - 🇺🇸US-208.103.161.110-0076
-  - 🇫🇷FR-51.77.214.109-0052
-  - 🇩🇪DE-89.106.95.206-0018
-  - 🇩🇪DE-89.106.95.203-0020
-  - 🇳🇱NL-212.34.142.191-0044
-  - CLOUDFLARE-104.17.77.77-0027
-  - 🇩🇪DE-202.61.205.86-0460
-  - 🇵🇱PL-92.118.205.177-0522
-  - 🇭🇰HK-212.192.13.242-0322
-  - 🇰🇷KR-3.35.50.171-0482
-  - 🇹🇷TR-193.124.46.134-0183
-  - 🇭🇰HK-202.146.222.30-0463
-  - 🇪🇪EE-185.36.140.105-0525
-  - 🇹🇼TW-160.187.100.109-0358
-  - 🇪🇪EE-185.36.140.105-0524
-  - 🇹🇼TW-218.173.195.183-0357
-  - 🇮🇳IN-68.233.103.254-0337
-  - 🇦🇺AU-3.107.6.213-0483
-  - 🇩🇪DE-194.154.30.150-0022
+  - CLOUDFLARE-162.159.33.40-0018
+  - CLOUDFLARE-162.159.33.40-0019
+  - CLOUDFLARE-172.64.158.90-0020
+  - CLOUDFLARE-104.16.58.115-0021
+  - CLOUDFLARE-104.17.4.195-0023
+  - CLOUDFLARE-104.18.251.45-0025
+  - CLOUDFLARE-104.18.173.103-0026
+  - CLOUDFLARE-104.17.48.197-0027
+  - CLOUDFLARE-104.18.191.0-0028
+  - CLOUDFLARE-104.19.35.169-0029
+  - CLOUDFLARE-162.159.153.70-0030
+  - CLOUDFLARE-172.64.158.90-0031
+  - 🇩🇪DE-89.106.95.193-0034
+  - 🇩🇪DE-89.106.95.203-0035
+  - CLOUDFLARE-104.20.6.134-0059
+  - CLOUDFLARE-45.131.210.138-0061
+  - 🇺🇸US-45.40.154.191-0062
+  - CLOUDFLARE-45.12.30.138-0063
+  - CLOUDFLARE-164.38.155.138-0064
+  - 🇫🇷FR-57.128.176.82-0065
+  - 🇬🇧GB-57.129.137.241-0068
+  - 🇺🇸US-135.84.72.18-0071
+  - CLOUDFLARE-104.18.37.228-0073
+  - 🇳🇱NL-77.246.109.191-0080
+  - CLOUDFLARE-185.18.250.252-0089
+  - 🇩🇪DE-159.195.82.187-0340
+  - CLOUDFLARE-104.18.21.69-0456
+  - CLOUDFLARE-104.18.33.45-0509
+  - CLOUDFLARE-104.18.40.47-0510
+  - 🇬🇧GB-152.233.28.198-0032
+  - 🇵🇱PL-92.118.205.177-0511
+  - 🇪🇪EE-185.36.140.105-0513
+  - 🇪🇪EE-185.36.140.105-0514
+  - 🇭🇰HK-212.192.13.242-0463
+  - 🇰🇷KR-3.36.52.102-0471
+  - 🇦🇺AU-13.239.240.45-0473
+  - 🇸🇬SG-46.250.230.93-0056
+  - 🇹🇼TW-218.173.195.183-0367
+  - 🇹🇼TW-160.187.100.109-0368
+  - 🇦🇺AU-54.153.223.26-0472
+  - 🇹🇷TR-193.124.46.134-0194
+  - 🇮🇳IN-13.233.127.26-0467
+  - 🇩🇪DE-194.154.30.150-0037
+  - 🇩🇪DE-202.61.205.86-0462
+  - 🇭🇰HK-202.146.222.30-0468
+  - 🇮🇳IN-68.233.103.254-0464
+  - 🇩🇪DE-185.228.139.247-0461
 - name: ♻️ 自动选择
   type: url-test
   proxies:
-  - CLOUDFLARE-162.159.33.40-0003
-  - CLOUDFLARE-172.64.158.90-0004
-  - CLOUDFLARE-104.16.58.115-0005
-  - CLOUDFLARE-104.16.58.115-0006
-  - CLOUDFLARE-104.19.38.35-0008
-  - CLOUDFLARE-104.18.251.45-0009
-  - CLOUDFLARE-104.18.173.103-0010
-  - CLOUDFLARE-104.18.191.0-0012
-  - CLOUDFLARE-66.81.247.231-0042
-  - CLOUDFLARE-45.194.53.238-0049
-  - 🇺🇸US-192.0.63.138-0051
-  - CLOUDFLARE-176.124.223.138-0053
-  - CLOUDFLARE-185.146.173.20-0054
-  - CLOUDFLARE-104.16.250.22-0055
-  - CLOUDFLARE-167.68.5.191-0335
-  - CLOUDFLARE-104.18.40.47-0521
-  - 🇬🇧GB-152.233.28.198-0017
-  - 🇩🇪DE-89.106.95.193-0019
-  - 🇬🇧GB-152.233.28.198-0023
-  - 🇺🇸US-208.103.161.110-0076
-  - 🇫🇷FR-51.77.214.109-0052
-  - 🇩🇪DE-89.106.95.206-0018
-  - 🇩🇪DE-89.106.95.203-0020
-  - 🇳🇱NL-212.34.142.191-0044
-  - CLOUDFLARE-104.17.77.77-0027
-  - 🇩🇪DE-202.61.205.86-0460
-  - 🇵🇱PL-92.118.205.177-0522
-  - 🇭🇰HK-212.192.13.242-0322
-  - 🇰🇷KR-3.35.50.171-0482
-  - 🇹🇷TR-193.124.46.134-0183
-  - 🇭🇰HK-202.146.222.30-0463
-  - 🇪🇪EE-185.36.140.105-0525
-  - 🇹🇼TW-160.187.100.109-0358
-  - 🇪🇪EE-185.36.140.105-0524
-  - 🇹🇼TW-218.173.195.183-0357
-  - 🇮🇳IN-68.233.103.254-0337
-  - 🇦🇺AU-3.107.6.213-0483
-  - 🇩🇪DE-194.154.30.150-0022
+  - CLOUDFLARE-162.159.33.40-0018
+  - CLOUDFLARE-162.159.33.40-0019
+  - CLOUDFLARE-172.64.158.90-0020
+  - CLOUDFLARE-104.16.58.115-0021
+  - CLOUDFLARE-104.17.4.195-0023
+  - CLOUDFLARE-104.18.251.45-0025
+  - CLOUDFLARE-104.18.173.103-0026
+  - CLOUDFLARE-104.17.48.197-0027
+  - CLOUDFLARE-104.18.191.0-0028
+  - CLOUDFLARE-104.19.35.169-0029
+  - CLOUDFLARE-162.159.153.70-0030
+  - CLOUDFLARE-172.64.158.90-0031
+  - 🇩🇪DE-89.106.95.193-0034
+  - 🇩🇪DE-89.106.95.203-0035
+  - CLOUDFLARE-104.20.6.134-0059
+  - CLOUDFLARE-45.131.210.138-0061
+  - 🇺🇸US-45.40.154.191-0062
+  - CLOUDFLARE-45.12.30.138-0063
+  - CLOUDFLARE-164.38.155.138-0064
+  - 🇫🇷FR-57.128.176.82-0065
+  - 🇬🇧GB-57.129.137.241-0068
+  - 🇺🇸US-135.84.72.18-0071
+  - CLOUDFLARE-104.18.37.228-0073
+  - 🇳🇱NL-77.246.109.191-0080
+  - CLOUDFLARE-185.18.250.252-0089
+  - 🇩🇪DE-159.195.82.187-0340
+  - CLOUDFLARE-104.18.21.69-0456
+  - CLOUDFLARE-104.18.33.45-0509
+  - CLOUDFLARE-104.18.40.47-0510
+  - 🇬🇧GB-152.233.28.198-0032
+  - 🇵🇱PL-92.118.205.177-0511
+  - 🇪🇪EE-185.36.140.105-0513
+  - 🇪🇪EE-185.36.140.105-0514
+  - 🇭🇰HK-212.192.13.242-0463
+  - 🇰🇷KR-3.36.52.102-0471
+  - 🇦🇺AU-13.239.240.45-0473
+  - 🇸🇬SG-46.250.230.93-0056
+  - 🇹🇼TW-218.173.195.183-0367
+  - 🇹🇼TW-160.187.100.109-0368
+  - 🇦🇺AU-54.153.223.26-0472
+  - 🇹🇷TR-193.124.46.134-0194
+  - 🇮🇳IN-13.233.127.26-0467
+  - 🇩🇪DE-194.154.30.150-0037
+  - 🇩🇪DE-202.61.205.86-0462
+  - 🇭🇰HK-202.146.222.30-0468
+  - 🇮🇳IN-68.233.103.254-0464
+  - 🇩🇪DE-185.228.139.247-0461
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
