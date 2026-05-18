@@ -1,1 +1,5 @@
-trojan://humanity@185.18.250.252:443?allowInsecure=0&sni=www.multiplydose.com&ws=1&wspath=%2Fassignment#CLOUDFLARE-185.18.250.252-0098
+trojan://6202b230-417c-4d8e-b624-0f71afa9c75d@162.159.36.20:443?allowInsecure=1&sni=sni.111000.dynv6.net&ws=1&wspath=%25252F%25253Fproxyip%25253Dip.111000.de5.net%2525253A443#CLOUDFLARE-162.159.36.20-0435
+trojan://humanity@104.20.6.134:443?allowInsecure=0&sni=www.ignitelimit.com&ws=1&wspath=%2Fassignment#CLOUDFLARE-104.20.6.134-0058
+trojan://humanity@104.18.32.47:443?allowInsecure=1&sni=www.multiplydose.com&ws=1&wspath=%2Fassignment#CLOUDFLARE-104.18.32.47-0079
+trojan://humanity@208.103.161.110:443?allowInsecure=0&sni=www.creationlong.org&ws=1&wspath=%2Fassignment#%F0%9F%87%BA%F0%9F%87%B8%20US-208.103.161.110-0095
+trojan://humanity@185.18.250.252:443?allowInsecure=0&sni=www.gossipglove.com&ws=1&wspath=%2Fassignment#CLOUDFLARE-185.18.250.252-0093
