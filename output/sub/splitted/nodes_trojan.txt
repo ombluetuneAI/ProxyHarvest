@@ -1,3 +1,7 @@
-trojan://humanity@104.20.6.134:443?allowInsecure=0&sni=www.ignitelimit.com&ws=1&wspath=%2Fassignment#CLOUDFLARE-104.20.6.134-0059
-trojan://humanity@104.18.32.47:443?allowInsecure=0&sni=www.multiplydose.com&ws=1&wspath=%2Fassignment#CLOUDFLARE-104.18.32.47-0075
-trojan://humanity@172.66.47.45:443?allowInsecure=0&sni=www.multiplydose.com&ws=1&wspath=%2Fassignment#CLOUDFLARE-172.66.47.45-0077
+trojan://6202b230-417c-4d8e-b624-0f71afa9c75d@104.20.6.134:443?allowInsecure=0&sni=sni.111000.dynv6.net&ws=1&wspath=%2F%3Fproxyip%3Dip.111000.de5.net%3A443#CLOUDFLARE-104.20.6.134-0347
+trojan://humanity@185.18.250.252:443?allowInsecure=0&sni=www.gossipglove.com&ws=1&wspath=%2Fassignment#CLOUDFLARE-185.18.250.252-0084
+trojan://humanity@104.18.32.47:443?allowInsecure=0&sni=www.gossipglove.com&ws=1&wspath=%2Fassignment#CLOUDFLARE-104.18.32.47-0102
+trojan://humanity@172.64.155.209:443?allowInsecure=0&sni=www.gossipglove.com&ws=1&wspath=%2Fassignment#CLOUDFLARE-172.64.155.209-0085
+trojan://humanity@104.18.32.47:443?allowInsecure=0&sni=www.calmlunch.com&ws=1&wspath=%2Fassignment#CLOUDFLARE-104.18.32.47-0095
+trojan://humanity@104.21.40.34:443?allowInsecure=1&sni=www.gossipglove.com&ws=1&wspath=%2Fassignment#CLOUDFLARE-104.21.40.34-0101
+trojan://strong-secret-pass-777@45.12.146.179:4443?allowInsecure=1#CY-45.12.146.179-0069
