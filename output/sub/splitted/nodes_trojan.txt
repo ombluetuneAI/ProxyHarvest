@@ -1,6 +1,4 @@
-trojan://humanity@www.gossipglove.com:443?allowInsecure=1&ws=1&wspath=%2Fassignment#CLOUDFLARE-104.18.0.55-0083
-trojan://humanity@104.25.109.237:443?allowInsecure=0&sni=www.calmlunch.com&ws=1&wspath=%2Fassignment#CLOUDFLARE-104.25.109.237-0086
-trojan://humanity@104.18.32.47:443?allowInsecure=0&sni=www.calmlunch.com&ws=1&wspath=%2Fassignment#CLOUDFLARE-104.18.32.47-0093
-trojan://humanity@104.18.13.149:443?allowInsecure=1&sni=www.calmloud.com&ws=1&wspath=%2Fassignment#CLOUDFLARE-104.18.13.149-0354
-trojan://6202b230-417c-4d8e-b624-0f71afa9c75d@104.16.80.73:443?allowInsecure=1&sni=sni.111000.dynv6.net&ws=1&wspath=%25252F#CLOUDFLARE-104.16.80.73-0399
-trojan://humanity@208.103.161.110:443?allowInsecure=0&sni=www.creationlong.org&ws=1&wspath=%2Fassignment#%F0%9F%87%BA%F0%9F%87%B8%20US-208.103.161.110-0103
+trojan://6202b230-417c-4d8e-b624-0f71afa9c75d@104.17.101.139:443?allowInsecure=1&sni=sni.111000.dynv6.net&ws=1&wspath=%2F%3Fproxyip%3Dip.111000.de5.net%3A443#CLOUDFLARE-104.17.101.139-0330
+trojan://humanity@www.ignitelimit.com:443?allowInsecure=1&ws=1&wspath=%2Fassignment#CLOUDFLARE-104.18.22.63-0335
+trojan://humanity@185.18.250.252:443?allowInsecure=1&sni=www.calmlunch.com&ws=1&wspath=%2Fassignment#CLOUDFLARE-185.18.250.252-0337
+trojan://humanity@v1.dabache.top:443?allowInsecure=1&sni=www.creationlong.org&ws=1&wspath=%2Fassignment#CLOUDFLARE-172.66.44.211-0338
