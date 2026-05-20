@@ -1,3 +1,1 @@
-hysteria2://github.com/Alvin9999-newpac/fanqiang@178.18.147.66:29900?sni=www.microsoft.com&insecure=1#%F0%9F%87%A9%F0%9F%87%AADE-178.18.147.66-0510
-hysteria2://strong-secret-pass-777@45.12.134.57:444?sni=www.microsoft.com&obfs=salamander&obfs-password=cry_me_a_r1ver_2026&insecure=1#%F0%9F%87%A8%F0%9F%87%BECY-45.12.134.57-0509
-hysteria2://qQe1z5kU8kN6SlKnDt9Ru3Qp@160.187.100.109:443?sni=https%3A//t.me/WangCai2%F0%9F%87%A8%F0%9F%87%B3&insecure=1#%F0%9F%87%B9%F0%9F%87%BCTW-160.187.100.109-0496
+hysteria2://dongtaiwang.com@62.210.124.146:22000?sni=www.microsoft.com&insecure=1#%F0%9F%87%AB%F0%9F%87%B7FR-62.210.124.146-0658

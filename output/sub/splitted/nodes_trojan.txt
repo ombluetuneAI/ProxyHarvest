@@ -1,3 +1,1 @@
-trojan://BxceQaOe@54.46.53.9:2702?allowInsecure=1&sni=t.me%2Fripaojiedian#%F0%9F%87%AD%F0%9F%87%B0%20HK-54.46.53.9-0378
-trojan://humanity@v1.dabache.top:443?allowInsecure=1&sni=www.creationlong.org&ws=1&wspath=%2Fassignment#CLOUDFLARE-172.66.47.45-0328
-trojan://humanity@172.66.44.211:443?allowInsecure=0&sni=www.creationlong.org&ws=1&wspath=%2Fassignment#CLOUDFLARE-172.66.44.211-0073
+trojan://kkzh2prsyr2ik47as615@64.94.95.118:57142?allowInsecure=1#%F0%9F%87%BA%F0%9F%87%B8%20US-64.94.95.118-0095
