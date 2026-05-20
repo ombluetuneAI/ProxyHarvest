@@ -1,1 +1,4 @@
-hysteria2://dongtaiwang.com@62.210.124.146:22000?sni=www.microsoft.com&insecure=1#%F0%9F%87%AB%F0%9F%87%B7FR-62.210.124.146-0658
+hysteria2://dongtaiwang.com@62.210.124.146:22000?sni=www.microsoft.com&insecure=1#%F0%9F%87%AB%F0%9F%87%B7FR-62.210.124.146-0670
+hysteria2://qQe1z5kU8kN6SlKnDt9Ru3Qp@23.144.12.162:443?insecure=1#%F0%9F%87%BA%F0%9F%87%B8US-23.144.12.162-0671
+hysteria2://jOIItw1h4D@138.124.182.202:8443?sni=latviyaotpusk1.home.kg#%F0%9F%87%B1%F0%9F%87%BBLV-138.124.182.202-0619
+hysteria2://2545ab46-6306-4f2b-badd-5531f384d55f@212.192.13.242:4433?sni=hk1.xiaoliyu.cyou&insecure=1#%F0%9F%87%AD%F0%9F%87%B0HK-212.192.13.242-0511
