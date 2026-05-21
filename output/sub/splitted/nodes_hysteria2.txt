@@ -1,1 +1,1 @@
-hysteria2://dongtaiwang.com@62.210.124.146:22000?sni=www.microsoft.com&insecure=1#%F0%9F%87%AB%F0%9F%87%B7FR-62.210.124.146-0549
+hysteria2://dongtaiwang.com@62.210.124.146:22000?sni=www.microsoft.com&insecure=1#%F0%9F%87%AB%F0%9F%87%B7FR-62.210.124.146-0528
