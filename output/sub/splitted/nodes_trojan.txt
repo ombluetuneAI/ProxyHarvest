@@ -1,5 +1,6 @@
-trojan://humanity@104.18.7.147:443?allowInsecure=0&sni=www.creationlong.org&ws=1&wspath=%2Fassignment#CLOUDFLARE-104.18.7.147-0084
-trojan://humanity@185.18.250.245:443?allowInsecure=0&sni=www.calmlunch.com&ws=1&wspath=%2Fassignment#CLOUDFLARE-185.18.250.245-0090
-trojan://humanity@185.18.250.252:443?allowInsecure=0&sni=www.multiplydose.com&ws=1&wspath=%2Fassignment#CLOUDFLARE-185.18.250.252-0095
-trojan://kkzh2prsyr2ik47as615@64.94.95.118:57142?allowInsecure=1#%F0%9F%87%BA%F0%9F%87%B8%20US-64.94.95.118-0104
-trojan://strong-secret-pass-777@45.12.134.57:4443?allowInsecure=1#CY-45.12.134.57-0036
+trojan://humanity@8.6.112.0:443?allowInsecure=0&sni=www.ignitelimit.com&ws=1&wspath=%2Fassignment#CLOUDFLARE-8.6.112.0-0082
+trojan://humanity@172.67.180.92:443?allowInsecure=0&sni=www.multiplydose.com&ws=1&wspath=%2Fassignment#CLOUDFLARE-172.67.180.92-0092
+trojan://humanity@185.18.250.245:443?allowInsecure=1&sni=www.calmlunch.com&ws=1&wspath=%2Fassignment#CLOUDFLARE-185.18.250.245-0093
+trojan://humanity@104.18.32.47:443?allowInsecure=0&sni=www.calmlunch.com&ws=1&wspath=%2Fassignment#CLOUDFLARE-104.18.32.47-0101
+trojan://humanity@185.18.250.252:443?allowInsecure=0&sni=www.multiplydose.com&ws=1&wspath=%2Fassignment#CLOUDFLARE-185.18.250.252-0106
+trojan://strong-secret-pass-777@45.12.134.57:4443?allowInsecure=1#CY-45.12.134.57-0050
