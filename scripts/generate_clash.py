@@ -1,33 +1,56 @@
 #!/usr/bin/env python3
-"""Fetch proxies from anaer/Sub, combine with clash_template.yaml, output to output/clash.yaml.
+"""Fetch proxies from anaer/Sub, merge with existing clash.yaml, output clash_merge.yaml.
 
 Usage:
     python scripts/generate_clash.py
 
 Output:
-    output/clash.yaml  - Complete Clash config with template + remote proxies
+    output/clash_merge.yaml  - Merged Clash config (remote + existing, deduped)
 """
-import copy
-import sys
 import os
+import sys
 from pathlib import Path
 
 import yaml
 import requests
 
-# Paths
+# Add project root to sys.path
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(PROJECT_ROOT))
+
+from core.converter import FormatConverter
+from core.merger import merge_proxies_priority
+
+# Paths
 TEMPLATE_PATH = PROJECT_ROOT / "config" / "clash_template.yaml"
 OUTPUT_DIR = PROJECT_ROOT / "output"
-OUTPUT_PATH = OUTPUT_DIR / "clash.yaml"
+EXISTING_PATH = OUTPUT_DIR / "clash.yaml"
+OUTPUT_PATH = OUTPUT_DIR / "clash_merge.yaml"
 
 # Remote source
-REMOTE_URL = "https://raw.githubusercontent.com/anaer/Sub/refs/heads/main/proxies.yaml"
+REMOTE_URL = "https://raw.githubusercontent.com/anaer/Sub/main/clash.yaml"
+
+
+def _load_existing_proxies() -> list:
+    """Load proxies from existing clash.yaml if present."""
+    if not EXISTING_PATH.exists():
+        return []
+
+    with open(EXISTING_PATH, "r", encoding="utf-8") as f:
+        data = yaml.safe_load(f) or {}
+
+    proxies = data.get("proxies") or []
+    if not isinstance(proxies, list):
+        print(f"[WARN] Existing file has invalid 'proxies': {EXISTING_PATH}", file=sys.stderr)
+        return []
+
+    print(f"  -> {len(proxies)} proxies loaded from {EXISTING_PATH}")
+    return [p for p in proxies if isinstance(p, dict)]
 
 
 def main() -> int:
     # 1. Fetch remote proxies
-    print(f"[1/4] Fetching proxies from {REMOTE_URL} ...")
+    print(f"[1/5] Fetching proxies from {REMOTE_URL} ...")
     try:
         resp = requests.get(REMOTE_URL, timeout=30)
         resp.raise_for_status()
@@ -40,15 +63,27 @@ def main() -> int:
         print("[FAIL] Remote file does not contain 'proxies' key", file=sys.stderr)
         return 1
 
-    proxies = remote_data["proxies"]
-    if not isinstance(proxies, list):
+    remote_proxies = remote_data["proxies"]
+    if not isinstance(remote_proxies, list):
         print("[FAIL] 'proxies' is not a list", file=sys.stderr)
         return 1
 
-    print(f"  -> {len(proxies)} proxies fetched")
+    remote_proxies = [p for p in remote_proxies if isinstance(p, dict)]
+    print(f"  -> {len(remote_proxies)} proxies fetched")
 
-    # 2. Load template
-    print(f"[2/4] Loading template from {TEMPLATE_PATH} ...")
+    # 2. Load existing proxies from clash.yaml
+    print(f"[2/5] Loading existing proxies from {EXISTING_PATH} ...")
+    existing_proxies = _load_existing_proxies()
+    if not EXISTING_PATH.exists():
+        print("  -> no existing file, using remote only")
+
+    # 3. Merge and deduplicate (remote wins on same node, keeps remote name)
+    print("[3/5] Merging and deduplicating ...")
+    proxies = merge_proxies_priority(remote_proxies, existing_proxies)
+    print(f"  -> {len(proxies)} proxies after merge")
+
+    # 4. Load template
+    print(f"[4/5] Loading template from {TEMPLATE_PATH} ...")
     if not TEMPLATE_PATH.exists():
         print(f"[FAIL] Template not found: {TEMPLATE_PATH}", file=sys.stderr)
         return 1
@@ -60,34 +95,19 @@ def main() -> int:
         print("[FAIL] Invalid template format", file=sys.stderr)
         return 1
 
-    # 3. Build complete config (same logic as FormatConverter.build_clash_config)
-    print("[3/4] Building Clash config ...")
-    config = copy.deepcopy(template)
-    config["proxies"] = proxies
+    # 5. Build complete config
+    print("[5/5] Building Clash config ...")
+    config = FormatConverter.build_clash_config(template, proxies)
 
-    proxy_names = [p["name"] for p in proxies if isinstance(p, dict) and "name" in p]
-
-    if "proxy-groups" in config:
-        for group in config["proxy-groups"]:
-            proxies_field = group.get("proxies", [])
-
-            # Replace AUTO_FILL marker with all proxy names
-            if proxies_field == "AUTO_FILL":
-                group["proxies"] = list(proxy_names)
-            elif isinstance(proxies_field, list) and "AUTO_FILL" in proxies_field:
-                new_proxies = [p for p in proxies_field if p != "AUTO_FILL"]
-                new_proxies.extend(proxy_names)
-                group["proxies"] = new_proxies
-
-    # 4. Write output
-    print(f"[4/4] Writing output to {OUTPUT_PATH} ...")
+    # 6. Write output
+    print(f"Writing output to {OUTPUT_PATH} ...")
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
         yaml.dump(config, f, allow_unicode=True, sort_keys=False)
 
     file_size = os.path.getsize(OUTPUT_PATH)
     print(f"\n[OK] Generated {OUTPUT_PATH}")
-    print(f"     Proxies: {len(proxies)}")
+    print(f"     Proxies: {len(proxies)} (remote {len(remote_proxies)}, existing {len(existing_proxies)})")
     print(f"     Size:    {file_size:,} bytes")
     return 0
 

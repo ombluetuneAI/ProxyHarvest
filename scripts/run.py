@@ -9,6 +9,7 @@ Usage:
     python scripts/run.py update-sources   # Update subscription source URLs
     python scripts/run.py update-geoip     # Download fresh GeoIP database
     python scripts/run.py clash-validate   # Validate nodes via standalone Mihomo
+    python scripts/run.py clash-validate --input output/clash_merge.yaml --output output/clash.yaml
 """
 
 import sys
@@ -36,7 +37,8 @@ from core.filter import NodeFilter
 from core.formatter import NodeFormatter
 from core.geoip import ensure_geoip
 from core.clash_validator import (
-    ClashValidator, load_proxies_for_validation, authoritative_alive_via_mihomo
+    ClashValidator, load_proxies_for_validation, authoritative_alive_via_mihomo,
+    write_validated_clash,
 )
 
 # ── Helper: per-source collection summary CSV ──────────────────────
@@ -473,7 +475,7 @@ def run_update_sources(settings: dict) -> None:
     logger.info("Subscription sources updated")
 
 
-def run_clash_validate(settings: dict, input_path: str = None) -> None:
+def run_clash_validate(settings: dict, input_path: str = None, output_path: str = None) -> None:
     """Validate proxy nodes via standalone Mihomo."""
     logger = logging.getLogger("run.clash_validate")
     logger.info("=== Node validation via standalone Mihomo ===")
@@ -485,18 +487,30 @@ def run_clash_validate(settings: dict, input_path: str = None) -> None:
     sub_merge = os.path.join(get_path(settings, "sub_dir"), "sub_merge_yaml.yml")
     if input_path:
         proxies = load_proxies_for_validation(settings, input_path)
+        clash_input = input_path
     elif os.path.exists(sub_merge):
         proxies = load_proxies_for_validation(settings, sub_merge)
+        clash_input = sub_merge
         logger.info("Using merged collect file with source tags: %s", sub_merge)
     else:
         proxies = load_proxies_for_validation(settings, None)
+        clash_input = settings.get("mihomo", {}).get("input", "output/clash.yaml")
 
     sources = None
     if any(p.get("_source_id") is not None for p in proxies):
         sources = load_sub_sources(get_path(settings, "sub_sources"))
 
     validator = ClashValidator(settings)
-    validator.validate_proxies(proxies, output_dir=output_dir, sources=sources)
+    report = validator.validate_proxies(proxies, output_dir=output_dir, sources=sources)
+
+    if output_path:
+        alive_names = {
+            node["name"]
+            for node in report.get("nodes", [])
+            if node.get("alive") and node.get("name")
+        }
+        count = write_validated_clash(clash_input, output_path, alive_names)
+        logger.info("Wrote %d alive proxies to %s", count, output_path)
 
 
 def run_update_geoip(settings: dict) -> None:
@@ -521,12 +535,17 @@ def main():
     setup_logging(settings)
 
     clash_input = None
+    clash_output = None
     if command == "clash-validate":
         args = sys.argv[2:]
         if "--input" in args:
             idx = args.index("--input")
             if idx + 1 < len(args):
                 clash_input = args[idx + 1]
+        if "--output" in args:
+            idx = args.index("--output")
+            if idx + 1 < len(args):
+                clash_output = args[idx + 1]
 
     commands = {
         "all": lambda: run_all(settings),
@@ -536,7 +555,7 @@ def main():
         "update-sources": lambda: run_update_sources(settings),
         "update-geoip": lambda: run_update_geoip(settings),
         "clash-validate": lambda: run_clash_validate(
-            settings, input_path=clash_input
+            settings, input_path=clash_input, output_path=clash_output
         ),
     }
 

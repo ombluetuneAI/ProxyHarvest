@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import copy
 import csv
 import json
 import logging
@@ -13,6 +14,7 @@ from typing import Any, Dict, List, Optional
 import yaml
 
 from .config_loader import PROJECT_ROOT
+from .converter import FormatConverter
 from .mihomo_client import AUTO_SELECT_GROUP
 from .mihomo_manager import MihomoManager
 
@@ -278,3 +280,38 @@ def load_proxies_for_validation(settings: dict, input_path: Optional[str] = None
     if not proxies:
         raise ValueError(f"No proxies in {path}")
     return proxies
+
+
+def write_validated_clash(
+    input_path: str | Path,
+    output_path: str | Path,
+    alive_names: set[str],
+) -> int:
+    """Write a Clash config keeping only alive proxies and updating proxy-groups."""
+    in_path = Path(input_path)
+    out_path = Path(output_path)
+    if not in_path.is_absolute():
+        in_path = PROJECT_ROOT / in_path
+    if not out_path.is_absolute():
+        out_path = PROJECT_ROOT / out_path
+
+    with open(in_path, "r", encoding="utf-8") as f:
+        base = yaml.safe_load(f) or {}
+
+    filtered = [
+        p for p in base.get("proxies", [])
+        if isinstance(p, dict) and p.get("name") in alive_names
+    ]
+    config = FormatConverter.build_clash_config(copy.deepcopy(base), filtered)
+
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(out_path, "w", encoding="utf-8") as f:
+        yaml.dump(config, f, allow_unicode=True, sort_keys=False)
+
+    logger.info(
+        "Validated Clash config: %d/%d proxies -> %s",
+        len(filtered),
+        len(base.get("proxies", [])),
+        out_path,
+    )
+    return len(filtered)

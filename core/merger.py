@@ -36,6 +36,37 @@ def merge_and_validate(proxies: List[Dict[str, Any]],
     return result
 
 
+def merge_proxies_priority(
+    priority: List[Dict[str, Any]],
+    secondary: List[Dict[str, Any]],
+) -> List[Dict[str, Any]]:
+    """Merge two proxy lists; priority wins on duplicate nodes (keeps priority name)."""
+    seen: Dict[str, int] = {}
+    result: List[Dict[str, Any]] = []
+
+    for proxy in priority:
+        key = _dedup_key(proxy)
+        if key in seen:
+            result[seen[key]] = proxy
+        else:
+            seen[key] = len(result)
+            result.append(proxy)
+
+    for proxy in secondary:
+        key = _dedup_key(proxy)
+        if key not in seen:
+            seen[key] = len(result)
+            result.append(proxy)
+
+    logger.info(
+        "Merge: %d + %d -> %d proxies",
+        len(priority),
+        len(secondary),
+        len(result),
+    )
+    return result
+
+
 def _dedup_key(proxy: Dict[str, Any]) -> str:
     """Generate a deduplication key for a proxy.
 

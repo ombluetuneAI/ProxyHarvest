@@ -8,6 +8,7 @@ config/settings.local.yaml
 # (Final output files like nodes_*.yaml, nodes_*.txt are tracked in git)
 output/meta*.json
 output/out*.json
+output/clash_merge.yaml
 output/pingonly*.json
 output/singbox_*.json
 output/speedtest_singbox.json
