@@ -258,46 +258,6 @@ class ClashValidator:
         print("=" * 64)
 
 
-def authoritative_alive_via_mihomo(
-    settings: dict,
-    all_proxies: List[dict],
-    output_dir: str,
-) -> Optional[Dict[str, int]]:
-    """Validate the full proxy list with Mihomo and return the alive set.
-
-    singtools (sing-box) and Mihomo support different protocols, so singtools both
-    drops untestable nodes and occasionally mis-judges. Mihomo is the authority on
-    connectivity when available.
-
-    Returns:
-        Mapping of alive ``name -> delay_ms``. ``None`` when Mihomo is unavailable.
-    """
-    if not all_proxies:
-        return {}
-
-    try:
-        validator = ClashValidator(settings)
-    except Exception as exc:
-        logger.warning("Mihomo reconciliation skipped (unavailable): %s", exc)
-        return None
-
-    os.makedirs(output_dir, exist_ok=True)
-    try:
-        report = validator.validate_proxies(all_proxies, output_dir=output_dir)
-    except Exception as exc:
-        logger.warning("Mihomo reconciliation failed: %s", exc)
-        return None
-
-    alive = {
-        node["name"]: int(node.get("delay") or 0)
-        for node in report.get("nodes", [])
-        if node.get("alive") and node.get("name")
-    }
-    logger.info("Mihomo authoritative result: %d/%d nodes alive",
-                len(alive), len(all_proxies))
-    return alive
-
-
 def load_proxies_for_validation(settings: dict, input_path: Optional[str] = None) -> List[dict]:
     """Load proxies from clash yaml; default to configured mihomo input."""
     if input_path:
@@ -305,7 +265,7 @@ def load_proxies_for_validation(settings: dict, input_path: Optional[str] = None
         if not path.is_absolute():
             path = PROJECT_ROOT / path
     else:
-        default = settings.get("mihomo", {}).get("input", "output/clash.yaml")
+        default = settings.get("mihomo", {}).get("input", "output/nodes_clash.yaml")
         path = PROJECT_ROOT / default
 
     if not path.exists():

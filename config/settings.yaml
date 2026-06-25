@@ -14,9 +14,6 @@ paths:
   clash_template: config/clash_template.yaml
   country_mmdb: .cache/Country.mmdb
   output_dir: output
-  sub_dir: output/sub
-  list_dir: output/sub/list
-  splitted_dir: output/sub/splitted
 
 subconverter:
   version: v0.9.2
@@ -33,7 +30,7 @@ subconverter:
 mihomo:
   version: v1.19.27
   repo: MetaCubeX/mihomo
-  input: output/clash.yaml      # 默认验证输入（--input 未指定时）
+  input: output/nodes_clash.yaml   # clash-validate 默认输入；output/clash.yaml 保留供手动使用
   template: config/clash_template.yaml
   controller_host: 127.0.0.1
   controller_port: 9091
@@ -61,9 +58,6 @@ singtools:
   filter: "all"
   # test_mode: ping | speed | all  (auto-selects the matching config file)
   test_mode: all
-  # singtools(sing-box) 无法测试部分协议/传输(mieru/socks5/ss-2022+plugin/
-  # vless xhttp 等)而被静默丢弃。开启后自动用 Mihomo 复验并补回存活者。
-  reconcile_with_mihomo: true
   binary_path:
     linux: tools/singtools/linux/singtools
     windows: tools/singtools/windows/singtools.exe
@@ -99,18 +93,7 @@ collector:
       - IL
 
 output:
-  top_nodes: 200
-  filenames:
-    base64: nodes_base64.txt
-    mixed: nodes_mixed.txt
-    clash_yaml: nodes_clash.yaml
-    all_mixed: nodes_all_mixed.txt
-    log: speedtest_log.txt
-  formats:
-    - clash_yaml
-    - base64
-    - mixed
-  split_by_protocol: true
+  clash_yaml: nodes_clash.yaml
 
 namer:
   emoji_enabled: true

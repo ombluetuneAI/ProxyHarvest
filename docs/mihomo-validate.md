@@ -2,8 +2,8 @@
 
 本文介绍如何用 ProxyHarvest 拉起一个**独立的 Mihomo（Clash.Meta）内核**，对 Clash YAML 中的代理节点做**连通性 / 延迟**检测。
 
-> 适用场景：本地或 CI 环境快速判断节点是否还能连上。
-> 不适用：带宽测速（请用 `singtools`，见 `python scripts/run.py speedtest`）。
+> 适用场景：Collector 流水线第 2 步筛存活节点；`clash_gen` 工作流验证 `clash_merge.yaml` 后输出 `clash_all.yaml`。
+> 带宽测速由 `singtools` 在 `run.py all` 第 3 步完成，不在此文档范围。
 
 ---
 
@@ -12,7 +12,7 @@
 ```
 ProxyHarvest                         独立 mihomo 进程
 ─────────────                        ─────────────────
-读取 clash.yaml ─启动内核(-d/-f)─▶  mihomo (独立端口 127.0.0.1:9091)
+读取 Clash YAML ─启动内核(-d/-f)─▶  mihomo (独立端口 127.0.0.1:9091)
        │                                  │
        │                             批量延迟测试
        │                             (/proxies/{name}/delay)
@@ -56,8 +56,13 @@ powershell -ExecutionPolicy Bypass -File scripts/setup.ps1
 ## 快速开始
 
 ```bash
+# 验证 nodes_clash.yaml（默认输入）
 python scripts/run.py clash-validate
-python scripts/run.py clash-validate --input output/clash.yaml
+
+# clash_gen 工作流用法
+python scripts/run.py clash-validate \
+  --input output/clash_merge.yaml \
+  --output output/clash_all.yaml
 ```
 
 ---
@@ -68,7 +73,7 @@ python scripts/run.py clash-validate --input output/clash.yaml
 
 ```yaml
 mihomo:
-  input: output/clash.yaml
+  input: output/nodes_clash.yaml   # 默认验证输入
   controller_port: 9091
   mixed_port: 7899
   test_url: "http://www.gstatic.com/generate_204"
@@ -82,10 +87,14 @@ mihomo:
 
 ## 输出文件
 
+报告写入 `output/tmp/`（不入库）：
+
 | 文件 | 说明 |
 |------|------|
-| `output/tmp/clash_validate_report.json` | 完整报告 |
-| `output/tmp/clash_validate_summary.csv` | 按订阅源汇总 |
+| `clash_validate_report.json` | 完整报告 |
+| `clash_validate_summary.csv` | 按订阅源汇总（有 `_source_id` 时） |
+
+使用 `--output` 时额外写入指定的 Clash YAML（仅保留存活节点）。
 
 ---
 
@@ -96,4 +105,4 @@ mihomo:
 | `core/mihomo_manager.py` | 启停独立 mihomo 进程、生成验证配置 |
 | `core/mihomo_client.py` | Mihomo REST HTTP 客户端 |
 | `core/clash_validator.py` | 执行检测、生成报告 |
-| `scripts/run.py` | `clash-validate` 命令入口 |
+| `scripts/run.py` | `all`（含 Mihomo 筛选）与 `clash-validate` 命令入口 |

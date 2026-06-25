@@ -5,7 +5,7 @@
 config/settings.local.yaml
 
 # Output - intermediate/temporary files
-# (Final output files like nodes_*.yaml, nodes_*.txt are tracked in git)
+# Tracked in git: nodes_clash.yaml (collector), clash_all.yaml (clash_gen), clash.yaml (reserved)
 output/meta*.json
 output/out*.json
 output/clash_merge.yaml
@@ -19,6 +19,7 @@ output/speedtest_small*
 output/test*
 output/v2rayfree_raw.txt
 output/tmp/
+output/sub/
 
 # Python
 __pycache__/

@@ -3,11 +3,6 @@ name: Collect & SpeedTest & Filter
 on:
   workflow_dispatch:
     inputs:
-      skip_speedtest:
-        description: 'Skip speed test (collect only)'
-        required: false
-        default: 'false'
-        type: boolean
       force_push:
         description: 'Force push even if no changes'
         required: false
@@ -22,6 +17,10 @@ on:
       - 'core/**'
       - 'scripts/**'
       - 'requirements.txt'
+
+concurrency:
+  group: collector-${{ github.ref }}
+  cancel-in-progress: true
 
 env:
   PYTHON_VERSION: '3.11'
@@ -41,11 +40,9 @@ jobs:
     timeout-minutes: 30
 
     steps:
-      # ── Checkout ──────────────────────────────────────────────
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # ── Python setup ──────────────────────────────────────────
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -57,164 +54,87 @@ jobs:
           pip install --upgrade pip
           pip install -r requirements.txt
 
-      # ── Download subconverter ─────────────────────────────────
       - name: Download subconverter (Linux)
         run: |
           mkdir -p tools/subconverter/linux64
-          echo "Downloading subconverter ${{ env.SUBCONVERTER_VERSION }} from ${{ env.SUBCONVERTER_REPO }} for linux64..."
           curl -fsSL \
             "https://github.com/${{ env.SUBCONVERTER_REPO }}/releases/download/${{ env.SUBCONVERTER_VERSION }}/subconverter_linux64.tar.gz" \
             -o /tmp/subconverter_linux64.tar.gz
           tar xzf /tmp/subconverter_linux64.tar.gz -C tools/subconverter/linux64/ --strip-components=1
           chmod +x tools/subconverter/linux64/subconverter
-          echo "subconverter downloaded and extracted"
-          ls -lh tools/subconverter/linux64/subconverter
 
-      # ── Download singtools ────────────────────────────────────
       - name: Download singtools (Linux)
         run: |
           mkdir -p tools/singtools/linux
-          echo "Downloading singtools ${{ env.SINGTOOLS_VERSION }} for linux32..."
-          # singtools only provides linux32 build, which runs fine on x86_64
           curl -fsSL \
             "https://github.com/Kdwkakcs/singtools/releases/download/${{ env.SINGTOOLS_VERSION }}/singtools_linux32.tar.gz" \
             -o /tmp/singtools_linux.tar.gz
           tar xzf /tmp/singtools_linux.tar.gz -C tools/singtools/linux/
-          # Find and chmod the binary
           BINARY=$(find tools/singtools/linux -name 'singtools' -type f | head -1)
           if [ -n "$BINARY" ]; then
             chmod +x "$BINARY"
-            # If binary is in a subdirectory, move it up
             if [ "$(dirname "$BINARY")" != "tools/singtools/linux" ]; then
               mv "$BINARY" tools/singtools/linux/singtools
             fi
           else
-            echo "ERROR: singtools binary not found in extracted archive"
-            ls -lR tools/singtools/linux/
+            echo "ERROR: singtools binary not found"
             exit 1
           fi
-          echo "singtools downloaded and extracted"
-          ls -lh tools/singtools/linux/singtools
 
-      # ── Download mihomo (standalone validation core) ──────────
       - name: Download mihomo (Linux)
         run: |
           mkdir -p tools/mihomo/linux
-          echo "Downloading mihomo ${{ env.MIHOMO_VERSION }} for linux amd64 (compatible)..."
           curl -fsSL \
             "https://github.com/${{ env.MIHOMO_REPO }}/releases/download/${{ env.MIHOMO_VERSION }}/mihomo-linux-amd64-compatible-${{ env.MIHOMO_VERSION }}.gz" \
             -o /tmp/mihomo.gz
           gunzip -c /tmp/mihomo.gz > tools/mihomo/linux/mihomo
           chmod +x tools/mihomo/linux/mihomo
-          echo "mihomo downloaded and extracted"
-          ls -lh tools/mihomo/linux/mihomo
-          tools/mihomo/linux/mihomo -v || true
 
-      # ── Create required directories ───────────────────────────
       - name: Create directories
-        run: |
-          mkdir -p output/sub/splitted
-          mkdir -p .cache
+        run: mkdir -p .cache
 
-      # ── Run pipeline ──────────────────────────────────────────
-      - name: Run collection
-        run: |
-          echo "=== Starting ProxyHarvest pipeline ==="
-          echo "Skip speedtest: ${{ github.event.inputs.skip_speedtest }}"
-          if [ "${{ github.event.inputs.skip_speedtest }}" = "true" ]; then
-            python scripts/run.py collect
-          else
-            python scripts/run.py all
-          fi
-          echo "=== Pipeline finished ==="
+      - name: Run pipeline
+        run: python scripts/run.py all
 
-      # ── Generate summary ──────────────────────────────────────
       - name: Generate node summary
         if: always()
         run: |
           echo "## Node Collection Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-
-          # Count nodes in Clash YAML
           if [ -f output/nodes_clash.yaml ]; then
-            NODE_COUNT=$(grep -c '^\s*- {' output/nodes_clash.yaml 2>/dev/null || echo "0")
-            echo "- **Clash YAML nodes**: ${NODE_COUNT}" >> $GITHUB_STEP_SUMMARY
+            NODE_COUNT=$(grep -c '^\s*- name:' output/nodes_clash.yaml || echo "0")
+            SIZE=$(du -h output/nodes_clash.yaml | cut -f1)
+            echo "- **nodes_clash.yaml**: ${NODE_COUNT} nodes (${SIZE})" >> $GITHUB_STEP_SUMMARY
           else
-            echo "- **Clash YAML**: not generated" >> $GITHUB_STEP_SUMMARY
+            echo "- **nodes_clash.yaml**: not generated" >> $GITHUB_STEP_SUMMARY
           fi
 
-          # Check output files
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### Output Files" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          for f in output/nodes_*.txt output/nodes_*.yaml output/speedtest_log.txt; do
-            if [ -f "$f" ]; then
-              SIZE=$(du -h "$f" | cut -f1)
-              echo "- \`${f}\` (${SIZE})" >> $GITHUB_STEP_SUMMARY
-            fi
-          done
-
-          # Protocol split files
-          if ls output/sub/splitted/nodes_*.txt 1>/dev/null 2>&1; then
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "### Protocol Splits" >> $GITHUB_STEP_SUMMARY
-            echo "" >> $GITHUB_STEP_SUMMARY
-            for f in output/sub/splitted/nodes_*.txt; do
-              PROTO=$(basename "$f" .txt | sed 's/nodes_//')
-              COUNT=$(wc -l < "$f" 2>/dev/null || echo "?")
-              echo "- **${PROTO}**: ${COUNT} nodes" >> $GITHUB_STEP_SUMMARY
-            done
-          fi
-
-          # Speed test log
-          if [ -f output/speedtest_log.txt ]; then
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "### Speed Test Log (top 10)" >> $GITHUB_STEP_SUMMARY
-            echo '```' >> $GITHUB_STEP_SUMMARY
-            head -12 output/speedtest_log.txt >> $GITHUB_STEP_SUMMARY
-            echo '```' >> $GITHUB_STEP_SUMMARY
-          fi
-
-      # ── Upload output as artifact ────────────────────────────
       - name: Upload output artifact
-        if: always()
+        if: success()
         uses: actions/upload-artifact@v4
         with:
           name: proxy-nodes-${{ github.run_number }}
-          path: |
-            output/nodes_*.yaml
-            output/nodes_*.txt
-            output/sub/
-            output/speedtest_log.txt
+          path: output/nodes_clash.yaml
           retention-days: 30
           if-no-files-found: warn
 
-      # ── Clean intermediate files before commit ────────────────
       - name: Clean intermediate files
         if: always()
         run: |
-          # Remove intermediate/debug files that shouldn't be committed
-          rm -f output/meta*.json output/out*.json output/pingonly*.json
-          rm -f output/singbox_*.json output/speedtest_input* output/speedtest_clean.json
-          rm -f output/speedtest_config* output/speedtest_small* output/test* output/v2rayfree_raw.txt
           rm -rf output/tmp/
           echo "Intermediate files cleaned"
 
-      # ── Commit and push ───────────────────────────────────────
       - name: Commit & Push Results
-        if: always()
+        if: success()
         run: |
           git config user.email "actions@github.com"
           git config user.name "GitHub Actions"
 
-          # Stage output and any config changes (e.g., updated sub_sources.json)
-          git add output/ config/sub_sources.json 2>/dev/null || true
+          git add output/nodes_clash.yaml config/sub_sources.json 2>/dev/null || true
 
-          # Check if there are changes to commit
           if git diff --cached --quiet; then
             echo "No changes to commit"
             if [ "${{ github.event.inputs.force_push }}" = "true" ]; then
-              # Force an empty commit to trigger any downstream workflows
               git commit --allow-empty -m "chore: pipeline run $(date '+%Y-%m-%d %H:%M:%S') [no changes]"
             fi
           else
@@ -223,12 +143,9 @@ jobs:
 
           git push
 
-      # ── Cleanup ───────────────────────────────────────────────
       - name: Cleanup
         if: always()
         run: |
-          # Kill any remaining subconverter / mihomo process
           pkill -f subconverter 2>/dev/null || true
           pkill -f mihomo 2>/dev/null || true
-          # Remove temp files
           rm -f /tmp/subconverter_linux64.tar.gz /tmp/singtools_linux.tar.gz /tmp/mihomo.gz
