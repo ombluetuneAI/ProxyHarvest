@@ -28,6 +28,30 @@ subconverter:
     linux: tools/subconverter/linux64/subconverter
     windows: tools/subconverter/windows/subconverter.exe
 
+# 节点有效性验证：拉起独立的 mihomo 内核进程，通过 external-controller REST API
+# 做连通性/延迟检测。独立进程、独立端口，不碰系统代理/TUN。
+mihomo:
+  version: v1.19.27
+  repo: MetaCubeX/mihomo
+  input: output/clash.yaml      # 默认验证输入（--input 未指定时）
+  template: config/clash_template.yaml
+  controller_host: 127.0.0.1
+  controller_port: 9091
+  mixed_port: 7899
+  secret: ""                    # 留空 = 随机生成，仅本进程内部使用
+  startup_timeout: 20
+  data_dir: output/tmp/mihomo
+  test_group: "♻️ 自动选择"
+  test_url: "http://www.gstatic.com/generate_204"
+  timeout_ms: 10000
+  max_retries: 3                # 单节点测速失败时最多重试 3 次
+  use_group_test: false
+  parallel_fallback: true
+  max_workers: 32
+  binary_path:
+    linux: tools/mihomo/linux/mihomo
+    windows: tools/mihomo/windows/mihomo.exe
+
 singtools:
   version: vv0.2.0
   download_base: https://github.com/Kdwkakcs/singtools/releases/download/vv0.2.0
@@ -37,6 +61,9 @@ singtools:
   filter: "all"
   # test_mode: ping | speed | all  (auto-selects the matching config file)
   test_mode: all
+  # singtools(sing-box) 无法测试部分协议/传输(mieru/socks5/ss-2022+plugin/
+  # vless xhttp 等)而被静默丢弃。开启后自动用 Mihomo 复验并补回存活者。
+  reconcile_with_mihomo: true
   binary_path:
     linux: tools/singtools/linux/singtools
     windows: tools/singtools/windows/singtools.exe

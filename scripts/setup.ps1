@@ -1,5 +1,5 @@
 # ProxyHarvest Windows Setup Script
-# Downloads subconverter and singtools binaries, installs Python dependencies.
+# Downloads subconverter, singtools and mihomo binaries, installs Python dependencies.
 # Run from the project root: powershell -ExecutionPolicy Bypass -File scripts/setup.ps1
 
 $ErrorActionPreference = "Stop"
@@ -16,15 +16,18 @@ $SubconverterRepo    = "MetaCubeX/subconverter"
 $SubconverterFile    = "subconverter_win64.7z"
 $SingtoolsVersion    = "vv0.2.0"
 $SingtoolsFile       = "singtools_win64.7z"
+$MihomoVersion       = "v1.19.27"
+$MihomoRepo          = "MetaCubeX/mihomo"
+$MihomoFile          = "mihomo-windows-amd64-compatible-$MihomoVersion.zip"
 
 # ── Python dependencies ─────────────────────────────────────────
-Write-Host "[1/3] Installing Python dependencies..." -ForegroundColor Yellow
+Write-Host "[1/4] Installing Python dependencies..." -ForegroundColor Yellow
 pip install -r "$ProjectRoot\requirements.txt" --quiet 2>&1 | Out-Null
 pip install geoip2 py7zr --quiet 2>&1 | Out-Null
 Write-Host "       Done." -ForegroundColor Green
 
 # ── Download & extract subconverter ──────────────────────────────
-Write-Host "[2/3] Setting up subconverter $SubconverterVersion..." -ForegroundColor Yellow
+Write-Host "[2/4] Setting up subconverter $SubconverterVersion..." -ForegroundColor Yellow
 
 $SubDir = "$ProjectRoot\tools\subconverter\windows"
 $SubUrl = "https://github.com/$SubconverterRepo/releases/download/$SubconverterVersion/$SubconverterFile"
@@ -61,7 +64,7 @@ Remove-Item $SubZip -Force -ErrorAction SilentlyContinue
 Write-Host "       subconverter ready: $SubDir\subconverter.exe" -ForegroundColor Green
 
 # ── Download & extract singtools ─────────────────────────────────
-Write-Host "[3/3] Setting up singtools $SingtoolsVersion..." -ForegroundColor Yellow
+Write-Host "[3/4] Setting up singtools $SingtoolsVersion..." -ForegroundColor Yellow
 
 $SingDir = "$ProjectRoot\tools\singtools\windows"
 $SingUrl = "https://github.com/Kdwkakcs/singtools/releases/download/$SingtoolsVersion/$SingtoolsFile"
@@ -84,6 +87,31 @@ print(f'Extracted to {out_dir}')
 
 Remove-Item $SingZip -Force -ErrorAction SilentlyContinue
 Write-Host "       singtools ready: $SingDir\singtools.exe" -ForegroundColor Green
+
+# ── Download & extract mihomo (standalone validation core) ───────
+Write-Host "[4/4] Setting up mihomo $MihomoVersion..." -ForegroundColor Yellow
+
+$MihomoDir = "$ProjectRoot\tools\mihomo\windows"
+$MihomoUrl = "https://github.com/$MihomoRepo/releases/download/$MihomoVersion/$MihomoFile"
+$MihomoZip = "$env:TEMP\$MihomoFile"
+
+New-Item -ItemType Directory -Force -Path $MihomoDir | Out-Null
+
+Write-Host "       Downloading mihomo..." -ForegroundColor Gray
+Invoke-WebRequest -Uri $MihomoUrl -OutFile $MihomoZip -UseBasicParsing
+
+Write-Host "       Extracting..." -ForegroundColor Gray
+# The zip holds a single exe named mihomo-windows-amd64-compatible-<ver>.exe;
+# extract it and normalise the name to mihomo.exe.
+Expand-Archive -Path $MihomoZip -DestinationPath $MihomoDir -Force
+$MihomoExe = Get-ChildItem -Path $MihomoDir -Filter "mihomo*.exe" | Select-Object -First 1
+if ($null -eq $MihomoExe) { Write-Error "mihomo executable not found after extraction"; exit 1 }
+if ($MihomoExe.Name -ne "mihomo.exe") {
+    Move-Item -Path $MihomoExe.FullName -Destination "$MihomoDir\mihomo.exe" -Force
+}
+
+Remove-Item $MihomoZip -Force -ErrorAction SilentlyContinue
+Write-Host "       mihomo ready: $MihomoDir\mihomo.exe" -ForegroundColor Green
 
 Write-Host ""
 Write-Host "=== Setup complete! ===" -ForegroundColor Cyan

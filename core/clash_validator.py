@@ -1,0 +1,280 @@
+"""Validate proxy nodes via standalone Mihomo."""
+
+from __future__ import annotations
+
+import csv
+import json
+import logging
+import os
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from pathlib import Path
+from typing import Any, Dict, List, Optional
+
+import yaml
+
+from .config_loader import PROJECT_ROOT
+from .mihomo_client import AUTO_SELECT_GROUP
+from .mihomo_manager import MihomoManager
+
+logger = logging.getLogger(__name__)
+
+
+class ClashValidator:
+    """Run delay-based validity checks via a standalone Mihomo core."""
+
+    def __init__(self, settings: dict):
+        self.settings = settings
+        self.cfg = settings.get("mihomo", {})
+        self.manager = MihomoManager(settings)
+        self.client = None
+        self.runtime = None
+        self.group_name = self.cfg.get("test_group", AUTO_SELECT_GROUP)
+
+    def validate_proxies(
+        self,
+        proxies: List[Dict[str, Any]],
+        output_dir: str,
+        sources: Optional[list] = None,
+    ) -> Dict[str, Any]:
+        """Test proxy connectivity and optionally summarize per subscription source."""
+        if not proxies:
+            raise ValueError("No proxies to validate")
+
+        os.makedirs(output_dir, exist_ok=True)
+        node_results = self._validate_standalone(proxies)
+
+        name_to_source = {p.get("name", ""): p.get("_source_id", -1) for p in proxies}
+        alive = []
+        dead = []
+        for name in [p.get("name", "") for p in proxies]:
+            info = node_results.get(name, {})
+            delay = int(info.get("delay") or 0)
+            entry = {"name": name, "delay": delay, "alive": delay > 0}
+            if name_to_source.get(name, -1) != -1:
+                entry["source_id"] = name_to_source[name]
+            if delay > 0:
+                alive.append(entry)
+            else:
+                dead.append(entry)
+
+        source_summary = self._summarize_sources(alive, dead, sources)
+
+        report = {
+            "backend": "mihomo-standalone",
+            "transport": "http",
+            "test_url": self.runtime.test_url,
+            "timeout_ms": self.runtime.timeout_ms,
+            "total": len(proxies),
+            "alive": len(alive),
+            "dead": len(dead),
+            "nodes": sorted(alive + dead, key=lambda x: (not x["alive"], x.get("delay", 0))),
+            "sources": source_summary,
+        }
+
+        report_path = os.path.join(output_dir, "clash_validate_report.json")
+        with open(report_path, "w", encoding="utf-8") as f:
+            json.dump(report, f, ensure_ascii=False, indent=2)
+        logger.info("Validation report: %s", report_path)
+
+        if source_summary:
+            self._write_source_csv(source_summary, output_dir)
+
+        self._print_summary(report)
+        return report
+
+    def _validate_standalone(self, proxies: List[Dict[str, Any]]) -> Dict[str, Dict[str, Any]]:
+        """Spin up a dedicated mihomo core, run delay tests, tear it down."""
+        self.client = self.manager.start(proxies)
+        self.runtime = self.client.runtime
+        try:
+            return self._run_delay_tests(
+                [p["name"] for p in proxies if p.get("name")]
+            )
+        finally:
+            self.manager.stop()
+
+    def _run_delay_tests(self, proxy_names: List[str]) -> Dict[str, Dict[str, Any]]:
+        """Return mapping of proxy name -> {delay, alive}."""
+        use_group = bool(self.cfg.get("use_group_test", True))
+        fallback_parallel = bool(self.cfg.get("parallel_fallback", True))
+        max_workers = int(self.cfg.get("max_workers", 8))
+
+        results: Dict[str, Dict[str, Any]] = {}
+
+        if use_group:
+            try:
+                delay_map = self.client.test_group_delay(self.group_name)
+                results = self._results_from_delay_map(proxy_names, delay_map)
+                if any(v.get("delay", 0) > 0 for v in results.values()):
+                    logger.info("Group delay test completed via %s", self.group_name)
+                    return results
+                logger.warning("Group delay test returned no alive nodes, trying per-proxy tests")
+            except Exception as exc:
+                logger.warning("Group delay test failed: %s", exc)
+
+        if fallback_parallel:
+            results = self._parallel_proxy_tests(proxy_names, max_workers)
+        return results
+
+    def _results_from_delay_map(
+        self, proxy_names: List[str], delay_map: dict
+    ) -> Dict[str, Dict[str, Any]]:
+        results: Dict[str, Dict[str, Any]] = {}
+        for name in proxy_names:
+            delay = int(delay_map.get(name) or 0)
+            results[name] = {"delay": delay, "alive": delay > 0}
+        return results
+
+    def _test_proxy_delay_with_retry(self, name: str) -> int:
+        """Probe one proxy; on failure retry up to ``max_retries`` times."""
+        max_retries = max(0, int(self.cfg.get("max_retries", 0)))
+        delay = 0
+        for attempt in range(max_retries + 1):
+            delay = self.client.test_proxy_delay(name) or 0
+            if delay > 0:
+                return delay
+            if attempt < max_retries:
+                logger.debug("Retry %d/%d for proxy: %s", attempt + 1, max_retries, name)
+        return delay
+
+    def _parallel_proxy_tests(
+        self, proxy_names: List[str], max_workers: int
+    ) -> Dict[str, Dict[str, Any]]:
+        results: Dict[str, Dict[str, Any]] = {}
+
+        def _test(name: str) -> tuple[str, int]:
+            return name, self._test_proxy_delay_with_retry(name)
+
+        with ThreadPoolExecutor(max_workers=max_workers) as pool:
+            futures = {pool.submit(_test, name): name for name in proxy_names}
+            for future in as_completed(futures):
+                name, delay = future.result()
+                results[name] = {"delay": delay, "alive": delay > 0}
+        for name in proxy_names:
+            results.setdefault(name, {"delay": 0, "alive": False})
+        return results
+
+    def _summarize_sources(
+        self, alive: List[dict], dead: List[dict], sources: Optional[list]
+    ) -> List[dict]:
+        if not any("source_id" in x for x in alive + dead):
+            return []
+
+        id_to_remarks = {}
+        if sources:
+            id_to_remarks = {s.get("id", -1): s.get("remarks", "") for s in sources}
+
+        totals: Dict[int, int] = {}
+        valid: Dict[int, int] = {}
+        for entry in alive + dead:
+            sid = entry.get("source_id", -1)
+            if sid == -1:
+                continue
+            totals[sid] = totals.get(sid, 0) + 1
+            if entry.get("alive"):
+                valid[sid] = valid.get(sid, 0) + 1
+
+        rows = []
+        for sid in sorted(totals):
+            total = totals[sid]
+            ok = valid.get(sid, 0)
+            rows.append({
+                "source_id": sid,
+                "remarks": id_to_remarks.get(sid, ""),
+                "total_nodes": total,
+                "valid_nodes": ok,
+                "valid_rate": round(ok / total * 100, 1) if total else 0.0,
+            })
+        return rows
+
+    def _write_source_csv(self, rows: List[dict], output_dir: str) -> None:
+        path = os.path.join(output_dir, "clash_validate_summary.csv")
+        with open(path, "w", newline="", encoding="utf-8-sig") as f:
+            writer = csv.DictWriter(
+                f,
+                fieldnames=["source_id", "remarks", "total_nodes", "valid_nodes", "valid_rate"],
+            )
+            writer.writeheader()
+            writer.writerows(rows)
+        logger.info("Source summary: %s", path)
+
+    @staticmethod
+    def _print_summary(report: dict) -> None:
+        print("\n" + "=" * 64)
+        print(" MIHOMO VALIDATION")
+        print("=" * 64)
+        print(f"Backend   : {report.get('backend')}")
+        print(f"Test URL  : {report.get('test_url')}")
+        print(f"Nodes     : {report.get('alive')}/{report.get('total')} alive")
+        sources = report.get("sources") or []
+        if sources:
+            print("-" * 64)
+            print(f"| {'source_id':>10} | {'remarks':<22} | {'valid':>5} | {'total':>5} | {'rate':>6} |")
+            print("-" * 64)
+            for row in sources:
+                print(
+                    f"| {str(row['source_id']):>10} | {row['remarks']:<22} | "
+                    f"{row['valid_nodes']:>5} | {row['total_nodes']:>5} | {row['valid_rate']:>5.1f}% |"
+                )
+        print("=" * 64)
+
+
+def authoritative_alive_via_mihomo(
+    settings: dict,
+    all_proxies: List[dict],
+    output_dir: str,
+) -> Optional[Dict[str, int]]:
+    """Validate the full proxy list with Mihomo and return the alive set.
+
+    singtools (sing-box) and Mihomo support different protocols, so singtools both
+    drops untestable nodes and occasionally mis-judges. Mihomo is the authority on
+    connectivity when available.
+
+    Returns:
+        Mapping of alive ``name -> delay_ms``. ``None`` when Mihomo is unavailable.
+    """
+    if not all_proxies:
+        return {}
+
+    try:
+        validator = ClashValidator(settings)
+    except Exception as exc:
+        logger.warning("Mihomo reconciliation skipped (unavailable): %s", exc)
+        return None
+
+    os.makedirs(output_dir, exist_ok=True)
+    try:
+        report = validator.validate_proxies(all_proxies, output_dir=output_dir)
+    except Exception as exc:
+        logger.warning("Mihomo reconciliation failed: %s", exc)
+        return None
+
+    alive = {
+        node["name"]: int(node.get("delay") or 0)
+        for node in report.get("nodes", [])
+        if node.get("alive") and node.get("name")
+    }
+    logger.info("Mihomo authoritative result: %d/%d nodes alive",
+                len(alive), len(all_proxies))
+    return alive
+
+
+def load_proxies_for_validation(settings: dict, input_path: Optional[str] = None) -> List[dict]:
+    """Load proxies from clash yaml; default to configured mihomo input."""
+    if input_path:
+        path = Path(input_path)
+        if not path.is_absolute():
+            path = PROJECT_ROOT / path
+    else:
+        default = settings.get("mihomo", {}).get("input", "output/clash.yaml")
+        path = PROJECT_ROOT / default
+
+    if not path.exists():
+        raise FileNotFoundError(f"Input file not found: {path}")
+
+    with open(path, "r", encoding="utf-8") as f:
+        data = yaml.safe_load(f) or {}
+    proxies = data.get("proxies") or []
+    if not proxies:
+        raise ValueError(f"No proxies in {path}")
+    return proxies

@@ -8,6 +8,7 @@ Usage:
     python scripts/run.py format           # Format output only
     python scripts/run.py update-sources   # Update subscription source URLs
     python scripts/run.py update-geoip     # Download fresh GeoIP database
+    python scripts/run.py clash-validate   # Validate nodes via standalone Mihomo
 """
 
 import sys
@@ -34,6 +35,9 @@ from core.speedtester import SpeedTester
 from core.filter import NodeFilter
 from core.formatter import NodeFormatter
 from core.geoip import ensure_geoip
+from core.clash_validator import (
+    ClashValidator, load_proxies_for_validation, authoritative_alive_via_mihomo
+)
 
 # ── Helper: per-source collection summary CSV ──────────────────────
 def _save_collect_summary(collector: Collector, sources: list, tmp_dir: str) -> None:
@@ -220,6 +224,69 @@ def run_collect(settings: dict) -> list:
         subconverter.stop()
 
 
+def _apply_mihomo_authority(filtered: dict, speedtest_results: dict,
+                            proxies: list, mihomo_alive: dict,
+                            top_n: int = 200) -> dict:
+    """Rebuild the filtered result using Mihomo's alive set as the authority.
+
+    Keeps singtools bandwidth/ping for ranking where available; nodes that only
+    Mihomo could validate (singtools couldn't test them) carry zero bandwidth and
+    sort last. Drops singtools false positives that Mihomo deems dead.
+
+    Args:
+        filtered: Original singtools filter result (for top_n via stats).
+        speedtest_results: Raw singtools results (with ``meta``).
+        proxies: Full original proxy list.
+        mihomo_alive: Mapping of alive ``name -> delay_ms`` from Mihomo.
+
+    Returns:
+        New filtered-result dict aligned with the authoritative alive set.
+    """
+    speed_map = {}
+    for entry in speedtest_results.get("meta", []):
+        info = SpeedTester.extract_speed_info(entry)
+        if info["tag"]:
+            speed_map[info["tag"]] = info
+
+    proxy_speeds = []
+    for proxy in proxies:
+        name = proxy.get("name", "")
+        if name not in mihomo_alive:
+            continue
+        info = speed_map.get(name, {})
+        proxy_speeds.append({
+            "proxy": proxy,
+            "avg_speed": info.get("avg_speed", 0) or 0,
+            "max_speed": info.get("max_speed", 0) or 0,
+            # Prefer singtools ping; fall back to Mihomo delay for recovered nodes
+            "ping": (info.get("ping", 0) or 0) or mihomo_alive.get(name, 0),
+        })
+
+    has_speed_data = any(ps["avg_speed"] > 0 for ps in proxy_speeds)
+    if has_speed_data:
+        proxy_speeds.sort(key=lambda x: x["avg_speed"], reverse=True)
+        mode = "speed"
+    else:
+        proxy_speeds.sort(key=lambda x: x["ping"] if x["ping"] > 0 else 999999)
+        mode = "ping"
+
+    top = proxy_speeds[:top_n] if top_n else proxy_speeds
+
+    return {
+        "top_proxies": [ps["proxy"] for ps in top],
+        "all_proxies": [ps["proxy"] for ps in proxy_speeds],
+        "top_proxy_speeds": top,
+        "all_proxy_speeds": proxy_speeds,
+        "stats": {
+            "total_tested": len(proxies),
+            "passed": len(proxy_speeds),
+            "top_n": len(top),
+            "mode": mode,
+            "authority": "mihomo",
+        },
+    }
+
+
 def run_speedtest(settings: dict, proxies: list = None) -> dict:
     """Run speed test phase.
 
@@ -274,8 +341,25 @@ def run_speedtest(settings: dict, proxies: list = None) -> dict:
     node_filter = NodeFilter(settings)
     filtered = node_filter.filter_results(results, proxies, output_dir)
 
-    # Save speedtest summary CSV if pre-speedtest data exists
     tmp_dir = os.path.join(get_path(settings, "output_dir"), "tmp")
+
+    # Reconcile with Mihomo. singtools (sing-box) and Mihomo support different
+    # protocols, so singtools both drops untestable nodes and occasionally
+    # mis-judges. Mihomo is authoritative on connectivity when available.
+    if settings.get("singtools", {}).get("reconcile_with_mihomo", True):
+        logger.info("=== Reconciling node validity via authoritative Mihomo ===")
+        mihomo_alive = authoritative_alive_via_mihomo(
+            settings, proxies, os.path.join(tmp_dir, "reconcile")
+        )
+        if mihomo_alive is not None:
+            top_n = settings.get("output", {}).get("top_nodes", 200)
+            filtered = _apply_mihomo_authority(
+                filtered, results, proxies, mihomo_alive, top_n
+            )
+            logger.info("Reconciled to %d alive nodes (Mihomo authoritative)",
+                        len(filtered.get("all_proxies", [])))
+
+    # Save speedtest summary CSV if pre-speedtest data exists
     source_deduped_path = os.path.join(tmp_dir, "source_deduped.json")
     if os.path.exists(source_deduped_path):
         with open(source_deduped_path, "r", encoding="utf-8") as f:
@@ -389,6 +473,32 @@ def run_update_sources(settings: dict) -> None:
     logger.info("Subscription sources updated")
 
 
+def run_clash_validate(settings: dict, input_path: str = None) -> None:
+    """Validate proxy nodes via standalone Mihomo."""
+    logger = logging.getLogger("run.clash_validate")
+    logger.info("=== Node validation via standalone Mihomo ===")
+
+    output_dir = os.path.join(get_path(settings, "output_dir"), "tmp")
+    ensure_dir(output_dir)
+
+    # Prefer merged collect output (keeps _source_id for per-source stats)
+    sub_merge = os.path.join(get_path(settings, "sub_dir"), "sub_merge_yaml.yml")
+    if input_path:
+        proxies = load_proxies_for_validation(settings, input_path)
+    elif os.path.exists(sub_merge):
+        proxies = load_proxies_for_validation(settings, sub_merge)
+        logger.info("Using merged collect file with source tags: %s", sub_merge)
+    else:
+        proxies = load_proxies_for_validation(settings, None)
+
+    sources = None
+    if any(p.get("_source_id") is not None for p in proxies):
+        sources = load_sub_sources(get_path(settings, "sub_sources"))
+
+    validator = ClashValidator(settings)
+    validator.validate_proxies(proxies, output_dir=output_dir, sources=sources)
+
+
 def run_update_geoip(settings: dict) -> None:
     """Download fresh GeoIP database."""
     logger = logging.getLogger("run.update_geoip")
@@ -410,6 +520,14 @@ def main():
     settings = load_settings()
     setup_logging(settings)
 
+    clash_input = None
+    if command == "clash-validate":
+        args = sys.argv[2:]
+        if "--input" in args:
+            idx = args.index("--input")
+            if idx + 1 < len(args):
+                clash_input = args[idx + 1]
+
     commands = {
         "all": lambda: run_all(settings),
         "collect": lambda: run_collect_and_format(settings),
@@ -417,6 +535,9 @@ def main():
         "format": lambda: run_format(settings),
         "update-sources": lambda: run_update_sources(settings),
         "update-geoip": lambda: run_update_geoip(settings),
+        "clash-validate": lambda: run_clash_validate(
+            settings, input_path=clash_input
+        ),
     }
 
     if command not in commands:

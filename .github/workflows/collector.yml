@@ -28,6 +28,8 @@ env:
   SUBCONVERTER_VERSION: 'v0.9.2'
   SUBCONVERTER_REPO: 'MetaCubeX/subconverter'
   SINGTOOLS_VERSION: 'vv0.2.0'
+  MIHOMO_VERSION: 'v1.19.27'
+  MIHOMO_REPO: 'MetaCubeX/mihomo'
   TZ: Asia/Shanghai
 
 permissions:
@@ -93,6 +95,20 @@ jobs:
           fi
           echo "singtools downloaded and extracted"
           ls -lh tools/singtools/linux/singtools
+
+      # ── Download mihomo (standalone validation core) ──────────
+      - name: Download mihomo (Linux)
+        run: |
+          mkdir -p tools/mihomo/linux
+          echo "Downloading mihomo ${{ env.MIHOMO_VERSION }} for linux amd64 (compatible)..."
+          curl -fsSL \
+            "https://github.com/${{ env.MIHOMO_REPO }}/releases/download/${{ env.MIHOMO_VERSION }}/mihomo-linux-amd64-compatible-${{ env.MIHOMO_VERSION }}.gz" \
+            -o /tmp/mihomo.gz
+          gunzip -c /tmp/mihomo.gz > tools/mihomo/linux/mihomo
+          chmod +x tools/mihomo/linux/mihomo
+          echo "mihomo downloaded and extracted"
+          ls -lh tools/mihomo/linux/mihomo
+          tools/mihomo/linux/mihomo -v || true
 
       # ── Create required directories ───────────────────────────
       - name: Create directories
@@ -211,7 +227,8 @@ jobs:
       - name: Cleanup
         if: always()
         run: |
-          # Kill any remaining subconverter process
+          # Kill any remaining subconverter / mihomo process
           pkill -f subconverter 2>/dev/null || true
+          pkill -f mihomo 2>/dev/null || true
           # Remove temp files
-          rm -f /tmp/subconverter_linux64.tar.gz /tmp/singtools_linux.tar.gz
+          rm -f /tmp/subconverter_linux64.tar.gz /tmp/singtools_linux.tar.gz /tmp/mihomo.gz

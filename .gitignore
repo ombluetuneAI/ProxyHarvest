@@ -34,6 +34,8 @@ tools/subconverter/linux64/
 tools/subconverter/windows/
 tools/singtools/linux/
 tools/singtools/windows/
+tools/mihomo/linux/
+tools/mihomo/windows/
 
 # IDE
 .vscode/
