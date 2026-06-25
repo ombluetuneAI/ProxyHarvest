@@ -509,7 +509,9 @@ def run_clash_validate(settings: dict, input_path: str = None, output_path: str 
             for node in report.get("nodes", [])
             if node.get("alive") and node.get("name")
         }
-        count = write_validated_clash(clash_input, output_path, alive_names)
+        count = write_validated_clash(
+            clash_input, output_path, alive_names, settings=settings
+        )
         logger.info("Wrote %d alive proxies to %s", count, output_path)
 
 

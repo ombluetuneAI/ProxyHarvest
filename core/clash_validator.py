@@ -7,6 +7,7 @@ import csv
 import json
 import logging
 import os
+import sys
 import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
@@ -14,7 +15,7 @@ from typing import Any, Dict, List, Optional
 
 import yaml
 
-from .config_loader import PROJECT_ROOT
+from .config_loader import PROJECT_ROOT, load_clash_template
 from .converter import FormatConverter
 from .mihomo_client import AUTO_SELECT_GROUP
 from .mihomo_manager import MihomoManager
@@ -100,7 +101,9 @@ class ClashValidator:
 
     def _print_progress(self, done: int, total: int, name: str, delay: int) -> None:
         status = f"OK {delay}ms" if delay > 0 else "FAIL"
-        print(f"[{done}/{total}] {name}: {status}", flush=True)
+        encoding = sys.stdout.encoding or "utf-8"
+        safe_name = name.encode(encoding, errors="replace").decode(encoding)
+        print(f"[{done}/{total}] {safe_name}: {status}", flush=True)
 
     def _run_delay_tests(self, proxy_names: List[str]) -> Dict[str, Dict[str, Any]]:
         """Return mapping of proxy name -> {delay, alive}."""
@@ -320,6 +323,7 @@ def write_validated_clash(
     input_path: str | Path,
     output_path: str | Path,
     alive_names: set[str],
+    settings: Optional[dict] = None,
 ) -> int:
     """Write a Clash config keeping only alive proxies and updating proxy-groups."""
     in_path = Path(input_path)
@@ -336,7 +340,19 @@ def write_validated_clash(
         p for p in base.get("proxies", [])
         if isinstance(p, dict) and p.get("name") in alive_names
     ]
-    config = FormatConverter.build_clash_config(copy.deepcopy(base), filtered)
+
+    template_path = None
+    if settings:
+        template_path = settings.get("mihomo", {}).get("template") or settings.get(
+            "paths", {}
+        ).get("clash_template")
+    template = load_clash_template(template_path)
+    config = FormatConverter.build_clash_config(template, filtered)
+
+    # Keep routing/DNS customisations from the source file.
+    for key in ("rules", "rule-providers", "dns"):
+        if key in base:
+            config[key] = copy.deepcopy(base[key])
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     with open(out_path, "w", encoding="utf-8") as f:

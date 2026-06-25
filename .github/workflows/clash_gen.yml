@@ -48,7 +48,7 @@ jobs:
           python scripts/generate_clash.py
           echo "MERGE_NODE_COUNT=$(grep -c '^\s*- name:' output/clash_merge.yaml || echo 0)" >> $GITHUB_OUTPUT
 
-      # ── Validate and write clash.yaml ───────────────────────────
+      # ── Validate and write clash_all.yaml ───────────────────────────
       - name: Download mihomo for validation
         run: |
           mkdir -p tools/mihomo/linux
@@ -58,13 +58,13 @@ jobs:
           gunzip -c /tmp/mihomo.gz > tools/mihomo/linux/mihomo
           chmod +x tools/mihomo/linux/mihomo
 
-      - name: Validate nodes and generate clash.yaml
+      - name: Validate nodes and generate clash_all.yaml
         id: validate
         run: |
           python scripts/run.py clash-validate \
             --input output/clash_merge.yaml \
-            --output output/clash.yaml
-          echo "NODE_COUNT=$(grep -c '^\s*- name:' output/clash.yaml || echo 0)" >> $GITHUB_OUTPUT
+            --output output/clash_all.yaml
+          echo "NODE_COUNT=$(grep -c '^\s*- name:' output/clash_all.yaml || echo 0)" >> $GITHUB_OUTPUT
 
       # ── Summary ───────────────────────────────────────────────
       - name: Add job summary
@@ -73,11 +73,11 @@ jobs:
           echo "## Clash Config from anaer/Sub" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "- **Merged nodes**: ${{ steps.generate.outputs.MERGE_NODE_COUNT }}" >> $GITHUB_STEP_SUMMARY
-          if [ -f output/clash.yaml ]; then
-            NODE_COUNT=$(grep -c '^\s*- name:' output/clash.yaml || echo 0)
+          if [ -f output/clash_all.yaml ]; then
+            NODE_COUNT=$(grep -c '^\s*- name:' output/clash_all.yaml || echo 0)
             echo "- **Final nodes**: ${NODE_COUNT}" >> $GITHUB_STEP_SUMMARY
-            SIZE=$(du -h output/clash.yaml | cut -f1)
-            echo "- **Output**: \`output/clash.yaml\` (${SIZE})" >> $GITHUB_STEP_SUMMARY
+            SIZE=$(du -h output/clash_all.yaml | cut -f1)
+            echo "- **Output**: \`output/clash_all.yaml\` (${SIZE})" >> $GITHUB_STEP_SUMMARY
           fi
           if [ -f output/clash_merge.yaml ]; then
             SIZE=$(du -h output/clash_merge.yaml | cut -f1)
@@ -91,7 +91,7 @@ jobs:
         with:
           name: clash-config-${{ github.run_number }}
           path: |
-            output/clash.yaml
+            output/clash_all.yaml
             output/clash_merge.yaml
           retention-days: 30
           if-no-files-found: warn
@@ -103,7 +103,7 @@ jobs:
           git config user.email "clash_gen@github.com"
           git config user.name "Clash Gen"
 
-          git add output/clash.yaml
+          git add output/clash_all.yaml
 
           if git diff --cached --quiet; then
             echo "No changes to commit"

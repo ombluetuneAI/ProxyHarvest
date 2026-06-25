@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fetch proxies from anaer/Sub, merge with existing clash.yaml, output clash_merge.yaml.
+"""Fetch proxies from anaer/Sub, merge with existing clash_all.yaml, output clash_merge.yaml.
 
 Usage:
     python scripts/generate_clash.py
@@ -24,7 +24,7 @@ from core.merger import merge_proxies_priority
 # Paths
 TEMPLATE_PATH = PROJECT_ROOT / "config" / "clash_template.yaml"
 OUTPUT_DIR = PROJECT_ROOT / "output"
-EXISTING_PATH = OUTPUT_DIR / "clash.yaml"
+EXISTING_PATH = OUTPUT_DIR / "clash_all.yaml"
 OUTPUT_PATH = OUTPUT_DIR / "clash_merge.yaml"
 
 # Remote source
@@ -32,7 +32,7 @@ REMOTE_URL = "https://raw.githubusercontent.com/anaer/Sub/main/clash.yaml"
 
 
 def _load_existing_proxies() -> list:
-    """Load proxies from existing clash.yaml if present."""
+    """Load proxies from existing clash_all.yaml if present."""
     if not EXISTING_PATH.exists():
         return []
 
@@ -71,7 +71,7 @@ def main() -> int:
     remote_proxies = [p for p in remote_proxies if isinstance(p, dict)]
     print(f"  -> {len(remote_proxies)} proxies fetched")
 
-    # 2. Load existing proxies from clash.yaml
+    # 2. Load existing proxies from clash_all.yaml
     print(f"[2/5] Loading existing proxies from {EXISTING_PATH} ...")
     existing_proxies = _load_existing_proxies()
     if not EXISTING_PATH.exists():
