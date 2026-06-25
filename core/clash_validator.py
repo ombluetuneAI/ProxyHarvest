@@ -7,6 +7,7 @@ import csv
 import json
 import logging
 import os
+import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Any, Dict, List, Optional
@@ -43,6 +44,8 @@ class ClashValidator:
             raise ValueError("No proxies to validate")
 
         os.makedirs(output_dir, exist_ok=True)
+        total = len(proxies)
+        print(f"Validating {total} nodes via mihomo ...", flush=True)
         node_results = self._validate_standalone(proxies)
 
         name_to_source = {p.get("name", ""): p.get("_source_id", -1) for p in proxies}
@@ -95,26 +98,49 @@ class ClashValidator:
         finally:
             self.manager.stop()
 
+    def _print_progress(self, done: int, total: int, name: str, delay: int) -> None:
+        status = f"OK {delay}ms" if delay > 0 else "FAIL"
+        print(f"[{done}/{total}] {name}: {status}", flush=True)
+
     def _run_delay_tests(self, proxy_names: List[str]) -> Dict[str, Dict[str, Any]]:
         """Return mapping of proxy name -> {delay, alive}."""
         use_group = bool(self.cfg.get("use_group_test", True))
         fallback_parallel = bool(self.cfg.get("parallel_fallback", True))
         max_workers = int(self.cfg.get("max_workers", 8))
+        total = len(proxy_names)
 
         results: Dict[str, Dict[str, Any]] = {}
 
         if use_group:
+            print(
+                f"Testing {total} nodes via group \"{self.group_name}\" ...",
+                flush=True,
+            )
             try:
                 delay_map = self.client.test_group_delay(self.group_name)
                 results = self._results_from_delay_map(proxy_names, delay_map)
-                if any(v.get("delay", 0) > 0 for v in results.values()):
+                alive = sum(1 for v in results.values() if v.get("delay", 0) > 0)
+                print(
+                    f"[{total}/{total}] group test complete: {alive}/{total} alive",
+                    flush=True,
+                )
+                if alive > 0:
                     logger.info("Group delay test completed via %s", self.group_name)
                     return results
+                print(
+                    "Group delay test returned no alive nodes, trying per-proxy tests",
+                    flush=True,
+                )
                 logger.warning("Group delay test returned no alive nodes, trying per-proxy tests")
             except Exception as exc:
+                print(f"Group delay test failed: {exc}", flush=True)
                 logger.warning("Group delay test failed: %s", exc)
 
         if fallback_parallel:
+            print(
+                f"Testing {total} nodes individually ({max_workers} workers) ...",
+                flush=True,
+            )
             results = self._parallel_proxy_tests(proxy_names, max_workers)
         return results
 
@@ -143,6 +169,9 @@ class ClashValidator:
         self, proxy_names: List[str], max_workers: int
     ) -> Dict[str, Dict[str, Any]]:
         results: Dict[str, Dict[str, Any]] = {}
+        total = len(proxy_names)
+        done = 0
+        lock = threading.Lock()
 
         def _test(name: str) -> tuple[str, int]:
             return name, self._test_proxy_delay_with_retry(name)
@@ -152,8 +181,13 @@ class ClashValidator:
             for future in as_completed(futures):
                 name, delay = future.result()
                 results[name] = {"delay": delay, "alive": delay > 0}
+                with lock:
+                    done += 1
+                    self._print_progress(done, total, name, delay)
         for name in proxy_names:
             results.setdefault(name, {"delay": 0, "alive": False})
+        alive = sum(1 for v in results.values() if v.get("delay", 0) > 0)
+        print(f"Per-node test complete: {alive}/{total} alive", flush=True)
         return results
 
     def _summarize_sources(
