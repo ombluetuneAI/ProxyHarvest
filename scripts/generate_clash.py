@@ -28,7 +28,7 @@ EXISTING_PATH = OUTPUT_DIR / "clash_all.yaml"
 OUTPUT_PATH = OUTPUT_DIR / "clash_merge.yaml"
 
 # Remote source
-REMOTE_URL = "https://raw.githubusercontent.com/anaer/Sub/main/clash.yaml"
+REMOTE_URL = "https://raw.githubusercontent.com/anaer/Sub/main/proxies.yaml"
 
 
 def _load_existing_proxies() -> list:

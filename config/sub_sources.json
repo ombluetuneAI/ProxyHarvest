@@ -20,7 +20,7 @@
     "id": 7,
     "remarks": "anaer/Sub",
     "site": "https://raw.githubusercontent.com/anaer/Sub",
-    "url": "https://raw.githubusercontent.com/anaer/Sub/main/clash.yaml",
+    "url": "https://raw.githubusercontent.com/anaer/Sub/main/proxies.yaml",
     "update_method": "auto",
     "enabled": true
   },
