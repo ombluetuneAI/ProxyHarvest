@@ -40,23 +40,31 @@ def merge_proxies_priority(
     priority: List[Dict[str, Any]],
     secondary: List[Dict[str, Any]],
 ) -> List[Dict[str, Any]]:
-    """Merge two proxy lists; priority wins on duplicate nodes (keeps priority name)."""
+    """Merge two proxy lists; priority wins on duplicate nodes (keeps priority name).
+
+    Node dedup uses server/port/type key; name collisions get #2, #3, ... suffixes.
+    """
     seen: Dict[str, int] = {}
+    used_names: set[str] = set()
     result: List[Dict[str, Any]] = []
 
     for proxy in priority:
         key = _dedup_key(proxy)
         if key in seen:
-            result[seen[key]] = proxy
+            idx = seen[key]
+            old_name = result[idx].get("name", "")
+            if old_name in used_names:
+                used_names.discard(old_name)
+            result[idx] = _with_unique_name(proxy, used_names)
         else:
             seen[key] = len(result)
-            result.append(proxy)
+            result.append(_with_unique_name(proxy, used_names))
 
     for proxy in secondary:
         key = _dedup_key(proxy)
         if key not in seen:
             seen[key] = len(result)
-            result.append(proxy)
+            result.append(_with_unique_name(proxy, used_names))
 
     logger.info(
         "Merge: %d + %d -> %d proxies",
@@ -65,6 +73,32 @@ def merge_proxies_priority(
         len(result),
     )
     return result
+
+
+def _allocate_unique_name(name: str, used_names: set[str]) -> str:
+    """Return a unique proxy name, appending #2, #3, ... on collision."""
+    if name not in used_names:
+        used_names.add(name)
+        return name
+    n = 2
+    while True:
+        candidate = f"{name}#{n}"
+        if candidate not in used_names:
+            used_names.add(candidate)
+            logger.info("Rename proxy: %s -> %s", name, candidate)
+            return candidate
+        n += 1
+
+
+def _with_unique_name(proxy: Dict[str, Any], used_names: set[str]) -> Dict[str, Any]:
+    """Ensure proxy has a unique name; returns a copy when renamed."""
+    name = str(proxy.get("name", ""))
+    unique = _allocate_unique_name(name, used_names)
+    if unique == name:
+        return proxy
+    renamed = dict(proxy)
+    renamed["name"] = unique
+    return renamed
 
 
 def _dedup_key(proxy: Dict[str, Any]) -> str:
