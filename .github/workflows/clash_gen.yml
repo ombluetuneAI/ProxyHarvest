@@ -2,14 +2,8 @@ name: Generate Clash Config from anaer/Sub
 
 on:
   workflow_dispatch:
-    inputs:
-      force_push:
-        description: 'Force push even if no changes'
-        required: false
-        default: 'false'
-        type: boolean
   schedule:
-    - cron: '0 4 * * *'   # daily 05:00 Asia/Shanghai
+    - cron: '0 4 * * *'   # daily 04:00 Asia/Shanghai
       timezone: Asia/Shanghai
 
 env:
@@ -113,11 +107,7 @@ jobs:
 
           if git diff --cached --quiet; then
             echo "No changes to commit"
-            if [ "${{ github.event.inputs.force_push }}" = "true" ]; then
-              git commit --allow-empty -m "chore: clash config check $(date '+%Y-%m-%d %H:%M:%S') [no changes]"
-            else
-              exit 0
-            fi
+            exit 0
           else
             git commit -m "update: clash config from anaer/Sub $(date '+%Y-%m-%d %H:%M:%S')"
           fi

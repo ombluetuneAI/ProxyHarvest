@@ -2,22 +2,9 @@ name: Collect & SpeedTest & Filter
 
 on:
   workflow_dispatch:
-    inputs:
-      force_push:
-        description: 'Force push even if no changes'
-        required: false
-        default: 'false'
-        type: boolean
   schedule:
-    - cron: '0 6 * * *'   # daily 02:00 Asia/Shanghai
+    - cron: '0 6 * * *'   # daily 06:00 Asia/Shanghai
       timezone: Asia/Shanghai
-  push:
-    branches: [ master, main ]
-    paths:
-      - 'config/**'
-      - 'core/**'
-      - 'scripts/**'
-      - 'requirements.txt'
 
 concurrency:
   group: collector-${{ github.ref }}
@@ -149,9 +136,7 @@ jobs:
 
           if git diff --cached --quiet; then
             echo "No changes to commit"
-            if [ "${{ github.event.inputs.force_push }}" = "true" ]; then
-              git commit --allow-empty -m "chore: pipeline run $(date '+%Y-%m-%d %H:%M:%S') [no changes]"
-            fi
+            exit 0
           else
             git commit -m "update: nodes refreshed $(date '+%Y-%m-%d %H:%M:%S')"
           fi
