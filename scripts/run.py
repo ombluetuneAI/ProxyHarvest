@@ -25,7 +25,7 @@ from core.config_loader import (
     load_settings, load_sub_sources, save_sub_sources, get_path, load_clash_template
 )
 from core.platform_utils import ensure_dir
-from core.converter import SubConverter, FormatConverter
+from core.converter import SubConverter, FormatConverter, dump_clash_yaml, sanitize_proxies
 from core.source_updater import SourceUpdater
 from core.collector import Collector
 from core.namer import GeoNamer
@@ -192,7 +192,7 @@ def run_speed_rank(settings: dict, proxies: list) -> list:
     tmp = _tmp_dir(settings)
     clash_input = os.path.join(tmp, "speedtest_input.yaml")
     with open(clash_input, "w", encoding="utf-8") as f:
-        yaml.dump({"proxies": proxies}, f, allow_unicode=True, sort_keys=False)
+        dump_clash_yaml({"proxies": sanitize_proxies(proxies)}, f)
     logger.info("Speed rank input: %d proxies -> %s", len(proxies), clash_input)
 
     logger.info("=== Running speed test ===")
@@ -248,7 +248,7 @@ def write_nodes_clash_merge(settings: dict, proxies: list) -> str:
     )
     config = FormatConverter.build_clash_config(template, merge_proxies)
     with open(path, "w", encoding="utf-8") as f:
-        yaml.dump(config, f, allow_unicode=True, sort_keys=False)
+        dump_clash_yaml(config, f)
 
     logger.info("Written merge Clash YAML: %s (%d proxies)", path, len(merge_proxies))
     return path
@@ -271,7 +271,7 @@ def write_nodes_clash(settings: dict, proxies: list) -> str:
     )
     config = FormatConverter.build_clash_config(template, clean)
     with open(path, "w", encoding="utf-8") as f:
-        yaml.dump(config, f, allow_unicode=True, sort_keys=False)
+        dump_clash_yaml(config, f)
 
     logger.info("Written Clash YAML: %s (%d proxies)", path, len(clean))
     return path

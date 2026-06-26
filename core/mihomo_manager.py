@@ -18,11 +18,9 @@ import subprocess
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-import yaml
-
 from .mihomo_client import MihomoClient, DEFAULT_TEST_URL, AUTO_SELECT_GROUP
 from .config_loader import load_clash_template, PROJECT_ROOT
-from .converter import FormatConverter
+from .converter import FormatConverter, dump_clash_yaml
 from .platform_utils import IS_WINDOWS, get_tool_path, wait_for_port
 
 logger = logging.getLogger(__name__)
@@ -129,7 +127,7 @@ class MihomoManager:
         self.data_dir.mkdir(parents=True, exist_ok=True)
         config_path = self.data_dir / VALIDATE_CONFIG_NAME
         with open(config_path, "w", encoding="utf-8") as f:
-            yaml.dump(config, f, allow_unicode=True, sort_keys=False)
+            dump_clash_yaml(config, f)
         return config_path
 
     # ── lifecycle ───────────────────────────────────────────────────

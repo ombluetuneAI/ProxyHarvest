@@ -16,7 +16,7 @@ from typing import Any, Dict, List, Optional
 import yaml
 
 from .config_loader import PROJECT_ROOT, load_clash_template
-from .converter import FormatConverter
+from .converter import FormatConverter, dump_clash_yaml, sanitize_proxies
 from .mihomo_client import AUTO_SELECT_GROUP
 from .mihomo_manager import MihomoManager
 
@@ -276,7 +276,7 @@ def load_proxies_for_validation(settings: dict, input_path: Optional[str] = None
     proxies = data.get("proxies") or []
     if not proxies:
         raise ValueError(f"No proxies in {path}")
-    return proxies
+    return sanitize_proxies(proxies)
 
 
 def write_validated_clash(
@@ -316,7 +316,7 @@ def write_validated_clash(
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     with open(out_path, "w", encoding="utf-8") as f:
-        yaml.dump(config, f, allow_unicode=True, sort_keys=False)
+        dump_clash_yaml(config, f)
 
     logger.info(
         "Validated Clash config: %d/%d proxies -> %s",

@@ -7,7 +7,7 @@ from typing import List, Dict, Any, Optional
 import yaml
 
 from .constants import COUNTRY_EMOJI
-from .converter import SubConverter
+from .converter import SubConverter, sanitize_proxies
 from .merger import merge_and_validate
 
 logger = logging.getLogger(__name__)
@@ -245,7 +245,7 @@ class Collector:
         except yaml.YAMLError as e:
             logger.error("Failed to parse YAML: %s", e)
 
-        return proxies
+        return sanitize_proxies(proxies)
 
     def _validate_proxy(self, proxy: Dict[str, Any]) -> bool:
         """Validate a proxy against configured rules.

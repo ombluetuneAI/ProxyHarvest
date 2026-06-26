@@ -18,7 +18,7 @@ import requests
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from core.converter import FormatConverter
+from core.converter import FormatConverter, dump_clash_yaml
 from core.merger import merge_proxies_priority
 
 # Paths
@@ -103,7 +103,7 @@ def main() -> int:
     print(f"Writing output to {OUTPUT_PATH} ...")
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
-        yaml.dump(config, f, allow_unicode=True, sort_keys=False)
+        dump_clash_yaml(config, f)
 
     file_size = os.path.getsize(OUTPUT_PATH)
     print(f"\n[OK] Generated {OUTPUT_PATH}")

@@ -1,11 +1,13 @@
 """Format conversion using subconverter API."""
 
+import io
 import os
+import re
 import json
 import base64
 import logging
 import urllib.parse
-from typing import Optional, Dict, Any, List
+from typing import Optional, Dict, Any, List, Union
 
 import requests
 import yaml
@@ -13,6 +15,90 @@ import yaml
 from .platform_utils import get_tool_path, start_subconverter, stop_subconverter, make_session
 
 logger = logging.getLogger(__name__)
+
+_SHORT_ID_HEX_RE = re.compile(r"^[0-9a-fA-F]{2,16}$")
+_SHORT_ID_LINE_RE = re.compile(r"^(\s+short-id:\s*)(\S+)\s*$", re.MULTILINE)
+
+
+def normalize_reality_short_id(value: Any) -> Optional[str]:
+    """Normalize REALITY short-id to a lowercase hex string mihomo accepts."""
+    if value is None:
+        return None
+    if isinstance(value, bool):
+        return None
+    if isinstance(value, float):
+        logger.warning("Dropping REALITY short-id parsed as float: %r", value)
+        return None
+    if isinstance(value, int):
+        text = str(value)
+    else:
+        text = str(value).strip()
+        if text.lower() in ("", "null", "none"):
+            return None
+
+    text = text.lower()
+    if not _SHORT_ID_HEX_RE.fullmatch(text):
+        logger.warning("Dropping invalid REALITY short-id: %r", value)
+        return None
+    return text
+
+
+def sanitize_proxy(proxy: Dict[str, Any]) -> Dict[str, Any]:
+    """Fix REALITY short-id types/values that break Go YAML parsers."""
+    opts = proxy.get("reality-opts")
+    if not isinstance(opts, dict) or "short-id" not in opts:
+        return proxy
+
+    normalized = normalize_reality_short_id(opts.get("short-id"))
+    updated = dict(proxy)
+    new_opts = dict(opts)
+    if normalized is None:
+        new_opts.pop("short-id", None)
+    else:
+        new_opts["short-id"] = normalized
+    updated["reality-opts"] = new_opts
+    return updated
+
+
+def sanitize_proxies(proxies: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """Sanitize REALITY short-id fields for every proxy."""
+    return [sanitize_proxy(p) for p in proxies]
+
+
+def _quote_reality_short_ids(yaml_text: str) -> str:
+    """Quote short-id scalars so YAML loaders do not coerce them to numbers."""
+
+    def _quote(match: re.Match) -> str:
+        prefix, raw = match.group(1), match.group(2)
+        if raw[0] in "\"'":
+            return match.group(0)
+        return f'{prefix}"{raw}"'
+
+    return _SHORT_ID_LINE_RE.sub(_quote, yaml_text)
+
+
+def dump_clash_yaml(
+    data: Dict[str, Any],
+    stream: Optional[Union[io.TextIOBase, str, os.PathLike]] = None,
+    *,
+    allow_unicode: bool = True,
+    sort_keys: bool = False,
+) -> Optional[str]:
+    """Dump Clash YAML with REALITY short-id values safely quoted."""
+    text = yaml.dump(
+        data,
+        allow_unicode=allow_unicode,
+        sort_keys=sort_keys,
+    )
+    text = _quote_reality_short_ids(text)
+    if stream is None:
+        return text
+    if isinstance(stream, (str, os.PathLike)):
+        with open(stream, "w", encoding="utf-8") as handle:
+            handle.write(text)
+        return None
+    stream.write(text)
+    return None
 
 
 class SubConverter:
@@ -170,7 +256,7 @@ class FormatConverter:
         """
         import copy
         config = copy.deepcopy(template)
-        config["proxies"] = proxies
+        config["proxies"] = sanitize_proxies(proxies)
 
         proxy_names = [p["name"] for p in proxies]
 
