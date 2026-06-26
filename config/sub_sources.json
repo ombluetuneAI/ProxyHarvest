@@ -9,46 +9,6 @@
     "enabled": true
   },
   {
-    "id": 1,
-    "remarks": "free.iam7.tk/clash",
-    "site": "https://free.iam7.tk/clash",
-    "url": "https://free.iam7.tk/clash/proxies",
-    "update_method": "auto",
-    "enabled": true
-  },
-  {
-    "id": 2,
-    "remarks": "pc.adlionvm.tk/clash",
-    "site": "https://pc.adlionvm.tk/clash",
-    "url": "https://pc.adlionvm.tk/clash/proxies",
-    "update_method": "auto",
-    "enabled": true
-  },
-  {
-    "id": 3,
-    "remarks": "clash.myvm.cc/clash",
-    "site": "https://clash.myvm.cc/clash",
-    "url": "https://clash.myvm.cc/clash/proxies",
-    "update_method": "auto",
-    "enabled": true
-  },
-  {
-    "id": 4,
-    "remarks": "sub.pmsub.me/base64",
-    "site": "https://sub.pmsub.me/base64",
-    "url": "https://sub.pmsub.me/base64",
-    "update_method": "auto",
-    "enabled": true
-  },
-  {
-    "id": 5,
-    "remarks": "proxies.haisto.cn/clash",
-    "site": "https://proxies.haisto.cn/clash",
-    "url": "https://proxies.haisto.cn/clash/proxies",
-    "update_method": "auto",
-    "enabled": true
-  },
-  {
     "id": 6,
     "remarks": "MahsaFreeConfig",
     "site": "https://github.com/mahsanet/MahsaFreeConfig",
@@ -58,41 +18,17 @@
   },
   {
     "id": 7,
-    "remarks": "multi-proxy-config-fetcher",
-    "site": "https://raw.githubusercontent.com/4n0nymou3",
-    "url": "https://raw.githubusercontent.com/4n0nymou3/multi-proxy-config-fetcher/refs/heads/main/configs/proxy_configs.txt",
+    "remarks": "anaer/Sub",
+    "site": "https://raw.githubusercontent.com/anaer/Sub",
+    "url": "https://raw.githubusercontent.com/anaer/Sub/main/clash.yaml",
     "update_method": "auto",
     "enabled": true
   },
   {
     "id": 8,
-    "remarks": "colatiger/v2ray-nodes",
-    "site": "https://github.com/colatiger/v2ray-nodes",
-    "url": "https://bitbucket.org/huwo1/proxy_nodes/raw/b90856fe7cb9c666223f3ad41c87d0e60c711590/proxy.md|https://bitbucket.org/huwo1/proxy_nodes/raw/f31ca9ec67b84071515729ff45b011b6b09c10f2/clash.yaml",
-    "update_method": "auto",
-    "enabled": true
-  },
-  {
-    "id": 9,
-    "remarks": "oslook/clash-freenode",
-    "site": "https://github.com/oslook/clash-freenode",
-    "url": "https://raw.githubusercontent.com/openrunner/clash-freenode/main/clash.yaml",
-    "update_method": "auto",
-    "enabled": true
-  },
-  {
-    "id": 10,
-    "remarks": "ssrsub/ssr",
-    "site": "https://github.com/ssrsub/ssr",
-    "url": "https://raw.githubusercontent.com/ssrsub/ssr/master/V2Ray|https://raw.githubusercontent.com/ssrsub/ssr/master/ss-sub|https://raw.githubusercontent.com/ssrsub/ssr/master/ssrsub|https://raw.githubusercontent.com/ssrsub/ssr/master/trojan|https://raw.githubusercontent.com/ssrsub/ssr/master/Clash.yml",
-    "update_method": "auto",
-    "enabled": true
-  },
-  {
-    "id": 11,
-    "remarks": "Leon406/SubCrawler",
-    "site": "https://github.com/Leon406/SubCrawler",
-    "url": "https://raw.githubusercontent.com/Leon406/SubCrawler/main/sub/share/all",
+    "remarks": "ProxyHarvest",
+    "site": "https://github.com/ombluetuneAI/ProxyHarvest",
+    "url": "https://raw.githubusercontent.com/ombluetuneAI/ProxyHarvest/refs/heads/master/output/clash_all.yaml|https://raw.githubusercontent.com/ombluetuneAI/ProxyHarvest/refs/heads/master/output/nodes_clash.yaml",
     "update_method": "auto",
     "enabled": true
   },
@@ -101,14 +37,6 @@
     "remarks": "mahdibland/ShadowsocksAggregator",
     "site": "https://github.com/mahdibland/ShadowsocksAggregator",
     "url": "https://raw.githubusercontent.com/mahdibland/ShadowsocksAggregator/master/Eternity",
-    "update_method": "auto",
-    "enabled": true
-  },
-  {
-    "id": 13,
-    "remarks": "iwxf/free-v2ray",
-    "site": "https://github.com/iwxf/free-v2ray",
-    "url": "https://iwxf.netlify.app",
     "update_method": "auto",
     "enabled": true
   },
@@ -129,66 +57,10 @@
     "enabled": true
   },
   {
-    "id": 16,
-    "remarks": "anaer/Sub",
-    "site": "https://github.com/anaer/Sub",
-    "url": "https://raw.githubusercontent.com/anaer/Sub/main/clash.yaml",
-    "update_method": "auto",
-    "enabled": true
-  },
-  {
-    "id": 17,
-    "remarks": "xrayfree/free-ssr-ss-v2ray-vpn-clash",
-    "site": "https://github.com/xrayfree/free-ssr-ss-v2ray-vpn-clash",
-    "url": "https://freefq.neocities.org/free.txt",
-    "update_method": "auto",
-    "enabled": true
-  },
-  {
-    "id": 18,
-    "remarks": "aiboboxx/v2rayfree",
-    "site": "https://github.com/aiboboxx/v2rayfree",
-    "url": "https://raw.githubusercontent.com/aiboboxx/v2rayfree/main/v2",
-    "update_method": "auto",
-    "enabled": true
-  },
-  {
     "id": 19,
     "remarks": "Pawdroid/Free-servers",
     "site": "https://github.com/Pawdroid/Free-servers",
     "url": "https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub",
-    "update_method": "auto",
-    "enabled": true
-  },
-  {
-    "id": 20,
-    "remarks": "clash.221207.xyz/pubclashyaml",
-    "site": "https://clash.221207.xyz/pubclashyaml",
-    "url": "https://clash.221207.xyz/pubclashyaml",
-    "update_method": "auto",
-    "enabled": true
-  },
-  {
-    "id": 21,
-    "remarks": "mfuu/v2ray",
-    "site": "https://github.com/mfuu/v2ray",
-    "url": "https://raw.githubusercontent.com/mfuu/v2ray/master/v2ray|https://raw.githubusercontent.com/umelabs/node.umelabs.dev/master/Subscribe/v2ray.md|https://raw.githubusercontent.com/adiwzx/freenode/main/adispeed.txt|https://raw.githubusercontent.com/ermaozi/get_subscribe/main/subscribe/v2ray.txt",
-    "update_method": "auto",
-    "enabled": true
-  },
-  {
-    "id": 22,
-    "remarks": "yaney01/Yaney01",
-    "site": "https://github.com/yaney01/Yaney01",
-    "url": "https://ghproxy.com//raw.githubusercontent.com/yaney01/Yaney01/main/yaney_01",
-    "update_method": "auto",
-    "enabled": true
-  },
-  {
-    "id": 23,
-    "remarks": "klausvpn.posyao.com/clash",
-    "site": "https://klausvpn.posyao.com/clash",
-    "url": "https://klausvpn.posyao.com/clash/proxies",
     "update_method": "auto",
     "enabled": true
   },
@@ -201,76 +73,11 @@
     "enabled": true
   },
   {
-    "id": 25,
-    "remarks": "proxypool.laowang.me/clash",
-    "site": "https://proxypool.laowang.me/clash",
-    "url": "https://proxypool.laowang.me/clash/proxies",
-    "update_method": "auto",
-    "enabled": true
-  },
-  {
-    "id": 26,
-    "remarks": "free.jingfu.cf/clash",
-    "site": "https://free.jingfu.cf/clash",
-    "url": "https://free.jingfu.cf/clash/proxies",
-    "update_method": "auto",
-    "enabled": true
-  },
-  {
-    "id": 27,
-    "remarks": "AzadNetCH/Clash",
-    "site": "https://github.com/AzadNetCH/Clash",
-    "url": "https://raw.githubusercontent.com/AzadNetCH/Clash/main/AzadNet.yml|https://raw.githubusercontent.com/AzadNetCH/Clash/main/AzadNet_IRAN-Direct1.yml|https://raw.githubusercontent.com/AzadNetCH/Clash/main/AzadNet_IRAN-Direct2.yml",
-    "update_method": "auto",
-    "enabled": true
-  },
-  {
-    "id": 28,
-    "remarks": "proxy.yugogo.xyz/clash",
-    "site": "https://proxy.yugogo.xyz/clash",
-    "url": "https://proxy.yugogo.xyz/clash/proxies",
-    "update_method": "auto",
-    "enabled": true
-  },
-  {
-    "id": 29,
-    "remarks": "huwo1/proxy_nodes",
-    "site": "https://bitbucket.org/huwo1/proxy_nodes/src/main",
-    "url": "https://bitbucket.org/huwo1/proxy_nodes/raw/f31ca9ec67b84071515729ff45b011b6b09c10f2/proxy.md",
-    "update_method": "auto",
-    "enabled": true
-  },
-  {
-    "id": 30,
-    "remarks": "youlianboshi.netlify.app",
-    "site": "https://youlianboshi.netlify.app",
-    "url": "https://youlianboshi.netlify.app",
-    "update_method": "auto",
-    "enabled": true
-  },
-  {
     "id": 31,
     "remarks": "jiang.netlify.app",
     "site": "https://jiang.netlify.app",
     "url": "https://jiang.netlify.app",
     "update_method": "auto",
     "enabled": true
-  },
-  {
-    "id": 32,
-    "remarks": "proxy.yiun.xyz/clash",
-    "site": "https://proxy.yiun.xyz/clash",
-    "url": "https://proxy.yiun.xyz/clash/proxies",
-    "update_method": "auto",
-    "enabled": true
-  },
-  {
-    "id": 33,
-    "remarks": "SnapdragonLee/SystemProxy",
-    "site": "https://github.com/SnapdragonLee/SystemProxy",
-    "url": "https://raw.githubusercontent.com/SnapdragonLee/SystemProxy/master/dist/clash_config.yaml|https://raw.githubusercontent.com/SnapdragonLee/SystemProxy/master/dist/clash_config_extra.yaml|https://raw.githubusercontent.com/SnapdragonLee/SystemProxy/master/dist/clash_config_extra_US.yaml",
-    "update_method": "auto",
-    "enabled": true,
-    "description": "not updating frequently"
   }
 ]
