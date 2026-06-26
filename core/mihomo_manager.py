@@ -28,6 +28,7 @@ from .platform_utils import IS_WINDOWS, get_tool_path, wait_for_port
 logger = logging.getLogger(__name__)
 
 VALIDATE_CONFIG_NAME = "proxyharvest_validate.yaml"
+MIHOMO_CORE_LOG_NAME = "mihomo_core.log"
 
 
 def _find_free_port(preferred: int) -> int:
@@ -63,6 +64,7 @@ class MihomoManager:
 
         self._process: Optional[subprocess.Popen] = None
         self._controller_port: Optional[int] = None
+        self._log_handle: Optional[Any] = None
         self.client: Optional[MihomoClient] = None
 
     # ── binary ──────────────────────────────────────────────────────
@@ -132,6 +134,18 @@ class MihomoManager:
 
     # ── lifecycle ───────────────────────────────────────────────────
 
+    def _read_core_log_tail(self, max_chars: int = 8000) -> str:
+        log_path = self.data_dir / MIHOMO_CORE_LOG_NAME
+        if not log_path.exists():
+            return ""
+        try:
+            text = log_path.read_text(encoding="utf-8", errors="replace")
+            if len(text) <= max_chars:
+                return text
+            return f"... (truncated)\n{text[-max_chars:]}"
+        except OSError as exc:
+            return f"(failed to read log: {exc})"
+
     def start(self, proxies: List[Dict[str, Any]]) -> MihomoClient:
         """Launch mihomo with a validate config and return a ready REST client."""
         binary = self.resolve_binary()
@@ -144,10 +158,12 @@ class MihomoManager:
         )
 
         cmd = [str(binary), "-d", str(self.data_dir), "-f", str(config_path)]
+        log_path = self.data_dir / MIHOMO_CORE_LOG_NAME
+        self._log_handle = open(log_path, "w", encoding="utf-8")
         popen_kwargs: Dict[str, Any] = {
             "cwd": str(binary.parent),
-            "stdout": subprocess.DEVNULL,
-            "stderr": subprocess.DEVNULL,
+            "stdout": self._log_handle,
+            "stderr": subprocess.STDOUT,
         }
         if IS_WINDOWS:
             popen_kwargs["creationflags"] = subprocess.CREATE_NEW_PROCESS_GROUP
@@ -158,11 +174,23 @@ class MihomoManager:
         logger.info("mihomo started (PID: %d)", self._process.pid)
 
         if not wait_for_port(self.host, self._controller_port, timeout=self.startup_timeout):
+            exit_code = self._process.poll()
+            log_tail = self._read_core_log_tail()
             self.stop()
-            raise ConnectionError(
-                f"独立 mihomo 内核 API 未就绪 ({self.host}:{self._controller_port})。"
-                "请检查二进制是否可执行、端口是否被占用。"
+            msg = (
+                f"独立 mihomo 内核 API 未就绪 ({self.host}:{self._controller_port}，"
+                f"等待 {self.startup_timeout}s)。"
             )
+            if exit_code is not None:
+                msg += f"进程已退出 (code={exit_code})。"
+            else:
+                msg += "进程仍在运行但端口未监听。"
+            msg += "请检查二进制是否可执行、端口是否被占用、配置是否有误。"
+            logger.error("mihomo core log saved to %s", log_path)
+            if log_tail:
+                logger.error("mihomo core log tail:\n%s", log_tail)
+                msg += f"\n--- mihomo log ({log_path.name}) ---\n{log_tail}"
+            raise ConnectionError(msg)
 
         base_url = f"http://{self.host}:{self._controller_port}"
         self.client = MihomoClient.for_http(
@@ -177,19 +205,27 @@ class MihomoManager:
         return self.client
 
     def stop(self) -> None:
-        if self._process is None:
+        if self._process is None and self._log_handle is None:
             return
         try:
-            self._process.terminate()
-            try:
-                self._process.wait(timeout=5)
-            except subprocess.TimeoutExpired:
-                self._process.kill()
-                logger.warning("Force killed standalone mihomo")
-            logger.info("Standalone mihomo stopped")
+            if self._process is not None:
+                self._process.terminate()
+                try:
+                    self._process.wait(timeout=5)
+                except subprocess.TimeoutExpired:
+                    self._process.kill()
+                    logger.warning("Force killed standalone mihomo")
+                logger.info("Standalone mihomo stopped")
         except Exception as exc:  # pragma: no cover - best effort teardown
             logger.error("Error stopping mihomo: %s", exc)
         finally:
+            if self._log_handle is not None:
+                try:
+                    self._log_handle.flush()
+                    self._log_handle.close()
+                except OSError:
+                    pass
+                self._log_handle = None
             self._process = None
             self.client = None
 

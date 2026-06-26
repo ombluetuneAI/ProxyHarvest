@@ -101,6 +101,13 @@ jobs:
         run: |
           echo "## Node Collection Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
+          if [ -f output/nodes_clash_merge.yaml ]; then
+            MERGE_COUNT=$(grep -c '^\s*- name:' output/nodes_clash_merge.yaml || echo "0")
+            SIZE=$(du -h output/nodes_clash_merge.yaml | cut -f1)
+            echo "- **nodes_clash_merge.yaml**: ${MERGE_COUNT} nodes (${SIZE})" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "- **nodes_clash_merge.yaml**: not generated" >> $GITHUB_STEP_SUMMARY
+          fi
           if [ -f output/nodes_clash.yaml ]; then
             NODE_COUNT=$(grep -c '^\s*- name:' output/nodes_clash.yaml || echo "0")
             SIZE=$(du -h output/nodes_clash.yaml | cut -f1)
@@ -108,13 +115,20 @@ jobs:
           else
             echo "- **nodes_clash.yaml**: not generated" >> $GITHUB_STEP_SUMMARY
           fi
+          if [ -f output/tmp/mihomo/mihomo_core.log ]; then
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### Mihomo core log (last 40 lines)" >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+            tail -40 output/tmp/mihomo/mihomo_core.log >> $GITHUB_STEP_SUMMARY || true
+            echo '```' >> $GITHUB_STEP_SUMMARY
+          fi
 
-      - name: Upload output artifact
-        if: success()
+      - name: Upload output directory
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: proxy-nodes-${{ github.run_number }}
-          path: output/nodes_clash.yaml
+          name: collector-output-${{ github.run_number }}
+          path: output/
           retention-days: 30
           if-no-files-found: warn
 

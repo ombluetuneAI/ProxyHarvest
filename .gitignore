@@ -9,6 +9,7 @@ config/settings.local.yaml
 output/meta*.json
 output/out*.json
 output/clash_merge.yaml
+output/nodes_clash_merge.yaml
 output/pingonly*.json
 output/singbox_*.json
 output/speedtest_singbox.json

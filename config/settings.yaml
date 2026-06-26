@@ -94,6 +94,7 @@ collector:
 
 output:
   clash_yaml: nodes_clash.yaml
+  clash_merge_yaml: nodes_clash_merge.yaml
 
 namer:
   emoji_enabled: true

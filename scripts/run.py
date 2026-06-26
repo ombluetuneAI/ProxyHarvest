@@ -130,7 +130,8 @@ def run_collect(settings: dict) -> list:
             namer.close()
 
         _save_collect_summary(collector, sources, _tmp_dir(settings))
-        logger.info("Collection complete: %d proxies", len(proxies))
+        merge_path = write_nodes_clash_merge(settings, proxies)
+        logger.info("Collection complete: %d proxies -> %s", len(proxies), merge_path)
         return proxies
 
     finally:
@@ -229,6 +230,27 @@ def run_speed_rank(settings: dict, proxies: list) -> list:
         len(proxy_speeds), mode,
     )
     return [ps["proxy"] for ps in proxy_speeds]
+
+
+def write_nodes_clash_merge(settings: dict, proxies: list) -> str:
+    """Write merged Clash YAML after multi-source collect (keeps _source_id)."""
+    logger = logging.getLogger("run.write_clash_merge")
+    output_dir = get_path(settings, "output_dir")
+    ensure_dir(output_dir)
+
+    filename = settings.get("output", {}).get("clash_merge_yaml", "nodes_clash_merge.yaml")
+    path = os.path.join(output_dir, filename)
+
+    merge_proxies = [dict(p) for p in proxies]
+    template = load_clash_template(
+        settings.get("paths", {}).get("clash_template")
+    )
+    config = FormatConverter.build_clash_config(template, merge_proxies)
+    with open(path, "w", encoding="utf-8") as f:
+        yaml.dump(config, f, allow_unicode=True, sort_keys=False)
+
+    logger.info("Written merge Clash YAML: %s (%d proxies)", path, len(merge_proxies))
+    return path
 
 
 def write_nodes_clash(settings: dict, proxies: list) -> str:

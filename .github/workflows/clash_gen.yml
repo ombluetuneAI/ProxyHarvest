@@ -83,16 +83,21 @@ jobs:
             SIZE=$(du -h output/clash_merge.yaml | cut -f1)
             echo "- **Merged**: \`output/clash_merge.yaml\` (${SIZE})" >> $GITHUB_STEP_SUMMARY
           fi
+          if [ -f output/tmp/mihomo/mihomo_core.log ]; then
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### Mihomo core log (last 40 lines)" >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+            tail -40 output/tmp/mihomo/mihomo_core.log >> $GITHUB_STEP_SUMMARY || true
+            echo '```' >> $GITHUB_STEP_SUMMARY
+          fi
 
       # ── Upload as artifact ────────────────────────────────────
-      - name: Upload artifact
+      - name: Upload output directory
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: clash-config-${{ github.run_number }}
-          path: |
-            output/clash_all.yaml
-            output/clash_merge.yaml
+          path: output/
           retention-days: 30
           if-no-files-found: warn
 
