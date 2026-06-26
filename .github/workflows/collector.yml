@@ -9,7 +9,8 @@ on:
         default: 'false'
         type: boolean
   schedule:
-    - cron: '0 */4 * * *'   # every 4 hours UTC
+    - cron: '0 6 * * *'   # daily 02:00 Asia/Shanghai
+      timezone: Asia/Shanghai
   push:
     branches: [ master, main ]
     paths:
