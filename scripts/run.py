@@ -2,7 +2,8 @@
 """ProxyHarvest - Main CLI entry point.
 
 Usage:
-    python scripts/run.py all              # Collect -> Mihomo filter -> speed rank -> nodes_clash.yaml
+    python scripts/run.py all              # Collect -> Mihomo filter -> nodes_clash.yaml
+    python scripts/run.py all --speedtest  # 同上，额外 singtools 测速排序
     python scripts/run.py clash-validate   # Validate nodes via standalone Mihomo
     python scripts/run.py clash-validate --input output/clash_merge.yaml --output output/clash_all.yaml
 """
@@ -276,8 +277,18 @@ def write_nodes_clash(settings: dict, proxies: list) -> str:
     return path
 
 
-def run_all(settings: dict) -> None:
-    """Full pipeline: collect -> Mihomo filter -> speed rank -> nodes_clash.yaml."""
+def _speedtest_enabled(settings: dict, cli_flag: bool = False) -> bool:
+    """Whether to run singtools speed rank (default off)."""
+    if cli_flag:
+        return True
+    env = os.environ.get("ENABLE_SPEEDTEST", "").strip().lower()
+    if env in ("1", "true", "yes"):
+        return True
+    return bool(settings.get("singtools", {}).get("enabled", False))
+
+
+def run_all(settings: dict, *, speedtest: bool = False) -> None:
+    """Full pipeline: collect -> Mihomo filter -> [optional speed rank] -> nodes_clash.yaml."""
     logger = logging.getLogger("run.all")
     logger.info("=" * 60)
     logger.info("ProxyHarvest - Full Pipeline")
@@ -294,8 +305,14 @@ def run_all(settings: dict) -> None:
         logger.error("No alive nodes after Mihomo filter, aborting pipeline")
         return
 
-    ranked = run_speed_rank(settings, alive)
-    output_path = write_nodes_clash(settings, ranked)
+    if speedtest:
+        logger.info("singtools speed test enabled")
+        final = run_speed_rank(settings, alive)
+    else:
+        logger.info("singtools speed test skipped (use --speedtest to enable)")
+        final = alive
+
+    output_path = write_nodes_clash(settings, final)
 
     logger.info("=" * 60)
     logger.info("Pipeline complete! Output: %s", output_path)
@@ -341,21 +358,23 @@ def main():
     settings = load_settings()
     setup_logging(settings)
 
+    extra_args = sys.argv[2:]
+    speedtest = _speedtest_enabled(settings, "--speedtest" in extra_args)
+
     clash_input = None
     clash_output = None
     if command == "clash-validate":
-        args = sys.argv[2:]
-        if "--input" in args:
-            idx = args.index("--input")
-            if idx + 1 < len(args):
-                clash_input = args[idx + 1]
-        if "--output" in args:
-            idx = args.index("--output")
-            if idx + 1 < len(args):
-                clash_output = args[idx + 1]
+        if "--input" in extra_args:
+            idx = extra_args.index("--input")
+            if idx + 1 < len(extra_args):
+                clash_input = extra_args[idx + 1]
+        if "--output" in extra_args:
+            idx = extra_args.index("--output")
+            if idx + 1 < len(extra_args):
+                clash_output = extra_args[idx + 1]
 
     commands = {
-        "all": lambda: run_all(settings),
+        "all": lambda: run_all(settings, speedtest=speedtest),
         "clash-validate": lambda: run_clash_validate(
             settings, input_path=clash_input, output_path=clash_output
         ),

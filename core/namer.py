@@ -9,6 +9,17 @@ from .constants import COUNTRY_EMOJI
 
 logger = logging.getLogger(__name__)
 
+# Regional-indicator pair at name start (e.g. 🇺🇸)
+_FLAG_PREFIX_CHARS = tuple(chr(cp) for cp in range(0x1F1E6, 0x1F1FF + 1))
+
+
+def strip_leading_flag(name: str) -> str:
+    """Remove a leading flag emoji (regional indicators) if present."""
+    if len(name) >= 2 and name[0] in _FLAG_PREFIX_CHARS and name[1] in _FLAG_PREFIX_CHARS:
+        return name[2:].lstrip()
+    return name
+
+
 # Special server name replacements
 SERVER_REPLACE = {
     "CLOUDFLARE": "RELAY",
@@ -93,10 +104,17 @@ class GeoNamer:
             logger.debug("Could not resolve hostname: %s", server)
             return None
 
-    def rename_proxies(self, proxies: list) -> list:
-        """Rename proxy nodes with GeoIP-based names.
+    def _apply_flag(self, name: str, emoji: str) -> str:
+        """Format as {emoji}{name}, replacing any existing leading flag."""
+        base = strip_leading_flag(name)
+        if not emoji or not self.namer_config.get("emoji_enabled", True):
+            return base
+        return f"{emoji}{base}"
 
-        Format: {emoji}{country_code}-{ip}-{index:04d}
+    def rename_proxies(self, proxies: list) -> list:
+        """Prefix proxy names with a GeoIP country flag.
+
+        Format: {emoji}{name} — keeps the original name (minus any leading flag).
 
         Args:
             proxies: List of proxy dictionaries.
@@ -109,7 +127,6 @@ class GeoNamer:
             return proxies
 
         result = []
-        index = 1
         excluded = 0
 
         for proxy in proxies:
@@ -137,14 +154,10 @@ class GeoNamer:
                 excluded += 1
                 continue
 
-            # Build name
             emoji = COUNTRY_EMOJI.get(country_code.upper(), "")
-            old_name = proxy.get("name", "")
-            new_name = f"{emoji}{country_code.upper()}-{ip}-{index:04d}"
-            proxy["name"] = new_name
+            proxy["name"] = self._apply_flag(proxy.get("name", ""), emoji)
 
             result.append(proxy)
-            index += 1
 
         if excluded > 0:
             logger.info("Excluded %d proxies (GeoIP or country filter)", excluded)

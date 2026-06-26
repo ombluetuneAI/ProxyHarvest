@@ -50,6 +50,7 @@ mihomo:
     windows: tools/mihomo/windows/mihomo.exe
 
 singtools:
+  enabled: false               # 默认关闭；CLI --speedtest 或 ENABLE_SPEEDTEST=1 可开启
   version: vv0.2.0
   download_base: https://github.com/Kdwkakcs/singtools/releases/download/vv0.2.0
   timeout: 600
@@ -98,7 +99,7 @@ output:
 
 namer:
   emoji_enabled: true
-  format: "{emoji}{country_code}-{ip}-{index:04d}"
+  format: "{emoji}{name}"
 
 source_updater:
   airport_aggregator_urls:

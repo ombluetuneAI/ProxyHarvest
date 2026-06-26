@@ -2,6 +2,11 @@ name: Collect & SpeedTest & Filter
 
 on:
   workflow_dispatch:
+    inputs:
+      enable_speedtest:
+        description: Run singtools speed test and sort by bandwidth
+        type: boolean
+        default: false
   schedule:
     - cron: '0 6 * * *'   # daily 06:00 Asia/Shanghai
       timezone: Asia/Shanghai
@@ -52,6 +57,7 @@ jobs:
           chmod +x tools/subconverter/linux64/subconverter
 
       - name: Download singtools (Linux)
+        if: github.event_name == 'workflow_dispatch' && inputs.enable_speedtest == true
         run: |
           mkdir -p tools/singtools/linux
           curl -fsSL \
@@ -82,6 +88,8 @@ jobs:
         run: mkdir -p .cache
 
       - name: Run pipeline
+        env:
+          ENABLE_SPEEDTEST: ${{ github.event_name == 'workflow_dispatch' && inputs.enable_speedtest == true && '1' || '0' }}
         run: python scripts/run.py all
 
       - name: Generate node summary
