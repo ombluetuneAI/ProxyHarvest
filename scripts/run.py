@@ -6,6 +6,7 @@ Usage:
     python scripts/run.py all --speedtest  # 同上，额外 singtools 测速排序
     python scripts/run.py clash-validate   # Validate nodes via standalone Mihomo
     python scripts/run.py clash-validate --input output/clash_merge.yaml --output output/clash_all.yaml
+    python scripts/run.py clash-validate-verge  # Validate via local Clash Verge (restores config after)
 """
 
 import sys
@@ -322,10 +323,19 @@ def run_all(settings: dict, *, speedtest: bool = False) -> None:
     logger.info("=" * 60)
 
 
-def run_clash_validate(settings: dict, input_path: str = None, output_path: str = None) -> None:
-    """Validate proxy nodes via standalone Mihomo."""
+def run_clash_validate(
+    settings: dict,
+    input_path: str = None,
+    output_path: str = None,
+    *,
+    backend: str = "standalone",
+) -> None:
+    """Validate proxy nodes via Mihomo (standalone) or local Clash Verge."""
     logger = logging.getLogger("run.clash_validate")
-    logger.info("=== Node validation via standalone Mihomo ===")
+    if backend == "verge":
+        logger.info("=== Node validation via local Clash Verge ===")
+    else:
+        logger.info("=== Node validation via standalone Mihomo ===")
 
     output_dir = os.path.join(_tmp_dir(settings), "clash_validate")
 
@@ -336,7 +346,7 @@ def run_clash_validate(settings: dict, input_path: str = None, output_path: str 
     if any(p.get("_source_id") is not None for p in proxies):
         sources = load_sub_sources(get_path(settings, "sub_sources"))
 
-    validator = ClashValidator(settings)
+    validator = ClashValidator(settings, backend=backend)
     report = validator.validate_proxies(proxies, output_dir=output_dir, sources=sources)
 
     if output_path:
@@ -366,7 +376,8 @@ def main():
 
     clash_input = None
     clash_output = None
-    if command == "clash-validate":
+    validate_commands = {"clash-validate", "clash-validate-verge"}
+    if command in validate_commands:
         if "--input" in extra_args:
             idx = extra_args.index("--input")
             if idx + 1 < len(extra_args):
@@ -379,7 +390,10 @@ def main():
     commands = {
         "all": lambda: run_all(settings, speedtest=speedtest),
         "clash-validate": lambda: run_clash_validate(
-            settings, input_path=clash_input, output_path=clash_output
+            settings, input_path=clash_input, output_path=clash_output, backend="standalone"
+        ),
+        "clash-validate-verge": lambda: run_clash_validate(
+            settings, input_path=clash_input, output_path=clash_output, backend="verge"
         ),
     }
 

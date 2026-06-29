@@ -19,17 +19,20 @@ from .config_loader import PROJECT_ROOT, load_clash_template
 from .converter import FormatConverter, dump_clash_yaml, sanitize_proxies
 from .mihomo_client import AUTO_SELECT_GROUP
 from .mihomo_manager import MihomoManager
+from .verge_manager import VergeManager
 
 logger = logging.getLogger(__name__)
 
 
 class ClashValidator:
-    """Run delay-based validity checks via a standalone Mihomo core."""
+    """Run delay-based validity checks via Mihomo (standalone or local Clash Verge)."""
 
-    def __init__(self, settings: dict):
+    def __init__(self, settings: dict, backend: str = "standalone"):
         self.settings = settings
         self.cfg = settings.get("mihomo", {})
+        self.backend = backend
         self.manager = MihomoManager(settings)
+        self.verge_manager = VergeManager(settings) if backend == "verge" else None
         self.client = None
         self.runtime = None
         self.group_name = self.cfg.get("test_group", AUTO_SELECT_GROUP)
@@ -46,8 +49,14 @@ class ClashValidator:
 
         os.makedirs(output_dir, exist_ok=True)
         total = len(proxies)
-        print(f"Validating {total} nodes via mihomo ...", flush=True)
-        node_results = self._validate_standalone(proxies)
+        backend_label = "clash verge" if self.backend == "verge" else "mihomo"
+        print(f"Validating {total} nodes via {backend_label} ...", flush=True)
+        if self.backend == "verge":
+            node_results = self._validate_via_verge(proxies)
+            report_backend = "clash-verge"
+        else:
+            node_results = self._validate_standalone(proxies)
+            report_backend = "mihomo-standalone"
 
         name_to_source = {p.get("name", ""): p.get("_source_id", -1) for p in proxies}
         alive = []
@@ -66,7 +75,7 @@ class ClashValidator:
         source_summary = self._summarize_sources(alive, dead, sources)
 
         report = {
-            "backend": "mihomo-standalone",
+            "backend": report_backend,
             "transport": "http",
             "test_url": self.runtime.test_url,
             "timeout_ms": self.runtime.timeout_ms,
@@ -98,6 +107,18 @@ class ClashValidator:
             )
         finally:
             self.manager.stop()
+
+    def _validate_via_verge(self, proxies: List[Dict[str, Any]]) -> Dict[str, Dict[str, Any]]:
+        """Use the local Clash Verge mihomo core; always restore original config."""
+        assert self.verge_manager is not None
+        self.client = self.verge_manager.start_validation(proxies)
+        self.runtime = self.client.runtime
+        try:
+            return self._run_delay_tests(
+                [p["name"] for p in proxies if p.get("name")]
+            )
+        finally:
+            self.verge_manager.restore()
 
     def _print_progress(self, done: int, total: int, name: str, delay: int) -> None:
         status = f"OK {delay}ms" if delay > 0 else "FAIL"
@@ -240,7 +261,8 @@ class ClashValidator:
     @staticmethod
     def _print_summary(report: dict) -> None:
         print("\n" + "=" * 64)
-        print(" MIHOMO VALIDATION")
+        title = "CLASH VERGE VALIDATION" if report.get("backend") == "clash-verge" else "MIHOMO VALIDATION"
+        print(f" {title}")
         print("=" * 64)
         print(f"Backend   : {report.get('backend')}")
         print(f"Test URL  : {report.get('test_url')}")

@@ -20,7 +20,8 @@ class MihomoRuntimeConfig:
     secret: str
     test_url: str
     timeout_ms: int
-    http_base: str
+    http_base: str = ""
+    ipc_path: str = ""
 
 
 class MihomoClient:
@@ -45,6 +46,22 @@ class MihomoClient:
         )
         return cls(runtime)
 
+    @classmethod
+    def for_ipc(
+        cls,
+        ipc_path: str,
+        secret: str = "",
+        test_url: str = DEFAULT_TEST_URL,
+        timeout_ms: int = 10000,
+    ) -> "MihomoClient":
+        runtime = MihomoRuntimeConfig(
+            secret=secret or "",
+            test_url=test_url or DEFAULT_TEST_URL,
+            timeout_ms=int(timeout_ms or 10000),
+            ipc_path=ipc_path,
+        )
+        return cls(runtime)
+
     def request(
         self,
         method: str,
@@ -52,13 +69,26 @@ class MihomoClient:
         params: Optional[dict] = None,
         json_body: Optional[dict] = None,
     ) -> Tuple[int, Any]:
+        timeout = max(30, self.runtime.timeout_ms // 1000 + 30)
+        if self.runtime.ipc_path:
+            from .mihomo_ipc import ipc_request
+
+            return ipc_request(
+                self.runtime.ipc_path,
+                method,
+                path,
+                params=params,
+                json_body=json_body,
+                secret=self.runtime.secret,
+                timeout=float(timeout),
+            )
+
         import requests
 
         headers = {}
         if self.runtime.secret:
             headers["Authorization"] = f"Bearer {self.runtime.secret}"
         url = f"{self.runtime.http_base}{path}"
-        timeout = max(30, self.runtime.timeout_ms // 1000 + 30)
         resp = requests.request(
             method.upper(),
             url,

@@ -49,6 +49,14 @@ mihomo:
     linux: tools/mihomo/linux/mihomo
     windows: tools/mihomo/windows/mihomo.exe
 
+# 使用本地 Clash Verge Rev 验证节点（clash-validate-verge）
+# 自动探测应用数据目录；也可设置环境变量 CLASH_VERGE_APP_DIR
+clash_verge:
+  app_dir: ""                    # 留空 = 自动查找
+  backup_dir: output/tmp/verge_validate
+  startup_timeout: 10            # 等待 external-controller 就绪
+  reload_timeout: 20             # 重载配置后等待 API
+
 singtools:
   enabled: false               # 默认关闭；CLI --speedtest 或 ENABLE_SPEEDTEST=1 可开启
   version: vv0.2.0
