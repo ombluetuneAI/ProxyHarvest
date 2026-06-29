@@ -28,6 +28,7 @@ from core.platform_utils import ensure_dir
 from core.converter import SubConverter, FormatConverter, dump_clash_yaml, sanitize_proxies
 from core.source_updater import SourceUpdater
 from core.collector import Collector
+from core.merger import ensure_unique_names
 from core.namer import GeoNamer
 from core.speedtester import SpeedTester
 from core.geoip import ensure_geoip
@@ -129,6 +130,8 @@ def run_collect(settings: dict) -> list:
             proxies = namer.rename_proxies(proxies)
         finally:
             namer.close()
+
+        proxies = ensure_unique_names(proxies)
 
         _save_collect_summary(collector, sources, _tmp_dir(settings))
         merge_path = write_nodes_clash_merge(settings, proxies)

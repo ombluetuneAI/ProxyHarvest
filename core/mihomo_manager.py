@@ -21,6 +21,7 @@ from typing import Any, Dict, List, Optional
 from .mihomo_client import MihomoClient, DEFAULT_TEST_URL, AUTO_SELECT_GROUP
 from .config_loader import load_clash_template, PROJECT_ROOT
 from .converter import FormatConverter, dump_clash_yaml
+from .merger import ensure_unique_names
 from .platform_utils import IS_WINDOWS, get_tool_path, wait_for_port
 
 logger = logging.getLogger(__name__)
@@ -95,6 +96,7 @@ class MihomoManager:
         for proxy in proxies:
             item = {k: v for k, v in proxy.items() if not str(k).startswith("_")}
             clean_proxies.append(item)
+        clean_proxies = ensure_unique_names(clean_proxies)
 
         config = FormatConverter.build_clash_config(template, clean_proxies)
 

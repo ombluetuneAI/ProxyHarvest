@@ -36,6 +36,18 @@ def merge_and_validate(proxies: List[Dict[str, Any]],
     return result
 
 
+def ensure_unique_names(proxies: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """Ensure every proxy has a unique name; append #2, #3, ... on collision."""
+    used_names: set[str] = set()
+    result: List[Dict[str, Any]] = []
+    for proxy in proxies:
+        result.append(_with_unique_name(proxy, used_names))
+    renamed = sum(1 for orig, new in zip(proxies, result) if orig.get("name") != new.get("name"))
+    if renamed:
+        logger.info("Unique names: renamed %d/%d proxies", renamed, len(proxies))
+    return result
+
+
 def merge_proxies_priority(
     priority: List[Dict[str, Any]],
     secondary: List[Dict[str, Any]],
