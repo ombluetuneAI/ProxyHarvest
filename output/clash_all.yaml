@@ -144,6 +144,24 @@ proxies:
     enable: true
     query-server-name: cloudflare-ech.com
   packet-encoding: xudp
+- name: 其他-008
+  type: vless
+  network: ws
+  uuid: c35050ce-01ab-45a9-91b8-54cec637d0a8
+  server: 104.26.12.222
+  servername: octopusss5.info
+  port: 443
+  tls: true
+  udp: true
+  xudp: true
+  ws-opts:
+    headers:
+      Host: octopusss5.info
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/64.0.3282.186 Safari/537.36
+    path: /udfyfws
+  client-fingerprint: chrome
+  encryption: none
 - name: 其他-009
   type: vless
   network: ws
@@ -161,6 +179,51 @@ proxies:
     early-data-header-name: Sec-WebSocket-Protocol
     max-early-data: 2560
   client-fingerprint: chrome
+- name: 其他-010
+  type: vless
+  network: http
+  uuid: eab915bc-d2df-73d1-47d0-6eb240497055
+  server: gr1.fifapes.monster
+  port: 8882
+  udp: true
+  xudp: true
+  http-opts:
+    path:
+    - /
+  encryption: none
+- name: 其他-012
+  type: vless
+  network: ws
+  uuid: a51d8a82-faec-44f4-8882-441a2e7f0ce4
+  server: 172.66.200.130
+  port: 8880
+  udp: true
+  xudp: true
+  ws-opts:
+    headers:
+      Host: spring-math-5c8c.434.workers.dev
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/64.0.3282.167 Safari/537.36
+    path: /pyip=ProxyIP.KR.CMLiussss.net
+  encryption: none
+- name: 其他-013
+  type: vless
+  network: ws
+  uuid: 7e544a9d-7667-413b-bbb0-b3bb1aac6d77
+  server: 104.26.15.137
+  servername: shegeftihaaa.net
+  port: 443
+  tls: true
+  udp: true
+  xudp: true
+  ws-opts:
+    headers:
+      Host: shegeftihaaa.net
+      User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like
+        Gecko) Chrome/50.0.2661.102 Safari/537.36
+    path: /rsedgws
+  client-fingerprint: chrome
+  encryption: none
 - name: 其他-014
   type: vless
   network: ws
@@ -284,14 +347,20 @@ proxies:
     enable: true
     query-server-name: cloudflare-ech.com
   packet-encoding: xudp
-- name: 其他-024 |811KB/s
-  type: http
-  server: bb7c1f57-t9zts0-tcmifz-1s3lb.sg.oshuawei.com
-  port: 443
-  password: fbf91120-50ba-11ef-a203-f23c91cfbbc9
-  tls: true
-  sni: bb7c1f57-t9zts0-tcmifz-1s3lb.sg.oshuawei.com
-  username: fbf91120-50ba-11ef-a203-f23c91cfbbc9
+- name: 其他-020
+  type: vless
+  network: ws
+  uuid: d1eeb74f-e5ea-45eb-9934-5376bfeb5ba4
+  server: 104.17.21.32
+  port: 8880
+  udp: true
+  xudp: true
+  ws-opts:
+    headers:
+      Host: fragrant-shape-07a0.269-144.workers.dev
+      User-Agent: Mozilla/5.0 (Windows NT 5.1; Win64; x64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/60.0.3112.90 Safari/537.36
+    path: /pyip=ProxyIP.SG.CMLiussss.net
 - name: 其他-025 |781KB/s
   type: http
   server: 02da54f5-t9zts0-tlm64c-xm0q.sg.oshuawei.com
@@ -319,6 +388,34 @@ proxies:
     path: /sg-melbi
   client-fingerprint: chrome
   encryption: none
+- name: 其他-033
+  type: vless
+  network: ws
+  uuid: 94ed4a58-dcf4-43cb-afc1-f158e14ec42d
+  server: 104.27.82.154
+  port: 8880
+  udp: true
+  xudp: true
+  ws-opts:
+    headers:
+      Host: gentle-surf-cc74.345-604.workers.dev
+      User-Agent: Mozilla/5.0 (Linux; Android 6.0; MYA-L22 Build/HUAWEIMYA-L22) AppleWebKit/537.36
+        (KHTML, like Gecko) Chrome/62.0.3202.84 Mobile Safari/537.36
+    path: /pyip=ProxyIP.SG.CMLiussss.net
+- name: 其他-035
+  type: vless
+  network: ws
+  uuid: 8bcfe782-60c4-4c09-b46c-330f1aa3741c
+  server: www.gov.ua
+  port: 8880
+  udp: true
+  xudp: true
+  ws-opts:
+    headers:
+      Host: snowy-lab-6cab.237-2da.workers.dev
+      User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like
+        Gecko) Chrome/46.0.2490.80 Safari/537.36
+    path: /pyip=ProxyIP.US.CMLiussss.net
 - name: 其他-036
   type: trojan
   network: ws
@@ -343,6 +440,20 @@ proxies:
   xudp: true
   alterId: 2
   cipher: auto
+- name: 其他-041
+  type: vless
+  network: ws
+  uuid: 565326ee-c588-4843-9472-a051578ab1ae
+  server: 162.159.156.214
+  port: 8880
+  udp: true
+  xudp: true
+  ws-opts:
+    headers:
+      Host: lucky-cell-e8c5.490-f12.workers.dev
+      User-Agent: Mozilla/5.0 (Windows NT 6.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/60.0.3112.90 Safari/537.36
+    path: /pyip=ProxyIP.KR.CMLiussss.net
 - name: 德国-001 |1.6MB/s
   type: hysteria
   server: 5.83.129.90
@@ -1358,24 +1469,6 @@ proxies:
     path: /
   client-fingerprint: chrome
   encryption: none
-- name: 其他-003#2
-  type: vless
-  network: ws
-  uuid: 659a9075-d5ab-4fd2-bf34-b37043fae832
-  server: 104.16.72.70
-  servername: nbhhh.mrcool.kdns.fr
-  port: 443
-  tls: true
-  udp: true
-  xudp: true
-  ws-opts:
-    headers:
-      Host: nbhhh.mrcool.kdns.fr
-      User-Agent: Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/66.0.3359.117 Safari/537.36
-    path: /proxyip
-  client-fingerprint: chrome
-  encryption: none
 - name: 美国-006 |2.8MB/s|TK-FR|GPT⁺-FR|GM-FR
   type: trojan
   network: ws
@@ -1427,40 +1520,6 @@ proxies:
         Mobile Safari/537.36
     path: /assignment
   client-fingerprint: chrome
-- name: 其他-017#2
-  type: vless
-  network: ws
-  uuid: 4f013568-a58b-4b04-b5dd-4d52bf1c33a4
-  server: news.microsoft.com
-  servername: amoosamiii.net
-  port: 443
-  tls: true
-  udp: true
-  xudp: true
-  ws-opts:
-    headers:
-      Host: amoosamiii.net
-      User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like
-        Gecko) Chrome/41.0.2272.118 Safari/537.36
-    path: /poiuyws
-  client-fingerprint: chrome
-  encryption: none
-- name: 其他-022 |852KB/s
-  type: http
-  server: 5b4aa1c4-t9zts0-tb592v-4lg6.sg.oshuawei.com
-  port: 443
-  password: a4c9b7cc-a816-11ed-9f65-f23c9164ca5d
-  tls: true
-  sni: 5b4aa1c4-t9zts0-tb592v-4lg6.sg.oshuawei.com
-  username: a4c9b7cc-a816-11ed-9f65-f23c9164ca5d
-- name: 其他-025 |771KB/s
-  type: http
-  server: 657c72ce-t9zts0-tcq5zn-19qpt.sg.oshuawei.com
-  port: 443
-  password: 4b9ca118-7fab-11eb-bd3a-f23c9164ca5d
-  tls: true
-  sni: 657c72ce-t9zts0-tcq5zn-19qpt.sg.oshuawei.com
-  username: 4b9ca118-7fab-11eb-bd3a-f23c9164ca5d
 - name: 其他-001#2#2#2
   type: vless
   network: ws
@@ -1545,24 +1604,6 @@ proxies:
       User-Agent: Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML,
         like Gecko) Chrome/60.0.3112.90 Safari/537.36
     path: /
-  client-fingerprint: chrome
-  encryption: none
-- name: 其他-032#2
-  type: vless
-  network: ws
-  uuid: 57d22829-187c-4f83-b757-d6e367ca6de8
-  server: blog.webex.com
-  servername: blog.webex.com.yxls.eu.cc
-  port: 443
-  tls: true
-  udp: true
-  xudp: true
-  ws-opts:
-    headers:
-      Host: blog.webex.com.yxls.eu.cc
-      User-Agent: Mozilla/5.0 (Windows; U; Windows NT 6.1; de-DE) AppleWebKit/534.17
-        (KHTML, like Gecko) Chrome/10.0.649.0 Safari/534.17
-    path: /au-mt
   client-fingerprint: chrome
   encryption: none
 - name: 其他-039 |2.4MB/s|YT-KR|GPT⁺-KR|GM-KR
@@ -1698,24 +1739,6 @@ proxies:
         Gecko) Chrome/47.0.2526.111 Safari/537.36
     path: /assignment
   client-fingerprint: chrome
-- name: 美国-014#2
-  type: vless
-  network: ws
-  uuid: 4f013568-a58b-4b04-b5dd-4d52bf1c33a4
-  server: 141.193.213.21
-  servername: amoosamiii.net
-  port: 443
-  tls: true
-  udp: true
-  xudp: true
-  ws-opts:
-    headers:
-      Host: amoosamiii.net
-      User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like
-        Gecko) Chrome/36.0.1985.143 Safari/537.36
-    path: /poiuyws
-  client-fingerprint: chrome
-  encryption: none
 - name: 美国 047
   type: trojan
   network: ws
@@ -1746,24 +1769,6 @@ proxies:
       User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML,
         like Gecko) Chrome/46.0.2490.86 Safari/537.36
     path: /jdhfyws
-- name: 美国 054
-  type: vless
-  network: ws
-  server: 141.193.213.20
-  port: 443
-  uuid: 4f013568-a58b-4b04-b5dd-4d52bf1c33a4
-  servername: amoosamiii.net
-  tls: true
-  udp: true
-  client-fingerprint: chrome
-  xudp: true
-  encryption: none
-  ws-opts:
-    headers:
-      Host: amoosamiii.net
-      User-Agent: Mozilla/5.0 (X11; Linux i686) AppleWebKit/534.30 (KHTML, like Gecko)
-        Slackware/Chrome/12.0.742.100 Safari/534.30
-    path: /poiuyws
 - name: 美国 056
   type: vless
   network: ws
@@ -1800,24 +1805,6 @@ proxies:
       User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like
         Gecko) Chrome/70.0.3538.102 Safari/537.36
     path: /
-- name: 美国 061
-  type: vless
-  network: ws
-  server: 162.159.19.67
-  port: 443
-  uuid: 659a9075-d5ab-4fd2-bf34-b37043fae832
-  servername: nbhhh.mrcool.kdns.fr
-  tls: true
-  udp: true
-  client-fingerprint: chrome
-  xudp: true
-  encryption: none
-  ws-opts:
-    headers:
-      Host: nbhhh.mrcool.kdns.fr
-      User-Agent: Mozilla/5.0 (Linux; Android 7.0; Moto C Build/NRD90M.059) AppleWebKit/537.36
-        (KHTML, like Gecko) Chrome/69.0.3497.100 Mobile Safari/537.36
-    path: /
 - name: 巴西 002
   type: trojan
   network: ws
@@ -1833,24 +1820,6 @@ proxies:
       User-Agent: Mozilla/5.0 (Unknown; Linux) AppleWebKit/538.1 (KHTML, like Gecko)
         Chrome/v1.0.0 Safari/538.1
     path: /assignment
-- name: 美国 064
-  type: vless
-  network: ws
-  server: 173.245.58.75
-  port: 443
-  uuid: 4f013568-a58b-4b04-b5dd-4d52bf1c33a4
-  servername: amoosamiii.net
-  tls: true
-  udp: true
-  client-fingerprint: chrome
-  xudp: true
-  encryption: none
-  ws-opts:
-    headers:
-      Host: amoosamiii.net
-      User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like
-        Gecko) Chrome/49.0.2623.112 Safari/537.36
-    path: /poiuyws
 - name: 美国 066
   type: vless
   network: ws
@@ -1869,93 +1838,6 @@ proxies:
       User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML,
         like Gecko) Chrome/55.0.2883.87 Safari/537.36
     path: /
-- name: 美国 069
-  type: vless
-  network: ws
-  server: 104.18.42.98
-  port: 443
-  uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
-  servername: t1s1.rittbo.kdns.fr
-  tls: true
-  udp: true
-  client-fingerprint: chrome
-  xudp: true
-  encryption: none
-  ws-opts:
-    headers:
-      Host: t1s1.rittbo.kdns.fr
-      User-Agent: Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/60.0.3112.113 Safari/537.36
-    path: /
-- name: 美国 072
-  type: vless
-  network: ws
-  server: 172.64.32.75
-  port: 443
-  uuid: 4f013568-a58b-4b04-b5dd-4d52bf1c33a4
-  servername: amoosamiii.net
-  tls: true
-  udp: true
-  client-fingerprint: chrome
-  xudp: true
-  encryption: none
-  ws-opts:
-    headers:
-      Host: amoosamiii.net
-      User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like
-        Gecko) Chrome/41.0.2272.76 Safari/537.36
-    path: /poiuyws
-- name: 美国 073
-  type: vless
-  network: ws
-  server: 104.18.41.190
-  port: 443
-  uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
-  servername: t1s1.rittbo.kdns.fr
-  tls: true
-  udp: true
-  client-fingerprint: chrome
-  xudp: true
-  encryption: none
-  ws-opts:
-    headers:
-      Host: t1s1.rittbo.kdns.fr
-      User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/56.0.2924.87 Safari/537.36
-    path: /
-- name: 美国 077
-  type: vless
-  network: ws
-  server: 172.64.149.209
-  port: 443
-  uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
-  servername: t1s1.rittbo.kdns.fr
-  tls: true
-  udp: true
-  client-fingerprint: chrome
-  xudp: true
-  encryption: none
-  ws-opts:
-    headers:
-      Host: t1s1.rittbo.kdns.fr
-      User-Agent: Mozilla/5.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/55.0.2883.87 Safari/537.36
-    path: /
-- name: 荷兰 006
-  type: trojan
-  network: ws
-  server: 45.130.125.126
-  port: 443
-  password: 86957ec0-b213-433b-a43b-51f2175e0ec3
-  udp: true
-  sni: space.byu.id.yxls.eu.cc
-  client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: space.byu.id.yxls.eu.cc
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/64.0.3282.186 Safari/537.36
-    path: /au-do
 - name: 美国 078
   type: trojan
   network: ws
@@ -2034,24 +1916,6 @@ proxies:
       User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like
         Gecko) Chrome/55.0.2883.87 Safari/537.36
     path: /assignment
-- name: 美国 088
-  type: vless
-  network: ws
-  server: 108.162.194.135
-  port: 443
-  uuid: 659a9075-d5ab-4fd2-bf34-b37043fae832
-  servername: nbhhh.mrcool.kdns.fr
-  tls: true
-  udp: true
-  client-fingerprint: chrome
-  xudp: true
-  encryption: none
-  ws-opts:
-    headers:
-      Host: nbhhh.mrcool.kdns.fr
-      User-Agent: Mozilla/5.0 (Linux; Android 5.1; A1601 Build/LMY47I) AppleWebKit/537.36
-        (KHTML, like Gecko) Chrome/52.0.2743.98 Mobile Safari/537.36
-    path: /
 - name: 美国 090
   type: trojan
   network: ws
@@ -2067,24 +1931,6 @@ proxies:
       User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like
         Gecko) Chrome/70.0.3538.67 Safari/537.36
     path: /assignment
-- name: 美国 093
-  type: vless
-  network: ws
-  server: 162.159.13.71
-  port: 443
-  uuid: 659a9075-d5ab-4fd2-bf34-b37043fae832
-  servername: nbhhh.mrcool.kdns.fr
-  tls: true
-  udp: true
-  client-fingerprint: chrome
-  xudp: true
-  encryption: none
-  ws-opts:
-    headers:
-      Host: nbhhh.mrcool.kdns.fr
-      User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/66.0.3359.117 Safari/537.36
-    path: /
 - name: 美国 094
   type: trojan
   network: ws
@@ -2163,15 +2009,6 @@ proxies:
   server: 149.88.23.202
   port: 18000
   uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-- name: 日本 040
-  type: vmess
-  network: tcp
-  server: 172.104.80.66
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
   skip-cert-verify: true
   alterId: 0
   cipher: auto
@@ -2332,22 +2169,6 @@ proxies:
   skip-cert-verify: true
   alterId: 0
   cipher: auto
-- name: 其他 404
-  type: vless
-  network: ws
-  server: fbi.gov
-  port: 443
-  uuid: 1c0abb34-4313-4acb-993d-62bf52eace71
-  servername: c.downloadphysics.ir
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: c.downloadphysics.ir
-    path: /
 - name: 其他-035 |1.0MB/s
   type: hysteria2
   server: vpn-de-002.fastervpn.world
@@ -2521,18 +2342,25 @@ proxy-groups:
   - 其他-005
   - 其他-006
   - 其他-007
+  - 其他-008
   - 其他-009
+  - 其他-010
+  - 其他-012
+  - 其他-013
   - 其他-014
   - 其他-015
   - 其他-016
   - 其他-017
   - 其他-018
   - 其他-019
-  - 其他-024 |811KB/s
+  - 其他-020
   - 其他-025 |781KB/s
   - 其他-032
+  - 其他-033
+  - 其他-035
   - 其他-036
   - 其他-037
+  - 其他-041
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
   - 澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
@@ -2669,19 +2497,14 @@ proxy-groups:
   - 韩国-003 |3.9MB/s
   - 其他-001#2
   - 其他-002#2
-  - 其他-003#2
   - 美国-006 |2.8MB/s|TK-FR|GPT⁺-FR|GM-FR
   - 其他-001#2#2
   - 其他-014#2#2
-  - 其他-017#2
-  - 其他-022 |852KB/s
-  - 其他-025 |771KB/s
   - 其他-001#2#2#2
   - 其他-003#2#2
   - 其他-022
   - 其他-029 |819KB/s
   - 其他-030#2
-  - 其他-032#2
   - 其他-039 |2.4MB/s|YT-KR|GPT⁺-KR|GM-KR
   - 德国-002
   - 德国-006
@@ -2691,36 +2514,24 @@ proxy-groups:
   - 其他-021#2
   - 其他-022#2
   - 瑞士-001
-  - 美国-014#2
   - 美国 047
   - 美国 051
-  - 美国 054
   - 美国 056
   - 美国 060
-  - 美国 061
   - 巴西 002
-  - 美国 064
   - 美国 066
-  - 美国 069
-  - 美国 072
-  - 美国 073
-  - 美国 077
-  - 荷兰 006
   - 美国 078
   - 美国 081
   - 巴西 004
   - 法国 002
   - 美国 087
-  - 美国 088
   - 美国 090
-  - 美国 093
   - 美国 094
   - 美国 102
   - 美国 103
   - 韩国 006
   - 美国 684
   - 以色列 002
-  - 日本 040
   - 澳大利亚 026
   - 美国 718
   - 美国 719
@@ -2735,7 +2546,6 @@ proxy-groups:
   - 荷兰 124
   - 韩国 016
   - 美国 1648
-  - 其他 404
   - 其他-035 |1.0MB/s
   - 拉脱维亚-001 |2.0MB/s|TK-LV|GPT⁺-LV|GM-LV
   - 法国-003 |2.3MB/s|GPT⁺-FR
@@ -2767,18 +2577,25 @@ proxy-groups:
   - 其他-005
   - 其他-006
   - 其他-007
+  - 其他-008
   - 其他-009
+  - 其他-010
+  - 其他-012
+  - 其他-013
   - 其他-014
   - 其他-015
   - 其他-016
   - 其他-017
   - 其他-018
   - 其他-019
-  - 其他-024 |811KB/s
+  - 其他-020
   - 其他-025 |781KB/s
   - 其他-032
+  - 其他-033
+  - 其他-035
   - 其他-036
   - 其他-037
+  - 其他-041
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
   - 澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
@@ -2915,19 +2732,14 @@ proxy-groups:
   - 韩国-003 |3.9MB/s
   - 其他-001#2
   - 其他-002#2
-  - 其他-003#2
   - 美国-006 |2.8MB/s|TK-FR|GPT⁺-FR|GM-FR
   - 其他-001#2#2
   - 其他-014#2#2
-  - 其他-017#2
-  - 其他-022 |852KB/s
-  - 其他-025 |771KB/s
   - 其他-001#2#2#2
   - 其他-003#2#2
   - 其他-022
   - 其他-029 |819KB/s
   - 其他-030#2
-  - 其他-032#2
   - 其他-039 |2.4MB/s|YT-KR|GPT⁺-KR|GM-KR
   - 德国-002
   - 德国-006
@@ -2937,36 +2749,24 @@ proxy-groups:
   - 其他-021#2
   - 其他-022#2
   - 瑞士-001
-  - 美国-014#2
   - 美国 047
   - 美国 051
-  - 美国 054
   - 美国 056
   - 美国 060
-  - 美国 061
   - 巴西 002
-  - 美国 064
   - 美国 066
-  - 美国 069
-  - 美国 072
-  - 美国 073
-  - 美国 077
-  - 荷兰 006
   - 美国 078
   - 美国 081
   - 巴西 004
   - 法国 002
   - 美国 087
-  - 美国 088
   - 美国 090
-  - 美国 093
   - 美国 094
   - 美国 102
   - 美国 103
   - 韩国 006
   - 美国 684
   - 以色列 002
-  - 日本 040
   - 澳大利亚 026
   - 美国 718
   - 美国 719
@@ -2981,7 +2781,6 @@ proxy-groups:
   - 荷兰 124
   - 韩国 016
   - 美国 1648
-  - 其他 404
   - 其他-035 |1.0MB/s
   - 拉脱维亚-001 |2.0MB/s|TK-LV|GPT⁺-LV|GM-LV
   - 法国-003 |2.3MB/s|GPT⁺-FR
