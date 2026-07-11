@@ -338,23 +338,20 @@ proxies:
     enable: true
     query-server-name: cloudflare-ech.com
   packet-encoding: xudp
-- name: 其他-039
+- name: 其他-040
   type: vless
   network: ws
-  uuid: c35050ce-01ab-45a9-91b8-54cec637d0a8
-  server: 104.26.12.222
-  servername: octopusss5.info
-  port: 443
-  tls: true
+  uuid: a51d8a82-faec-44f4-8882-441a2e7f0ce4
+  server: 172.66.200.130
+  port: 8880
   udp: true
   xudp: true
   ws-opts:
     headers:
-      Host: octopusss5.info
+      Host: spring-math-5c8c.434.workers.dev
       User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/64.0.3282.186 Safari/537.36
-    path: /udfyfws
-  client-fingerprint: chrome
+        like Gecko) Chrome/64.0.3282.167 Safari/537.36
+    path: /pyip=ProxyIP.KR.CMLiussss.net
   encryption: none
 - name: 其他-041
   type: vless
@@ -374,20 +371,6 @@ proxies:
     path: /rsedgws
   client-fingerprint: chrome
   encryption: none
-- name: 其他-049
-  type: vless
-  network: ws
-  uuid: 59a0424b-d36b-4685-bac5-89d50d8969a8
-  server: 104.16.100.66
-  port: 8880
-  udp: true
-  xudp: true
-  ws-opts:
-    headers:
-      Host: billowing-snowflake-f056.63-f14.workers.dev
-      User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/67.0.3396.99 Safari/537.36
-    path: /pyip=ProxyIP.JP.CMLiussss.net
 - name: 其他-052 |685KB/s
   type: http
   server: b3f437cd-ta1og0-tb08pe-luwe.sg.oshuawei.com
@@ -1274,21 +1257,6 @@ proxies:
   tls: true
   udp: true
   sni: www.bing.com
-- name: 美国-002
-  type: vless
-  network: ws
-  uuid: 86fdb625-1a7f-4784-99a6-a96b3a80fc6d
-  server: 140.248.180.30
-  servername: hamshahriesfahan.com
-  port: 443
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  tfo: false
-  ws-opts:
-    headers:
-      Host: hamshahriesfahan.com
-    path: /vip1
 - name: 美国-008 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   type: http
   server: 138.199.35.215
@@ -1349,12 +1317,6 @@ proxies:
   type: http
   server: 84.17.47.150
   port: 9002
-  skip-cert-verify: true
-  tls: true
-- name: 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
-  type: http
-  server: 5.255.118.82
-  port: 443
   skip-cert-verify: true
   tls: true
 - name: 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
@@ -2069,15 +2031,6 @@ proxies:
   skip-cert-verify: true
   alterId: 0
   cipher: auto
-- name: 美国 722
-  type: vmess
-  network: tcp
-  server: 38.114.123.42
-  port: 18000
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
 - name: 美国 723
   type: vmess
   network: tcp
@@ -2361,9 +2314,8 @@ proxy-groups:
   - 其他-029
   - 其他-033
   - 其他-035
-  - 其他-039
+  - 其他-040
   - 其他-041
-  - 其他-049
   - 其他-052 |685KB/s
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
@@ -2483,7 +2435,6 @@ proxy-groups:
   - 罗马尼亚-113 |529KB/s
   - 罗马尼亚-114 |527KB/s
   - 罗马尼亚-115 |520KB/s
-  - 美国-002
   - 美国-008 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-009 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-010 |2.4MB/s|TK-US|YT-US|GPT⁺-US|GM-US
@@ -2494,7 +2445,6 @@ proxy-groups:
   - 美国-015 |1.2MB/s|TK-US|GPT⁺-US|GM-US
   - 美国-016 |1.0MB/s|TK-US|GPT⁺-US
   - 荷兰-001 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
   - 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-005 |1.3MB/s|TK-NL|GPT⁺-NL
@@ -2546,7 +2496,6 @@ proxy-groups:
   - 美国 719
   - 美国 720
   - 美国 721
-  - 美国 722
   - 美国 723
   - 英国 032
   - 荷兰 121
@@ -2597,9 +2546,8 @@ proxy-groups:
   - 其他-029
   - 其他-033
   - 其他-035
-  - 其他-039
+  - 其他-040
   - 其他-041
-  - 其他-049
   - 其他-052 |685KB/s
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
@@ -2719,7 +2667,6 @@ proxy-groups:
   - 罗马尼亚-113 |529KB/s
   - 罗马尼亚-114 |527KB/s
   - 罗马尼亚-115 |520KB/s
-  - 美国-002
   - 美国-008 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-009 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-010 |2.4MB/s|TK-US|YT-US|GPT⁺-US|GM-US
@@ -2730,7 +2677,6 @@ proxy-groups:
   - 美国-015 |1.2MB/s|TK-US|GPT⁺-US|GM-US
   - 美国-016 |1.0MB/s|TK-US|GPT⁺-US
   - 荷兰-001 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
   - 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-005 |1.3MB/s|TK-NL|GPT⁺-NL
@@ -2782,7 +2728,6 @@ proxy-groups:
   - 美国 719
   - 美国 720
   - 美国 721
-  - 美国 722
   - 美国 723
   - 英国 032
   - 荷兰 121
