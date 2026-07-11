@@ -3,7 +3,7 @@
     "id": 0,
     "remarks": "openRunner/clash-freenode",
     "site": "https://github.com/openRunner/clash-freenode",
-    "url": "https://free.datiya.com/uploads/20260711-clash.yaml",
+    "url": "https://free.datiya.com/uploads/20260712-clash.yaml",
     "url_template": "https://free.datiya.com/uploads/{YYYYMMDD}-clash.yaml",
     "update_method": "change_date",
     "enabled": true
