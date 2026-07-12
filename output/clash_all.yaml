@@ -123,18 +123,6 @@ proxies:
     enable: true
     query-server-name: cloudflare-ech.com
   packet-encoding: xudp
-- name: 其他-007
-  type: vmess
-  network: tcp
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  server: v45.hdacd.com
-  port: 30845
-  skip-cert-verify: false
-  tls: false
-  udp: true
-  xudp: true
-  alterId: 2
-  cipher: auto
 - name: 其他-011
   type: vless
   network: ws
@@ -280,6 +268,20 @@ proxies:
     enable: true
     query-server-name: cloudflare-ech.com
   packet-encoding: xudp
+- name: 其他-027
+  type: vless
+  network: ws
+  uuid: d1eeb74f-e5ea-45eb-9934-5376bfeb5ba4
+  server: 104.17.21.32
+  port: 8880
+  udp: true
+  xudp: true
+  ws-opts:
+    headers:
+      Host: fragrant-shape-07a0.269-144.workers.dev
+      User-Agent: Mozilla/5.0 (Windows NT 5.1; Win64; x64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/60.0.3112.90 Safari/537.36
+    path: /pyip=ProxyIP.SG.CMLiussss.net
 - name: 其他-029
   type: vless
   network: ws
@@ -338,6 +340,24 @@ proxies:
     enable: true
     query-server-name: cloudflare-ech.com
   packet-encoding: xudp
+- name: 其他-039
+  type: vless
+  network: ws
+  uuid: c35050ce-01ab-45a9-91b8-54cec637d0a8
+  server: 104.26.12.222
+  servername: octopusss5.info
+  port: 443
+  tls: true
+  udp: true
+  xudp: true
+  ws-opts:
+    headers:
+      Host: octopusss5.info
+      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/64.0.3282.186 Safari/537.36
+    path: /udfyfws
+  client-fingerprint: chrome
+  encryption: none
 - name: 其他-040
   type: vless
   network: ws
@@ -371,6 +391,19 @@ proxies:
     path: /rsedgws
   client-fingerprint: chrome
   encryption: none
+- name: 其他-042
+  type: vless
+  network: xhttp
+  uuid: 17d53a3b-ba7f-4adb-8885-8bb135ee2ebe
+  server: cdn-mws.garagecloud.ru
+  servername: cdn-mws.garagecloud.ru
+  port: 443
+  tls: true
+  udp: true
+  xudp: true
+  client-fingerprint: firefox
+  xhttp-opts:
+    path: /xh/ae8091c1597a
 - name: 其他-052 |685KB/s
   type: http
   server: b3f437cd-ta1og0-tb08pe-luwe.sg.oshuawei.com
@@ -1257,6 +1290,21 @@ proxies:
   tls: true
   udp: true
   sni: www.bing.com
+- name: 美国-002
+  type: vless
+  network: ws
+  uuid: 86fdb625-1a7f-4784-99a6-a96b3a80fc6d
+  server: 140.248.180.30
+  servername: hamshahriesfahan.com
+  port: 443
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  tfo: false
+  ws-opts:
+    headers:
+      Host: hamshahriesfahan.com
+    path: /vip1
 - name: 美国-008 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   type: http
   server: 138.199.35.215
@@ -1317,6 +1365,12 @@ proxies:
   type: http
   server: 84.17.47.150
   port: 9002
+  skip-cert-verify: true
+  tls: true
+- name: 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
+  type: http
+  server: 5.255.118.82
+  port: 443
   skip-cert-verify: true
   tls: true
 - name: 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
@@ -1693,22 +1747,6 @@ proxies:
     path: /
   client-fingerprint: chrome
   encryption: none
-- name: 瑞士-001
-  type: trojan
-  network: ws
-  server: 185.18.250.252
-  port: 443
-  password: humanity
-  skip-cert-verify: true
-  udp: true
-  sni: www.calmlunch.com
-  ws-opts:
-    headers:
-      Host: www.calmlunch.com
-      User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like
-        Gecko) Chrome/47.0.2526.111 Safari/537.36
-    path: /assignment
-  client-fingerprint: chrome
 - name: 美国 047
   type: trojan
   network: ws
@@ -1775,21 +1813,6 @@ proxies:
       User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like
         Gecko) Chrome/70.0.3538.102 Safari/537.36
     path: /
-- name: 巴西 002
-  type: trojan
-  network: ws
-  server: 188.114.96.3
-  port: 443
-  password: humanity
-  udp: true
-  sni: www.calmlunch.com
-  client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: www.calmlunch.com
-      User-Agent: Mozilla/5.0 (Unknown; Linux) AppleWebKit/538.1 (KHTML, like Gecko)
-        Chrome/v1.0.0 Safari/538.1
-    path: /assignment
 - name: 美国 066
   type: vless
   network: ws
@@ -2265,20 +2288,6 @@ proxies:
   port: 443
   skip-cert-verify: true
   tls: true
-- name: 美国-026 |1.1MB/s|TK-US|YT-US|GPT⁺|GM-US
-  type: ss
-  server: 104.128.72.119
-  port: 80
-  password: YTE1ZWU4ZTEyZjc3YmEzZA==:Y2JhZTU3ODYtZjg3MC00NA==
-  udp: true
-  cipher: 2022-blake3-aes-128-gcm
-  plugin: gost-plugin
-  plugin-opts:
-    host: one.local
-    mode: websocket
-    mux: true
-    path: /ws
-    tls: false
 - name: 荷兰-001 |2.5MB/s|GPT⁺-NL
   type: http
   server: 84.17.47.123
@@ -2302,7 +2311,6 @@ proxy-groups:
   - 其他-004
   - 其他-005
   - 其他-006
-  - 其他-007
   - 其他-011
   - 其他-013
   - 其他-018
@@ -2311,11 +2319,14 @@ proxy-groups:
   - 其他-022
   - 其他-023
   - 其他-024
+  - 其他-027
   - 其他-029
   - 其他-033
   - 其他-035
+  - 其他-039
   - 其他-040
   - 其他-041
+  - 其他-042
   - 其他-052 |685KB/s
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
@@ -2435,6 +2446,7 @@ proxy-groups:
   - 罗马尼亚-113 |529KB/s
   - 罗马尼亚-114 |527KB/s
   - 罗马尼亚-115 |520KB/s
+  - 美国-002
   - 美国-008 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-009 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-010 |2.4MB/s|TK-US|YT-US|GPT⁺-US|GM-US
@@ -2445,6 +2457,7 @@ proxy-groups:
   - 美国-015 |1.2MB/s|TK-US|GPT⁺-US|GM-US
   - 美国-016 |1.0MB/s|TK-US|GPT⁺-US
   - 荷兰-001 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
+  - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
   - 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-005 |1.3MB/s|TK-NL|GPT⁺-NL
@@ -2472,12 +2485,10 @@ proxy-groups:
   - 香港-021 |819KB/s
   - 其他-021#2
   - 其他-022#2#2
-  - 瑞士-001
   - 美国 047
   - 美国 051
   - 美国 056
   - 美国 060
-  - 巴西 002
   - 美国 066
   - 美国 078
   - 美国 081
@@ -2523,7 +2534,6 @@ proxy-groups:
   - 美国-022 |2.4MB/s|TK-US|YT-US|GPT-US|GM-US
   - 美国-023 |2.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-024 |2.0MB/s|TK-US|YT-US|GPT⁺-US
-  - 美国-026 |1.1MB/s|TK-US|YT-US|GPT⁺|GM-US
   - 荷兰-001 |2.5MB/s|GPT⁺-NL
   - 西班牙-001 |1.6MB/s|TK-ES|GPT⁺-ES|GM-ES
 - name: ♻️ 自动选择
@@ -2534,7 +2544,6 @@ proxy-groups:
   - 其他-004
   - 其他-005
   - 其他-006
-  - 其他-007
   - 其他-011
   - 其他-013
   - 其他-018
@@ -2543,11 +2552,14 @@ proxy-groups:
   - 其他-022
   - 其他-023
   - 其他-024
+  - 其他-027
   - 其他-029
   - 其他-033
   - 其他-035
+  - 其他-039
   - 其他-040
   - 其他-041
+  - 其他-042
   - 其他-052 |685KB/s
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
@@ -2667,6 +2679,7 @@ proxy-groups:
   - 罗马尼亚-113 |529KB/s
   - 罗马尼亚-114 |527KB/s
   - 罗马尼亚-115 |520KB/s
+  - 美国-002
   - 美国-008 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-009 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-010 |2.4MB/s|TK-US|YT-US|GPT⁺-US|GM-US
@@ -2677,6 +2690,7 @@ proxy-groups:
   - 美国-015 |1.2MB/s|TK-US|GPT⁺-US|GM-US
   - 美国-016 |1.0MB/s|TK-US|GPT⁺-US
   - 荷兰-001 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
+  - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
   - 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-005 |1.3MB/s|TK-NL|GPT⁺-NL
@@ -2704,12 +2718,10 @@ proxy-groups:
   - 香港-021 |819KB/s
   - 其他-021#2
   - 其他-022#2#2
-  - 瑞士-001
   - 美国 047
   - 美国 051
   - 美国 056
   - 美国 060
-  - 巴西 002
   - 美国 066
   - 美国 078
   - 美国 081
@@ -2755,7 +2767,6 @@ proxy-groups:
   - 美国-022 |2.4MB/s|TK-US|YT-US|GPT-US|GM-US
   - 美国-023 |2.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-024 |2.0MB/s|TK-US|YT-US|GPT⁺-US
-  - 美国-026 |1.1MB/s|TK-US|YT-US|GPT⁺|GM-US
   - 荷兰-001 |2.5MB/s|GPT⁺-NL
   - 西班牙-001 |1.6MB/s|TK-ES|GPT⁺-ES|GM-ES
   url: http://www.gstatic.com/generate_204
