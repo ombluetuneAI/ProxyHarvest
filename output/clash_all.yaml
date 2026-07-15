@@ -18,24 +18,39 @@ dns:
     geoip: true
     geoip-code: CN
 proxies:
-- name: 其他-002
+- name: 其他-001
   type: vless
   network: ws
-  uuid: 07c87117-8472-41f6-bea8-ddcb012b9b41
-  server: 108.162.198.249
-  servername: edge-267487d0.pages.dev
+  uuid: 663cf772-829c-4bc6-893d-b7d021d42f5b
+  server: 108.162.198.39
+  servername: vp8.cc.cd
+  port: 2096
+  tls: true
+  udp: true
+  ws-opts:
+    headers:
+      Host: vp8.cc.cd
+    path: /
+  client-fingerprint: chrome
+- name: 其他-003
+  type: vless
+  network: ws
+  uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
+  server: 162.159.48.245
+  servername: t1s1.rittbo.kdns.fr
   port: 443
   tls: true
   udp: true
   xudp: true
   ws-opts:
     headers:
-      Host: edge-267487d0.pages.dev
-      User-Agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko)
-        Chrome/65.0.3325.181 Safari/537.36
-    path: /?ed=2048
+      Host: t1s1.rittbo.kdns.fr
+      User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like
+        Gecko) Chrome/47.0.2526.111 Safari/537.36
+    path: /
   client-fingerprint: chrome
-- name: 其他-003
+  encryption: none
+- name: 其他-004
   type: vless
   network: ws
   uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
@@ -60,83 +75,21 @@ proxies:
   type: vless
   network: ws
   uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
-  server: 162.159.13.196
+  server: 104.17.25.173
   servername: t1s1.rittbo.kdns.fr
-  port: 8443
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  ws-opts:
-    headers:
-      Host: t1s1.rittbo.kdns.fr
-    path: /
-  client-fingerprint: chrome
-  encryption: none
-  ech-opts:
-    _dns: https://dns.alidns.com/dns-query
-    enable: true
-    query-server-name: cloudflare-ech.com
-  packet-encoding: xudp
-- name: 其他-006
-  type: vless
-  network: ws
-  uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
-  server: 108.162.196.3
-  servername: t1s1.rittbo.kdns.fr
-  port: 443
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  ws-opts:
-    headers:
-      Host: t1s1.rittbo.kdns.fr
-    path: /
-  encryption: none
-  client-fingerprint: chrome
-  ech-opts:
-    _dns: https://dns.alidns.com/dns-query
-    enable: true
-    query-server-name: cloudflare-ech.com
-  packet-encoding: xudp
-- name: 其他-007
-  type: vless
-  network: ws
-  uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
-  server: 198.41.223.238
-  servername: t1s1.rittbo.kdns.fr
-  port: 443
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  ws-opts:
-    headers:
-      Host: t1s1.rittbo.kdns.fr
-    path: /
-  client-fingerprint: chrome
-  encryption: none
-  ech-opts:
-    _dns: https://dns.alidns.com/dns-query
-    enable: true
-    query-server-name: cloudflare-ech.com
-  packet-encoding: xudp
-- name: 其他-008
-  type: vless
-  network: ws
-  uuid: c416332e-2bde-4806-ac02-8f021c6e8f68
-  server: 162.159.36.42
-  servername: bbc.zjxc.de5.net
   port: 443
   tls: true
   udp: true
   xudp: true
   ws-opts:
     headers:
-      Host: bbc.zjxc.de5.net
-      User-Agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko)
-        Chrome/65.0.3325.181 Safari/537.36
-    path: /?proxyip=proxyip.us.fxxk.dedyn.io
+      Host: t1s1.rittbo.kdns.fr
+      User-Agent: Mozilla/5.0 (Windows NT 6.0; WOW64) AppleWebKit/537.36 (KHTML, like
+        Gecko) Chrome/51.0.2704.106 Safari/537.36
+    path: /
   client-fingerprint: chrome
-- name: 其他-009
+  encryption: none
+- name: 其他-006
   type: vless
   network: ws
   uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
@@ -157,7 +110,21 @@ proxies:
     enable: true
     query-server-name: cloudflare-ech.com
   packet-encoding: xudp
-- name: 其他-012
+- name: 其他-008
+  type: vless
+  network: ws
+  uuid: 767c5a66-bd28-440a-90c8-7ae1101a0172
+  server: www.gov.ua
+  port: 8880
+  udp: true
+  xudp: true
+  ws-opts:
+    headers:
+      Host: still-voice-1adc.135-275.workers.dev
+      User-Agent: Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.3
+        (KHTML, like Gecko) Chrome/6.0.472.63 Safari/534.3
+    path: /pyip=ProxyIP.US.CMLiussss.net
+- name: 其他-009
   type: vless
   network: ws
   uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
@@ -178,125 +145,7 @@ proxies:
     enable: true
     query-server-name: cloudflare-ech.com
   packet-encoding: xudp
-- name: 其他-014
-  type: vless
-  network: ws
-  uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
-  server: 104.17.180.39
-  servername: t1s1.rittbo.kdns.fr
-  port: 443
-  tls: true
-  udp: true
-  xudp: true
-  ws-opts:
-    headers:
-      Host: t1s1.rittbo.kdns.fr
-      User-Agent: Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko)
-        Chrome/69.0.3497.100 Safari/537.36
-    path: /
-  client-fingerprint: chrome
-  encryption: none
-- name: 其他-015
-  type: vless
-  network: ws
-  uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
-  server: 172.64.52.134
-  servername: t1s1.rittbo.kdns.fr
-  port: 8443
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  ws-opts:
-    headers:
-      Host: t1s1.rittbo.kdns.fr
-    path: /
-  client-fingerprint: chrome
-  encryption: none
-  ech-opts:
-    _dns: https://dns.alidns.com/dns-query
-    enable: true
-    query-server-name: cloudflare-ech.com
-  packet-encoding: xudp
-- name: 其他-024
-  type: vless
-  network: ws
-  uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
-  server: 104.18.45.249
-  servername: t1s1.rittbo.kdns.fr
-  port: 8443
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  ws-opts:
-    headers:
-      Host: t1s1.rittbo.kdns.fr
-    path: /
-  client-fingerprint: chrome
-  encryption: none
-  ech-opts:
-    _dns: https://dns.alidns.com/dns-query
-    enable: true
-    query-server-name: cloudflare-ech.com
-  packet-encoding: xudp
-- name: 其他-025
-  type: vless
-  network: ws
-  uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
-  server: 162.159.21.206
-  servername: t1s1.rittbo.kdns.fr
-  port: 2083
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  ws-opts:
-    headers:
-      Host: t1s1.rittbo.kdns.fr
-    path: /
-  client-fingerprint: chrome
-  encryption: none
-  ech-opts:
-    _dns: https://dns.alidns.com/dns-query
-    enable: true
-    query-server-name: cloudflare-ech.com
-  packet-encoding: xudp
-- name: 其他-026
-  type: vless
-  network: ws
-  uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
-  server: 172.64.40.84
-  servername: t1s1.rittbo.kdns.fr
-  port: 443
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  ws-opts:
-    headers:
-      Host: t1s1.rittbo.kdns.fr
-    path: /
-  encryption: none
-  client-fingerprint: chrome
-  ech-opts:
-    _dns: https://dns.alidns.com/dns-query
-    enable: true
-    query-server-name: cloudflare-ech.com
-  packet-encoding: xudp
-- name: 其他-027
-  type: vless
-  network: ws
-  uuid: b2f6aa3a-2550-4a1c-b2c0-1c94b1207217
-  server: 104.17.121.110
-  servername: terazhediii.info
-  port: 443
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  ws-opts:
-    headers:
-      Host: terazhediii.info
-    path: /hdgrbws
-  client-fingerprint: chrome
-- name: 其他-028
+- name: 其他-010
   type: vless
   network: ws
   uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
@@ -317,21 +166,266 @@ proxies:
     enable: true
     query-server-name: cloudflare-ech.com
   packet-encoding: xudp
-- name: 其他-039
+- name: 其他-011
   type: vless
   network: ws
-  uuid: 70ca8aec-42ba-41df-a874-ec9517053dec
-  server: download.yunzhongzhuan.com
-  port: 8880
+  uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
+  server: 172.64.52.134
+  servername: t1s1.rittbo.kdns.fr
+  port: 8443
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  ws-opts:
+    headers:
+      Host: t1s1.rittbo.kdns.fr
+    path: /
+  client-fingerprint: chrome
+  encryption: none
+  ech-opts:
+    _dns: https://dns.alidns.com/dns-query
+    enable: true
+    query-server-name: cloudflare-ech.com
+  packet-encoding: xudp
+- name: 其他-012
+  type: vless
+  network: ws
+  uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
+  server: 108.162.196.3
+  servername: t1s1.rittbo.kdns.fr
+  port: 443
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  ws-opts:
+    headers:
+      Host: t1s1.rittbo.kdns.fr
+    path: /
+  encryption: none
+  client-fingerprint: chrome
+  ech-opts:
+    _dns: https://dns.alidns.com/dns-query
+    enable: true
+    query-server-name: cloudflare-ech.com
+  packet-encoding: xudp
+- name: 其他-013
+  type: vless
+  network: xhttp
+  uuid: 17d53a3b-ba7f-4adb-8885-8bb135ee2ebe
+  server: cdn-mws.garagecloud.ru
+  servername: cdn-mws.garagecloud.ru
+  port: 443
+  tls: true
+  udp: true
+  xudp: true
+  client-fingerprint: firefox
+  xhttp-opts:
+    path: /xh/ae8091c1597a
+- name: 其他-014
+  type: vless
+  network: ws
+  uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
+  server: 104.18.45.249
+  servername: t1s1.rittbo.kdns.fr
+  port: 8443
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  ws-opts:
+    headers:
+      Host: t1s1.rittbo.kdns.fr
+    path: /
+  client-fingerprint: chrome
+  encryption: none
+  ech-opts:
+    _dns: https://dns.alidns.com/dns-query
+    enable: true
+    query-server-name: cloudflare-ech.com
+  packet-encoding: xudp
+- name: 其他-015
+  type: vless
+  network: http
+  uuid: eab915bc-d2df-73d1-47d0-6eb240497055
+  server: gr1.fifapes.monster
+  port: 8882
+  udp: true
+  xudp: true
+  http-opts:
+    path:
+    - /
+  encryption: none
+- name: 其他-016
+  type: vless
+  network: ws
+  uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
+  server: 104.17.180.39
+  servername: t1s1.rittbo.kdns.fr
+  port: 443
+  tls: true
   udp: true
   xudp: true
   ws-opts:
     headers:
-      Host: rough-mouse-2a3a.424-e94.workers.dev
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/54.0.2840.71 Safari/537.36
-    path: /pyip=ProxyIP.JP.CMLiussss.net
-- name: 其他-040
+      Host: t1s1.rittbo.kdns.fr
+      User-Agent: Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko)
+        Chrome/69.0.3497.100 Safari/537.36
+    path: /
+  client-fingerprint: chrome
+  encryption: none
+- name: 其他-018
+  type: vless
+  network: ws
+  uuid: 07c87117-8472-41f6-bea8-ddcb012b9b41
+  server: 108.162.198.249
+  servername: edge-267487d0.pages.dev
+  port: 443
+  tls: true
+  udp: true
+  xudp: true
+  ws-opts:
+    headers:
+      Host: edge-267487d0.pages.dev
+      User-Agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko)
+        Chrome/65.0.3325.181 Safari/537.36
+    path: /?ed=2048
+  client-fingerprint: chrome
+- name: 其他-020
+  type: vless
+  network: ws
+  uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
+  server: 162.159.13.196
+  servername: t1s1.rittbo.kdns.fr
+  port: 8443
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  ws-opts:
+    headers:
+      Host: t1s1.rittbo.kdns.fr
+    path: /
+  client-fingerprint: chrome
+  encryption: none
+  ech-opts:
+    _dns: https://dns.alidns.com/dns-query
+    enable: true
+    query-server-name: cloudflare-ech.com
+  packet-encoding: xudp
+- name: 其他-021
+  type: vless
+  network: ws
+  uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
+  server: 198.41.223.238
+  servername: t1s1.rittbo.kdns.fr
+  port: 443
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  ws-opts:
+    headers:
+      Host: t1s1.rittbo.kdns.fr
+    path: /
+  client-fingerprint: chrome
+  encryption: none
+  ech-opts:
+    _dns: https://dns.alidns.com/dns-query
+    enable: true
+    query-server-name: cloudflare-ech.com
+  packet-encoding: xudp
+- name: 其他-022
+  type: vless
+  network: ws
+  uuid: c416332e-2bde-4806-ac02-8f021c6e8f68
+  server: 162.159.36.42
+  servername: bbc.zjxc.de5.net
+  port: 443
+  tls: true
+  udp: true
+  xudp: true
+  ws-opts:
+    headers:
+      Host: bbc.zjxc.de5.net
+      User-Agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko)
+        Chrome/65.0.3325.181 Safari/537.36
+    path: /?proxyip=proxyip.us.fxxk.dedyn.io
+  client-fingerprint: chrome
+- name: 其他-023
+  type: vless
+  network: ws
+  uuid: b940be1b-3998-45d2-bf7b-06e7b6c4987a
+  server: 162.159.7.11
+  port: 443
+  tls: true
+  udp: false
+  sni: 2026071203.yzqiang.qzz.io
+  ws-opts:
+    headers:
+      Host: 2026071203.yzqiang.qzz.io
+    path: /?ed=2048
+  client-fingerprint: chrome
+- name: 其他-025
+  type: vmess
+  network: tcp
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  server: v45.hdacd.com
+  port: 30845
+  skip-cert-verify: false
+  tls: false
+  udp: true
+  xudp: true
+  alterId: 2
+  cipher: auto
+- name: 其他-032
+  type: vless
+  network: ws
+  uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
+  server: 162.159.21.206
+  servername: t1s1.rittbo.kdns.fr
+  port: 2083
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  ws-opts:
+    headers:
+      Host: t1s1.rittbo.kdns.fr
+    path: /
+  client-fingerprint: chrome
+  encryption: none
+  ech-opts:
+    _dns: https://dns.alidns.com/dns-query
+    enable: true
+    query-server-name: cloudflare-ech.com
+  packet-encoding: xudp
+- name: 其他-033
+  type: vless
+  network: ws
+  uuid: b2f6aa3a-2550-4a1c-b2c0-1c94b1207217
+  server: 104.17.121.110
+  servername: terazhediii.info
+  port: 443
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  ws-opts:
+    headers:
+      Host: terazhediii.info
+    path: /hdgrbws
+  client-fingerprint: chrome
+- name: 其他-039
+  type: vless
+  network: ws
+  uuid: b940be1b-3998-45d2-bf7b-06e7b6c4987a
+  server: 104.16.0.73
+  port: 443
+  tls: true
+  udp: false
+  sni: 2026071203.yzqiang.qzz.io
+  ws-opts:
+    headers:
+      Host: 2026071203.yzqiang.qzz.io
+    path: /?ed=2048
+  client-fingerprint: chrome
+- name: 其他-044
   type: vless
   network: ws
   uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
@@ -351,21 +445,7 @@ proxies:
     path: /
   client-fingerprint: chrome
   encryption: none
-- name: 其他-042
-  type: vless
-  network: ws
-  uuid: f9a53aa5-774e-4556-b2b7-d8b57b423b97
-  server: 162.159.21.178
-  port: 8880
-  udp: true
-  xudp: true
-  ws-opts:
-    headers:
-      Host: yellow-breeze-989b.348-9b8.workers.dev
-      User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like
-        Gecko) Chrome/69.0.3497.100 Safari/537.36
-    path: /pyip=ProxyIP.KR.CMLiussss.net
-- name: 其他-043
+- name: 其他-046
   type: vless
   network: ws
   uuid: 6680846a-8a57-4dfd-9a0e-63209cfc8535
@@ -383,6 +463,20 @@ proxies:
     path: /sg-amz
   client-fingerprint: chrome
   encryption: none
+- name: 其他-047
+  type: vless
+  network: ws
+  uuid: 2f142ede-d555-4ceb-b005-7df31b484be3
+  server: anydesk.com
+  port: 8880
+  udp: true
+  xudp: true
+  ws-opts:
+    headers:
+      Host: bitter-pine-001c.450-e0e.workers.dev
+      User-Agent: Mozilla/5.0 (Windows NT 6.0; Win64; x64) AppleWebKit/537.36 (KHTML,
+        like Gecko) Chrome/57.0.2987.133 Safari/537.36
+    path: /pyip=ProxyIP.KR.CMLiussss.net
 - name: 其他-049
   type: vless
   network: ws
@@ -400,22 +494,7 @@ proxies:
     early-data-header-name: Sec-WebSocket-Protocol
     max-early-data: 2560
   client-fingerprint: chrome
-- name: 其他-052
-  type: vless
-  network: ws
-  uuid: a51d8a82-faec-44f4-8882-441a2e7f0ce4
-  server: 172.66.200.130
-  port: 8880
-  udp: true
-  xudp: true
-  ws-opts:
-    headers:
-      Host: spring-math-5c8c.434.workers.dev
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/64.0.3282.167 Safari/537.36
-    path: /pyip=ProxyIP.KR.CMLiussss.net
-  encryption: none
-- name: 其他-053
+- name: 其他-051
   type: vless
   network: ws
   uuid: 4a1441b0-7bc8-4906-85cf-6b59c256b480
@@ -430,7 +509,7 @@ proxies:
       Host: edt2.yfqh08811.ccwu.cc
     path: /
   client-fingerprint: chrome
-- name: 其他-054
+- name: 其他-052
   type: vless
   network: ws
   uuid: 767b6340-96dc-4aa0-8013-a8af7513d920
@@ -446,7 +525,7 @@ proxies:
       Host: c7dabe95.proxy-978.pages.dev
     path: /
   client-fingerprint: chrome
-- name: 其他-057
+- name: 其他-054
   type: vmess
   network: ws
   uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
@@ -460,7 +539,7 @@ proxies:
     headers:
       Host: v2ray1.dozapp.xyz
     path: /lMnsZUN4/
-- name: 其他-059
+- name: 其他-055
   type: trojan
   network: ws
   server: 172.66.44.211
@@ -472,21 +551,16 @@ proxies:
     headers:
       Host: www.multiplydose.com
     path: /assignment
-- name: 其他-061
-  type: vless
-  network: ws
-  uuid: 49a9aa25-443b-4fab-9a85-066dd5396c57
-  server: 104.17.170.132
-  port: 8880
+- name: 其他-056
+  type: trojan
+  network: tcp
+  server: jpbgp.netvigor.cc
+  port: 19128
+  password: OccIqeORGQwiNkwS
   udp: true
-  xudp: true
-  ws-opts:
-    headers:
-      Host: mute-river-6aee.421-bd7.workers.dev
-      User-Agent: Mozilla/5.0 (Windows NT 6.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/57.0.2987.133 Safari/537.36
-    path: /pyip=ProxyIP.KR.CMLiussss.net
-- name: 其他-062
+  sni: yazhou10.dynu.net
+  client-fingerprint: chrome
+- name: 其他-058
   type: vless
   network: ws
   uuid: d1eeb74f-e5ea-45eb-9934-5376bfeb5ba4
@@ -500,19 +574,6 @@ proxies:
       User-Agent: Mozilla/5.0 (Windows NT 5.1; Win64; x64) AppleWebKit/537.36 (KHTML,
         like Gecko) Chrome/60.0.3112.90 Safari/537.36
     path: /pyip=ProxyIP.SG.CMLiussss.net
-- name: 其他-067
-  type: vless
-  network: xhttp
-  uuid: 17d53a3b-ba7f-4adb-8885-8bb135ee2ebe
-  server: cdn-mws.garagecloud.ru
-  servername: cdn-mws.garagecloud.ru
-  port: 443
-  tls: true
-  udp: true
-  xudp: true
-  client-fingerprint: firefox
-  xhttp-opts:
-    path: /xh/ae8091c1597a
 - name: 塞舌尔-002
   type: trojan
   network: ws
@@ -581,14 +642,21 @@ proxies:
   skip-cert-verify: true
   tls: true
   sni: www.bing.com
-- name: 罗马尼亚-004 |3.4MB/s|TK-RO|YT-CN|GPT⁺-RO
+- name: 罗马尼亚-004 |3.4MB/s|TK-RO|YT-UA|GPT⁺-RO|GM-UA
+  type: http
+  server: 84.239.49.215
+  port: 9002
+  skip-cert-verify: true
+  tls: true
+  sni: www.bing.com
+- name: 罗马尼亚-005 |3.4MB/s|TK-RO|YT-CN|GPT⁺-RO
   type: http
   server: 84.239.49.199
   port: 9002
   skip-cert-verify: true
   tls: true
   sni: www.bing.com
-- name: 罗马尼亚-005 |3.4MB/s|TK-RO|GPT⁺-RO|GM-RO
+- name: 罗马尼亚-006 |3.4MB/s|TK-RO|GPT⁺-RO|GM-RO
   type: http
   server: 84.239.14.147
   port: 9002
@@ -596,27 +664,20 @@ proxies:
   tls: true
   udp: true
   sni: www.bing.com
-- name: 罗马尼亚-006 |3.4MB/s|TK-RO|YT-UA|GPT⁺-RO|GM-UA
+- name: 罗马尼亚-007 |3.3MB/s|TK-RO|GPT⁺-RO|GM-RO
   type: http
-  server: 84.239.49.215
+  server: 193.176.84.35
   port: 9002
   skip-cert-verify: true
   tls: true
   sni: www.bing.com
-- name: 罗马尼亚-007 |3.3MB/s|TK-RO|YT-CN|GPT⁺-RO
+- name: 罗马尼亚-008 |3.3MB/s|TK-RO|YT-CN|GPT⁺-RO
   type: http
   server: 84.239.49.223
   port: 9002
   skip-cert-verify: true
   tls: true
   udp: true
-  sni: www.bing.com
-- name: 罗马尼亚-008 |3.3MB/s|TK-RO|GPT⁺-RO|GM-RO
-  type: http
-  server: 193.176.84.35
-  port: 9002
-  skip-cert-verify: true
-  tls: true
   sni: www.bing.com
 - name: 罗马尼亚-009 |3.2MB/s|TK-RO|YT-CN|GPT⁺-RO
   type: http
@@ -625,27 +686,27 @@ proxies:
   skip-cert-verify: true
   tls: true
   sni: www.bing.com
-- name: 罗马尼亚-010 |3.1MB/s|TK-RO|YT-US|GPT⁺-RO
-  type: http
-  server: 84.239.49.245
-  port: 9002
-  skip-cert-verify: true
-  tls: true
-  sni: www.bing.com
-- name: 罗马尼亚-011 |3.1MB/s|TK-RO|YT-RO|GPT⁺-RO|GM-RO
-  type: http
-  server: 84.239.49.165
-  port: 9002
-  skip-cert-verify: true
-  tls: true
-  sni: www.bing.com
-- name: 罗马尼亚-012 |3.1MB/s|TK-RO|GPT⁺-RO|GM-RO
+- name: 罗马尼亚-010 |3.1MB/s|TK-RO|GPT⁺-RO|GM-RO
   type: http
   server: 84.239.49.173
   port: 9002
   skip-cert-verify: true
   tls: true
   udp: true
+  sni: www.bing.com
+- name: 罗马尼亚-011 |3.1MB/s|TK-RO|YT-US|GPT⁺-RO
+  type: http
+  server: 84.239.49.245
+  port: 9002
+  skip-cert-verify: true
+  tls: true
+  sni: www.bing.com
+- name: 罗马尼亚-012 |3.1MB/s|TK-RO|YT-RO|GPT⁺-RO|GM-RO
+  type: http
+  server: 84.239.49.165
+  port: 9002
+  skip-cert-verify: true
+  tls: true
   sni: www.bing.com
 - name: 罗马尼亚-013 |2.9MB/s|TK-RO|YT-RO|GPT⁺-RO|GM-RO
   type: http
@@ -678,18 +739,18 @@ proxies:
   sni: www.bing.com
 - name: 罗马尼亚-017 |1.4MB/s
   type: http
+  server: 193.176.84.27
+  port: 9002
+  skip-cert-verify: true
+  tls: true
+  sni: www.bing.com
+- name: 罗马尼亚-018 |1.4MB/s
+  type: http
   server: 84.239.49.209
   port: 9002
   skip-cert-verify: true
   tls: true
   udp: true
-  sni: www.bing.com
-- name: 罗马尼亚-018 |1.4MB/s
-  type: http
-  server: 193.176.84.27
-  port: 9002
-  skip-cert-verify: true
-  tls: true
   sni: www.bing.com
 - name: 罗马尼亚-019 |1.3MB/s
   type: http
@@ -701,7 +762,7 @@ proxies:
   sni: www.bing.com
 - name: 罗马尼亚-020 |1.2MB/s
   type: http
-  server: 84.239.14.159
+  server: 193.176.84.32
   port: 9002
   skip-cert-verify: true
   tls: true
@@ -715,32 +776,32 @@ proxies:
   sni: www.bing.com
 - name: 罗马尼亚-022 |1.2MB/s
   type: http
-  server: 193.176.84.32
+  server: 84.239.14.159
   port: 9002
   skip-cert-verify: true
   tls: true
   sni: www.bing.com
-- name: 罗马尼亚-023 |1.1MB/s
+- name: 罗马尼亚-023 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
   type: http
-  server: 84.239.49.59
+  server: 193.176.84.30
   port: 9002
   skip-cert-verify: true
   tls: true
   sni: www.bing.com
 - name: 罗马尼亚-024 |1.1MB/s
   type: http
-  server: 84.239.49.254
-  port: 9002
-  skip-cert-verify: true
-  tls: true
-  sni: www.bing.com
-- name: 罗马尼亚-025 |1.1MB/s
-  type: http
-  server: 84.239.49.191
+  server: 84.239.49.231
   port: 9002
   skip-cert-verify: true
   tls: true
   udp: true
+  sni: www.bing.com
+- name: 罗马尼亚-025 |1.1MB/s
+  type: http
+  server: 193.176.84.40
+  port: 9002
+  skip-cert-verify: true
+  tls: true
   sni: www.bing.com
 - name: 罗马尼亚-026 |1.1MB/s
   type: http
@@ -751,41 +812,27 @@ proxies:
   sni: www.bing.com
 - name: 罗马尼亚-027 |1.1MB/s
   type: http
-  server: 84.239.49.231
+  server: 84.239.49.191
   port: 9002
   skip-cert-verify: true
   tls: true
   udp: true
   sni: www.bing.com
-- name: 罗马尼亚-028 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
+- name: 罗马尼亚-028 |1.1MB/s
   type: http
-  server: 193.176.84.30
+  server: 84.239.49.254
   port: 9002
   skip-cert-verify: true
   tls: true
   sni: www.bing.com
 - name: 罗马尼亚-029 |1.1MB/s
   type: http
-  server: 193.176.84.40
+  server: 84.239.49.59
   port: 9002
   skip-cert-verify: true
   tls: true
   sni: www.bing.com
 - name: 罗马尼亚-030 |1.0MB/s
-  type: http
-  server: 84.239.49.40
-  port: 9002
-  skip-cert-verify: true
-  tls: true
-  sni: www.bing.com
-- name: 罗马尼亚-031 |1.0MB/s
-  type: http
-  server: 84.239.49.42
-  port: 9002
-  skip-cert-verify: true
-  tls: true
-  sni: www.bing.com
-- name: 罗马尼亚-032 |1.0MB/s
   type: http
   server: 84.239.49.185
   port: 9002
@@ -793,30 +840,21 @@ proxies:
   tls: true
   udp: true
   sni: www.bing.com
-- name: 罗马尼亚-033 |1.0MB/s
-  type: http
-  server: 84.239.49.239
-  port: 9002
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  sni: www.bing.com
-- name: 罗马尼亚-034 |1.0MB/s
-  type: http
-  server: 84.239.49.38
-  port: 9002
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  sni: www.bing.com
-- name: 罗马尼亚-035 |1.0MB/s
+- name: 罗马尼亚-031 |1.0MB/s
   type: http
   server: 84.239.49.200
   port: 9002
   skip-cert-verify: true
   tls: true
   sni: www.bing.com
-- name: 罗马尼亚-036 |1.0MB/s
+- name: 罗马尼亚-032 |1.0MB/s
+  type: http
+  server: 84.239.49.171
+  port: 9002
+  skip-cert-verify: true
+  tls: true
+  sni: www.bing.com
+- name: 罗马尼亚-033 |1.0MB/s
   type: http
   server: 84.239.14.158
   port: 9002
@@ -824,51 +862,7 @@ proxies:
   tls: true
   udp: true
   sni: www.bing.com
-- name: 罗马尼亚-037 |1.0MB/s
-  type: http
-  server: 84.239.49.171
-  port: 9002
-  skip-cert-verify: true
-  tls: true
-  sni: www.bing.com
-- name: 罗马尼亚-038 |1.0MB/s
-  type: http
-  server: 84.239.49.192
-  port: 9002
-  skip-cert-verify: true
-  tls: true
-  sni: www.bing.com
-- name: 罗马尼亚-039 |1.0MB/s
-  type: http
-  server: 84.239.49.159
-  port: 9002
-  skip-cert-verify: true
-  tls: true
-  sni: www.bing.com
-- name: 罗马尼亚-040 |1.0MB/s
-  type: http
-  server: 84.239.14.146
-  port: 9002
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  sni: www.bing.com
-- name: 罗马尼亚-041 |1.0MB/s
-  type: http
-  server: 84.239.49.240
-  port: 9002
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  sni: www.bing.com
-- name: 罗马尼亚-042 |1.0MB/s
-  type: http
-  server: 84.239.49.249
-  port: 9002
-  skip-cert-verify: true
-  tls: true
-  sni: www.bing.com
-- name: 罗马尼亚-043 |1.0MB/s
+- name: 罗马尼亚-034 |1.0MB/s
   type: http
   server: 84.239.49.164
   port: 9002
@@ -876,9 +870,76 @@ proxies:
   tls: true
   udp: true
   sni: www.bing.com
-- name: 罗马尼亚-044 |1.0MB/s
+- name: 罗马尼亚-035 |1.0MB/s
+  type: http
+  server: 84.239.49.239
+  port: 9002
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  sni: www.bing.com
+- name: 罗马尼亚-036 |1.0MB/s
+  type: http
+  server: 84.239.49.38
+  port: 9002
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  sni: www.bing.com
+- name: 罗马尼亚-037 |1.0MB/s
+  type: http
+  server: 84.239.49.42
+  port: 9002
+  skip-cert-verify: true
+  tls: true
+  sni: www.bing.com
+- name: 罗马尼亚-038 |1.0MB/s
+  type: http
+  server: 84.239.14.146
+  port: 9002
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  sni: www.bing.com
+- name: 罗马尼亚-039 |1.0MB/s
   type: http
   server: 84.239.49.49
+  port: 9002
+  skip-cert-verify: true
+  tls: true
+  sni: www.bing.com
+- name: 罗马尼亚-040 |1.0MB/s
+  type: http
+  server: 84.239.49.159
+  port: 9002
+  skip-cert-verify: true
+  tls: true
+  sni: www.bing.com
+- name: 罗马尼亚-041 |1.0MB/s
+  type: http
+  server: 84.239.49.40
+  port: 9002
+  skip-cert-verify: true
+  tls: true
+  sni: www.bing.com
+- name: 罗马尼亚-042 |1.0MB/s
+  type: http
+  server: 84.239.49.192
+  port: 9002
+  skip-cert-verify: true
+  tls: true
+  sni: www.bing.com
+- name: 罗马尼亚-043 |1.0MB/s
+  type: http
+  server: 84.239.49.240
+  port: 9002
+  skip-cert-verify: true
+  tls: true
+  udp: true
+  sni: www.bing.com
+- name: 罗马尼亚-044 |1.0MB/s
+  type: http
+  server: 84.239.49.249
   port: 9002
   skip-cert-verify: true
   tls: true
@@ -1264,18 +1325,18 @@ proxies:
   sni: www.bing.com
 - name: 罗马尼亚-097 |586KB/s
   type: http
+  server: 193.176.84.25
+  port: 9002
+  skip-cert-verify: true
+  tls: true
+  sni: www.bing.com
+- name: 罗马尼亚-098 |586KB/s
+  type: http
   server: 84.239.49.212
   port: 9002
   skip-cert-verify: true
   tls: true
   udp: true
-  sni: www.bing.com
-- name: 罗马尼亚-098 |586KB/s
-  type: http
-  server: 193.176.84.25
-  port: 9002
-  skip-cert-verify: true
-  tls: true
   sni: www.bing.com
 - name: 罗马尼亚-099 |573KB/s
   type: http
@@ -1403,43 +1464,37 @@ proxies:
   tls: true
   udp: true
   sni: www.bing.com
-- name: 美国-003 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+- name: 美国-001 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   type: http
   server: 138.199.35.215
   port: 9002
   skip-cert-verify: true
   tls: true
-- name: 美国-004 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  type: http
-  server: 38.28.193.188
-  port: 443
-  skip-cert-verify: true
-  tls: true
-- name: 美国-005 |2.4MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  type: http
-  server: 156.146.59.12
-  port: 9002
-  skip-cert-verify: true
-  tls: true
-- name: 美国-006 |2.4MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+- name: 美国-003 |2.4MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   type: http
   server: 156.146.59.47
   port: 9002
   skip-cert-verify: true
   tls: true
-- name: 美国-007 |2.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+- name: 美国-004 |2.4MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  type: http
+  server: 156.146.59.12
+  port: 9002
+  skip-cert-verify: true
+  tls: true
+- name: 美国-005 |2.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   type: http
   server: 156.146.59.20
   port: 9002
   skip-cert-verify: true
   tls: true
-- name: 美国-008 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+- name: 美国-006 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   type: http
   server: 209.148.53.153
   port: 8090
   skip-cert-verify: true
   tls: true
-- name: 美国-009 |1.3MB/s
+- name: 美国-007 |1.3MB/s
   type: mieru
   server: 157.254.223.44
   port: 34567
@@ -1447,19 +1502,19 @@ proxies:
   multiplexing: MULTIPLEXING_LOW
   transport: TCP
   username: dongtaiwang.com
-- name: 美国-010 |1.2MB/s|TK-US|GPT⁺-US|GM-US
+- name: 美国-008 |1.2MB/s|TK-US|GPT⁺-US|GM-US
   type: http
   server: 198.2.210.70
   port: 443
   skip-cert-verify: true
   tls: true
-- name: 美国-011 |1.0MB/s|TK-US|GPT⁺-US
+- name: 美国-009 |1.0MB/s|TK-US|GPT⁺-US
   type: http
   server: 138.199.35.198
   port: 9002
   skip-cert-verify: true
   tls: true
-- name: 美国-015
+- name: 美国-014
   type: vless
   network: ws
   uuid: 86fdb625-1a7f-4784-99a6-a96b3a80fc6d
@@ -1480,34 +1535,34 @@ proxies:
   port: 9002
   skip-cert-verify: true
   tls: true
-- name: 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL
+- name: 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
+  type: http
+  server: 5.255.118.82
+  port: 443
+  skip-cert-verify: true
+  tls: true
+- name: 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
   type: http
   server: 51.159.225.196
   port: 23856
   skip-cert-verify: true
   tls: true
-- name: 荷兰-003 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
+- name: 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
   type: http
   server: 84.17.47.147
   port: 9002
   skip-cert-verify: true
   tls: true
-- name: 荷兰-004 |1.3MB/s|TK-NL|GPT⁺-NL
+- name: 荷兰-005 |1.3MB/s|TK-NL|GPT⁺-NL
   type: http
   server: 2.59.183.62
   port: 8443
   skip-cert-verify: true
   tls: true
-- name: 荷兰-005 |1.1MB/s|TK-NL|YT-RU|GPT⁺-NL
+- name: 荷兰-006 |1.1MB/s|TK-NL|YT-RU|GPT⁺-NL
   type: http
   server: 146.103.33.227
   port: 8443
-  skip-cert-verify: true
-  tls: true
-- name: 韩国-001 |1.7MB/s|YT-KR|GPT⁺-KR|GM-KR
-  type: http
-  server: 64.110.88.200
-  port: 30000
   skip-cert-verify: true
   tls: true
 - name: 韩国-002
@@ -1525,6 +1580,27 @@ proxies:
     method: GET
     path:
     - /
+- name: 其他-026#2
+  type: vless
+  network: ws
+  uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
+  server: 172.64.40.84
+  servername: t1s1.rittbo.kdns.fr
+  port: 443
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  ws-opts:
+    headers:
+      Host: t1s1.rittbo.kdns.fr
+    path: /
+  encryption: none
+  client-fingerprint: chrome
+  ech-opts:
+    _dns: https://dns.alidns.com/dns-query
+    enable: true
+    query-server-name: cloudflare-ech.com
+  packet-encoding: xudp
 - name: 其他-020#2
   type: vless
   network: grpc
@@ -1664,27 +1740,6 @@ proxies:
         Mobile Safari/537.36
     path: /assignment
   client-fingerprint: chrome
-- name: 其他-001#2#2#2
-  type: vless
-  network: ws
-  uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
-  server: 172.64.53.65
-  servername: t1s1.rittbo.kdns.fr
-  port: 443
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  ws-opts:
-    headers:
-      Host: t1s1.rittbo.kdns.fr
-    path: /
-  client-fingerprint: chrome
-  encryption: none
-  ech-opts:
-    _dns: https://dns.alidns.com/dns-query
-    enable: true
-    query-server-name: cloudflare-ech.com
-  packet-encoding: xudp
 - name: 其他-003#2#2
   type: vless
   network: ws
@@ -1778,24 +1833,6 @@ proxies:
   skip-cert-verify: false
   tls: false
   username: fQ67Dpe5dU
-- name: 其他-022#2#2
-  type: vless
-  network: ws
-  uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
-  server: youxuan.cf.090227.xyz
-  servername: t1s1.rittbo.kdns.fr
-  port: 443
-  tls: true
-  udp: true
-  xudp: true
-  ws-opts:
-    headers:
-      Host: t1s1.rittbo.kdns.fr
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/54.0.2840.71 Safari/537.36
-    path: /
-  client-fingerprint: chrome
-  encryption: none
 - name: 美国 047
   type: trojan
   network: ws
@@ -1826,42 +1863,6 @@ proxies:
       User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML,
         like Gecko) Chrome/46.0.2490.86 Safari/537.36
     path: /jdhfyws
-- name: 美国 056
-  type: vless
-  network: ws
-  server: 172.64.144.82
-  port: 443
-  uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
-  servername: t1s1.rittbo.kdns.fr
-  tls: true
-  udp: true
-  client-fingerprint: chrome
-  xudp: true
-  encryption: none
-  ws-opts:
-    headers:
-      Host: t1s1.rittbo.kdns.fr
-      User-Agent: Mozilla/5.0 (Linux; Android 6.0.1; SM-J700M Build/MMB29K) AppleWebKit/537.36
-        (KHTML, like Gecko) Chrome/69.0.3497.100 Mobile Safari/537.36
-    path: /
-- name: 美国 060
-  type: vless
-  network: ws
-  server: 104.26.5.60
-  port: 443
-  uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
-  servername: t1s1.rittbo.kdns.fr
-  tls: true
-  udp: true
-  client-fingerprint: chrome
-  xudp: true
-  encryption: none
-  ws-opts:
-    headers:
-      Host: t1s1.rittbo.kdns.fr
-      User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like
-        Gecko) Chrome/70.0.3538.102 Safari/537.36
-    path: /
 - name: 美国 078
   type: trojan
   network: ws
@@ -2253,12 +2254,6 @@ proxies:
   port: 9002
   skip-cert-verify: true
   tls: true
-- name: 美国-024 |2.0MB/s|TK-US|YT-US|GPT⁺-US
-  type: http
-  server: 38.28.193.1
-  port: 443
-  skip-cert-verify: true
-  tls: true
 - name: 荷兰-001 |2.5MB/s|GPT⁺-NL
   type: http
   server: 84.17.47.123
@@ -2277,34 +2272,39 @@ proxy-groups:
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - 其他-002
+  - 其他-001
   - 其他-003
+  - 其他-004
   - 其他-005
   - 其他-006
-  - 其他-007
   - 其他-008
   - 其他-009
+  - 其他-010
+  - 其他-011
   - 其他-012
+  - 其他-013
   - 其他-014
   - 其他-015
-  - 其他-024
+  - 其他-016
+  - 其他-018
+  - 其他-020
+  - 其他-021
+  - 其他-022
+  - 其他-023
   - 其他-025
-  - 其他-026
-  - 其他-027
-  - 其他-028
+  - 其他-032
+  - 其他-033
   - 其他-039
-  - 其他-040
-  - 其他-042
-  - 其他-043
+  - 其他-044
+  - 其他-046
+  - 其他-047
   - 其他-049
+  - 其他-051
   - 其他-052
-  - 其他-053
   - 其他-054
-  - 其他-057
-  - 其他-059
-  - 其他-061
-  - 其他-062
-  - 其他-067
+  - 其他-055
+  - 其他-056
+  - 其他-058
   - 塞舌尔-002
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
@@ -2312,15 +2312,15 @@ proxy-groups:
   - 罗马尼亚-001 |4.2MB/s|TK-RO|YT-UA|GPT⁺-RO|GM-UA
   - 罗马尼亚-002 |4.1MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 罗马尼亚-003 |3.5MB/s|TK-RO|YT-RO|GPT⁺-RO|GM-RO
-  - 罗马尼亚-004 |3.4MB/s|TK-RO|YT-CN|GPT⁺-RO
-  - 罗马尼亚-005 |3.4MB/s|TK-RO|GPT⁺-RO|GM-RO
-  - 罗马尼亚-006 |3.4MB/s|TK-RO|YT-UA|GPT⁺-RO|GM-UA
-  - 罗马尼亚-007 |3.3MB/s|TK-RO|YT-CN|GPT⁺-RO
-  - 罗马尼亚-008 |3.3MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 罗马尼亚-004 |3.4MB/s|TK-RO|YT-UA|GPT⁺-RO|GM-UA
+  - 罗马尼亚-005 |3.4MB/s|TK-RO|YT-CN|GPT⁺-RO
+  - 罗马尼亚-006 |3.4MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 罗马尼亚-007 |3.3MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 罗马尼亚-008 |3.3MB/s|TK-RO|YT-CN|GPT⁺-RO
   - 罗马尼亚-009 |3.2MB/s|TK-RO|YT-CN|GPT⁺-RO
-  - 罗马尼亚-010 |3.1MB/s|TK-RO|YT-US|GPT⁺-RO
-  - 罗马尼亚-011 |3.1MB/s|TK-RO|YT-RO|GPT⁺-RO|GM-RO
-  - 罗马尼亚-012 |3.1MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 罗马尼亚-010 |3.1MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 罗马尼亚-011 |3.1MB/s|TK-RO|YT-US|GPT⁺-RO
+  - 罗马尼亚-012 |3.1MB/s|TK-RO|YT-RO|GPT⁺-RO|GM-RO
   - 罗马尼亚-013 |2.9MB/s|TK-RO|YT-RO|GPT⁺-RO|GM-RO
   - 罗马尼亚-014 |2.3MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 罗马尼亚-015 |1.5MB/s
@@ -2331,12 +2331,12 @@ proxy-groups:
   - 罗马尼亚-020 |1.2MB/s
   - 罗马尼亚-021 |1.2MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 罗马尼亚-022 |1.2MB/s
-  - 罗马尼亚-023 |1.1MB/s
+  - 罗马尼亚-023 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 罗马尼亚-024 |1.1MB/s
   - 罗马尼亚-025 |1.1MB/s
   - 罗马尼亚-026 |1.1MB/s
   - 罗马尼亚-027 |1.1MB/s
-  - 罗马尼亚-028 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 罗马尼亚-028 |1.1MB/s
   - 罗马尼亚-029 |1.1MB/s
   - 罗马尼亚-030 |1.0MB/s
   - 罗马尼亚-031 |1.0MB/s
@@ -2424,23 +2424,23 @@ proxy-groups:
   - 罗马尼亚-113 |529KB/s
   - 罗马尼亚-114 |527KB/s
   - 罗马尼亚-115 |520KB/s
-  - 美国-003 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-004 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-005 |2.4MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-006 |2.4MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-007 |2.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-008 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-009 |1.3MB/s
-  - 美国-010 |1.2MB/s|TK-US|GPT⁺-US|GM-US
-  - 美国-011 |1.0MB/s|TK-US|GPT⁺-US
-  - 美国-015
+  - 美国-001 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 美国-003 |2.4MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 美国-004 |2.4MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 美国-005 |2.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 美国-006 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 美国-007 |1.3MB/s
+  - 美国-008 |1.2MB/s|TK-US|GPT⁺-US|GM-US
+  - 美国-009 |1.0MB/s|TK-US|GPT⁺-US
+  - 美国-014
   - 荷兰-001 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL
-  - 荷兰-003 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 荷兰-004 |1.3MB/s|TK-NL|GPT⁺-NL
-  - 荷兰-005 |1.1MB/s|TK-NL|YT-RU|GPT⁺-NL
-  - 韩国-001 |1.7MB/s|YT-KR|GPT⁺-KR|GM-KR
+  - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
+  - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
+  - 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
+  - 荷兰-005 |1.3MB/s|TK-NL|GPT⁺-NL
+  - 荷兰-006 |1.1MB/s|TK-NL|YT-RU|GPT⁺-NL
   - 韩国-002
+  - 其他-026#2
   - 其他-020#2
   - 其他-033#2
   - 其他-041#2
@@ -2450,7 +2450,6 @@ proxy-groups:
   - 其他-002#2
   - 其他-001#2#2
   - 其他-014#2#2
-  - 其他-001#2#2#2
   - 其他-003#2#2
   - 其他-022#2
   - 其他-039 |2.4MB/s|YT-KR|GPT⁺-KR|GM-KR
@@ -2458,11 +2457,8 @@ proxy-groups:
   - 德国-006
   - 德国-008 |1.9MB/s
   - 香港-021 |819KB/s
-  - 其他-022#2#2
   - 美国 047
   - 美国 051
-  - 美国 056
-  - 美国 060
   - 美国 078
   - 法国 002
   - 美国 087
@@ -2502,40 +2498,44 @@ proxy-groups:
   - 美国-020 |2.4MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-022 |2.4MB/s|TK-US|YT-US|GPT-US|GM-US
   - 美国-023 |2.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-024 |2.0MB/s|TK-US|YT-US|GPT⁺-US
   - 荷兰-001 |2.5MB/s|GPT⁺-NL
   - 西班牙-001 |1.6MB/s|TK-ES|GPT⁺-ES|GM-ES
 - name: ♻️ 自动选择
   type: url-test
   proxies:
-  - 其他-002
+  - 其他-001
   - 其他-003
+  - 其他-004
   - 其他-005
   - 其他-006
-  - 其他-007
   - 其他-008
   - 其他-009
+  - 其他-010
+  - 其他-011
   - 其他-012
+  - 其他-013
   - 其他-014
   - 其他-015
-  - 其他-024
+  - 其他-016
+  - 其他-018
+  - 其他-020
+  - 其他-021
+  - 其他-022
+  - 其他-023
   - 其他-025
-  - 其他-026
-  - 其他-027
-  - 其他-028
+  - 其他-032
+  - 其他-033
   - 其他-039
-  - 其他-040
-  - 其他-042
-  - 其他-043
+  - 其他-044
+  - 其他-046
+  - 其他-047
   - 其他-049
+  - 其他-051
   - 其他-052
-  - 其他-053
   - 其他-054
-  - 其他-057
-  - 其他-059
-  - 其他-061
-  - 其他-062
-  - 其他-067
+  - 其他-055
+  - 其他-056
+  - 其他-058
   - 塞舌尔-002
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
@@ -2543,15 +2543,15 @@ proxy-groups:
   - 罗马尼亚-001 |4.2MB/s|TK-RO|YT-UA|GPT⁺-RO|GM-UA
   - 罗马尼亚-002 |4.1MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 罗马尼亚-003 |3.5MB/s|TK-RO|YT-RO|GPT⁺-RO|GM-RO
-  - 罗马尼亚-004 |3.4MB/s|TK-RO|YT-CN|GPT⁺-RO
-  - 罗马尼亚-005 |3.4MB/s|TK-RO|GPT⁺-RO|GM-RO
-  - 罗马尼亚-006 |3.4MB/s|TK-RO|YT-UA|GPT⁺-RO|GM-UA
-  - 罗马尼亚-007 |3.3MB/s|TK-RO|YT-CN|GPT⁺-RO
-  - 罗马尼亚-008 |3.3MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 罗马尼亚-004 |3.4MB/s|TK-RO|YT-UA|GPT⁺-RO|GM-UA
+  - 罗马尼亚-005 |3.4MB/s|TK-RO|YT-CN|GPT⁺-RO
+  - 罗马尼亚-006 |3.4MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 罗马尼亚-007 |3.3MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 罗马尼亚-008 |3.3MB/s|TK-RO|YT-CN|GPT⁺-RO
   - 罗马尼亚-009 |3.2MB/s|TK-RO|YT-CN|GPT⁺-RO
-  - 罗马尼亚-010 |3.1MB/s|TK-RO|YT-US|GPT⁺-RO
-  - 罗马尼亚-011 |3.1MB/s|TK-RO|YT-RO|GPT⁺-RO|GM-RO
-  - 罗马尼亚-012 |3.1MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 罗马尼亚-010 |3.1MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 罗马尼亚-011 |3.1MB/s|TK-RO|YT-US|GPT⁺-RO
+  - 罗马尼亚-012 |3.1MB/s|TK-RO|YT-RO|GPT⁺-RO|GM-RO
   - 罗马尼亚-013 |2.9MB/s|TK-RO|YT-RO|GPT⁺-RO|GM-RO
   - 罗马尼亚-014 |2.3MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 罗马尼亚-015 |1.5MB/s
@@ -2562,12 +2562,12 @@ proxy-groups:
   - 罗马尼亚-020 |1.2MB/s
   - 罗马尼亚-021 |1.2MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 罗马尼亚-022 |1.2MB/s
-  - 罗马尼亚-023 |1.1MB/s
+  - 罗马尼亚-023 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 罗马尼亚-024 |1.1MB/s
   - 罗马尼亚-025 |1.1MB/s
   - 罗马尼亚-026 |1.1MB/s
   - 罗马尼亚-027 |1.1MB/s
-  - 罗马尼亚-028 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 罗马尼亚-028 |1.1MB/s
   - 罗马尼亚-029 |1.1MB/s
   - 罗马尼亚-030 |1.0MB/s
   - 罗马尼亚-031 |1.0MB/s
@@ -2655,23 +2655,23 @@ proxy-groups:
   - 罗马尼亚-113 |529KB/s
   - 罗马尼亚-114 |527KB/s
   - 罗马尼亚-115 |520KB/s
-  - 美国-003 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-004 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-005 |2.4MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-006 |2.4MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-007 |2.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-008 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-009 |1.3MB/s
-  - 美国-010 |1.2MB/s|TK-US|GPT⁺-US|GM-US
-  - 美国-011 |1.0MB/s|TK-US|GPT⁺-US
-  - 美国-015
+  - 美国-001 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 美国-003 |2.4MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 美国-004 |2.4MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 美国-005 |2.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 美国-006 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 美国-007 |1.3MB/s
+  - 美国-008 |1.2MB/s|TK-US|GPT⁺-US|GM-US
+  - 美国-009 |1.0MB/s|TK-US|GPT⁺-US
+  - 美国-014
   - 荷兰-001 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL
-  - 荷兰-003 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 荷兰-004 |1.3MB/s|TK-NL|GPT⁺-NL
-  - 荷兰-005 |1.1MB/s|TK-NL|YT-RU|GPT⁺-NL
-  - 韩国-001 |1.7MB/s|YT-KR|GPT⁺-KR|GM-KR
+  - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
+  - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
+  - 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
+  - 荷兰-005 |1.3MB/s|TK-NL|GPT⁺-NL
+  - 荷兰-006 |1.1MB/s|TK-NL|YT-RU|GPT⁺-NL
   - 韩国-002
+  - 其他-026#2
   - 其他-020#2
   - 其他-033#2
   - 其他-041#2
@@ -2681,7 +2681,6 @@ proxy-groups:
   - 其他-002#2
   - 其他-001#2#2
   - 其他-014#2#2
-  - 其他-001#2#2#2
   - 其他-003#2#2
   - 其他-022#2
   - 其他-039 |2.4MB/s|YT-KR|GPT⁺-KR|GM-KR
@@ -2689,11 +2688,8 @@ proxy-groups:
   - 德国-006
   - 德国-008 |1.9MB/s
   - 香港-021 |819KB/s
-  - 其他-022#2#2
   - 美国 047
   - 美国 051
-  - 美国 056
-  - 美国 060
   - 美国 078
   - 法国 002
   - 美国 087
@@ -2733,7 +2729,6 @@ proxy-groups:
   - 美国-020 |2.4MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-022 |2.4MB/s|TK-US|YT-US|GPT-US|GM-US
   - 美国-023 |2.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-024 |2.0MB/s|TK-US|YT-US|GPT⁺-US
   - 荷兰-001 |2.5MB/s|GPT⁺-NL
   - 西班牙-001 |1.6MB/s|TK-ES|GPT⁺-ES|GM-ES
   url: http://www.gstatic.com/generate_204
