@@ -27,6 +27,29 @@ proxies:
   cipher: auto
   tls: false
   skip-cert-verify: false
+- name: 🇨🇳其他-013
+  server: v45.hdacd.com
+  port: 30845
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  udp: true
+- name: 其他-053
+  server: cfip.1323123.xyz
+  port: 443
+  type: vless
+  tls: true
+  uuid: 4a1441b0-7bc8-4906-85cf-6b59c256b480
+  servername: edt2.yfqh08811.ccwu.cc
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: edt2.yfqh08811.ccwu.cc
+  skip-cert-verify: true
 - name: 🇩🇪德国-001 |1.6MB/s
   server: 5.83.129.90
   port: 54177
@@ -81,20 +104,20 @@ proxies:
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-004 |3.4MB/s|TK-RO|YT-UA|GPT⁺-RO|GM-UA
-  server: 84.239.49.215
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-005 |3.4MB/s|TK-RO|YT-CN|GPT⁺-RO
+- name: 🇷🇴罗马尼亚-004 |3.4MB/s|TK-RO|YT-CN|GPT⁺-RO
   server: 84.239.49.199
   port: 9002
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-006 |3.4MB/s|TK-RO|GPT⁺-RO|GM-RO
+- name: 🇷🇴罗马尼亚-005 |3.4MB/s|TK-RO|GPT⁺-RO|GM-RO
   server: 84.239.14.147
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇷🇴罗马尼亚-006 |3.4MB/s|TK-RO|YT-UA|GPT⁺-RO|GM-UA
+  server: 84.239.49.215
   port: 9002
   type: http
   tls: true
@@ -117,20 +140,20 @@ proxies:
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-010 |3.1MB/s|TK-RO|YT-RO|GPT⁺-RO|GM-RO
+- name: 🇷🇴罗马尼亚-010 |3.1MB/s|TK-RO|YT-US|GPT⁺-RO
+  server: 84.239.49.245
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇷🇴罗马尼亚-011 |3.1MB/s|TK-RO|YT-RO|GPT⁺-RO|GM-RO
   server: 84.239.49.165
   port: 9002
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-011 |3.1MB/s|TK-RO|GPT⁺-RO|GM-RO
+- name: 🇷🇴罗马尼亚-012 |3.1MB/s|TK-RO|GPT⁺-RO|GM-RO
   server: 84.239.49.173
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-012 |3.1MB/s|TK-RO|YT-US|GPT⁺-RO
-  server: 84.239.49.245
   port: 9002
   type: http
   tls: true
@@ -178,163 +201,163 @@ proxies:
   tls: true
   skip-cert-verify: true
 - name: 🇷🇴罗马尼亚-020 |1.2MB/s
-  server: 193.176.84.32
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-021 |1.2MB/s
   server: 84.239.14.159
   port: 9002
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-022 |1.2MB/s|TK-RO|GPT⁺-RO|GM-RO
+- name: 🇷🇴罗马尼亚-021 |1.2MB/s|TK-RO|GPT⁺-RO|GM-RO
   server: 84.239.14.149
   port: 9002
   type: http
   tls: true
   skip-cert-verify: true
+- name: 🇷🇴罗马尼亚-022 |1.2MB/s
+  server: 193.176.84.32
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
 - name: 🇷🇴罗马尼亚-023 |1.1MB/s
-  server: 84.239.49.191
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-024 |1.1MB/s
-  server: 193.176.84.40
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-025 |1.1MB/s
-  server: 84.239.49.231
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-026 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
-  server: 193.176.84.30
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-027 |1.1MB/s
-  server: 84.239.49.166
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-028 |1.1MB/s
-  server: 84.239.49.254
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-029 |1.1MB/s
   server: 84.239.49.59
   port: 9002
   type: http
   tls: true
   skip-cert-verify: true
+- name: 🇷🇴罗马尼亚-024 |1.1MB/s
+  server: 84.239.49.254
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇷🇴罗马尼亚-025 |1.1MB/s
+  server: 84.239.49.191
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇷🇴罗马尼亚-026 |1.1MB/s
+  server: 84.239.49.166
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇷🇴罗马尼亚-027 |1.1MB/s
+  server: 84.239.49.231
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇷🇴罗马尼亚-028 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
+  server: 193.176.84.30
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇷🇴罗马尼亚-029 |1.1MB/s
+  server: 193.176.84.40
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
 - name: 🇷🇴罗马尼亚-030 |1.0MB/s
-  server: 84.239.49.249
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-031 |1.0MB/s
-  server: 84.239.49.159
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-032 |1.0MB/s
-  server: 84.239.49.164
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-033 |1.0MB/s
-  server: 84.239.49.185
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-034 |1.0MB/s
-  server: 84.239.14.146
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-035 |1.0MB/s
-  server: 84.239.49.198
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-036 |1.0MB/s
-  server: 84.239.49.49
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-037 |1.0MB/s
-  server: 84.239.49.239
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-038 |1.0MB/s
   server: 84.239.49.40
   port: 9002
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-039 |1.0MB/s
-  server: 84.239.14.158
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-040 |1.0MB/s
-  server: 84.239.49.240
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-041 |1.0MB/s
-  server: 84.239.49.38
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-042 |1.0MB/s
-  server: 84.239.49.171
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-043 |1.0MB/s
-  server: 84.239.49.200
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-044 |1.0MB/s
+- name: 🇷🇴罗马尼亚-031 |1.0MB/s
   server: 84.239.49.42
   port: 9002
   type: http
   tls: true
   skip-cert-verify: true
+- name: 🇷🇴罗马尼亚-032 |1.0MB/s
+  server: 84.239.49.185
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇷🇴罗马尼亚-033 |1.0MB/s
+  server: 84.239.49.239
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇷🇴罗马尼亚-034 |1.0MB/s
+  server: 84.239.49.38
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇷🇴罗马尼亚-035 |1.0MB/s
+  server: 84.239.49.200
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇷🇴罗马尼亚-036 |1.0MB/s
+  server: 84.239.14.158
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇷🇴罗马尼亚-037 |1.0MB/s
+  server: 84.239.49.171
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇷🇴罗马尼亚-038 |1.0MB/s
+  server: 84.239.49.192
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇷🇴罗马尼亚-039 |1.0MB/s
+  server: 84.239.49.159
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇷🇴罗马尼亚-040 |1.0MB/s
+  server: 84.239.14.146
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇷🇴罗马尼亚-041 |1.0MB/s
+  server: 84.239.49.240
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇷🇴罗马尼亚-042 |1.0MB/s
+  server: 84.239.49.249
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇷🇴罗马尼亚-043 |1.0MB/s
+  server: 84.239.49.164
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇷🇴罗马尼亚-044 |1.0MB/s
+  server: 84.239.49.49
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
 - name: 🇷🇴罗马尼亚-045 |1.0MB/s
-  server: 193.176.84.26
+  server: 84.239.49.198
   port: 9002
   type: http
   tls: true
   skip-cert-verify: true
 - name: 🇷🇴罗马尼亚-046 |1.0MB/s
-  server: 84.239.49.192
+  server: 193.176.84.26
   port: 9002
   type: http
   tls: true
@@ -556,13 +579,13 @@ proxies:
   tls: true
   skip-cert-verify: true
 - name: 🇷🇴罗马尼亚-083 |717KB/s
-  server: 84.239.49.197
+  server: 84.239.49.176
   port: 9002
   type: http
   tls: true
   skip-cert-verify: true
 - name: 🇷🇴罗马尼亚-084 |717KB/s
-  server: 84.239.49.176
+  server: 84.239.49.197
   port: 9002
   type: http
   tls: true
@@ -640,13 +663,13 @@ proxies:
   tls: true
   skip-cert-verify: true
 - name: 🇷🇴罗马尼亚-097 |586KB/s
-  server: 193.176.84.25
+  server: 84.239.49.212
   port: 9002
   type: http
   tls: true
   skip-cert-verify: true
 - name: 🇷🇴罗马尼亚-098 |586KB/s
-  server: 84.239.49.212
+  server: 193.176.84.25
   port: 9002
   type: http
   tls: true
@@ -753,7 +776,55 @@ proxies:
   type: http
   tls: true
   skip-cert-verify: true
-- name: 美国-002
+- name: 🇺🇸美国-003 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  server: 138.199.35.215
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇺🇸美国-004 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  server: 38.28.193.188
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇺🇸美国-005 |2.4MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  server: 156.146.59.12
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇺🇸美国-006 |2.4MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  server: 156.146.59.47
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇺🇸美国-007 |2.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  server: 156.146.59.20
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇺🇸美国-008 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  server: 209.148.53.153
+  port: 8090
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇺🇸美国-010 |1.2MB/s|TK-US|GPT⁺-US|GM-US
+  server: 198.2.210.70
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇺🇸美国-011 |1.0MB/s|TK-US|GPT⁺-US
+  server: 138.199.35.198
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 美国-015
   server: 140.248.180.30
   port: 443
   type: vless
@@ -766,91 +837,37 @@ proxies:
     headers:
       Host: hamshahriesfahan.com
   skip-cert-verify: true
-- name: 🇺🇸美国-008 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  server: 138.199.35.215
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇺🇸美国-009 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  server: 38.28.193.188
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇺🇸美国-010 |2.4MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  server: 156.146.59.12
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇺🇸美国-011 |2.4MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  server: 156.146.59.47
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇺🇸美国-012 |2.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  server: 156.146.59.20
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇺🇸美国-013 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  server: 209.148.53.153
-  port: 8090
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇺🇸美国-015 |1.2MB/s|TK-US|GPT⁺-US|GM-US
-  server: 198.2.210.70
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇺🇸美国-016 |1.0MB/s|TK-US|GPT⁺-US
-  server: 138.199.35.198
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
 - name: 🇳🇱荷兰-001 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
   server: 84.17.47.150
   port: 9002
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇳🇱荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
-  server: 5.255.118.82
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇳🇱荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
+- name: 🇳🇱荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL
   server: 51.159.225.196
   port: 23856
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇳🇱荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
+- name: 🇳🇱荷兰-003 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
   server: 84.17.47.147
   port: 9002
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇳🇱荷兰-005 |1.3MB/s|TK-NL|GPT⁺-NL
+- name: 🇳🇱荷兰-004 |1.3MB/s|TK-NL|GPT⁺-NL
   server: 2.59.183.62
   port: 8443
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇳🇱荷兰-006 |1.1MB/s|TK-NL|YT-RU|GPT⁺-NL
-  server: 146.103.33.227
-  port: 8443
+- name: 🇳🇱荷兰-006 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
+  server: 5.255.118.82
+  port: 443
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇰🇷韩国-002 |1.7MB/s|YT-KR|GPT⁺-KR|GM-KR
+- name: 🇰🇷韩国-001 |1.7MB/s|YT-KR|GPT⁺-KR|GM-KR
   server: 64.110.88.200
   port: 30000
   type: http
@@ -873,14 +890,6 @@ proxies:
   port: 1090
   type: socks5
   username: T2clM0QlM0Q6
-- name: 🇰🇷其他-039 |2.4MB/s|YT-KR|GPT⁺-KR|GM-KR
-  server: testkr3.ssv.vc
-  port: 30446
-  type: http
-  username: test
-  password: test.+
-  tls: true
-  skip-cert-verify: true
 - name: 🇺🇸香港-021 |819KB/s
   server: 154.26.192.123
   port: 10988
@@ -889,18 +898,6 @@ proxies:
   password: gs4BXwT6SW
   tls: false
   skip-cert-verify: false
-- name: 美国 066
-  server: 104.18.42.54
-  port: 443
-  type: vless
-  tls: true
-  uuid: eeb6823c-b926-4ea2-866a-5542edd26e59
-  servername: t1s1.rittbo.kdns.fr
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: t1s1.rittbo.kdns.fr
 - name: 🇱🇻拉脱维亚-001 |2.0MB/s|TK-LV|GPT⁺-LV|GM-LV
   server: 185.219.159.16
   port: 443
@@ -1009,15 +1006,6 @@ proxies:
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇻🇳_VN_越南
-  server: vn2.yuntong.click
-  port: 443
-  type: hysteria2
-  password: f7cb07a0-e6f9-4d22-a60e-c61854450c89
-  obfs: salamander
-  obfs-password: eNM/NfxTsBqQIKcN0ezARS1z0f5mIxRd9GSwhVsyJlo=
-  sni: vn2.yuntong.click
-  skip-cert-verify: true
 - name: 🇩🇪_DE_德国
   server: ff2.yuntong.click
   port: 443
@@ -1039,6 +1027,18 @@ proxies:
     path: /
     headers:
       Host: c7dabe95.proxy-978.pages.dev
+- name: 美国 CloudFlare节点 3#2
+  server: 104.17.147.118
+  port: 443
+  type: vless
+  tls: true
+  uuid: 6680846a-8a57-4dfd-9a0e-63209cfc8535
+  servername: support.zoom.us.yxls.eu.cc
+  network: ws
+  ws-opts:
+    path: /sg-amz
+    headers:
+      Host: support.zoom.us.yxls.eu.cc
 - name: 🇺🇸_US_美国_2
   server: guanwang.awsno.com
   port: 443
@@ -1050,47 +1050,80 @@ proxies:
   skip-cert-verify: true
   servername: gw.alicdn.com
   udp: true
-- name: 🇺🇸_US_美国_1
-  server: 156.229.164.1
-  port: 55000
-  type: hysteria2
-  password: 1624ccf4-f88b-4411-81bd-978570b3cbdc
-  sni: www.bing.com
-  skip-cert-verify: true
-- name: 🇸🇬_SG_新加坡#2
-  server: 54.255.102.19
+- name: 🇷🇺_RU_俄罗斯->🇫🇮_FI_芬兰
+  server: fast88.screw.page
   port: 443
   type: hysteria2
-  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
-  sni: https://t.me/WangCai2🇨🇳
+  password: c0aa0cee-e855-4bcc-9afc-46241cb17990
+  sni: fast88.screw.page
   skip-cert-verify: true
-- name: 🇸🇬_SG_新加坡_1#2
-  server: aw-sg.vndmall.pro
-  port: 8888
-  type: ss
-  cipher: aes-256-gcm
-  password: a338A9
-  udp: true
-- name: 🇭🇰_HK_中国香港_1
-  server: 45.202.248.138
-  port: 55000
+- name: 🇺🇸_US_美国_2#2
+  server: 69.63.220.227
+  port: 443
   type: hysteria2
-  password: 7c7ff1be-a6e9-4a6f-853c-052ed3f3f21b
-  sni: www.bing.com
+  password: 038663b35fe801158d3eca2dae5a6fb1
+  obfs: salamander
+  obfs-password: 7e3ea7dfee4694e5e0e73383
+  sni: 69.63.220.227
   skip-cert-verify: true
-- name: 🇬🇧_GB_英国
-  server: 45.154.205.25
-  port: 55000
+- name: JP_1|2.8MB/s
+  server: 7.cf.3666888.xyz
+  port: 443
+  type: vless
+  tls: true
+  uuid: 663cf772-829c-4bc6-893d-b7d021d42f5b
+  servername: vp1.cc.cd
+  network: ws
+  ws-opts:
+    path: /fp=chrome
+    headers:
+      Host: vp1.cc.cd
+- name: 🇭🇰Hong Kong, Central | [BL]
+  server: hkt.ccwink.cc
+  port: 56309
   type: hysteria2
-  password: 88f839f2-c3c0-487d-aac3-f8c089d2369d
-  sni: www.bing.com
+  ports: 56309
+  password: 2f4c3fc5-8fa2-4576-a583-8f98a6026887
+  sni: hkt.ccwink.cc
   skip-cert-verify: true
-- name: 🇯🇵JP_4|2.7MB/s
-  server: 52.195.12.64
+- name: 🇺🇸US_1|3.5MB/s
+  server: 18.190.176.112
   port: 443
   type: ss
   cipher: aes-256-cfb
   password: amazonskr05
+- name: 🇺🇸US_6|3.4MB/s
+  server: 172.245.189.138
+  port: 14656
+  type: hysteria2
+  ports: 14656
+  password: 0c62d145-d288-4b2c-9df3-8a76e6489d25
+  sni: www.bing.com
+  skip-cert-verify: true
+- name: 🇸🇬SG_1|2.6MB/s
+  server: 43.163.64.216
+  port: 48992
+  type: hysteria2
+  ports: 48992
+  password: 1e7ceb38c72edc633d408aac3669df3c
+  sni: www.cloudflare.com
+  skip-cert-verify: true
+- name: 🇰🇷KR_1|5.0MB/s
+  server: 138.2.116.23
+  port: 55020
+  type: hysteria2
+  ports: 55020
+  password: d5m-5bGOsVbFgRlxsEyO3pCF
+  sni: 140.245.74.46.sslip.io
+  skip-cert-verify: true
+- name: 🇪🇪EE_1|2.7MB/s
+  server: 109.206.241.10
+  port: 8443
+  type: hysteria2
+  ports: 8443
+  password: oiiaB38ywjEHCWRs_O_a_1113_Il_KeyyyHop_Bes1
+  sni: russiapower.accesscam.org
+  skip-cert-verify: false
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -1098,21 +1131,23 @@ proxy-groups:
   - ♻️ 自动选择
   - DIRECT
   - 🇭🇰香港
+  - 🇨🇳其他-013
+  - 其他-053
   - 🇩🇪德国-001 |1.6MB/s
   - 🇩🇪德国-002 |594KB/s
   - 🇦🇺澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
   - 🇷🇴罗马尼亚-001 |4.2MB/s|TK-RO|YT-UA|GPT⁺-RO|GM-UA
   - 🇷🇴罗马尼亚-002 |4.1MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 🇷🇴罗马尼亚-003 |3.5MB/s|TK-RO|YT-RO|GPT⁺-RO|GM-RO
-  - 🇷🇴罗马尼亚-004 |3.4MB/s|TK-RO|YT-UA|GPT⁺-RO|GM-UA
-  - 🇷🇴罗马尼亚-005 |3.4MB/s|TK-RO|YT-CN|GPT⁺-RO
-  - 🇷🇴罗马尼亚-006 |3.4MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 🇷🇴罗马尼亚-004 |3.4MB/s|TK-RO|YT-CN|GPT⁺-RO
+  - 🇷🇴罗马尼亚-005 |3.4MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 🇷🇴罗马尼亚-006 |3.4MB/s|TK-RO|YT-UA|GPT⁺-RO|GM-UA
   - 🇷🇴罗马尼亚-007 |3.3MB/s|TK-RO|YT-CN|GPT⁺-RO
   - 🇷🇴罗马尼亚-008 |3.3MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 🇷🇴罗马尼亚-009 |3.2MB/s|TK-RO|YT-CN|GPT⁺-RO
-  - 🇷🇴罗马尼亚-010 |3.1MB/s|TK-RO|YT-RO|GPT⁺-RO|GM-RO
-  - 🇷🇴罗马尼亚-011 |3.1MB/s|TK-RO|GPT⁺-RO|GM-RO
-  - 🇷🇴罗马尼亚-012 |3.1MB/s|TK-RO|YT-US|GPT⁺-RO
+  - 🇷🇴罗马尼亚-010 |3.1MB/s|TK-RO|YT-US|GPT⁺-RO
+  - 🇷🇴罗马尼亚-011 |3.1MB/s|TK-RO|YT-RO|GPT⁺-RO|GM-RO
+  - 🇷🇴罗马尼亚-012 |3.1MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 🇷🇴罗马尼亚-013 |2.9MB/s|TK-RO|YT-RO|GPT⁺-RO|GM-RO
   - 🇷🇴罗马尼亚-014 |2.3MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 🇷🇴罗马尼亚-015 |1.5MB/s
@@ -1121,14 +1156,14 @@ proxy-groups:
   - 🇷🇴罗马尼亚-018 |1.4MB/s
   - 🇷🇴罗马尼亚-019 |1.3MB/s
   - 🇷🇴罗马尼亚-020 |1.2MB/s
-  - 🇷🇴罗马尼亚-021 |1.2MB/s
-  - 🇷🇴罗马尼亚-022 |1.2MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 🇷🇴罗马尼亚-021 |1.2MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 🇷🇴罗马尼亚-022 |1.2MB/s
   - 🇷🇴罗马尼亚-023 |1.1MB/s
   - 🇷🇴罗马尼亚-024 |1.1MB/s
   - 🇷🇴罗马尼亚-025 |1.1MB/s
-  - 🇷🇴罗马尼亚-026 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 🇷🇴罗马尼亚-026 |1.1MB/s
   - 🇷🇴罗马尼亚-027 |1.1MB/s
-  - 🇷🇴罗马尼亚-028 |1.1MB/s
+  - 🇷🇴罗马尼亚-028 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 🇷🇴罗马尼亚-029 |1.1MB/s
   - 🇷🇴罗马尼亚-030 |1.0MB/s
   - 🇷🇴罗马尼亚-031 |1.0MB/s
@@ -1216,27 +1251,24 @@ proxy-groups:
   - 🇷🇴罗马尼亚-113 |529KB/s
   - 🇷🇴罗马尼亚-114 |527KB/s
   - 🇷🇴罗马尼亚-115 |520KB/s
-  - 美国-002
-  - 🇺🇸美国-008 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 🇺🇸美国-009 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 🇺🇸美国-010 |2.4MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 🇺🇸美国-011 |2.4MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 🇺🇸美国-012 |2.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 🇺🇸美国-013 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 🇺🇸美国-015 |1.2MB/s|TK-US|GPT⁺-US|GM-US
-  - 🇺🇸美国-016 |1.0MB/s|TK-US|GPT⁺-US
+  - 🇺🇸美国-003 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 🇺🇸美国-004 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 🇺🇸美国-005 |2.4MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 🇺🇸美国-006 |2.4MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 🇺🇸美国-007 |2.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 🇺🇸美国-008 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 🇺🇸美国-010 |1.2MB/s|TK-US|GPT⁺-US|GM-US
+  - 🇺🇸美国-011 |1.0MB/s|TK-US|GPT⁺-US
+  - 美国-015
   - 🇳🇱荷兰-001 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 🇳🇱荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 🇳🇱荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
-  - 🇳🇱荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 🇳🇱荷兰-005 |1.3MB/s|TK-NL|GPT⁺-NL
-  - 🇳🇱荷兰-006 |1.1MB/s|TK-NL|YT-RU|GPT⁺-NL
-  - 🇰🇷韩国-002 |1.7MB/s|YT-KR|GPT⁺-KR|GM-KR
+  - 🇳🇱荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL
+  - 🇳🇱荷兰-003 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
+  - 🇳🇱荷兰-004 |1.3MB/s|TK-NL|GPT⁺-NL
+  - 🇳🇱荷兰-006 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
+  - 🇰🇷韩国-001 |1.7MB/s|YT-KR|GPT⁺-KR|GM-KR
   - 其他-036#2
   - 🇰🇷韩国-003 |3.9MB/s
-  - 🇰🇷其他-039 |2.4MB/s|YT-KR|GPT⁺-KR|GM-KR
   - 🇺🇸香港-021 |819KB/s
-  - 美国 066
   - 🇱🇻拉脱维亚-001 |2.0MB/s|TK-LV|GPT⁺-LV|GM-LV
   - 🇫🇷法国-003 |2.3MB/s|GPT⁺-FR
   - 🇷🇴罗马尼亚-001 |4.2MB/s|TK-RO|GPT⁺-RO|GM-RO
@@ -1255,35 +1287,40 @@ proxy-groups:
   - 🇺🇸美国-024 |2.0MB/s|TK-US|YT-US|GPT⁺-US
   - 🇳🇱荷兰-001 |2.5MB/s|GPT⁺-NL
   - 🇪🇸西班牙-001 |1.6MB/s|TK-ES|GPT⁺-ES|GM-ES
-  - 🇻🇳_VN_越南
   - 🇩🇪_DE_德国
   - 美国 CloudFlare节点#3
+  - 美国 CloudFlare节点 3#2
   - 🇺🇸_US_美国_2
-  - 🇺🇸_US_美国_1
-  - 🇸🇬_SG_新加坡#2
-  - 🇸🇬_SG_新加坡_1#2
-  - 🇭🇰_HK_中国香港_1
-  - 🇬🇧_GB_英国
-  - 🇯🇵JP_4|2.7MB/s
+  - 🇷🇺_RU_俄罗斯->🇫🇮_FI_芬兰
+  - 🇺🇸_US_美国_2#2
+  - JP_1|2.8MB/s
+  - 🇭🇰Hong Kong, Central | [BL]
+  - 🇺🇸US_1|3.5MB/s
+  - 🇺🇸US_6|3.4MB/s
+  - 🇸🇬SG_1|2.6MB/s
+  - 🇰🇷KR_1|5.0MB/s
+  - 🇪🇪EE_1|2.7MB/s
 - name: ♻️ 自动选择
   type: url-test
   proxies:
   - 🇭🇰香港
+  - 🇨🇳其他-013
+  - 其他-053
   - 🇩🇪德国-001 |1.6MB/s
   - 🇩🇪德国-002 |594KB/s
   - 🇦🇺澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
   - 🇷🇴罗马尼亚-001 |4.2MB/s|TK-RO|YT-UA|GPT⁺-RO|GM-UA
   - 🇷🇴罗马尼亚-002 |4.1MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 🇷🇴罗马尼亚-003 |3.5MB/s|TK-RO|YT-RO|GPT⁺-RO|GM-RO
-  - 🇷🇴罗马尼亚-004 |3.4MB/s|TK-RO|YT-UA|GPT⁺-RO|GM-UA
-  - 🇷🇴罗马尼亚-005 |3.4MB/s|TK-RO|YT-CN|GPT⁺-RO
-  - 🇷🇴罗马尼亚-006 |3.4MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 🇷🇴罗马尼亚-004 |3.4MB/s|TK-RO|YT-CN|GPT⁺-RO
+  - 🇷🇴罗马尼亚-005 |3.4MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 🇷🇴罗马尼亚-006 |3.4MB/s|TK-RO|YT-UA|GPT⁺-RO|GM-UA
   - 🇷🇴罗马尼亚-007 |3.3MB/s|TK-RO|YT-CN|GPT⁺-RO
   - 🇷🇴罗马尼亚-008 |3.3MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 🇷🇴罗马尼亚-009 |3.2MB/s|TK-RO|YT-CN|GPT⁺-RO
-  - 🇷🇴罗马尼亚-010 |3.1MB/s|TK-RO|YT-RO|GPT⁺-RO|GM-RO
-  - 🇷🇴罗马尼亚-011 |3.1MB/s|TK-RO|GPT⁺-RO|GM-RO
-  - 🇷🇴罗马尼亚-012 |3.1MB/s|TK-RO|YT-US|GPT⁺-RO
+  - 🇷🇴罗马尼亚-010 |3.1MB/s|TK-RO|YT-US|GPT⁺-RO
+  - 🇷🇴罗马尼亚-011 |3.1MB/s|TK-RO|YT-RO|GPT⁺-RO|GM-RO
+  - 🇷🇴罗马尼亚-012 |3.1MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 🇷🇴罗马尼亚-013 |2.9MB/s|TK-RO|YT-RO|GPT⁺-RO|GM-RO
   - 🇷🇴罗马尼亚-014 |2.3MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 🇷🇴罗马尼亚-015 |1.5MB/s
@@ -1292,14 +1329,14 @@ proxy-groups:
   - 🇷🇴罗马尼亚-018 |1.4MB/s
   - 🇷🇴罗马尼亚-019 |1.3MB/s
   - 🇷🇴罗马尼亚-020 |1.2MB/s
-  - 🇷🇴罗马尼亚-021 |1.2MB/s
-  - 🇷🇴罗马尼亚-022 |1.2MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 🇷🇴罗马尼亚-021 |1.2MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 🇷🇴罗马尼亚-022 |1.2MB/s
   - 🇷🇴罗马尼亚-023 |1.1MB/s
   - 🇷🇴罗马尼亚-024 |1.1MB/s
   - 🇷🇴罗马尼亚-025 |1.1MB/s
-  - 🇷🇴罗马尼亚-026 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 🇷🇴罗马尼亚-026 |1.1MB/s
   - 🇷🇴罗马尼亚-027 |1.1MB/s
-  - 🇷🇴罗马尼亚-028 |1.1MB/s
+  - 🇷🇴罗马尼亚-028 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 🇷🇴罗马尼亚-029 |1.1MB/s
   - 🇷🇴罗马尼亚-030 |1.0MB/s
   - 🇷🇴罗马尼亚-031 |1.0MB/s
@@ -1387,27 +1424,24 @@ proxy-groups:
   - 🇷🇴罗马尼亚-113 |529KB/s
   - 🇷🇴罗马尼亚-114 |527KB/s
   - 🇷🇴罗马尼亚-115 |520KB/s
-  - 美国-002
-  - 🇺🇸美国-008 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 🇺🇸美国-009 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 🇺🇸美国-010 |2.4MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 🇺🇸美国-011 |2.4MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 🇺🇸美国-012 |2.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 🇺🇸美国-013 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 🇺🇸美国-015 |1.2MB/s|TK-US|GPT⁺-US|GM-US
-  - 🇺🇸美国-016 |1.0MB/s|TK-US|GPT⁺-US
+  - 🇺🇸美国-003 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 🇺🇸美国-004 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 🇺🇸美国-005 |2.4MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 🇺🇸美国-006 |2.4MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 🇺🇸美国-007 |2.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 🇺🇸美国-008 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 🇺🇸美国-010 |1.2MB/s|TK-US|GPT⁺-US|GM-US
+  - 🇺🇸美国-011 |1.0MB/s|TK-US|GPT⁺-US
+  - 美国-015
   - 🇳🇱荷兰-001 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 🇳🇱荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 🇳🇱荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
-  - 🇳🇱荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 🇳🇱荷兰-005 |1.3MB/s|TK-NL|GPT⁺-NL
-  - 🇳🇱荷兰-006 |1.1MB/s|TK-NL|YT-RU|GPT⁺-NL
-  - 🇰🇷韩国-002 |1.7MB/s|YT-KR|GPT⁺-KR|GM-KR
+  - 🇳🇱荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL
+  - 🇳🇱荷兰-003 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
+  - 🇳🇱荷兰-004 |1.3MB/s|TK-NL|GPT⁺-NL
+  - 🇳🇱荷兰-006 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
+  - 🇰🇷韩国-001 |1.7MB/s|YT-KR|GPT⁺-KR|GM-KR
   - 其他-036#2
   - 🇰🇷韩国-003 |3.9MB/s
-  - 🇰🇷其他-039 |2.4MB/s|YT-KR|GPT⁺-KR|GM-KR
   - 🇺🇸香港-021 |819KB/s
-  - 美国 066
   - 🇱🇻拉脱维亚-001 |2.0MB/s|TK-LV|GPT⁺-LV|GM-LV
   - 🇫🇷法国-003 |2.3MB/s|GPT⁺-FR
   - 🇷🇴罗马尼亚-001 |4.2MB/s|TK-RO|GPT⁺-RO|GM-RO
@@ -1426,16 +1460,19 @@ proxy-groups:
   - 🇺🇸美国-024 |2.0MB/s|TK-US|YT-US|GPT⁺-US
   - 🇳🇱荷兰-001 |2.5MB/s|GPT⁺-NL
   - 🇪🇸西班牙-001 |1.6MB/s|TK-ES|GPT⁺-ES|GM-ES
-  - 🇻🇳_VN_越南
   - 🇩🇪_DE_德国
   - 美国 CloudFlare节点#3
+  - 美国 CloudFlare节点 3#2
   - 🇺🇸_US_美国_2
-  - 🇺🇸_US_美国_1
-  - 🇸🇬_SG_新加坡#2
-  - 🇸🇬_SG_新加坡_1#2
-  - 🇭🇰_HK_中国香港_1
-  - 🇬🇧_GB_英国
-  - 🇯🇵JP_4|2.7MB/s
+  - 🇷🇺_RU_俄罗斯->🇫🇮_FI_芬兰
+  - 🇺🇸_US_美国_2#2
+  - JP_1|2.8MB/s
+  - 🇭🇰Hong Kong, Central | [BL]
+  - 🇺🇸US_1|3.5MB/s
+  - 🇺🇸US_6|3.4MB/s
+  - 🇸🇬SG_1|2.6MB/s
+  - 🇰🇷KR_1|5.0MB/s
+  - 🇪🇪EE_1|2.7MB/s
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
