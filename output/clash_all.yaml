@@ -1219,20 +1219,6 @@ proxies:
     headers:
       Host: ourfast.ccwu.cc
     path: /
-- name: 其他-092
-  type: vless
-  network: ws
-  uuid: 767c5a66-bd28-440a-90c8-7ae1101a0172
-  server: www.gov.ua
-  port: 8880
-  udp: true
-  xudp: true
-  ws-opts:
-    headers:
-      Host: still-voice-1adc.135-275.workers.dev
-      User-Agent: Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.3
-        (KHTML, like Gecko) Chrome/6.0.472.63 Safari/534.3
-    path: /pyip=ProxyIP.US.CMLiussss.net
 - name: 其他-093
   type: vless
   network: ws
@@ -2241,21 +2227,6 @@ proxies:
       Host: vp33.cc.cd
     path: /
   client-fingerprint: chrome
-- name: 英国-003
-  type: vless
-  network: ws
-  uuid: af475b0e-0c07-40fe-b4db-3dea2c0a481d
-  server: 91.193.58.17
-  servername: edgetunnel-cmliu.lyqnihao.dpdns.org
-  port: 2083
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  tfo: false
-  ws-opts:
-    headers:
-      Host: edgetunnel-cmliu.lyqnihao.dpdns.org
-    path: /fp=chrome
 - name: 荷兰-001
   type: trojan
   network: ws
@@ -2383,15 +2354,6 @@ proxies:
   port: 443
   skip-cert-verify: true
   tls: true
-- name: 香港-001
-  type: vmess
-  network: http
-  uuid: 1c7c0c72-6bc1-4e51-ada8-0e5570bb4780
-  server: 45.158.23.138
-  port: 27272
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
 - name: 其他-021#2
   type: vless
   network: ws
@@ -3035,19 +2997,6 @@ proxies:
     headers:
       Host: 152.67.218.38
     path: /
-- name: 美国 684
-  type: vmess
-  network: ws
-  server: 3h-kazakhstan1.09vpn.com
-  port: 80
-  uuid: 567f4be5-12ab-42e1-b8d9-db6fd1fdd31c
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: wrmelmwxlf.gktevlrqznwqqozy.fabpfs66gizmnojhcvqxwl.kytrcfzqla87gvgvs6c7kjnrubuh.cc
-    path: /vmess/
 - name: 以色列 002
   type: vmess
   network: tcp
@@ -3161,15 +3110,6 @@ proxies:
   server: 140.238.2.250
   port: 443
   uuid: 41a7089a-040b-4538-8b8d-010902405bde
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-- name: 美国 1648
-  type: vmess
-  network: tcp
-  server: 165.140.216.141
-  port: 443
-  uuid: e7d72a8d-26f2-4b54-b366-0c43e0bcba7d
   skip-cert-verify: true
   alterId: 0
   cipher: auto
@@ -3400,7 +3340,6 @@ proxy-groups:
   - 其他-083
   - 其他-084
   - 其他-085
-  - 其他-092
   - 其他-093
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
@@ -3533,7 +3472,6 @@ proxy-groups:
   - 美国-011
   - 英国-001
   - 英国-002
-  - 英国-003
   - 荷兰-001
   - 荷兰-002
   - 荷兰-003
@@ -3547,7 +3485,6 @@ proxy-groups:
   - 荷兰-011
   - 荷兰-012
   - 荷兰-013 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 香港-001
   - 其他-021#2
   - 其他-027#2
   - 其他-031#2
@@ -3592,7 +3529,6 @@ proxy-groups:
   - 美国 094
   - 美国 102
   - 韩国 006
-  - 美国 684
   - 以色列 002
   - 澳大利亚 026
   - 美国 718
@@ -3604,7 +3540,6 @@ proxy-groups:
   - 荷兰 121
   - 美国 1529
   - 韩国 016
-  - 美国 1648
   - 其他-035 |1.0MB/s
   - 拉脱维亚-001 |2.0MB/s|TK-LV|GPT⁺-LV|GM-LV
   - 法国-003 |2.3MB/s|GPT⁺-FR
@@ -3708,7 +3643,6 @@ proxy-groups:
   - 其他-083
   - 其他-084
   - 其他-085
-  - 其他-092
   - 其他-093
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
@@ -3841,7 +3775,6 @@ proxy-groups:
   - 美国-011
   - 英国-001
   - 英国-002
-  - 英国-003
   - 荷兰-001
   - 荷兰-002
   - 荷兰-003
@@ -3855,7 +3788,6 @@ proxy-groups:
   - 荷兰-011
   - 荷兰-012
   - 荷兰-013 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 香港-001
   - 其他-021#2
   - 其他-027#2
   - 其他-031#2
@@ -3900,7 +3832,6 @@ proxy-groups:
   - 美国 094
   - 美国 102
   - 韩国 006
-  - 美国 684
   - 以色列 002
   - 澳大利亚 026
   - 美国 718
@@ -3912,7 +3843,6 @@ proxy-groups:
   - 荷兰 121
   - 美国 1529
   - 韩国 016
-  - 美国 1648
   - 其他-035 |1.0MB/s
   - 拉脱维亚-001 |2.0MB/s|TK-LV|GPT⁺-LV|GM-LV
   - 法国-003 |2.3MB/s|GPT⁺-FR
