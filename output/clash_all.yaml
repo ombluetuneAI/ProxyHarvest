@@ -294,20 +294,6 @@ proxies:
     path:
     - /
   encryption: none
-- name: 其他-032
-  type: vless
-  network: ws
-  uuid: 7b102311-43fd-4e8f-877e-8090623c101d
-  server: proxyip.hk.cmliussss.net
-  servername: vp10.pages.dev
-  port: 443
-  tls: true
-  udp: true
-  ws-opts:
-    headers:
-      Host: vp10.pages.dev
-    path: /
-  client-fingerprint: chrome
 - name: 其他-051
   type: vless
   network: xhttp
@@ -336,6 +322,20 @@ proxies:
     headers:
       Host: shin-ra.ccwu.cc
     path: /
+- name: 其他-061
+  type: vless
+  network: ws
+  uuid: 7b102311-43fd-4e8f-877e-8090623c101d
+  server: proxyip.sg.cmliussss.net
+  servername: vp10.pages.dev
+  port: 443
+  tls: true
+  udp: true
+  ws-opts:
+    headers:
+      Host: vp10.pages.dev
+    path: /
+  client-fingerprint: chrome
 - name: 其他-064
   type: vless
   network: ws
@@ -372,20 +372,6 @@ proxies:
     path: /fp
   client-fingerprint: chrome
   encryption: none
-- name: 其他-078
-  type: vless
-  network: ws
-  uuid: a3cd0fea-482b-4b67-be46-de041690b657
-  server: 104.17.178.154
-  port: 8880
-  udp: true
-  xudp: true
-  ws-opts:
-    headers:
-      Host: solitary-firefly-e2dc.495-398.workers.dev
-      User-Agent: Mozilla/5.0 (Windows NT 6.0; WOW64) AppleWebKit/537.36 (KHTML, like
-        Gecko) Chrome/46.0.2490.80 Safari/537.36
-    path: /pyip=ProxyIP.SG.CMLiussss.net
 - name: 德国-001 |1.6MB/s
   type: hysteria
   server: 5.83.129.90
@@ -1350,20 +1336,6 @@ proxies:
   port: 9002
   skip-cert-verify: true
   tls: true
-- name: 其他-084
-  type: vless
-  network: ws
-  uuid: d1eeb74f-e5ea-45eb-9934-5376bfeb5ba4
-  server: 104.17.21.32
-  port: 8880
-  udp: true
-  xudp: true
-  ws-opts:
-    headers:
-      Host: fragrant-shape-07a0.269-144.workers.dev
-      User-Agent: Mozilla/5.0 (Windows NT 5.1; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/60.0.3112.90 Safari/537.36
-    path: /pyip=ProxyIP.SG.CMLiussss.net
 - name: 其他-021#2
   type: vless
   network: ws
@@ -1831,22 +1803,6 @@ proxies:
       User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
         like Gecko) Chrome/68.0.3440.106 Safari/537.36
     path: /assignment
-- name: 美国 102
-  type: trojan
-  network: ws
-  server: 104.18.12.149
-  port: 443
-  password: humanity
-  skip-cert-verify: true
-  udp: true
-  sni: www.multiplydose.com
-  client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: www.multiplydose.com
-      User-Agent: Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.3
-        (KHTML, like Gecko) Chrome/6.0.472.63 Safari/534.3
-    path: /assignment
 - name: 韩国 006
   type: vmess
   network: ws
@@ -2123,12 +2079,11 @@ proxy-groups:
   - 其他-015
   - 其他-018
   - 其他-020
-  - 其他-032
   - 其他-051
   - 其他-053
+  - 其他-061
   - 其他-064
   - 其他-068
-  - 其他-078
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
   - 澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
@@ -2260,7 +2215,6 @@ proxy-groups:
   - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-004 |1.8MB/s|TK-NL|GPT⁺-NL
   - 荷兰-005 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 其他-084
   - 其他-021#2
   - 其他-054 |711KB/s
   - 其他-003#2
@@ -2292,7 +2246,6 @@ proxy-groups:
   - 美国 087
   - 美国 090
   - 美国 094
-  - 美国 102
   - 韩国 006
   - 以色列 002
   - 澳大利亚 026
@@ -2341,12 +2294,11 @@ proxy-groups:
   - 其他-015
   - 其他-018
   - 其他-020
-  - 其他-032
   - 其他-051
   - 其他-053
+  - 其他-061
   - 其他-064
   - 其他-068
-  - 其他-078
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
   - 澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
@@ -2478,7 +2430,6 @@ proxy-groups:
   - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-004 |1.8MB/s|TK-NL|GPT⁺-NL
   - 荷兰-005 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 其他-084
   - 其他-021#2
   - 其他-054 |711KB/s
   - 其他-003#2
@@ -2510,7 +2461,6 @@ proxy-groups:
   - 美国 087
   - 美国 090
   - 美国 094
-  - 美国 102
   - 韩国 006
   - 以色列 002
   - 澳大利亚 026
