@@ -30,20 +30,6 @@ proxies:
     path:
     - /
   encryption: none
-- name: 其他-009
-  type: vless
-  network: ws
-  uuid: 767c5a66-bd28-440a-90c8-7ae1101a0172
-  server: www.gov.ua
-  port: 8880
-  udp: true
-  xudp: true
-  ws-opts:
-    headers:
-      Host: still-voice-1adc.135-275.workers.dev
-      User-Agent: Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.3
-        (KHTML, like Gecko) Chrome/6.0.472.63 Safari/534.3
-    path: /pyip=ProxyIP.US.CMLiussss.net
 - name: 其他-018 |711KB/s
   type: http
   server: 2af4e0ee-ta1og0-ta6lxc-jjv2.sg.oshuawei.com
@@ -980,18 +966,6 @@ proxies:
   port: 9002
   skip-cert-verify: true
   tls: true
-- name: 荷兰-001
-  type: trojan
-  network: ws
-  server: 188.164.248.122
-  port: 443
-  password: c206d543-023d-46cc-9d5a-1f0f2fc16323
-  skip-cert-verify: true
-  sni: space.byu.id.yxls.eu.cc
-  ws-opts:
-    headers:
-      Host: space.byu.id.yxls.eu.cc
-    path: /in-pdr
 - name: 荷兰-002 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
   type: http
   server: 84.17.47.150
@@ -1016,36 +990,6 @@ proxies:
   port: 9002
   skip-cert-verify: true
   tls: true
-- name: 其他-027#2
-  type: vless
-  network: ws
-  uuid: b2f6aa3a-2550-4a1c-b2c0-1c94b1207217
-  server: 104.17.121.110
-  servername: terazhediii.info
-  port: 443
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  ws-opts:
-    headers:
-      Host: terazhediii.info
-    path: /hdgrbws
-  client-fingerprint: chrome
-- name: 其他-042
-  type: vless
-  network: ws
-  uuid: f9a53aa5-774e-4556-b2b7-d8b57b423b97
-  server: 162.159.21.178
-  port: 8880
-  udp: true
-  xudp: true
-  ws-opts:
-    headers:
-      Host: yellow-breeze-989b.348-9b8.workers.dev
-      User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like
-        Gecko) Chrome/69.0.3497.100 Safari/537.36
-    path: /pyip=ProxyIP.KR.CMLiussss.net
 - name: 其他-057
   type: vmess
   network: ws
@@ -1060,46 +1004,6 @@ proxies:
     headers:
       Host: v2ray1.dozapp.xyz
     path: /lMnsZUN4/
-- name: 其他-059
-  type: trojan
-  network: ws
-  server: 172.66.44.211
-  port: 443
-  password: humanity
-  skip-cert-verify: false
-  sni: www.multiplydose.com
-  ws-opts:
-    headers:
-      Host: www.multiplydose.com
-    path: /assignment
-- name: 其他-061
-  type: vless
-  network: ws
-  uuid: 49a9aa25-443b-4fab-9a85-066dd5396c57
-  server: 104.17.170.132
-  port: 8880
-  udp: true
-  xudp: true
-  ws-opts:
-    headers:
-      Host: mute-river-6aee.421-bd7.workers.dev
-      User-Agent: Mozilla/5.0 (Windows NT 6.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/57.0.2987.133 Safari/537.36
-    path: /pyip=ProxyIP.KR.CMLiussss.net
-- name: 其他-062
-  type: vless
-  network: ws
-  uuid: d1eeb74f-e5ea-45eb-9934-5376bfeb5ba4
-  server: 104.17.21.32
-  port: 8880
-  udp: true
-  xudp: true
-  ws-opts:
-    headers:
-      Host: fragrant-shape-07a0.269-144.workers.dev
-      User-Agent: Mozilla/5.0 (Windows NT 5.1; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/60.0.3112.90 Safari/537.36
-    path: /pyip=ProxyIP.SG.CMLiussss.net
 - name: 塞舌尔-002
   type: trojan
   network: ws
@@ -1127,22 +1031,6 @@ proxies:
     method: GET
     path:
     - /
-- name: 其他-033#2
-  type: trojan
-  network: ws
-  server: 162.159.17.189
-  port: 443
-  password: humanity
-  skip-cert-verify: true
-  udp: true
-  sni: www.multiplydose.com
-  ws-opts:
-    headers:
-      Host: www.multiplydose.com
-      User-Agent: Mozilla/5.0 (Linux; Android 6.0.1; SM-G532G Build/MMB29T) AppleWebKit/537.36
-        (KHTML, like Gecko) Chrome/63.0.3239.83 Mobile Safari/537.36
-    path: /assignment
-  client-fingerprint: chrome
 - name: 其他-036#2
   type: trojan
   network: ws
@@ -1164,22 +1052,6 @@ proxies:
   udp: true
   client-fingerprint: chrome
   username: T2clM0QlM0Q6
-- name: 其他-014#2#2
-  type: trojan
-  network: ws
-  server: 188.114.98.0
-  port: 443
-  password: humanity
-  udp: true
-  sni: www.creationlong.org
-  ws-opts:
-    headers:
-      Host: www.creationlong.org
-      User-Agent: Mozilla/5.0 (Linux; Android 5.1; HUAWEI CUN-L22 Build/HUAWEICUN-L22;
-        wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/62.0.3202.84
-        Mobile Safari/537.36
-    path: /assignment
-  client-fingerprint: chrome
 - name: 其他-003#2#2
   type: vless
   network: ws
@@ -1195,21 +1067,6 @@ proxies:
     headers:
       Host: wstg.datasynctrue.online
     path: /api/connect
-- name: 其他-022#2
-  type: trojan
-  network: ws
-  server: 104.17.131.88
-  port: 443
-  password: humanity
-  udp: true
-  sni: www.gossipglove.com
-  ws-opts:
-    headers:
-      Host: www.gossipglove.com
-      User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like
-        Gecko) Chrome/43.0.2357.65 Safari/537.36
-    path: /assignment
-  client-fingerprint: chrome
 - name: 其他-039 |2.4MB/s|YT-KR|GPT⁺-KR|GM-KR
   type: http
   server: testkr3.ssv.vc
@@ -1273,33 +1130,6 @@ proxies:
   skip-cert-verify: false
   tls: false
   username: fQ67Dpe5dU
-- name: 美国 047
-  type: trojan
-  network: ws
-  server: 208.103.161.101
-  port: 443
-  password: humanity
-  skip-cert-verify: false
-  sni: www.creationlong.org
-  ws-opts:
-    headers:
-      Host: www.creationlong.org
-    path: /assignment
-- name: 美国 078
-  type: trojan
-  network: ws
-  server: 172.64.147.166
-  port: 443
-  password: humanity
-  udp: true
-  sni: www.multiplydose.com
-  client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: www.multiplydose.com
-      User-Agent: Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko)
-        Chrome/41.0.2228.0 Safari/537.36
-    path: /assignment
 - name: 法国 002
   type: vless
   network: ws
@@ -1318,21 +1148,6 @@ proxies:
       User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.31 (KHTML, like
         Gecko) Chrome/26.0.1410.64 Safari/537.31
     path: /vws/
-- name: 美国 087
-  type: trojan
-  network: ws
-  server: 172.66.47.69
-  port: 443
-  password: humanity
-  udp: true
-  sni: www.multiplydose.com
-  client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: www.multiplydose.com
-      User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like
-        Gecko) Chrome/55.0.2883.87 Safari/537.36
-    path: /assignment
 - name: 美国 090
   type: trojan
   network: ws
@@ -1347,37 +1162,6 @@ proxies:
       Host: www.ignitelimit.com
       User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like
         Gecko) Chrome/70.0.3538.67 Safari/537.36
-    path: /assignment
-- name: 美国 094
-  type: trojan
-  network: ws
-  server: 104.21.40.34
-  port: 443
-  password: humanity
-  udp: true
-  sni: www.multiplydose.com
-  client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: www.multiplydose.com
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/68.0.3440.106 Safari/537.36
-    path: /assignment
-- name: 美国 102
-  type: trojan
-  network: ws
-  server: 104.18.12.149
-  port: 443
-  password: humanity
-  skip-cert-verify: true
-  udp: true
-  sni: www.multiplydose.com
-  client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: www.multiplydose.com
-      User-Agent: Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.3
-        (KHTML, like Gecko) Chrome/6.0.472.63 Safari/534.3
     path: /assignment
 - name: 韩国 006
   type: vmess
@@ -1545,22 +1329,6 @@ proxies:
     short-id: "b8aa"
   client-fingerprint: chrome
   encryption: none
-- name: 瑞士-001 |733KB/s
-  type: trojan
-  network: ws
-  server: 185.18.250.252
-  port: 443
-  password: humanity
-  skip-cert-verify: true
-  udp: true
-  sni: www.multiplydose.com
-  ws-opts:
-    headers:
-      Host: www.multiplydose.com
-      User-Agent: Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML,
-        like Gecko) Chrome/70.0.3538.77 Safari/537.36
-    path: /assignment
-  client-fingerprint: chrome
 - name: 罗马尼亚-001 |4.2MB/s|TK-RO|GPT⁺-RO|GM-RO
   type: http
   server: 84.239.49.205
@@ -1665,7 +1433,6 @@ proxy-groups:
   - ♻️ 自动选择
   - DIRECT
   - 其他-008
-  - 其他-009
   - 其他-018 |711KB/s
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
@@ -1793,37 +1560,23 @@ proxy-groups:
   - 美国-007 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-008 |1.3MB/s
   - 美国-009 |1.0MB/s|TK-US|GPT⁺-US
-  - 荷兰-001
   - 荷兰-002 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-004 |1.8MB/s|TK-NL|GPT⁺-NL
   - 荷兰-005 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 其他-027#2
-  - 其他-042
   - 其他-057
-  - 其他-059
-  - 其他-061
-  - 其他-062
   - 塞舌尔-002
   - 韩国-002
-  - 其他-033#2
   - 其他-036#2
   - 韩国-003 |3.9MB/s
-  - 其他-014#2#2
   - 其他-003#2#2
-  - 其他-022#2
   - 其他-039 |2.4MB/s|YT-KR|GPT⁺-KR|GM-KR
   - 德国-002
   - 德国-006
   - 德国-008 |1.9MB/s
   - 香港-021 |819KB/s
-  - 美国 047
-  - 美国 078
   - 法国 002
-  - 美国 087
   - 美国 090
-  - 美国 094
-  - 美国 102
   - 韩国 006
   - 以色列 002
   - 澳大利亚 026
@@ -1840,7 +1593,6 @@ proxy-groups:
   - 拉脱维亚-001 |2.0MB/s|TK-LV|GPT⁺-LV|GM-LV
   - 法国-003 |2.3MB/s|GPT⁺-FR
   - 法国-020 |3.2MB/s|TK-FR|GPT⁺-DE|GM-DE
-  - 瑞士-001 |733KB/s
   - 罗马尼亚-001 |4.2MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 罗马尼亚-002 |3.4MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 罗马尼亚-004 |3.0MB/s|TK-RO|GPT⁺-RO|GM-RO
@@ -1861,7 +1613,6 @@ proxy-groups:
   type: url-test
   proxies:
   - 其他-008
-  - 其他-009
   - 其他-018 |711KB/s
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
@@ -1989,37 +1740,23 @@ proxy-groups:
   - 美国-007 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-008 |1.3MB/s
   - 美国-009 |1.0MB/s|TK-US|GPT⁺-US
-  - 荷兰-001
   - 荷兰-002 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-004 |1.8MB/s|TK-NL|GPT⁺-NL
   - 荷兰-005 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 其他-027#2
-  - 其他-042
   - 其他-057
-  - 其他-059
-  - 其他-061
-  - 其他-062
   - 塞舌尔-002
   - 韩国-002
-  - 其他-033#2
   - 其他-036#2
   - 韩国-003 |3.9MB/s
-  - 其他-014#2#2
   - 其他-003#2#2
-  - 其他-022#2
   - 其他-039 |2.4MB/s|YT-KR|GPT⁺-KR|GM-KR
   - 德国-002
   - 德国-006
   - 德国-008 |1.9MB/s
   - 香港-021 |819KB/s
-  - 美国 047
-  - 美国 078
   - 法国 002
-  - 美国 087
   - 美国 090
-  - 美国 094
-  - 美国 102
   - 韩国 006
   - 以色列 002
   - 澳大利亚 026
@@ -2036,7 +1773,6 @@ proxy-groups:
   - 拉脱维亚-001 |2.0MB/s|TK-LV|GPT⁺-LV|GM-LV
   - 法国-003 |2.3MB/s|GPT⁺-FR
   - 法国-020 |3.2MB/s|TK-FR|GPT⁺-DE|GM-DE
-  - 瑞士-001 |733KB/s
   - 罗马尼亚-001 |4.2MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 罗马尼亚-002 |3.4MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 罗马尼亚-004 |3.0MB/s|TK-RO|GPT⁺-RO|GM-RO
