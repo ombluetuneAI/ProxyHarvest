@@ -831,6 +831,18 @@ proxies:
   port: 1090
   type: socks5
   username: T2clM0QlM0Q6
+- name: 其他-022#2
+  server: 104.17.131.88
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.gossipglove.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.gossipglove.com
+  udp: true
 - name: 🇺🇸香港-021 |819KB/s
   server: 154.26.192.123
   port: 10988
@@ -839,6 +851,18 @@ proxies:
   password: gs4BXwT6SW
   tls: false
   skip-cert-verify: false
+- name: 美国 094
+  server: 104.21.40.34
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.multiplydose.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.multiplydose.com
+  udp: true
 - name: 🇱🇻拉脱维亚-001 |2.0MB/s|TK-LV|GPT⁺-LV|GM-LV
   server: 185.219.159.16
   port: 443
@@ -947,36 +971,6 @@ proxies:
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇨🇳其他-013
-  server: v45.hdacd.com
-  port: 30845
-  type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  udp: true
-- name: 巴西 002
-  server: 188.114.96.3
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.calmlunch.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.calmlunch.com
-  udp: true
-- name: 🇺🇸️54@v2ray_configs_pools
-  server: vpn-us-003.fastervpn.world
-  port: 443
-  type: hysteria2
-  ports: 443
-  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
-  sni: vpn-us-003.fastervpn.world
-  skip-cert-verify: true
 - name: 🇳🇱NL-193.169.239.76-0162
   server: renewed-chigger.rooster465.autos
   port: 443
@@ -1016,20 +1010,6 @@ proxies:
   skip-cert-verify: true
   servername: gw.alicdn.com
   udp: true
-- name: 🇭🇰Hong Kong, Central | [BL]
-  server: hkt.ccwink.cc
-  port: 56309
-  type: hysteria2
-  ports: 56309
-  password: 2f4c3fc5-8fa2-4576-a583-8f98a6026887
-  sni: hkt.ccwink.cc
-  skip-cert-verify: true
-- name: 🇯🇵JP-154.64.226.149-6067
-  server: rr2.tube-cat.com
-  port: 9450
-  type: trojan
-  password: ba07a8af-5544-48ac-ab62-3b6c00a44fa6
-  sni: hk.catxstar.com
 - name: 🇺🇸US-157.254.38.210-0388
   server: oplosgru-c.catcat321.com
   port: 20004
@@ -1170,19 +1150,6 @@ proxies:
   port: 443
   type: trojan
   password: IQ68037294
-- name: 🇳🇱_NL_荷兰->🇫🇮_FI_芬兰
-  server: 103.54.16.230
-  port: 2053
-  type: vless
-  tls: true
-  uuid: c7e9c591-2764-423a-afca-efbd010fd396
-  servername: forfreeuse.sub-flow.online
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: forfreeuse.sub-flow.online
-  skip-cert-verify: true
 - name: 🇺🇸_HK_中国香港->🇩🇪_DE_德国
   server: hkdcrtc-e.catcat321.com
   port: 20041
@@ -1231,19 +1198,6 @@ proxies:
     short-id: "dbbe8dca27a92c35"
   client-fingerprint: random
   skip-cert-verify: true
-- name: 🇩🇪_DE_德国->🇫🇮_FI_芬兰
-  server: 51.89.23.94
-  port: 2053
-  type: vless
-  tls: true
-  uuid: c7e9c591-2764-423a-afca-efbd010fd396
-  servername: forfreeuse.sub-flow.online
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: forfreeuse.sub-flow.online
-  skip-cert-verify: true
 - name: 🇨🇿俄罗斯 V2CROSS.COM
   server: 195.133.94.188
   port: 2053
@@ -1256,27 +1210,20 @@ proxies:
     path: /
     headers:
       Host: forfreeuse.sub-flow.online
-- name: 🇲🇽美国 V2CROSS.COM
-  server: cindy50.ceoiii.com
-  port: 36801
-  type: vmess
-  uuid: a6ab6513-6ec3-327f-a068-b89fe72954b8
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /hls/cctv5phd.m3u8
-    headers:
-      Host: ajax.microsoft.com
-- name: 🇳🇱NL_2|3.6MB/s
-  server: 216.57.111.222
-  port: 8443
-  type: hysteria2
-  ports: 8443
-  password: 9dada88d-f8f8-459d-8a4f-4df2c973fe43
-  sni: h2.ecliptic-it.ru
-  skip-cert-verify: false
+- name: 🇳🇱西班牙 V2CROSS.COM
+  server: getsavesafe.net
+  port: 443
+  type: vless
+  tls: true
+  uuid: 39c42b0a-b823-4c93-bb99-74b4183e518d
+  servername: getsavesafe.net
+  host: getsavesafe.net
+  path: /
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 5Z6PwoPSNBLPIsX8lZtHM7-Y-psMMR1vz5Pit0EVISs
+    short-id: "82f5d3a1e9c0b661"
+  client-fingerprint: random
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -1415,7 +1362,9 @@ proxy-groups:
   - 🇳🇱荷兰-004 |1.8MB/s|TK-NL|GPT⁺-NL
   - 🇳🇱荷兰-005 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 🇰🇷韩国-003 |3.9MB/s
+  - 其他-022#2
   - 🇺🇸香港-021 |819KB/s
+  - 美国 094
   - 🇱🇻拉脱维亚-001 |2.0MB/s|TK-LV|GPT⁺-LV|GM-LV
   - 🇫🇷法国-003 |2.3MB/s|GPT⁺-FR
   - 🇷🇴罗马尼亚-001 |4.2MB/s|TK-RO|GPT⁺-RO|GM-RO
@@ -1434,17 +1383,12 @@ proxy-groups:
   - 🇺🇸美国-024 |2.0MB/s|TK-US|YT-US|GPT⁺-US
   - 🇳🇱荷兰-001 |2.5MB/s|GPT⁺-NL
   - 🇪🇸西班牙-001 |1.6MB/s|TK-ES|GPT⁺-ES|GM-ES
-  - 🇨🇳其他-013
-  - 巴西 002
-  - 🇺🇸️54@v2ray_configs_pools
   - 🇳🇱NL-193.169.239.76-0162
   - 🇦🇺AU-82.117.225.56-0507
   - 🇭🇰HK-194.99.79.214-6331
   - 🇦🇺AU-82.117.225.216-0504
   - 🇯🇵IE-3.249.67.252-0065
   - 🇺🇸_US_美国_2
-  - 🇭🇰Hong Kong, Central | [BL]
-  - 🇯🇵JP-154.64.226.149-6067
   - 🇺🇸US-157.254.38.210-0388
   - 🇺🇸US-157.254.38.210-0392
   - 🇭🇰HK-185.244.208.176-0173
@@ -1469,16 +1413,13 @@ proxy-groups:
   - 🇵🇱PL-202.78.163.164-0214
   - 🇰🇷KR-109.61.127.145-0216
   - 🇳🇱NL-89.39.70.9-0222
-  - 🇳🇱_NL_荷兰->🇫🇮_FI_芬兰
   - 🇺🇸_HK_中国香港->🇩🇪_DE_德国
   - 🇨🇳_CN_中国->🇭🇰_HK_中国香港
   - 🇺🇸_HK_中国香港->🇩🇪_DE_德国_1
   - 🇺🇸_HK_中国香港->🇮🇩_ID_印度尼西亚
   - 🇺🇸_US_美国_4
-  - 🇩🇪_DE_德国->🇫🇮_FI_芬兰
   - 🇨🇿俄罗斯 V2CROSS.COM
-  - 🇲🇽美国 V2CROSS.COM
-  - 🇳🇱NL_2|3.6MB/s
+  - 🇳🇱西班牙 V2CROSS.COM
 - name: ♻️ 自动选择
   type: url-test
   proxies:
@@ -1614,7 +1555,9 @@ proxy-groups:
   - 🇳🇱荷兰-004 |1.8MB/s|TK-NL|GPT⁺-NL
   - 🇳🇱荷兰-005 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 🇰🇷韩国-003 |3.9MB/s
+  - 其他-022#2
   - 🇺🇸香港-021 |819KB/s
+  - 美国 094
   - 🇱🇻拉脱维亚-001 |2.0MB/s|TK-LV|GPT⁺-LV|GM-LV
   - 🇫🇷法国-003 |2.3MB/s|GPT⁺-FR
   - 🇷🇴罗马尼亚-001 |4.2MB/s|TK-RO|GPT⁺-RO|GM-RO
@@ -1633,17 +1576,12 @@ proxy-groups:
   - 🇺🇸美国-024 |2.0MB/s|TK-US|YT-US|GPT⁺-US
   - 🇳🇱荷兰-001 |2.5MB/s|GPT⁺-NL
   - 🇪🇸西班牙-001 |1.6MB/s|TK-ES|GPT⁺-ES|GM-ES
-  - 🇨🇳其他-013
-  - 巴西 002
-  - 🇺🇸️54@v2ray_configs_pools
   - 🇳🇱NL-193.169.239.76-0162
   - 🇦🇺AU-82.117.225.56-0507
   - 🇭🇰HK-194.99.79.214-6331
   - 🇦🇺AU-82.117.225.216-0504
   - 🇯🇵IE-3.249.67.252-0065
   - 🇺🇸_US_美国_2
-  - 🇭🇰Hong Kong, Central | [BL]
-  - 🇯🇵JP-154.64.226.149-6067
   - 🇺🇸US-157.254.38.210-0388
   - 🇺🇸US-157.254.38.210-0392
   - 🇭🇰HK-185.244.208.176-0173
@@ -1668,16 +1606,13 @@ proxy-groups:
   - 🇵🇱PL-202.78.163.164-0214
   - 🇰🇷KR-109.61.127.145-0216
   - 🇳🇱NL-89.39.70.9-0222
-  - 🇳🇱_NL_荷兰->🇫🇮_FI_芬兰
   - 🇺🇸_HK_中国香港->🇩🇪_DE_德国
   - 🇨🇳_CN_中国->🇭🇰_HK_中国香港
   - 🇺🇸_HK_中国香港->🇩🇪_DE_德国_1
   - 🇺🇸_HK_中国香港->🇮🇩_ID_印度尼西亚
   - 🇺🇸_US_美国_4
-  - 🇩🇪_DE_德国->🇫🇮_FI_芬兰
   - 🇨🇿俄罗斯 V2CROSS.COM
-  - 🇲🇽美国 V2CROSS.COM
-  - 🇳🇱NL_2|3.6MB/s
+  - 🇳🇱西班牙 V2CROSS.COM
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
