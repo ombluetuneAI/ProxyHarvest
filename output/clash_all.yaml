@@ -30,20 +30,6 @@ proxies:
     path:
     - /
   encryption: none
-- name: 其他-013
-  type: vless
-  network: ws
-  uuid: b19b768d-bc57-4d03-9bea-61129ed5fef9
-  server: 162.159.46.0
-  port: 8880
-  udp: true
-  xudp: true
-  ws-opts:
-    headers:
-      Host: new.106-79e.workers.dev
-      User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like
-        Gecko) Chrome/47.0.2526.111 Safari/537.36 MVisionPlayer/1.0.0.0
-    path: /pyip=ProxyIP.SG.CMLiussss.net
 - name: 其他-018 |711KB/s
   type: http
   server: 2af4e0ee-ta1og0-ta6lxc-jjv2.sg.oshuawei.com
@@ -1018,18 +1004,6 @@ proxies:
     headers:
       Host: v2ray1.dozapp.xyz
     path: /lMnsZUN4/
-- name: 塞舌尔-002
-  type: trojan
-  network: ws
-  server: 45.130.125.126
-  port: 443
-  password: humanity
-  skip-cert-verify: false
-  sni: www.calmlunch.com
-  ws-opts:
-    headers:
-      Host: www.calmlunch.com
-    path: /assignment
 - name: 韩国-002
   type: vmess
   network: http
@@ -1045,18 +1019,6 @@ proxies:
     method: GET
     path:
     - /
-- name: 其他-036#2
-  type: trojan
-  network: ws
-  server: 104.18.152.97
-  port: 443
-  password: humanity
-  skip-cert-verify: false
-  sni: www.ignitelimit.com
-  ws-opts:
-    headers:
-      Host: www.ignitelimit.com
-    path: /assignment
 - name: 韩国-003 |3.9MB/s
   type: socks5
   server: 121.169.46.116
@@ -1432,7 +1394,6 @@ proxy-groups:
   - ♻️ 自动选择
   - DIRECT
   - 其他-008
-  - 其他-013
   - 其他-018 |711KB/s
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
@@ -1565,9 +1526,7 @@ proxy-groups:
   - 荷兰-004 |1.8MB/s|TK-NL|GPT⁺-NL
   - 荷兰-005 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 其他-057
-  - 塞舌尔-002
   - 韩国-002
-  - 其他-036#2
   - 韩国-003 |3.9MB/s
   - 其他-039 |2.4MB/s|YT-KR|GPT⁺-KR|GM-KR
   - 德国-002
@@ -1612,7 +1571,6 @@ proxy-groups:
   type: url-test
   proxies:
   - 其他-008
-  - 其他-013
   - 其他-018 |711KB/s
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
@@ -1745,9 +1703,7 @@ proxy-groups:
   - 荷兰-004 |1.8MB/s|TK-NL|GPT⁺-NL
   - 荷兰-005 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 其他-057
-  - 塞舌尔-002
   - 韩国-002
-  - 其他-036#2
   - 韩国-003 |3.9MB/s
   - 其他-039 |2.4MB/s|YT-KR|GPT⁺-KR|GM-KR
   - 德国-002
