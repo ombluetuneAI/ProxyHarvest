@@ -831,18 +831,14 @@ proxies:
   port: 1090
   type: socks5
   username: T2clM0QlM0Q6
-- name: 其他-022#2
-  server: 104.17.131.88
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.gossipglove.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.gossipglove.com
-  udp: true
+- name: 🇰🇷其他-039 |2.4MB/s|YT-KR|GPT⁺-KR|GM-KR
+  server: testkr3.ssv.vc
+  port: 30446
+  type: http
+  username: test
+  password: test.+
+  tls: true
+  skip-cert-verify: true
 - name: 🇺🇸香港-021 |819KB/s
   server: 154.26.192.123
   port: 10988
@@ -851,18 +847,6 @@ proxies:
   password: gs4BXwT6SW
   tls: false
   skip-cert-verify: false
-- name: 美国 094
-  server: 104.21.40.34
-  port: 443
-  type: trojan
-  password: humanity
-  sni: www.multiplydose.com
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.multiplydose.com
-  udp: true
 - name: 🇱🇻拉脱维亚-001 |2.0MB/s|TK-LV|GPT⁺-LV|GM-LV
   server: 185.219.159.16
   port: 443
@@ -971,6 +955,16 @@ proxies:
   type: http
   tls: true
   skip-cert-verify: true
+- name: 🇨🇳其他-013 2
+  server: v45.hdacd.com
+  port: 30845
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  skip-cert-verify: false
+  udp: true
 - name: 🇳🇱NL-193.169.239.76-0162
   server: renewed-chigger.rooster465.autos
   port: 443
@@ -993,12 +987,6 @@ proxies:
   type: trojan
   password: XG59623478
   sni: concise-buck.rooster465.autos
-- name: 🇯🇵IE-3.249.67.252-0065
-  server: singular-lark.rooster465.autos
-  port: 443
-  type: trojan
-  password: XG59623478
-  sni: singular-lark.rooster465.autos
 - name: 🇺🇸_US_美国_2
   server: guanwang.awsno.com
   port: 443
@@ -1013,12 +1001,6 @@ proxies:
 - name: 🇺🇸US-157.254.38.210-0388
   server: oplosgru-c.catcat321.com
   port: 20004
-  type: trojan
-  password: ba07a8af-5544-48ac-ab62-3b6c00a44fa6
-  sni: hk.catxstar.com
-- name: 🇺🇸US-157.254.38.210-0392
-  server: oplosgru-c.catcat321.com
-  port: 20035
   type: trojan
   password: ba07a8af-5544-48ac-ab62-3b6c00a44fa6
   sni: hk.catxstar.com
@@ -1085,48 +1067,85 @@ proxies:
   type: trojan
   password: IQ68037294
   sni: cheerful-swan.rooster465.autos
-- name: 🇸🇬SG-81.28.13.103-0189
+- name: 🇯🇵SG-45.135.228.28-0188
+  server: pleased-sawfly.rooster465.autos
+  port: 443
+  type: trojan
+  password: IQ68037294
+- name: 🇯🇵SG-81.28.13.103-0189
   server: faithful-panther.rooster465.autos
   port: 443
   type: trojan
   password: FC60532879
   sni: faithful-panther.rooster465.autos
-- name: 🇸🇬SG-45.135.228.59-0191
+- name: 🇯🇵SG-45.135.228.63-0190
+  server: fair-reptile.rooster465.autos
+  port: 443
+  type: trojan
+  password: IQ68037294
+  sni: fair-reptile.rooster465.autos
+- name: 🇯🇵SG-45.135.228.59-0191
   server: true-alpaca.rooster465.autos
   port: 443
   type: trojan
   password: FC60532879
   sni: true-alpaca.rooster465.autos
-- name: 🇸🇬SG-81.28.13.126-0195
-  server: resolved-gelding.rooster465.autos
-  port: 443
-  type: trojan
-  password: FC60532879
-  sni: resolved-gelding.rooster465.autos
-- name: 🇸🇬SG-45.135.228.9-0204
-  server: actual-chicken.rooster465.autos
-  port: 443
-  type: trojan
-  password: FC60532879
-  sni: actual-chicken.rooster465.autos
-- name: 🇰🇷KR-82.117.226.221-0205
-  server: accurate-drake.rooster465.autos
+- name: 🇯🇵SG-91.243.81.129-0192
+  server: casual-stallion.rooster465.autos
   port: 443
   type: trojan
   password: IQ68037294
-  sni: accurate-drake.rooster465.autos
-- name: 🇸🇬SG-45.135.228.169-0206
-  server: fun-salmon.rooster465.autos
+- name: 🇯🇵SG-45.135.228.220-0196
+  server: neat-duck.rooster465.autos
   port: 443
   type: trojan
   password: IQ68037294
-  sni: fun-salmon.rooster465.autos
+  sni: neat-duck.rooster465.autos
+- name: 🇯🇵SG-45.135.228.211-0199
+  server: endless-kiwi.rooster465.autos
+  port: 443
+  type: trojan
+  password: IQ68037294
+- name: 🇯🇵SG-81.28.13.225-0200
+  server: open-eel.rooster465.autos
+  port: 443
+  type: trojan
+  password: IQ68037294
+  sni: open-eel.rooster465.autos
+- name: 🇯🇵SG-91.243.81.26-0201
+  server: full-mackerel.rooster465.autos
+  port: 443
+  type: trojan
+  password: IQ68037294
+- name: 🇯🇵SG-81.28.13.48-0202
+  server: glowing-deer.rooster465.autos
+  port: 443
+  type: trojan
+  password: IQ68037294
+- name: 🇯🇵SG-91.243.81.192-0203
+  server: sterling-fowl.rooster465.autos
+  port: 443
+  type: trojan
+  password: IQ68037294
+  sni: sterling-fowl.rooster465.autos
+- name: 🇯🇵SG-45.135.228.100-0207
+  server: meet-doe.rooster465.autos
+  port: 443
+  type: trojan
+  password: IQ68037294
+  sni: meet-doe.rooster465.autos
 - name: 🇳🇱NL-89.39.70.180-0209
   server: eager-louse.rooster465.autos
   port: 443
   type: trojan
   password: IQ68037294
   sni: eager-louse.rooster465.autos
+- name: 🇯🇵KR-82.117.226.104-0212
+  server: robust-toucan.rooster465.autos
+  port: 443
+  type: trojan
+  password: IQ68037294
+  sni: robust-toucan.rooster465.autos
 - name: 🇭🇰HK-185.14.47.101-0213
   server: ideal-robin.rooster465.autos
   port: 443
@@ -1139,12 +1158,18 @@ proxies:
   type: trojan
   password: NQ26071394
   sni: pretty-mollusk.rooster465.autos
-- name: 🇰🇷KR-109.61.127.145-0216
+- name: 🇯🇵KR-109.61.127.145-0216
   server: outgoing-ladybird.rooster465.autos
   port: 443
   type: trojan
   password: FC60532879
   sni: outgoing-ladybird.rooster465.autos
+- name: 🇯🇵SG-81.28.13.159-0221
+  server: giving-bird.rooster465.autos
+  port: 443
+  type: trojan
+  password: IQ68037294
+  sni: giving-bird.rooster465.autos
 - name: 🇳🇱NL-89.39.70.9-0222
   server: whole-woodcock.rooster465.autos
   port: 443
@@ -1176,54 +1201,184 @@ proxies:
   sni: de.catxstar.com
   skip-cert-verify: true
   udp: true
-- name: 🇺🇸_HK_中国香港->🇮🇩_ID_印度尼西亚
-  server: oplosgru-c.catcat321.com
-  port: 20120
-  type: trojan
-  password: ba07a8af-5544-48ac-ab62-3b6c00a44fa6
-  sni: hk.catxstar.com
-  skip-cert-verify: true
-  udp: true
-- name: 🇺🇸_US_美国_4
-  server: 154.193.55.183
+- name: _US_美国->🇫🇮_FI_芬兰
+  server: 199.232.78.159
   port: 443
   type: vless
   tls: true
-  uuid: 11e57eeb-ffdf-4983-a9fa-ad352dea7253
-  servername: storage.yandex.net
-  path: /
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: EMS0wzISeSbEe4JABPD8EgDnyLXgDmrX4_lcfG6VVX4
-    short-id: "dbbe8dca27a92c35"
-  client-fingerprint: random
-  skip-cert-verify: true
-- name: 🇨🇿俄罗斯 V2CROSS.COM
-  server: 195.133.94.188
-  port: 2053
-  type: vless
-  tls: true
-  uuid: c7e9c591-2764-423a-afca-efbd010fd396
-  servername: forfreeuse.sub-flow.online
+  uuid: 0c0b895d-b954-4bec-94e6-5770677e7925
+  servername: ssl.fastly.com
   network: ws
   ws-opts:
-    path: /
+    path: /TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER?ed=2053
     headers:
-      Host: forfreeuse.sub-flow.online
-- name: 🇳🇱西班牙 V2CROSS.COM
-  server: getsavesafe.net
+      Host: pan1.global.ssl.fastly.neT
+  skip-cert-verify: true
+- name: 🇯🇵JP-18.179.203.229-0203
+  server: v2jp.k1.ssnss.live
+  port: 44184
+  type: trojan
+  password: d050aca3-9df2-4461-90ec-92373c1d7636
+- name: 🇷🇺_RU_俄罗斯->🇩🇪_DE_德国
+  server: 194.93.0.28
   port: 443
   type: vless
   tls: true
-  uuid: 39c42b0a-b823-4c93-bb99-74b4183e518d
-  servername: getsavesafe.net
-  host: getsavesafe.net
-  path: /
-  flow: xtls-rprx-vision
+  uuid: 218fd696-e3a2-4c33-b397-a5f13a82969e
+  servername: media2.tcpdoor.net
+  network: grpc
+  grpc-opts:
+    grpc-mode: gun
+    grpc-service-name: grpc
   reality-opts:
-    public-key: 5Z6PwoPSNBLPIsX8lZtHM7-Y-psMMR1vz5Pit0EVISs
-    short-id: "82f5d3a1e9c0b661"
+    public-key: vxhkDXfYpz1OLqZ-_9QVoQr3_UJLtJFheb5bD5YH7z8
+    short-id: "3303c7a5"
   client-fingerprint: random
+  skip-cert-verify: true
+- name: 🇨🇳_CN_中国->🇺🇸_US_美国
+  server: v24.hdacd.com
+  port: 30824
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  udp: true
+- name: US_speednode_0176
+  server: jumao91.shop
+  port: 2096
+  type: trojan
+  password: 51a0af77-a60c-4d9b-81a4-f50e1b38d90b
+  sni: jumao91.shop
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /proxyip=45.207.156.255
+    headers:
+      Host: jumao91.shop
+- name: 🇦🇪_AE_阿拉伯联合酋长国->🇩🇪_DE_德国
+  server: 217.60.193.1
+  port: 443
+  type: vless
+  tls: true
+  uuid: 5c192fd7-ef98-4112-a20c-129108fcd7e9
+  servername: ddc-akn.astralweb.tech
+  path: /
+  skip-cert-verify: true
+- name: 🇩🇪_DE_德国_3
+  server: 31.76.11.46.cdn-one.org
+  port: 443
+  type: vless
+  tls: true
+  uuid: 4f375fb4-3c95-425f-bc7b-8085487a6f3c
+  servername: 31.76.11.46.cdn-one.org
+  network: ws
+  ws-opts:
+    path: /52872/BNzG4FvIAr
+    headers:
+      Host: 31.76.11.46.cdn-one.org
+  skip-cert-verify: true
+- name: 🇩🇪_DE_德国_5
+  server: 159.195.201.235
+  port: 25310
+  type: vless
+  tls: true
+  uuid: 6af3672b-8994-4cf1-aa15-23ce6574ebf0
+  servername: cloudflare.com
+  network: grpc
+  grpc-opts:
+    grpc-mode: gun
+    grpc-service-name: auragrpc
+  reality-opts:
+    public-key: 3Ow1WhWHN1nUEkOR4kThVpzEuvlcB5ZrqoBcHtJGyiY
+    short-id: "a3d8f1e9b2c7d4e6"
+  client-fingerprint: random
+  skip-cert-verify: true
+- name: 🇦🇪_AE_阿拉伯联合酋长国->🇩🇪_DE_德国_1
+  server: ddc-akn.astralweb.tech
+  port: 443
+  type: vless
+  tls: true
+  uuid: 04b9e828-43ed-4faf-8952-41069ec08355
+  host: ddc-akn.astralweb.tech
+  path: /
+  skip-cert-verify: true
+- name: 🇵🇱_PL_波兰_1
+  server: 31.76.251.127.cdn-one.org
+  port: 443
+  type: vless
+  tls: true
+  uuid: 4f375fb4-3c95-425f-bc7b-8085487a6f3c
+  servername: 31.76.251.127.cdn-one.org
+  network: ws
+  ws-opts:
+    path: /10336/2GCOqG7bvA
+    headers:
+      Host: 31.76.251.127.cdn-one.org
+  skip-cert-verify: true
+- name: 🇰🇷KR_1|5.4MB/s
+  server: hg1.yuanbaojc.site
+  port: 20801
+  type: hysteria2
+  ports: 20801
+  password: 300f8c21-6341-4503-a5db-c13d331c63c8
+  sni: 127.0.0.1
+  skip-cert-verify: true
+- name: 🇰🇷韩国家宽|高速01
+  server: hg1.yuanbaojc.site
+  port: 20801
+  type: hysteria2
+  ports: 20801
+  password: 300f8c21-6341-4503-a5db-c13d331c63c8
+  skip-cert-verify: true
+- name: 🇨🇳US_3|3.6MB/s
+  server: v29.hdacd.com
+  port: 30829
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+- name: 🇰🇷KR_2|5.2MB/s
+  server: 222.238.227.54
+  port: 20801
+  type: hysteria2
+  ports: 20801
+  password: 300f8c21-6341-4503-a5db-c13d331c63c8
+  skip-cert-verify: true
+- name: 🇰🇷KR_3|3.6MB/s
+  server: 222.238.227.54
+  port: 20801
+  type: hysteria2
+  ports: 20801
+  password: 300f8c21-6341-4503-a5db-c13d331c63c8
+  sni: 127.0.0.1
+  skip-cert-verify: true
+- name: US_16|1.3MB/s
+  server: 104.16.239.120
+  port: 443
+  type: trojan
+  password: MITIVPN
+  sni: Ussa1-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.S88R.iR
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/usa---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
+    headers:
+      Host: Ussa1-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.S88R.iR
+- name: US_17|2.5MB/s
+  server: 104.17.148.22
+  port: 443
+  type: trojan
+  password: MITIVPN
+  sni: Duss-a-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.S-s-S.iR
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/usa---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
+    headers:
+      Host: Duss-a-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.S-s-S.iR
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -1362,9 +1517,8 @@ proxy-groups:
   - 🇳🇱荷兰-004 |1.8MB/s|TK-NL|GPT⁺-NL
   - 🇳🇱荷兰-005 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 🇰🇷韩国-003 |3.9MB/s
-  - 其他-022#2
+  - 🇰🇷其他-039 |2.4MB/s|YT-KR|GPT⁺-KR|GM-KR
   - 🇺🇸香港-021 |819KB/s
-  - 美国 094
   - 🇱🇻拉脱维亚-001 |2.0MB/s|TK-LV|GPT⁺-LV|GM-LV
   - 🇫🇷法国-003 |2.3MB/s|GPT⁺-FR
   - 🇷🇴罗马尼亚-001 |4.2MB/s|TK-RO|GPT⁺-RO|GM-RO
@@ -1383,14 +1537,13 @@ proxy-groups:
   - 🇺🇸美国-024 |2.0MB/s|TK-US|YT-US|GPT⁺-US
   - 🇳🇱荷兰-001 |2.5MB/s|GPT⁺-NL
   - 🇪🇸西班牙-001 |1.6MB/s|TK-ES|GPT⁺-ES|GM-ES
+  - 🇨🇳其他-013 2
   - 🇳🇱NL-193.169.239.76-0162
   - 🇦🇺AU-82.117.225.56-0507
   - 🇭🇰HK-194.99.79.214-6331
   - 🇦🇺AU-82.117.225.216-0504
-  - 🇯🇵IE-3.249.67.252-0065
   - 🇺🇸_US_美国_2
   - 🇺🇸US-157.254.38.210-0388
-  - 🇺🇸US-157.254.38.210-0392
   - 🇭🇰HK-185.244.208.176-0173
   - 🇭🇰HK-185.14.47.56-0174
   - 🇳🇱NL-193.169.239.146-0176
@@ -1402,24 +1555,45 @@ proxy-groups:
   - 🇵🇱PL-202.78.163.47-0184
   - 🇦🇺AU-87.121.33.14-0186
   - 🇵🇱PL-202.78.163.237-0187
-  - 🇸🇬SG-81.28.13.103-0189
-  - 🇸🇬SG-45.135.228.59-0191
-  - 🇸🇬SG-81.28.13.126-0195
-  - 🇸🇬SG-45.135.228.9-0204
-  - 🇰🇷KR-82.117.226.221-0205
-  - 🇸🇬SG-45.135.228.169-0206
+  - 🇯🇵SG-45.135.228.28-0188
+  - 🇯🇵SG-81.28.13.103-0189
+  - 🇯🇵SG-45.135.228.63-0190
+  - 🇯🇵SG-45.135.228.59-0191
+  - 🇯🇵SG-91.243.81.129-0192
+  - 🇯🇵SG-45.135.228.220-0196
+  - 🇯🇵SG-45.135.228.211-0199
+  - 🇯🇵SG-81.28.13.225-0200
+  - 🇯🇵SG-91.243.81.26-0201
+  - 🇯🇵SG-81.28.13.48-0202
+  - 🇯🇵SG-91.243.81.192-0203
+  - 🇯🇵SG-45.135.228.100-0207
   - 🇳🇱NL-89.39.70.180-0209
+  - 🇯🇵KR-82.117.226.104-0212
   - 🇭🇰HK-185.14.47.101-0213
   - 🇵🇱PL-202.78.163.164-0214
-  - 🇰🇷KR-109.61.127.145-0216
+  - 🇯🇵KR-109.61.127.145-0216
+  - 🇯🇵SG-81.28.13.159-0221
   - 🇳🇱NL-89.39.70.9-0222
   - 🇺🇸_HK_中国香港->🇩🇪_DE_德国
   - 🇨🇳_CN_中国->🇭🇰_HK_中国香港
   - 🇺🇸_HK_中国香港->🇩🇪_DE_德国_1
-  - 🇺🇸_HK_中国香港->🇮🇩_ID_印度尼西亚
-  - 🇺🇸_US_美国_4
-  - 🇨🇿俄罗斯 V2CROSS.COM
-  - 🇳🇱西班牙 V2CROSS.COM
+  - _US_美国->🇫🇮_FI_芬兰
+  - 🇯🇵JP-18.179.203.229-0203
+  - 🇷🇺_RU_俄罗斯->🇩🇪_DE_德国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国
+  - US_speednode_0176
+  - 🇦🇪_AE_阿拉伯联合酋长国->🇩🇪_DE_德国
+  - 🇩🇪_DE_德国_3
+  - 🇩🇪_DE_德国_5
+  - 🇦🇪_AE_阿拉伯联合酋长国->🇩🇪_DE_德国_1
+  - 🇵🇱_PL_波兰_1
+  - 🇰🇷KR_1|5.4MB/s
+  - 🇰🇷韩国家宽|高速01
+  - 🇨🇳US_3|3.6MB/s
+  - 🇰🇷KR_2|5.2MB/s
+  - 🇰🇷KR_3|3.6MB/s
+  - US_16|1.3MB/s
+  - US_17|2.5MB/s
 - name: ♻️ 自动选择
   type: url-test
   proxies:
@@ -1555,9 +1729,8 @@ proxy-groups:
   - 🇳🇱荷兰-004 |1.8MB/s|TK-NL|GPT⁺-NL
   - 🇳🇱荷兰-005 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 🇰🇷韩国-003 |3.9MB/s
-  - 其他-022#2
+  - 🇰🇷其他-039 |2.4MB/s|YT-KR|GPT⁺-KR|GM-KR
   - 🇺🇸香港-021 |819KB/s
-  - 美国 094
   - 🇱🇻拉脱维亚-001 |2.0MB/s|TK-LV|GPT⁺-LV|GM-LV
   - 🇫🇷法国-003 |2.3MB/s|GPT⁺-FR
   - 🇷🇴罗马尼亚-001 |4.2MB/s|TK-RO|GPT⁺-RO|GM-RO
@@ -1576,14 +1749,13 @@ proxy-groups:
   - 🇺🇸美国-024 |2.0MB/s|TK-US|YT-US|GPT⁺-US
   - 🇳🇱荷兰-001 |2.5MB/s|GPT⁺-NL
   - 🇪🇸西班牙-001 |1.6MB/s|TK-ES|GPT⁺-ES|GM-ES
+  - 🇨🇳其他-013 2
   - 🇳🇱NL-193.169.239.76-0162
   - 🇦🇺AU-82.117.225.56-0507
   - 🇭🇰HK-194.99.79.214-6331
   - 🇦🇺AU-82.117.225.216-0504
-  - 🇯🇵IE-3.249.67.252-0065
   - 🇺🇸_US_美国_2
   - 🇺🇸US-157.254.38.210-0388
-  - 🇺🇸US-157.254.38.210-0392
   - 🇭🇰HK-185.244.208.176-0173
   - 🇭🇰HK-185.14.47.56-0174
   - 🇳🇱NL-193.169.239.146-0176
@@ -1595,24 +1767,45 @@ proxy-groups:
   - 🇵🇱PL-202.78.163.47-0184
   - 🇦🇺AU-87.121.33.14-0186
   - 🇵🇱PL-202.78.163.237-0187
-  - 🇸🇬SG-81.28.13.103-0189
-  - 🇸🇬SG-45.135.228.59-0191
-  - 🇸🇬SG-81.28.13.126-0195
-  - 🇸🇬SG-45.135.228.9-0204
-  - 🇰🇷KR-82.117.226.221-0205
-  - 🇸🇬SG-45.135.228.169-0206
+  - 🇯🇵SG-45.135.228.28-0188
+  - 🇯🇵SG-81.28.13.103-0189
+  - 🇯🇵SG-45.135.228.63-0190
+  - 🇯🇵SG-45.135.228.59-0191
+  - 🇯🇵SG-91.243.81.129-0192
+  - 🇯🇵SG-45.135.228.220-0196
+  - 🇯🇵SG-45.135.228.211-0199
+  - 🇯🇵SG-81.28.13.225-0200
+  - 🇯🇵SG-91.243.81.26-0201
+  - 🇯🇵SG-81.28.13.48-0202
+  - 🇯🇵SG-91.243.81.192-0203
+  - 🇯🇵SG-45.135.228.100-0207
   - 🇳🇱NL-89.39.70.180-0209
+  - 🇯🇵KR-82.117.226.104-0212
   - 🇭🇰HK-185.14.47.101-0213
   - 🇵🇱PL-202.78.163.164-0214
-  - 🇰🇷KR-109.61.127.145-0216
+  - 🇯🇵KR-109.61.127.145-0216
+  - 🇯🇵SG-81.28.13.159-0221
   - 🇳🇱NL-89.39.70.9-0222
   - 🇺🇸_HK_中国香港->🇩🇪_DE_德国
   - 🇨🇳_CN_中国->🇭🇰_HK_中国香港
   - 🇺🇸_HK_中国香港->🇩🇪_DE_德国_1
-  - 🇺🇸_HK_中国香港->🇮🇩_ID_印度尼西亚
-  - 🇺🇸_US_美国_4
-  - 🇨🇿俄罗斯 V2CROSS.COM
-  - 🇳🇱西班牙 V2CROSS.COM
+  - _US_美国->🇫🇮_FI_芬兰
+  - 🇯🇵JP-18.179.203.229-0203
+  - 🇷🇺_RU_俄罗斯->🇩🇪_DE_德国
+  - 🇨🇳_CN_中国->🇺🇸_US_美国
+  - US_speednode_0176
+  - 🇦🇪_AE_阿拉伯联合酋长国->🇩🇪_DE_德国
+  - 🇩🇪_DE_德国_3
+  - 🇩🇪_DE_德国_5
+  - 🇦🇪_AE_阿拉伯联合酋长国->🇩🇪_DE_德国_1
+  - 🇵🇱_PL_波兰_1
+  - 🇰🇷KR_1|5.4MB/s
+  - 🇰🇷韩国家宽|高速01
+  - 🇨🇳US_3|3.6MB/s
+  - 🇰🇷KR_2|5.2MB/s
+  - 🇰🇷KR_3|3.6MB/s
+  - US_16|1.3MB/s
+  - US_17|2.5MB/s
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
