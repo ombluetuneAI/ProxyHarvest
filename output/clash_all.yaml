@@ -18,18 +18,6 @@ dns:
     geoip: true
     geoip-code: CN
 proxies:
-- name: 其他-008
-  type: vless
-  network: http
-  uuid: eab915bc-d2df-73d1-47d0-6eb240497055
-  server: gr1.fifapes.monster
-  port: 8882
-  udp: true
-  xudp: true
-  http-opts:
-    path:
-    - /
-  encryption: none
 - name: 其他-018 |711KB/s
   type: http
   server: 2af4e0ee-ta1og0-ta6lxc-jjv2.sg.oshuawei.com
@@ -1393,7 +1381,6 @@ proxy-groups:
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - 其他-008
   - 其他-018 |711KB/s
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
@@ -1570,7 +1557,6 @@ proxy-groups:
 - name: ♻️ 自动选择
   type: url-test
   proxies:
-  - 其他-008
   - 其他-018 |711KB/s
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
