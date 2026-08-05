@@ -60,20 +60,6 @@ proxies:
       Host: 31.76.11.46.cdn-one.org
     path: /52872/BNzG4FvIAr
   client-fingerprint: chrome
-- name: 其他-005
-  type: vless
-  network: ws
-  uuid: 89c3b66f-c849-4602-a5a8-84b6f06af478
-  server: www.true.th
-  servername: d2pwbkmfr5lxa4.cloudfront.net
-  port: 80
-  skip-cert-verify: true
-  tls: false
-  udp: true
-  ws-opts:
-    headers:
-      Host: d2pwbkmfr5lxa4.cloudfront.net
-    path: /
 - name: 其他-006 |554KB/s
   type: http
   server: d39d6b46-ta1og0-tbnk1n-ueq.sg.oshuawei.com
@@ -1034,6 +1020,15 @@ proxies:
   port: 9002
   skip-cert-verify: true
   tls: true
+- name: 韩国-001 |3.9MB/s
+  type: socks5
+  server: 121.169.46.116
+  port: 1090
+  skip-cert-verify: true
+  tls: false
+  udp: true
+  client-fingerprint: chrome
+  username: T2clM0QlM0Q6
 - name: 其他-057
   type: vmess
   network: ws
@@ -1431,7 +1426,6 @@ proxy-groups:
   - 其他-002
   - 其他-003
   - 其他-004
-  - 其他-005
   - 其他-006 |554KB/s
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
@@ -1563,6 +1557,7 @@ proxy-groups:
   - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
   - 荷兰-004 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-005 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
+  - 韩国-001 |3.9MB/s
   - 其他-057
   - 韩国-002
   - 其他-039 |2.4MB/s|YT-KR|GPT⁺-KR|GM-KR
@@ -1610,7 +1605,6 @@ proxy-groups:
   - 其他-002
   - 其他-003
   - 其他-004
-  - 其他-005
   - 其他-006 |554KB/s
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
@@ -1742,6 +1736,7 @@ proxy-groups:
   - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
   - 荷兰-004 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-005 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
+  - 韩国-001 |3.9MB/s
   - 其他-057
   - 韩国-002
   - 其他-039 |2.4MB/s|YT-KR|GPT⁺-KR|GM-KR
