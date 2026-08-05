@@ -27,12 +27,25 @@ proxies:
   cipher: auto
   tls: false
   skip-cert-verify: false
-- name: 🇸🇬其他-018 |711KB/s
-  server: 2af4e0ee-ta1og0-ta6lxc-jjv2.sg.oshuawei.com
+- name: 🇩🇪其他-004
+  server: 31.76.11.46.cdn-one.org
+  port: 443
+  type: vless
+  tls: true
+  uuid: 4f375fb4-3c95-425f-bc7b-8085487a6f3c
+  servername: 31.76.11.46.cdn-one.org
+  network: ws
+  ws-opts:
+    path: /52872/BNzG4FvIAr
+    headers:
+      Host: 31.76.11.46.cdn-one.org
+  skip-cert-verify: true
+- name: 🇸🇬其他-006 |554KB/s
+  server: d39d6b46-ta1og0-tbnk1n-ueq.sg.oshuawei.com
   port: 443
   type: http
-  username: 31676725-b0fd-fed2-c857-2da8ce5a6e4f
-  password: 31676725-b0fd-fed2-c857-2da8ce5a6e4f
+  username: 91df5a86-fcdd-11ef-94aa-f23c913c8d2b
+  password: 91df5a86-fcdd-11ef-94aa-f23c913c8d2b
   tls: true
 - name: 🇩🇪德国-001 |1.6MB/s
   server: 5.83.129.90
@@ -124,14 +137,14 @@ proxies:
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-010 |3.1MB/s|TK-RO|YT-RO|GPT⁺-RO|GM-RO
-  server: 84.239.49.165
+- name: 🇷🇴罗马尼亚-010 |3.1MB/s|TK-RO|GPT⁺-RO|GM-RO
+  server: 84.239.49.173
   port: 9002
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-011 |3.1MB/s|TK-RO|GPT⁺-RO|GM-RO
-  server: 84.239.49.173
+- name: 🇷🇴罗马尼亚-011 |3.1MB/s|TK-RO|YT-RO|GPT⁺-RO|GM-RO
+  server: 84.239.49.165
   port: 9002
   type: http
   tls: true
@@ -167,13 +180,13 @@ proxies:
   tls: true
   skip-cert-verify: true
 - name: 🇷🇴罗马尼亚-017 |1.4MB/s
-  server: 84.239.49.201
+  server: 84.239.49.209
   port: 9002
   type: http
   tls: true
   skip-cert-verify: true
 - name: 🇷🇴罗马尼亚-018 |1.4MB/s
-  server: 84.239.49.209
+  server: 84.239.49.201
   port: 9002
   type: http
   tls: true
@@ -190,68 +203,68 @@ proxies:
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-021 |1.2MB/s
-  server: 193.176.84.32
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-022 |1.2MB/s|TK-RO|GPT⁺-RO|GM-RO
+- name: 🇷🇴罗马尼亚-021 |1.2MB/s|TK-RO|GPT⁺-RO|GM-RO
   server: 84.239.14.149
   port: 9002
   type: http
   tls: true
   skip-cert-verify: true
+- name: 🇷🇴罗马尼亚-022 |1.2MB/s
+  server: 193.176.84.32
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
 - name: 🇷🇴罗马尼亚-023 |1.1MB/s
-  server: 84.239.49.166
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-024 |1.1MB/s
-  server: 84.239.49.59
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-025 |1.1MB/s
-  server: 193.176.84.40
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-026 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
-  server: 193.176.84.30
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-027 |1.1MB/s
   server: 84.239.49.191
   port: 9002
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-028 |1.1MB/s
+- name: 🇷🇴罗马尼亚-024 |1.1MB/s
   server: 84.239.49.254
   port: 9002
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-029 |1.1MB/s
+- name: 🇷🇴罗马尼亚-025 |1.1MB/s
   server: 84.239.49.231
   port: 9002
   type: http
   tls: true
   skip-cert-verify: true
+- name: 🇷🇴罗马尼亚-026 |1.1MB/s
+  server: 84.239.49.59
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇷🇴罗马尼亚-027 |1.1MB/s
+  server: 193.176.84.40
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇷🇴罗马尼亚-028 |1.1MB/s
+  server: 84.239.49.166
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇷🇴罗马尼亚-029 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
+  server: 193.176.84.30
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
 - name: 🇷🇴罗马尼亚-030 |1.0MB/s
-  server: 84.239.49.49
+  server: 84.239.49.185
   port: 9002
   type: http
   tls: true
   skip-cert-verify: true
 - name: 🇷🇴罗马尼亚-031 |1.0MB/s
-  server: 84.239.49.200
+  server: 84.239.14.146
   port: 9002
   type: http
   tls: true
@@ -263,37 +276,37 @@ proxies:
   tls: true
   skip-cert-verify: true
 - name: 🇷🇴罗马尼亚-033 |1.0MB/s
-  server: 84.239.49.239
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-034 |1.0MB/s
-  server: 84.239.49.38
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-035 |1.0MB/s
-  server: 84.239.49.192
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-036 |1.0MB/s
   server: 84.239.49.249
   port: 9002
   type: http
   tls: true
   skip-cert-verify: true
+- name: 🇷🇴罗马尼亚-034 |1.0MB/s
+  server: 84.239.49.171
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇷🇴罗马尼亚-035 |1.0MB/s
+  server: 84.239.49.38
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇷🇴罗马尼亚-036 |1.0MB/s
+  server: 193.176.84.26
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
 - name: 🇷🇴罗马尼亚-037 |1.0MB/s
-  server: 84.239.49.40
+  server: 84.239.49.240
   port: 9002
   type: http
   tls: true
   skip-cert-verify: true
 - name: 🇷🇴罗马尼亚-038 |1.0MB/s
-  server: 193.176.84.26
+  server: 84.239.49.192
   port: 9002
   type: http
   tls: true
@@ -305,49 +318,49 @@ proxies:
   tls: true
   skip-cert-verify: true
 - name: 🇷🇴罗马尼亚-040 |1.0MB/s
-  server: 84.239.49.240
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-041 |1.0MB/s
-  server: 193.176.84.23
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-042 |1.0MB/s
-  server: 84.239.14.146
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-043 |1.0MB/s
-  server: 84.239.49.171
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-044 |1.0MB/s
   server: 84.239.49.159
   port: 9002
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-045 |1.0MB/s
-  server: 84.239.14.158
+- name: 🇷🇴罗马尼亚-041 |1.0MB/s
+  server: 84.239.49.49
   port: 9002
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-046 |1.0MB/s
+- name: 🇷🇴罗马尼亚-042 |1.0MB/s
+  server: 84.239.49.239
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇷🇴罗马尼亚-043 |1.0MB/s
   server: 84.239.49.198
   port: 9002
   type: http
   tls: true
   skip-cert-verify: true
+- name: 🇷🇴罗马尼亚-044 |1.0MB/s
+  server: 84.239.49.200
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇷🇴罗马尼亚-045 |1.0MB/s
+  server: 84.239.49.40
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇷🇴罗马尼亚-046 |1.0MB/s
+  server: 84.239.14.158
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
 - name: 🇷🇴罗马尼亚-047 |1.0MB/s
-  server: 84.239.49.185
+  server: 193.176.84.23
   port: 9002
   type: http
   tls: true
@@ -647,13 +660,13 @@ proxies:
   tls: true
   skip-cert-verify: true
 - name: 🇷🇴罗马尼亚-097 |586KB/s
-  server: 193.176.84.25
+  server: 84.239.49.212
   port: 9002
   type: http
   tls: true
   skip-cert-verify: true
 - name: 🇷🇴罗马尼亚-098 |586KB/s
-  server: 84.239.49.212
+  server: 193.176.84.25
   port: 9002
   type: http
   tls: true
@@ -719,19 +732,19 @@ proxies:
   tls: true
   skip-cert-verify: true
 - name: 🇷🇴罗马尼亚-109 |538KB/s
-  server: 84.239.49.55
-  port: 9002
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-110 |538KB/s
   server: 84.239.49.202
   port: 9002
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-111 |538KB/s
+- name: 🇷🇴罗马尼亚-110 |538KB/s
   server: 84.239.49.229
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇷🇴罗马尼亚-111 |538KB/s
+  server: 84.239.49.55
   port: 9002
   type: http
   tls: true
@@ -808,15 +821,15 @@ proxies:
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇳🇱荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
-  server: 5.255.118.82
-  port: 443
+- name: 🇳🇱荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
+  server: 51.159.225.196
+  port: 23856
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇳🇱荷兰-004 |1.8MB/s|TK-NL|GPT⁺-NL
-  server: 51.159.225.196
-  port: 23856
+- name: 🇳🇱荷兰-004 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
+  server: 5.255.118.82
+  port: 443
   type: http
   tls: true
   skip-cert-verify: true
@@ -826,7 +839,7 @@ proxies:
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇰🇷韩国-003 |3.9MB/s
+- name: 🇰🇷韩国-001 |3.9MB/s
   server: 121.169.46.116
   port: 1090
   type: socks5
@@ -998,6 +1011,19 @@ proxies:
   skip-cert-verify: true
   servername: gw.alicdn.com
   udp: true
+- name: SG_6|3.6MB/s
+  server: 162.159.0.3
+  port: 443
+  type: vless
+  tls: true
+  uuid: dd321f25-8f90-4e7c-a1fa-01883a8988a7
+  servername: soucuovls.pages.dev
+  network: ws
+  ws-opts:
+    path: pyip=proxyip.cmliussss.netfp=random
+    headers:
+      Host: soucuovls.pages.dev
+  skip-cert-verify: true
 - name: 🇺🇸US-157.254.38.210-0388
   server: oplosgru-c.catcat321.com
   port: 20004
@@ -1038,12 +1064,6 @@ proxies:
   type: trojan
   password: KV63147582
   sni: more-trout.rooster465.autos
-- name: 🇭🇰HK-185.244.208.210-0181
-  server: upright-hamster.rooster465.autos
-  port: 443
-  type: trojan
-  password: PI36027154
-  sni: upright-hamster.rooster465.autos
 - name: 🇳🇱NL-79.133.126.235-0182
   server: fast-ghost.rooster465.autos
   port: 443
@@ -1067,85 +1087,6 @@ proxies:
   type: trojan
   password: IQ68037294
   sni: cheerful-swan.rooster465.autos
-- name: 🇯🇵SG-45.135.228.28-0188
-  server: pleased-sawfly.rooster465.autos
-  port: 443
-  type: trojan
-  password: IQ68037294
-- name: 🇯🇵SG-81.28.13.103-0189
-  server: faithful-panther.rooster465.autos
-  port: 443
-  type: trojan
-  password: FC60532879
-  sni: faithful-panther.rooster465.autos
-- name: 🇯🇵SG-45.135.228.63-0190
-  server: fair-reptile.rooster465.autos
-  port: 443
-  type: trojan
-  password: IQ68037294
-  sni: fair-reptile.rooster465.autos
-- name: 🇯🇵SG-45.135.228.59-0191
-  server: true-alpaca.rooster465.autos
-  port: 443
-  type: trojan
-  password: FC60532879
-  sni: true-alpaca.rooster465.autos
-- name: 🇯🇵SG-91.243.81.129-0192
-  server: casual-stallion.rooster465.autos
-  port: 443
-  type: trojan
-  password: IQ68037294
-- name: 🇯🇵SG-45.135.228.220-0196
-  server: neat-duck.rooster465.autos
-  port: 443
-  type: trojan
-  password: IQ68037294
-  sni: neat-duck.rooster465.autos
-- name: 🇯🇵SG-45.135.228.211-0199
-  server: endless-kiwi.rooster465.autos
-  port: 443
-  type: trojan
-  password: IQ68037294
-- name: 🇯🇵SG-81.28.13.225-0200
-  server: open-eel.rooster465.autos
-  port: 443
-  type: trojan
-  password: IQ68037294
-  sni: open-eel.rooster465.autos
-- name: 🇯🇵SG-91.243.81.26-0201
-  server: full-mackerel.rooster465.autos
-  port: 443
-  type: trojan
-  password: IQ68037294
-- name: 🇯🇵SG-81.28.13.48-0202
-  server: glowing-deer.rooster465.autos
-  port: 443
-  type: trojan
-  password: IQ68037294
-- name: 🇯🇵SG-91.243.81.192-0203
-  server: sterling-fowl.rooster465.autos
-  port: 443
-  type: trojan
-  password: IQ68037294
-  sni: sterling-fowl.rooster465.autos
-- name: 🇯🇵SG-45.135.228.100-0207
-  server: meet-doe.rooster465.autos
-  port: 443
-  type: trojan
-  password: IQ68037294
-  sni: meet-doe.rooster465.autos
-- name: 🇳🇱NL-89.39.70.180-0209
-  server: eager-louse.rooster465.autos
-  port: 443
-  type: trojan
-  password: IQ68037294
-  sni: eager-louse.rooster465.autos
-- name: 🇯🇵KR-82.117.226.104-0212
-  server: robust-toucan.rooster465.autos
-  port: 443
-  type: trojan
-  password: IQ68037294
-  sni: robust-toucan.rooster465.autos
 - name: 🇭🇰HK-185.14.47.101-0213
   server: ideal-robin.rooster465.autos
   port: 443
@@ -1158,18 +1099,6 @@ proxies:
   type: trojan
   password: NQ26071394
   sni: pretty-mollusk.rooster465.autos
-- name: 🇯🇵KR-109.61.127.145-0216
-  server: outgoing-ladybird.rooster465.autos
-  port: 443
-  type: trojan
-  password: FC60532879
-  sni: outgoing-ladybird.rooster465.autos
-- name: 🇯🇵SG-81.28.13.159-0221
-  server: giving-bird.rooster465.autos
-  port: 443
-  type: trojan
-  password: IQ68037294
-  sni: giving-bird.rooster465.autos
 - name: 🇳🇱NL-89.39.70.9-0222
   server: whole-woodcock.rooster465.autos
   port: 443
@@ -1201,24 +1130,21 @@ proxies:
   sni: de.catxstar.com
   skip-cert-verify: true
   udp: true
-- name: _US_美国->🇫🇮_FI_芬兰
-  server: 199.232.78.159
+- name: 🇳🇱
+  server: 5.255.102.165
   port: 443
-  type: vless
-  tls: true
-  uuid: 0c0b895d-b954-4bec-94e6-5770677e7925
-  servername: ssl.fastly.com
-  network: ws
-  ws-opts:
-    path: /TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER,TELEGRAM_NUFiLTER?ed=2053
-    headers:
-      Host: pan1.global.ssl.fastly.neT
+  type: hysteria2
+  ports: 443
+  password: LzMWgm6LaNWCm11bFTbynDPq2TqQj03t
+  sni: www.microsoft.com
   skip-cert-verify: true
-- name: 🇯🇵JP-18.179.203.229-0203
-  server: v2jp.k1.ssnss.live
-  port: 44184
-  type: trojan
-  password: d050aca3-9df2-4461-90ec-92373c1d7636
+- name: 🇦🇿54@oneclickvpnkeys
+  server: 94.20.88.13
+  port: 8443
+  type: hysteria2
+  ports: 8443
+  password: ew9_M93_6a31Qd45_hUX3984F_jNZ83x_Nz1l_f
+  sni: azer-tea-grape.bumbleshrimp.com
 - name: 🇷🇺_RU_俄罗斯->🇩🇪_DE_德国
   server: 194.93.0.28
   port: 443
@@ -1245,18 +1171,6 @@ proxies:
   tls: false
   skip-cert-verify: true
   udp: true
-- name: US_speednode_0176
-  server: jumao91.shop
-  port: 2096
-  type: trojan
-  password: 51a0af77-a60c-4d9b-81a4-f50e1b38d90b
-  sni: jumao91.shop
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /proxyip=45.207.156.255
-    headers:
-      Host: jumao91.shop
 - name: 🇦🇪_AE_阿拉伯联合酋长国->🇩🇪_DE_德国
   server: 217.60.193.1
   port: 443
@@ -1266,119 +1180,96 @@ proxies:
   servername: ddc-akn.astralweb.tech
   path: /
   skip-cert-verify: true
-- name: 🇩🇪_DE_德国_3
-  server: 31.76.11.46.cdn-one.org
+- name: 🇺🇸US-157.254.38.210-0428
+  server: hkdcrtc-e.catcat321.com
+  port: 20066
+  type: trojan
+  password: 41c406e2-12b5-41f2-a329-d0621052d675
+  sni: hk.catxstar.com
+- name: 美国 科罗拉多州布隆菲尔德市Level 3通信股份有限公司
+  server: d.mygoldiran.com
   port: 443
   type: vless
   tls: true
-  uuid: 4f375fb4-3c95-425f-bc7b-8085487a6f3c
-  servername: 31.76.11.46.cdn-one.org
+  uuid: 76792e97-ee95-4d29-86da-347362d491f2
+  servername: usa_multi.mygoldiran.com
   network: ws
   ws-opts:
-    path: /52872/BNzG4FvIAr
+    path: /idea
     headers:
-      Host: 31.76.11.46.cdn-one.org
-  skip-cert-verify: true
-- name: 🇩🇪_DE_德国_5
-  server: 159.195.201.235
-  port: 25310
-  type: vless
-  tls: true
-  uuid: 6af3672b-8994-4cf1-aa15-23ce6574ebf0
-  servername: cloudflare.com
-  network: grpc
-  grpc-opts:
-    grpc-mode: gun
-    grpc-service-name: auragrpc
-  reality-opts:
-    public-key: 3Ow1WhWHN1nUEkOR4kThVpzEuvlcB5ZrqoBcHtJGyiY
-    short-id: "a3d8f1e9b2c7d4e6"
-  client-fingerprint: random
-  skip-cert-verify: true
-- name: 🇦🇪_AE_阿拉伯联合酋长国->🇩🇪_DE_德国_1
-  server: ddc-akn.astralweb.tech
+      Host: usa_multi.mygoldiran.com
+- name: 🇩🇪德国
+  server: node-degame.bangboonet.ru
   port: 443
-  type: vless
-  tls: true
-  uuid: 04b9e828-43ed-4faf-8952-41069ec08355
-  host: ddc-akn.astralweb.tech
-  path: /
+  type: hysteria2
+  ports: 443
+  password: 2ef4cf10-34df-4c0f-9d82-bf6ca9e45025
+  sni: node-degame.bangboonet.ru
+- name: 🇺🇸美国
+  server: 155.117.19.221
+  port: 30001
+  type: hysteria2
+  ports: 30001
+  password: 6fe3a600-4bcf-4040-81eb-ccd29231db2b
   skip-cert-verify: true
-- name: 🇵🇱_PL_波兰_1
-  server: 31.76.251.127.cdn-one.org
+- name: 🇮🇹GB_1|3.7MB/s
+  server: it-one.quiet-rogue.site
   port: 443
-  type: vless
-  tls: true
-  uuid: 4f375fb4-3c95-425f-bc7b-8085487a6f3c
-  servername: 31.76.251.127.cdn-one.org
-  network: ws
-  ws-opts:
-    path: /10336/2GCOqG7bvA
-    headers:
-      Host: 31.76.251.127.cdn-one.org
-  skip-cert-verify: true
-- name: 🇰🇷KR_1|5.4MB/s
-  server: hg1.yuanbaojc.site
-  port: 20801
   type: hysteria2
-  ports: 20801
-  password: 300f8c21-6341-4503-a5db-c13d331c63c8
-  sni: 127.0.0.1
-  skip-cert-verify: true
-- name: 🇰🇷韩国家宽|高速01
-  server: hg1.yuanbaojc.site
-  port: 20801
+  ports: 443
+  password: 71cada65-d23e-418c-88e4-a06188d14689
+  sni: it-one.quiet-rogue.site
+  skip-cert-verify: false
+- name: 🇺🇸US_11|1.5MB/s
+  server: uswx3.wxgqlfx.vip
+  port: 25379
   type: hysteria2
-  ports: 20801
-  password: 300f8c21-6341-4503-a5db-c13d331c63c8
+  ports: 25379
+  password: 1db7c1ae-e1e1-4612-8057-9f7b54849472
+  sni: 144.225.187.184
   skip-cert-verify: true
-- name: 🇨🇳US_3|3.6MB/s
-  server: v29.hdacd.com
-  port: 30829
-  type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-- name: 🇰🇷KR_2|5.2MB/s
-  server: 222.238.227.54
-  port: 20801
-  type: hysteria2
-  ports: 20801
-  password: 300f8c21-6341-4503-a5db-c13d331c63c8
-  skip-cert-verify: true
-- name: 🇰🇷KR_3|3.6MB/s
-  server: 222.238.227.54
-  port: 20801
-  type: hysteria2
-  ports: 20801
-  password: 300f8c21-6341-4503-a5db-c13d331c63c8
-  sni: 127.0.0.1
-  skip-cert-verify: true
-- name: US_16|1.3MB/s
-  server: 104.16.239.120
+- name: DE_5|1.8MB/s
+  server: cctvhikvision.center
   port: 443
   type: trojan
-  password: MITIVPN
-  sni: Ussa1-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.S88R.iR
-  skip-cert-verify: true
+  password: ersi13mjahoao8e6
+  sni: ramz.xuithree.dpdns.org
+  skip-cert-verify: false
   network: ws
   ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/usa---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
+    path: /dksk
     headers:
-      Host: Ussa1-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.S88R.iR
-- name: US_17|2.5MB/s
-  server: 104.17.148.22
+      Host: ramz.xuithree.dpdns.org
+- name: DE_6|1.7MB/s
+  server: hikvision-plus.com
   port: 443
   type: trojan
-  password: MITIVPN
-  sni: Duss-a-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.S-s-S.iR
-  skip-cert-verify: true
+  password: ersi13mjahoao8e6
+  sni: ramz.xuithree.dpdns.org
+  skip-cert-verify: false
   network: ws
   ws-opts:
-    path: /---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/usa---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN/---@MiTiVPN---@MiTiVPN
+    path: /dksk
     headers:
-      Host: Duss-a-MiTiVPN--MiTiVPN--MiTiVPN---MiTiVPN--MiTiVPN--MiTiVPN.S-s-S.iR
+      Host: ramz.xuithree.dpdns.org
+- name: DE_7|2.4MB/s
+  server: hyperon.site
+  port: 443
+  type: trojan
+  password: ersi13mjahoao8e6
+  sni: ramz.xuithree.dpdns.org
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /dksk
+    headers:
+      Host: ramz.xuithree.dpdns.org
+- name: 🇧🇷❓Other_1|1.8MB/s
+  server: 137.131.181.254
+  port: 59319
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: YjliYmFlNzVmMmE4ZmJkYjAxNzQ2NWUyNzZlNjhkZGU=
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -1386,7 +1277,8 @@ proxy-groups:
   - ♻️ 自动选择
   - DIRECT
   - 🇭🇰香港
-  - 🇸🇬其他-018 |711KB/s
+  - 🇩🇪其他-004
+  - 🇸🇬其他-006 |554KB/s
   - 🇩🇪德国-001 |1.6MB/s
   - 🇩🇪德国-002 |594KB/s
   - 🇦🇺澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
@@ -1399,8 +1291,8 @@ proxy-groups:
   - 🇷🇴罗马尼亚-007 |3.3MB/s|TK-RO|YT-CN|GPT⁺-RO
   - 🇷🇴罗马尼亚-008 |3.3MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 🇷🇴罗马尼亚-009 |3.2MB/s|TK-RO|YT-CN|GPT⁺-RO
-  - 🇷🇴罗马尼亚-010 |3.1MB/s|TK-RO|YT-RO|GPT⁺-RO|GM-RO
-  - 🇷🇴罗马尼亚-011 |3.1MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 🇷🇴罗马尼亚-010 |3.1MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 🇷🇴罗马尼亚-011 |3.1MB/s|TK-RO|YT-RO|GPT⁺-RO|GM-RO
   - 🇷🇴罗马尼亚-012 |3.1MB/s|TK-RO|YT-US|GPT⁺-RO
   - 🇷🇴罗马尼亚-013 |2.9MB/s|TK-RO|YT-RO|GPT⁺-RO|GM-RO
   - 🇷🇴罗马尼亚-014 |2.3MB/s|TK-RO|GPT⁺-RO|GM-RO
@@ -1410,15 +1302,15 @@ proxy-groups:
   - 🇷🇴罗马尼亚-018 |1.4MB/s
   - 🇷🇴罗马尼亚-019 |1.3MB/s
   - 🇷🇴罗马尼亚-020 |1.2MB/s
-  - 🇷🇴罗马尼亚-021 |1.2MB/s
-  - 🇷🇴罗马尼亚-022 |1.2MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 🇷🇴罗马尼亚-021 |1.2MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 🇷🇴罗马尼亚-022 |1.2MB/s
   - 🇷🇴罗马尼亚-023 |1.1MB/s
   - 🇷🇴罗马尼亚-024 |1.1MB/s
   - 🇷🇴罗马尼亚-025 |1.1MB/s
-  - 🇷🇴罗马尼亚-026 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 🇷🇴罗马尼亚-026 |1.1MB/s
   - 🇷🇴罗马尼亚-027 |1.1MB/s
   - 🇷🇴罗马尼亚-028 |1.1MB/s
-  - 🇷🇴罗马尼亚-029 |1.1MB/s
+  - 🇷🇴罗马尼亚-029 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 🇷🇴罗马尼亚-030 |1.0MB/s
   - 🇷🇴罗马尼亚-031 |1.0MB/s
   - 🇷🇴罗马尼亚-032 |1.0MB/s
@@ -1513,10 +1405,10 @@ proxy-groups:
   - 🇺🇸美国-007 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 🇺🇸美国-009 |1.0MB/s|TK-US|GPT⁺-US
   - 🇳🇱荷兰-002 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 🇳🇱荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 🇳🇱荷兰-004 |1.8MB/s|TK-NL|GPT⁺-NL
+  - 🇳🇱荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
+  - 🇳🇱荷兰-004 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 🇳🇱荷兰-005 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 🇰🇷韩国-003 |3.9MB/s
+  - 🇰🇷韩国-001 |3.9MB/s
   - 🇰🇷其他-039 |2.4MB/s|YT-KR|GPT⁺-KR|GM-KR
   - 🇺🇸香港-021 |819KB/s
   - 🇱🇻拉脱维亚-001 |2.0MB/s|TK-LV|GPT⁺-LV|GM-LV
@@ -1543,6 +1435,7 @@ proxy-groups:
   - 🇭🇰HK-194.99.79.214-6331
   - 🇦🇺AU-82.117.225.216-0504
   - 🇺🇸_US_美国_2
+  - SG_6|3.6MB/s
   - 🇺🇸US-157.254.38.210-0388
   - 🇭🇰HK-185.244.208.176-0173
   - 🇭🇰HK-185.14.47.56-0174
@@ -1550,55 +1443,37 @@ proxy-groups:
   - 🇭🇰HK-185.244.208.69-0177
   - 🇳🇱NL-89.39.70.120-0178
   - 🇵🇱PL-202.78.163.172-0180
-  - 🇭🇰HK-185.244.208.210-0181
   - 🇳🇱NL-79.133.126.235-0182
   - 🇵🇱PL-202.78.163.47-0184
   - 🇦🇺AU-87.121.33.14-0186
   - 🇵🇱PL-202.78.163.237-0187
-  - 🇯🇵SG-45.135.228.28-0188
-  - 🇯🇵SG-81.28.13.103-0189
-  - 🇯🇵SG-45.135.228.63-0190
-  - 🇯🇵SG-45.135.228.59-0191
-  - 🇯🇵SG-91.243.81.129-0192
-  - 🇯🇵SG-45.135.228.220-0196
-  - 🇯🇵SG-45.135.228.211-0199
-  - 🇯🇵SG-81.28.13.225-0200
-  - 🇯🇵SG-91.243.81.26-0201
-  - 🇯🇵SG-81.28.13.48-0202
-  - 🇯🇵SG-91.243.81.192-0203
-  - 🇯🇵SG-45.135.228.100-0207
-  - 🇳🇱NL-89.39.70.180-0209
-  - 🇯🇵KR-82.117.226.104-0212
   - 🇭🇰HK-185.14.47.101-0213
   - 🇵🇱PL-202.78.163.164-0214
-  - 🇯🇵KR-109.61.127.145-0216
-  - 🇯🇵SG-81.28.13.159-0221
   - 🇳🇱NL-89.39.70.9-0222
   - 🇺🇸_HK_中国香港->🇩🇪_DE_德国
   - 🇨🇳_CN_中国->🇭🇰_HK_中国香港
   - 🇺🇸_HK_中国香港->🇩🇪_DE_德国_1
-  - _US_美国->🇫🇮_FI_芬兰
-  - 🇯🇵JP-18.179.203.229-0203
+  - 🇳🇱
+  - 🇦🇿54@oneclickvpnkeys
   - 🇷🇺_RU_俄罗斯->🇩🇪_DE_德国
   - 🇨🇳_CN_中国->🇺🇸_US_美国
-  - US_speednode_0176
   - 🇦🇪_AE_阿拉伯联合酋长国->🇩🇪_DE_德国
-  - 🇩🇪_DE_德国_3
-  - 🇩🇪_DE_德国_5
-  - 🇦🇪_AE_阿拉伯联合酋长国->🇩🇪_DE_德国_1
-  - 🇵🇱_PL_波兰_1
-  - 🇰🇷KR_1|5.4MB/s
-  - 🇰🇷韩国家宽|高速01
-  - 🇨🇳US_3|3.6MB/s
-  - 🇰🇷KR_2|5.2MB/s
-  - 🇰🇷KR_3|3.6MB/s
-  - US_16|1.3MB/s
-  - US_17|2.5MB/s
+  - 🇺🇸US-157.254.38.210-0428
+  - 美国 科罗拉多州布隆菲尔德市Level 3通信股份有限公司
+  - 🇩🇪德国
+  - 🇺🇸美国
+  - 🇮🇹GB_1|3.7MB/s
+  - 🇺🇸US_11|1.5MB/s
+  - DE_5|1.8MB/s
+  - DE_6|1.7MB/s
+  - DE_7|2.4MB/s
+  - 🇧🇷❓Other_1|1.8MB/s
 - name: ♻️ 自动选择
   type: url-test
   proxies:
   - 🇭🇰香港
-  - 🇸🇬其他-018 |711KB/s
+  - 🇩🇪其他-004
+  - 🇸🇬其他-006 |554KB/s
   - 🇩🇪德国-001 |1.6MB/s
   - 🇩🇪德国-002 |594KB/s
   - 🇦🇺澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
@@ -1611,8 +1486,8 @@ proxy-groups:
   - 🇷🇴罗马尼亚-007 |3.3MB/s|TK-RO|YT-CN|GPT⁺-RO
   - 🇷🇴罗马尼亚-008 |3.3MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 🇷🇴罗马尼亚-009 |3.2MB/s|TK-RO|YT-CN|GPT⁺-RO
-  - 🇷🇴罗马尼亚-010 |3.1MB/s|TK-RO|YT-RO|GPT⁺-RO|GM-RO
-  - 🇷🇴罗马尼亚-011 |3.1MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 🇷🇴罗马尼亚-010 |3.1MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 🇷🇴罗马尼亚-011 |3.1MB/s|TK-RO|YT-RO|GPT⁺-RO|GM-RO
   - 🇷🇴罗马尼亚-012 |3.1MB/s|TK-RO|YT-US|GPT⁺-RO
   - 🇷🇴罗马尼亚-013 |2.9MB/s|TK-RO|YT-RO|GPT⁺-RO|GM-RO
   - 🇷🇴罗马尼亚-014 |2.3MB/s|TK-RO|GPT⁺-RO|GM-RO
@@ -1622,15 +1497,15 @@ proxy-groups:
   - 🇷🇴罗马尼亚-018 |1.4MB/s
   - 🇷🇴罗马尼亚-019 |1.3MB/s
   - 🇷🇴罗马尼亚-020 |1.2MB/s
-  - 🇷🇴罗马尼亚-021 |1.2MB/s
-  - 🇷🇴罗马尼亚-022 |1.2MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 🇷🇴罗马尼亚-021 |1.2MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 🇷🇴罗马尼亚-022 |1.2MB/s
   - 🇷🇴罗马尼亚-023 |1.1MB/s
   - 🇷🇴罗马尼亚-024 |1.1MB/s
   - 🇷🇴罗马尼亚-025 |1.1MB/s
-  - 🇷🇴罗马尼亚-026 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 🇷🇴罗马尼亚-026 |1.1MB/s
   - 🇷🇴罗马尼亚-027 |1.1MB/s
   - 🇷🇴罗马尼亚-028 |1.1MB/s
-  - 🇷🇴罗马尼亚-029 |1.1MB/s
+  - 🇷🇴罗马尼亚-029 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 🇷🇴罗马尼亚-030 |1.0MB/s
   - 🇷🇴罗马尼亚-031 |1.0MB/s
   - 🇷🇴罗马尼亚-032 |1.0MB/s
@@ -1725,10 +1600,10 @@ proxy-groups:
   - 🇺🇸美国-007 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 🇺🇸美国-009 |1.0MB/s|TK-US|GPT⁺-US
   - 🇳🇱荷兰-002 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 🇳🇱荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 🇳🇱荷兰-004 |1.8MB/s|TK-NL|GPT⁺-NL
+  - 🇳🇱荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
+  - 🇳🇱荷兰-004 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 🇳🇱荷兰-005 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 🇰🇷韩国-003 |3.9MB/s
+  - 🇰🇷韩国-001 |3.9MB/s
   - 🇰🇷其他-039 |2.4MB/s|YT-KR|GPT⁺-KR|GM-KR
   - 🇺🇸香港-021 |819KB/s
   - 🇱🇻拉脱维亚-001 |2.0MB/s|TK-LV|GPT⁺-LV|GM-LV
@@ -1755,6 +1630,7 @@ proxy-groups:
   - 🇭🇰HK-194.99.79.214-6331
   - 🇦🇺AU-82.117.225.216-0504
   - 🇺🇸_US_美国_2
+  - SG_6|3.6MB/s
   - 🇺🇸US-157.254.38.210-0388
   - 🇭🇰HK-185.244.208.176-0173
   - 🇭🇰HK-185.14.47.56-0174
@@ -1762,50 +1638,31 @@ proxy-groups:
   - 🇭🇰HK-185.244.208.69-0177
   - 🇳🇱NL-89.39.70.120-0178
   - 🇵🇱PL-202.78.163.172-0180
-  - 🇭🇰HK-185.244.208.210-0181
   - 🇳🇱NL-79.133.126.235-0182
   - 🇵🇱PL-202.78.163.47-0184
   - 🇦🇺AU-87.121.33.14-0186
   - 🇵🇱PL-202.78.163.237-0187
-  - 🇯🇵SG-45.135.228.28-0188
-  - 🇯🇵SG-81.28.13.103-0189
-  - 🇯🇵SG-45.135.228.63-0190
-  - 🇯🇵SG-45.135.228.59-0191
-  - 🇯🇵SG-91.243.81.129-0192
-  - 🇯🇵SG-45.135.228.220-0196
-  - 🇯🇵SG-45.135.228.211-0199
-  - 🇯🇵SG-81.28.13.225-0200
-  - 🇯🇵SG-91.243.81.26-0201
-  - 🇯🇵SG-81.28.13.48-0202
-  - 🇯🇵SG-91.243.81.192-0203
-  - 🇯🇵SG-45.135.228.100-0207
-  - 🇳🇱NL-89.39.70.180-0209
-  - 🇯🇵KR-82.117.226.104-0212
   - 🇭🇰HK-185.14.47.101-0213
   - 🇵🇱PL-202.78.163.164-0214
-  - 🇯🇵KR-109.61.127.145-0216
-  - 🇯🇵SG-81.28.13.159-0221
   - 🇳🇱NL-89.39.70.9-0222
   - 🇺🇸_HK_中国香港->🇩🇪_DE_德国
   - 🇨🇳_CN_中国->🇭🇰_HK_中国香港
   - 🇺🇸_HK_中国香港->🇩🇪_DE_德国_1
-  - _US_美国->🇫🇮_FI_芬兰
-  - 🇯🇵JP-18.179.203.229-0203
+  - 🇳🇱
+  - 🇦🇿54@oneclickvpnkeys
   - 🇷🇺_RU_俄罗斯->🇩🇪_DE_德国
   - 🇨🇳_CN_中国->🇺🇸_US_美国
-  - US_speednode_0176
   - 🇦🇪_AE_阿拉伯联合酋长国->🇩🇪_DE_德国
-  - 🇩🇪_DE_德国_3
-  - 🇩🇪_DE_德国_5
-  - 🇦🇪_AE_阿拉伯联合酋长国->🇩🇪_DE_德国_1
-  - 🇵🇱_PL_波兰_1
-  - 🇰🇷KR_1|5.4MB/s
-  - 🇰🇷韩国家宽|高速01
-  - 🇨🇳US_3|3.6MB/s
-  - 🇰🇷KR_2|5.2MB/s
-  - 🇰🇷KR_3|3.6MB/s
-  - US_16|1.3MB/s
-  - US_17|2.5MB/s
+  - 🇺🇸US-157.254.38.210-0428
+  - 美国 科罗拉多州布隆菲尔德市Level 3通信股份有限公司
+  - 🇩🇪德国
+  - 🇺🇸美国
+  - 🇮🇹GB_1|3.7MB/s
+  - 🇺🇸US_11|1.5MB/s
+  - DE_5|1.8MB/s
+  - DE_6|1.7MB/s
+  - DE_7|2.4MB/s
+  - 🇧🇷❓Other_1|1.8MB/s
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
