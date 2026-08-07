@@ -27,19 +27,19 @@ proxies:
   cipher: auto
   tls: false
   skip-cert-verify: false
-- name: 🇩🇪其他-004
-  server: 31.76.11.46.cdn-one.org
+- name: Server 175
+  server: meshbuzz.bond
   port: 443
   type: vless
   tls: true
-  uuid: 4f375fb4-3c95-425f-bc7b-8085487a6f3c
-  servername: 31.76.11.46.cdn-one.org
+  uuid: 8a6729c4-81d4-4b05-8747-3fffc17b6a64
+  servername: OhPwIlJo8.RoBoRoCkS.Ir
   network: ws
   ws-opts:
-    path: /52872/BNzG4FvIAr
+    path: /mashdi
     headers:
-      Host: 31.76.11.46.cdn-one.org
-  skip-cert-verify: true
+      Host: OhPwIlJo8.RoBoRoCkS.Ir
+  skip-cert-verify: false
 - name: 🇸🇬其他-006 |554KB/s
   server: d39d6b46-ta1og0-tbnk1n-ueq.sg.oshuawei.com
   port: 443
@@ -968,16 +968,6 @@ proxies:
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇨🇳其他-013 2
-  server: v45.hdacd.com
-  port: 30845
-  type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
-  skip-cert-verify: false
-  udp: true
 - name: 🇳🇱NL-193.169.239.76-0162
   server: renewed-chigger.rooster465.autos
   port: 443
@@ -1011,6 +1001,19 @@ proxies:
   skip-cert-verify: true
   servername: gw.alicdn.com
   udp: true
+- name: _US_美国_6
+  server: 162.159.0.3
+  port: 443
+  type: vless
+  tls: true
+  uuid: dd321f25-8f90-4e7c-a1fa-01883a8988a7
+  servername: soucuovls.pages.dev
+  network: ws
+  ws-opts:
+    path: pyip=proxyip.cmliussss.net
+    headers:
+      Host: soucuovls.pages.dev
+  skip-cert-verify: true
 - name: SG_6|3.6MB/s
   server: 162.159.0.3
   port: 443
@@ -1087,6 +1090,85 @@ proxies:
   type: trojan
   password: IQ68037294
   sni: cheerful-swan.rooster465.autos
+- name: 🇯🇵SG-45.135.228.28-0188
+  server: pleased-sawfly.rooster465.autos
+  port: 443
+  type: trojan
+  password: IQ68037294
+- name: 🇯🇵SG-81.28.13.103-0189
+  server: faithful-panther.rooster465.autos
+  port: 443
+  type: trojan
+  password: FC60532879
+  sni: faithful-panther.rooster465.autos
+- name: 🇯🇵SG-45.135.228.63-0190
+  server: fair-reptile.rooster465.autos
+  port: 443
+  type: trojan
+  password: IQ68037294
+  sni: fair-reptile.rooster465.autos
+- name: 🇯🇵SG-45.135.228.59-0191
+  server: true-alpaca.rooster465.autos
+  port: 443
+  type: trojan
+  password: FC60532879
+  sni: true-alpaca.rooster465.autos
+- name: 🇯🇵SG-91.243.81.129-0192
+  server: casual-stallion.rooster465.autos
+  port: 443
+  type: trojan
+  password: IQ68037294
+- name: 🇯🇵SG-45.135.228.220-0196
+  server: neat-duck.rooster465.autos
+  port: 443
+  type: trojan
+  password: IQ68037294
+  sni: neat-duck.rooster465.autos
+- name: 🇯🇵SG-45.135.228.211-0199
+  server: endless-kiwi.rooster465.autos
+  port: 443
+  type: trojan
+  password: IQ68037294
+- name: 🇯🇵SG-81.28.13.225-0200
+  server: open-eel.rooster465.autos
+  port: 443
+  type: trojan
+  password: IQ68037294
+  sni: open-eel.rooster465.autos
+- name: 🇯🇵SG-91.243.81.26-0201
+  server: full-mackerel.rooster465.autos
+  port: 443
+  type: trojan
+  password: IQ68037294
+- name: 🇯🇵SG-81.28.13.48-0202
+  server: glowing-deer.rooster465.autos
+  port: 443
+  type: trojan
+  password: IQ68037294
+- name: 🇯🇵SG-91.243.81.192-0203
+  server: sterling-fowl.rooster465.autos
+  port: 443
+  type: trojan
+  password: IQ68037294
+  sni: sterling-fowl.rooster465.autos
+- name: 🇯🇵SG-45.135.228.100-0207
+  server: meet-doe.rooster465.autos
+  port: 443
+  type: trojan
+  password: IQ68037294
+  sni: meet-doe.rooster465.autos
+- name: 🇯🇵SG-81.28.13.68-0210
+  server: pet-albacore.rooster465.autos
+  port: 443
+  type: trojan
+  password: IQ68037294
+  sni: pet-albacore.rooster465.autos
+- name: 🇯🇵KR-82.117.226.104-0212
+  server: robust-toucan.rooster465.autos
+  port: 443
+  type: trojan
+  password: IQ68037294
+  sni: robust-toucan.rooster465.autos
 - name: 🇭🇰HK-185.14.47.101-0213
   server: ideal-robin.rooster465.autos
   port: 443
@@ -1099,6 +1181,18 @@ proxies:
   type: trojan
   password: NQ26071394
   sni: pretty-mollusk.rooster465.autos
+- name: 🇯🇵KR-109.61.127.145-0216
+  server: outgoing-ladybird.rooster465.autos
+  port: 443
+  type: trojan
+  password: FC60532879
+  sni: outgoing-ladybird.rooster465.autos
+- name: 🇯🇵SG-81.28.13.159-0221
+  server: giving-bird.rooster465.autos
+  port: 443
+  type: trojan
+  password: IQ68037294
+  sni: giving-bird.rooster465.autos
 - name: 🇳🇱NL-89.39.70.9-0222
   server: whole-woodcock.rooster465.autos
   port: 443
@@ -1130,37 +1224,11 @@ proxies:
   sni: de.catxstar.com
   skip-cert-verify: true
   udp: true
-- name: 🇳🇱
-  server: 5.255.102.165
-  port: 443
-  type: hysteria2
-  ports: 443
-  password: LzMWgm6LaNWCm11bFTbynDPq2TqQj03t
-  sni: www.microsoft.com
-  skip-cert-verify: true
-- name: 🇦🇿54@oneclickvpnkeys
-  server: 94.20.88.13
-  port: 8443
-  type: hysteria2
-  ports: 8443
-  password: ew9_M93_6a31Qd45_hUX3984F_jNZ83x_Nz1l_f
-  sni: azer-tea-grape.bumbleshrimp.com
-- name: 🇷🇺_RU_俄罗斯->🇩🇪_DE_德国
-  server: 194.93.0.28
-  port: 443
-  type: vless
-  tls: true
-  uuid: 218fd696-e3a2-4c33-b397-a5f13a82969e
-  servername: media2.tcpdoor.net
-  network: grpc
-  grpc-opts:
-    grpc-mode: gun
-    grpc-service-name: grpc
-  reality-opts:
-    public-key: vxhkDXfYpz1OLqZ-_9QVoQr3_UJLtJFheb5bD5YH7z8
-    short-id: "3303c7a5"
-  client-fingerprint: random
-  skip-cert-verify: true
+- name: 🇯🇵JP-18.179.203.229-0203
+  server: v2jp.k1.ssnss.live
+  port: 44184
+  type: trojan
+  password: d050aca3-9df2-4461-90ec-92373c1d7636
 - name: 🇨🇳_CN_中国->🇺🇸_US_美国
   server: v24.hdacd.com
   port: 30824
@@ -1171,105 +1239,60 @@ proxies:
   tls: false
   skip-cert-verify: true
   udp: true
-- name: 🇦🇪_AE_阿拉伯联合酋长国->🇩🇪_DE_德国
-  server: 217.60.193.1
+- name: 巴西圣保罗 CloudFlare节点#2
+  server: 188.114.98.66
   port: 443
   type: vless
   tls: true
-  uuid: 5c192fd7-ef98-4112-a20c-129108fcd7e9
-  servername: ddc-akn.astralweb.tech
-  path: /
-  skip-cert-verify: true
-- name: 🇺🇸US-157.254.38.210-0428
-  server: hkdcrtc-e.catcat321.com
-  port: 20066
-  type: trojan
-  password: 41c406e2-12b5-41f2-a329-d0621052d675
-  sni: hk.catxstar.com
-- name: 美国 科罗拉多州布隆菲尔德市Level 3通信股份有限公司
-  server: d.mygoldiran.com
-  port: 443
-  type: vless
-  tls: true
-  uuid: 76792e97-ee95-4d29-86da-347362d491f2
-  servername: usa_multi.mygoldiran.com
+  uuid: 4d10c997-4781-4cd9-82c3-15453523e12c
+  servername: support.zoom.us.yxls.eu.cc
   network: ws
   ws-opts:
-    path: /idea
+    path: /sg-melbi
     headers:
-      Host: usa_multi.mygoldiran.com
-- name: 🇩🇪德国
-  server: node-degame.bangboonet.ru
-  port: 443
-  type: hysteria2
-  ports: 443
-  password: 2ef4cf10-34df-4c0f-9d82-bf6ca9e45025
-  sni: node-degame.bangboonet.ru
-- name: 🇺🇸美国
-  server: 155.117.19.221
-  port: 30001
-  type: hysteria2
-  ports: 30001
-  password: 6fe3a600-4bcf-4040-81eb-ccd29231db2b
+      Host: support.zoom.us.yxls.eu.cc
+- name: 🇨🇳_JP_日本->🇫🇷_FR_法国
+  server: v35.hdacd.com
+  port: 30835
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
   skip-cert-verify: true
-- name: 🇮🇹GB_1|3.7MB/s
-  server: it-one.quiet-rogue.site
+  udp: true
+- name: 🇩🇪DE_4|2.0MB/s
+  server: de-two.quiet-rogue.site
   port: 443
   type: hysteria2
   ports: 443
   password: 71cada65-d23e-418c-88e4-a06188d14689
-  sni: it-one.quiet-rogue.site
-  skip-cert-verify: false
-- name: 🇺🇸US_11|1.5MB/s
-  server: uswx3.wxgqlfx.vip
-  port: 25379
-  type: hysteria2
-  ports: 25379
-  password: 1db7c1ae-e1e1-4612-8057-9f7b54849472
-  sni: 144.225.187.184
+  sni: de-two.quiet-rogue.site
   skip-cert-verify: true
-- name: DE_5|1.8MB/s
-  server: cctvhikvision.center
-  port: 443
-  type: trojan
-  password: ersi13mjahoao8e6
-  sni: ramz.xuithree.dpdns.org
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /dksk
-    headers:
-      Host: ramz.xuithree.dpdns.org
-- name: DE_6|1.7MB/s
-  server: hikvision-plus.com
-  port: 443
-  type: trojan
-  password: ersi13mjahoao8e6
-  sni: ramz.xuithree.dpdns.org
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /dksk
-    headers:
-      Host: ramz.xuithree.dpdns.org
-- name: DE_7|2.4MB/s
-  server: hyperon.site
-  port: 443
-  type: trojan
-  password: ersi13mjahoao8e6
-  sni: ramz.xuithree.dpdns.org
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /dksk
-    headers:
-      Host: ramz.xuithree.dpdns.org
-- name: 🇧🇷❓Other_1|1.8MB/s
-  server: 137.131.181.254
-  port: 59319
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: YjliYmFlNzVmMmE4ZmJkYjAxNzQ2NWUyNzZlNjhkZGU=
+- name: 🇨🇳US_1|4.2MB/s
+  server: v29.hdacd.com
+  port: 30829
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+- name: 🇸🇬SG_1|3.3MB/s
+  server: sg3.xiaoliyu.cyou
+  port: 4466
+  type: hysteria2
+  ports: 4466
+  password: 18cf8030-1ceb-4b7d-8c0c-c036413c144e
+  sni: sg3.xiaoliyu.cyou
+  skip-cert-verify: true
+- name: 🇮🇳IN_1|1.3MB/s
+  server: ln4.xiaoliyu.cyou
+  port: 4433
+  type: hysteria2
+  ports: 4433
+  password: 18cf8030-1ceb-4b7d-8c0c-c036413c144e
+  sni: ln4.xiaoliyu.cyou
+  skip-cert-verify: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -1277,7 +1300,7 @@ proxy-groups:
   - ♻️ 自动选择
   - DIRECT
   - 🇭🇰香港
-  - 🇩🇪其他-004
+  - Server 175
   - 🇸🇬其他-006 |554KB/s
   - 🇩🇪德国-001 |1.6MB/s
   - 🇩🇪德国-002 |594KB/s
@@ -1429,12 +1452,12 @@ proxy-groups:
   - 🇺🇸美国-024 |2.0MB/s|TK-US|YT-US|GPT⁺-US
   - 🇳🇱荷兰-001 |2.5MB/s|GPT⁺-NL
   - 🇪🇸西班牙-001 |1.6MB/s|TK-ES|GPT⁺-ES|GM-ES
-  - 🇨🇳其他-013 2
   - 🇳🇱NL-193.169.239.76-0162
   - 🇦🇺AU-82.117.225.56-0507
   - 🇭🇰HK-194.99.79.214-6331
   - 🇦🇺AU-82.117.225.216-0504
   - 🇺🇸_US_美国_2
+  - _US_美国_6
   - SG_6|3.6MB/s
   - 🇺🇸US-157.254.38.210-0388
   - 🇭🇰HK-185.244.208.176-0173
@@ -1447,32 +1470,41 @@ proxy-groups:
   - 🇵🇱PL-202.78.163.47-0184
   - 🇦🇺AU-87.121.33.14-0186
   - 🇵🇱PL-202.78.163.237-0187
+  - 🇯🇵SG-45.135.228.28-0188
+  - 🇯🇵SG-81.28.13.103-0189
+  - 🇯🇵SG-45.135.228.63-0190
+  - 🇯🇵SG-45.135.228.59-0191
+  - 🇯🇵SG-91.243.81.129-0192
+  - 🇯🇵SG-45.135.228.220-0196
+  - 🇯🇵SG-45.135.228.211-0199
+  - 🇯🇵SG-81.28.13.225-0200
+  - 🇯🇵SG-91.243.81.26-0201
+  - 🇯🇵SG-81.28.13.48-0202
+  - 🇯🇵SG-91.243.81.192-0203
+  - 🇯🇵SG-45.135.228.100-0207
+  - 🇯🇵SG-81.28.13.68-0210
+  - 🇯🇵KR-82.117.226.104-0212
   - 🇭🇰HK-185.14.47.101-0213
   - 🇵🇱PL-202.78.163.164-0214
+  - 🇯🇵KR-109.61.127.145-0216
+  - 🇯🇵SG-81.28.13.159-0221
   - 🇳🇱NL-89.39.70.9-0222
   - 🇺🇸_HK_中国香港->🇩🇪_DE_德国
   - 🇨🇳_CN_中国->🇭🇰_HK_中国香港
   - 🇺🇸_HK_中国香港->🇩🇪_DE_德国_1
-  - 🇳🇱
-  - 🇦🇿54@oneclickvpnkeys
-  - 🇷🇺_RU_俄罗斯->🇩🇪_DE_德国
+  - 🇯🇵JP-18.179.203.229-0203
   - 🇨🇳_CN_中国->🇺🇸_US_美国
-  - 🇦🇪_AE_阿拉伯联合酋长国->🇩🇪_DE_德国
-  - 🇺🇸US-157.254.38.210-0428
-  - 美国 科罗拉多州布隆菲尔德市Level 3通信股份有限公司
-  - 🇩🇪德国
-  - 🇺🇸美国
-  - 🇮🇹GB_1|3.7MB/s
-  - 🇺🇸US_11|1.5MB/s
-  - DE_5|1.8MB/s
-  - DE_6|1.7MB/s
-  - DE_7|2.4MB/s
-  - 🇧🇷❓Other_1|1.8MB/s
+  - 巴西圣保罗 CloudFlare节点#2
+  - 🇨🇳_JP_日本->🇫🇷_FR_法国
+  - 🇩🇪DE_4|2.0MB/s
+  - 🇨🇳US_1|4.2MB/s
+  - 🇸🇬SG_1|3.3MB/s
+  - 🇮🇳IN_1|1.3MB/s
 - name: ♻️ 自动选择
   type: url-test
   proxies:
   - 🇭🇰香港
-  - 🇩🇪其他-004
+  - Server 175
   - 🇸🇬其他-006 |554KB/s
   - 🇩🇪德国-001 |1.6MB/s
   - 🇩🇪德国-002 |594KB/s
@@ -1624,12 +1656,12 @@ proxy-groups:
   - 🇺🇸美国-024 |2.0MB/s|TK-US|YT-US|GPT⁺-US
   - 🇳🇱荷兰-001 |2.5MB/s|GPT⁺-NL
   - 🇪🇸西班牙-001 |1.6MB/s|TK-ES|GPT⁺-ES|GM-ES
-  - 🇨🇳其他-013 2
   - 🇳🇱NL-193.169.239.76-0162
   - 🇦🇺AU-82.117.225.56-0507
   - 🇭🇰HK-194.99.79.214-6331
   - 🇦🇺AU-82.117.225.216-0504
   - 🇺🇸_US_美国_2
+  - _US_美国_6
   - SG_6|3.6MB/s
   - 🇺🇸US-157.254.38.210-0388
   - 🇭🇰HK-185.244.208.176-0173
@@ -1642,27 +1674,36 @@ proxy-groups:
   - 🇵🇱PL-202.78.163.47-0184
   - 🇦🇺AU-87.121.33.14-0186
   - 🇵🇱PL-202.78.163.237-0187
+  - 🇯🇵SG-45.135.228.28-0188
+  - 🇯🇵SG-81.28.13.103-0189
+  - 🇯🇵SG-45.135.228.63-0190
+  - 🇯🇵SG-45.135.228.59-0191
+  - 🇯🇵SG-91.243.81.129-0192
+  - 🇯🇵SG-45.135.228.220-0196
+  - 🇯🇵SG-45.135.228.211-0199
+  - 🇯🇵SG-81.28.13.225-0200
+  - 🇯🇵SG-91.243.81.26-0201
+  - 🇯🇵SG-81.28.13.48-0202
+  - 🇯🇵SG-91.243.81.192-0203
+  - 🇯🇵SG-45.135.228.100-0207
+  - 🇯🇵SG-81.28.13.68-0210
+  - 🇯🇵KR-82.117.226.104-0212
   - 🇭🇰HK-185.14.47.101-0213
   - 🇵🇱PL-202.78.163.164-0214
+  - 🇯🇵KR-109.61.127.145-0216
+  - 🇯🇵SG-81.28.13.159-0221
   - 🇳🇱NL-89.39.70.9-0222
   - 🇺🇸_HK_中国香港->🇩🇪_DE_德国
   - 🇨🇳_CN_中国->🇭🇰_HK_中国香港
   - 🇺🇸_HK_中国香港->🇩🇪_DE_德国_1
-  - 🇳🇱
-  - 🇦🇿54@oneclickvpnkeys
-  - 🇷🇺_RU_俄罗斯->🇩🇪_DE_德国
+  - 🇯🇵JP-18.179.203.229-0203
   - 🇨🇳_CN_中国->🇺🇸_US_美国
-  - 🇦🇪_AE_阿拉伯联合酋长国->🇩🇪_DE_德国
-  - 🇺🇸US-157.254.38.210-0428
-  - 美国 科罗拉多州布隆菲尔德市Level 3通信股份有限公司
-  - 🇩🇪德国
-  - 🇺🇸美国
-  - 🇮🇹GB_1|3.7MB/s
-  - 🇺🇸US_11|1.5MB/s
-  - DE_5|1.8MB/s
-  - DE_6|1.7MB/s
-  - DE_7|2.4MB/s
-  - 🇧🇷❓Other_1|1.8MB/s
+  - 巴西圣保罗 CloudFlare节点#2
+  - 🇨🇳_JP_日本->🇫🇷_FR_法国
+  - 🇩🇪DE_4|2.0MB/s
+  - 🇨🇳US_1|4.2MB/s
+  - 🇸🇬SG_1|3.3MB/s
+  - 🇮🇳IN_1|1.3MB/s
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
