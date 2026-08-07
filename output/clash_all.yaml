@@ -18,23 +18,6 @@ dns:
     geoip: true
     geoip-code: CN
 proxies:
-- name: 其他-001
-  type: vless
-  network: ws
-  uuid: 30235bbe-f791-4e53-89f9-5d9363af9b0a
-  server: free77-sg3.node2.top
-  servername: sie704.pages.dev
-  port: 443
-  tls: true
-  udp: true
-  xudp: true
-  ws-opts:
-    headers:
-      Host: sie704.pages.dev
-      User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/534.24 (KHTML, like
-        Gecko) Chrome/11.0.696.3 Safari/534.24
-    path: /XFJVPNfp=chrome
-  client-fingerprint: chrome
 - name: 其他-003
   type: trojan
   network: grpc
@@ -46,21 +29,6 @@ proxies:
   udp: true
   grpc-opts:
     grpc-service-name: /50779/NQmry9z8yR
-- name: 其他-004
-  type: vless
-  network: ws
-  uuid: 4f375fb4-3c95-425f-bc7b-8085487a6f3c
-  server: 31.76.11.46.cdn-one.org
-  servername: 31.76.11.46.cdn-one.org
-  port: 443
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  ws-opts:
-    headers:
-      Host: 31.76.11.46.cdn-one.org
-    path: /52872/BNzG4FvIAr
-  client-fingerprint: chrome
 - name: 其他-006 |554KB/s
   type: http
   server: d39d6b46-ta1og0-tbnk1n-ueq.sg.oshuawei.com
@@ -947,16 +915,6 @@ proxies:
   tls: true
   udp: true
   sni: www.bing.com
-- name: 美国-001
-  type: vless
-  network: ws
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  server: 63.141.128.30
-  port: 8880
-  ws-opts:
-    headers:
-      Host: vms.lifetime42.workers.dev
-    path: /
 - name: 美国-002 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   type: http
   server: 138.199.35.215
@@ -1007,22 +965,6 @@ proxies:
   port: 9002
   skip-cert-verify: true
   tls: true
-- name: 荷兰-001
-  type: vless
-  network: ws
-  uuid: 7b102311-43fd-4e8f-877e-8090623c101d
-  server: 80.74.29.157
-  servername: vp58.cc.cd
-  port: 443
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  ws-opts:
-    headers:
-      Host: vp58.cc.cd
-    path: /Telegram🇨🇳
-  client-fingerprint: chrome
 - name: 荷兰-002 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
   type: http
   server: 84.17.47.150
@@ -1450,9 +1392,7 @@ proxy-groups:
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - 其他-001
   - 其他-003
-  - 其他-004
   - 其他-006 |554KB/s
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
@@ -1572,7 +1512,6 @@ proxy-groups:
   - 罗马尼亚-113 |529KB/s
   - 罗马尼亚-114 |527KB/s
   - 罗马尼亚-115 |520KB/s
-  - 美国-001
   - 美国-002 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-003 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-004 |2.4MB/s|TK-US|YT-US|GPT⁺-US|GM-US
@@ -1581,7 +1520,6 @@ proxy-groups:
   - 美国-007 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-008 |1.3MB/s
   - 美国-009 |1.0MB/s|TK-US|GPT⁺-US
-  - 荷兰-001
   - 荷兰-002 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
   - 荷兰-004 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
@@ -1631,9 +1569,7 @@ proxy-groups:
 - name: ♻️ 自动选择
   type: url-test
   proxies:
-  - 其他-001
   - 其他-003
-  - 其他-004
   - 其他-006 |554KB/s
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
@@ -1753,7 +1689,6 @@ proxy-groups:
   - 罗马尼亚-113 |529KB/s
   - 罗马尼亚-114 |527KB/s
   - 罗马尼亚-115 |520KB/s
-  - 美国-001
   - 美国-002 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-003 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-004 |2.4MB/s|TK-US|YT-US|GPT⁺-US|GM-US
@@ -1762,7 +1697,6 @@ proxy-groups:
   - 美国-007 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-008 |1.3MB/s
   - 美国-009 |1.0MB/s|TK-US|GPT⁺-US
-  - 荷兰-001
   - 荷兰-002 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
   - 荷兰-004 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
