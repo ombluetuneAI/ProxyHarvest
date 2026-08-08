@@ -977,12 +977,6 @@ proxies:
   port: 23856
   skip-cert-verify: true
   tls: true
-- name: 荷兰-004 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
-  type: http
-  server: 5.255.118.82
-  port: 443
-  skip-cert-verify: true
-  tls: true
 - name: 荷兰-005 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
   type: http
   server: 84.17.47.147
@@ -1253,15 +1247,6 @@ proxies:
   skip-cert-verify: true
   alterId: 0
   cipher: auto
-- name: 美国 1648
-  type: vmess
-  network: tcp
-  server: 165.140.216.141
-  port: 443
-  uuid: e7d72a8d-26f2-4b54-b366-0c43e0bcba7d
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
 - name: 拉脱维亚-001 |2.0MB/s|TK-LV|GPT⁺-LV|GM-LV
   type: http
   server: 185.219.159.16
@@ -1522,7 +1507,6 @@ proxy-groups:
   - 美国-009 |1.0MB/s|TK-US|GPT⁺-US
   - 荷兰-002 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
-  - 荷兰-004 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-005 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 韩国-001 |3.9MB/s
   - 其他-057
@@ -1546,7 +1530,6 @@ proxy-groups:
   - 荷兰 121
   - 美国 1529
   - 韩国 016
-  - 美国 1648
   - 拉脱维亚-001 |2.0MB/s|TK-LV|GPT⁺-LV|GM-LV
   - 法国-003 |2.3MB/s|GPT⁺-FR
   - 法国-020 |3.2MB/s|TK-FR|GPT⁺-DE|GM-DE
@@ -1699,7 +1682,6 @@ proxy-groups:
   - 美国-009 |1.0MB/s|TK-US|GPT⁺-US
   - 荷兰-002 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
-  - 荷兰-004 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-005 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 韩国-001 |3.9MB/s
   - 其他-057
@@ -1723,7 +1705,6 @@ proxy-groups:
   - 荷兰 121
   - 美国 1529
   - 韩国 016
-  - 美国 1648
   - 拉脱维亚-001 |2.0MB/s|TK-LV|GPT⁺-LV|GM-LV
   - 法国-003 |2.3MB/s|GPT⁺-FR
   - 法国-020 |3.2MB/s|TK-FR|GPT⁺-DE|GM-DE
