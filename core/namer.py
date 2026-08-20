@@ -106,6 +106,8 @@ class GeoNamer:
 
     def _apply_flag(self, name: str, emoji: str) -> str:
         """Format as {emoji}{name}, replacing any existing leading flag."""
+        if not isinstance(name, str):
+            name = str(name) if name is not None else ""
         base = strip_leading_flag(name)
         if not emoji or not self.namer_config.get("emoji_enabled", True):
             return base
