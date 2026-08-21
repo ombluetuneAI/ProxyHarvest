@@ -89,6 +89,11 @@ class GeoNamer:
         Returns:
             IP address string or None.
         """
+        if not isinstance(server, str):
+            server = str(server) if server is not None else ""
+        if not server:
+            return None
+
         # Already an IP
         try:
             socket.inet_aton(server)
@@ -100,7 +105,7 @@ class GeoNamer:
         try:
             ip = socket.gethostbyname(server)
             return ip
-        except socket.gaierror:
+        except (socket.gaierror, UnicodeError):
             logger.debug("Could not resolve hostname: %s", server)
             return None
 
