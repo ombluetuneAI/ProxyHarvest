@@ -932,14 +932,6 @@ proxies:
   port: 8090
   skip-cert-verify: true
   tls: true
-- name: 美国-007 |1.3MB/s
-  type: mieru
-  server: 157.254.223.44
-  port: 34567
-  password: dongtaiwang.com
-  multiplexing: MULTIPLEXING_LOW
-  transport: TCP
-  username: dongtaiwang.com
 - name: 美国-008 |1.0MB/s|TK-US|GPT⁺-US
   type: http
   server: 138.199.35.198
@@ -970,15 +962,6 @@ proxies:
   port: 9002
   skip-cert-verify: true
   tls: true
-- name: 韩国-001 |3.9MB/s
-  type: socks5
-  server: 121.169.46.116
-  port: 1090
-  skip-cert-verify: true
-  tls: false
-  udp: true
-  client-fingerprint: chrome
-  username: T2clM0QlM0Q6
 - name: 其他-057
   type: vmess
   network: ws
@@ -1366,13 +1349,11 @@ proxy-groups:
   - 美国-004 |2.4MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-005 |2.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-006 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-007 |1.3MB/s
   - 美国-008 |1.0MB/s|TK-US|GPT⁺-US
   - 荷兰-001 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL
   - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 韩国-001 |3.9MB/s
   - 其他-057
   - 韩国-002
   - 香港-021 |819KB/s
@@ -1531,13 +1512,11 @@ proxy-groups:
   - 美国-004 |2.4MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-005 |2.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-006 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-007 |1.3MB/s
   - 美国-008 |1.0MB/s|TK-US|GPT⁺-US
   - 荷兰-001 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL
   - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 韩国-001 |3.9MB/s
   - 其他-057
   - 韩国-002
   - 香港-021 |819KB/s
