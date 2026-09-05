@@ -27,64 +27,26 @@ proxies:
   cipher: auto
   tls: false
   skip-cert-verify: false
-- name: '@Shh_Proxy-New⁸'
-  server: 213.182.199.137
+- name: 🇺🇸@FreakConfig
+  server: 144.31.49.138
   port: 443
-  type: trojan
-  password: humanity
-  sni: www.pleadcourt.org
+  type: hysteria2
+  ports: 443
+  password: cd74c0a406664a5bc0bac098220a2468
+  obfs: salamander
+  obfs-password: 44f1c1e2f8b99e792ceed574627a1eb0
+  sni: ru1.sferavpn.pro
   skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /assignment
-    headers:
-      Host: www.pleadcourt.org
-- name: 🇮🇹France
-  server: 57.131.38.163
-  port: 2053
-  type: vless
-  tls: true
-  uuid: d4b08cd6-0903-411a-9dac-45dbdf5c9712
-  servername: www.apple.com
-  host: www.apple.com
-  path: /
-  reality-opts:
-    public-key: Ej2H5ucT7qKegYcT8wODdlxa-cLHr7F4hDVUHzAhcnc
-    short-id: "5b8a942318178e7b"
-  client-fingerprint: random
-- name: 🇫🇷
-  server: 62.210.91.10
-  port: 23576
-  type: vless
-  tls: true
-  uuid: 48ff2b70-e180-582f-8866-d9a2edeed5f5
-  servername: fuck.rkn
-  host: fuck.rkn
-  path: /
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s
-  client-fingerprint: random
-- name: 🇳🇱⚙️8@oneclickvpnkeys
-  server: 158.173.20.208
+- name: 🇩🇪(@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
+  server: 2.27.59.206
   port: 443
-  type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: 🇸🇬Join+Telegram:@Farah_VPN 🇸🇬
-  server: 149.88.23.207
-  port: 18000
-  type: vmess
-  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  alterId: 0
-  cipher: auto
-  tls: false
-- name: 🇺🇸United States
-  server: 198.98.53.130
-  port: 443
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: eDfN7SODQceIOmIAbtJJtK
+  type: hysteria2
+  ports: 443
+  password: cd74c0a406664a5bc0bac098220a2468
+  obfs: salamander
+  obfs-password: 44f1c1e2f8b99e792ceed574627a1eb0
+  sni: de1.sferavpn.pro
+  skip-cert-verify: true
 - name: 🇩🇪德国-001 |1.6MB/s
   server: 5.83.129.90
   port: 54177
@@ -151,14 +113,14 @@ proxies:
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-006 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
-  server: 193.176.84.30
+- name: 🇷🇴罗马尼亚-006 |1.1MB/s
+  server: 193.176.84.40
   port: 9002
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇷🇴罗马尼亚-007 |1.1MB/s
-  server: 193.176.84.40
+- name: 🇷🇴罗马尼亚-007 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
+  server: 193.176.84.30
   port: 9002
   type: http
   tls: true
@@ -241,27 +203,27 @@ proxies:
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇺🇸美国-002 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+- name: 🇺🇸美国-001 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   server: 138.199.35.215
   port: 9002
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇺🇸美国-003 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+- name: 🇺🇸美国-002 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   server: 38.28.193.188
   port: 443
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇺🇸美国-004 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  server: 209.148.53.153
-  port: 8090
+- name: 🇺🇸美国-003 |1.0MB/s|TK-US|GPT⁺-US
+  server: 138.199.35.198
+  port: 9002
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇺🇸美国-005 |1.0MB/s|TK-US|GPT⁺-US
-  server: 138.199.35.198
-  port: 9002
+- name: 🇺🇸美国-005 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  server: 209.148.53.153
+  port: 8090
   type: http
   tls: true
   skip-cert-verify: true
@@ -271,15 +233,15 @@ proxies:
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇳🇱荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
-  server: 5.255.118.82
-  port: 443
+- name: 🇳🇱荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL
+  server: 51.159.225.196
+  port: 23856
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇳🇱荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
-  server: 51.159.225.196
-  port: 23856
+- name: 🇳🇱荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
+  server: 5.255.118.82
+  port: 443
   type: http
   tls: true
   skip-cert-verify: true
@@ -402,15 +364,6 @@ proxies:
   cipher: auto
   tls: false
   skip-cert-verify: true
-- name: 🇺🇸美国 721
-  server: 129.146.143.80
-  port: 48111
-  type: vmess
-  uuid: d4603cc2-e0ee-4651-83f5-1db5b7168177
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
 - name: 🇺🇸美国 723
   server: 38.91.107.49
   port: 18000
@@ -486,26 +439,51 @@ proxies:
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇩🇪(@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
-  server: 2.27.59.206
+- name: '@Shh_Proxy-New⁸'
+  server: 213.182.199.137
   port: 443
-  type: hysteria2
-  ports: 443
-  password: cd74c0a406664a5bc0bac098220a2468
-  obfs: salamander
-  obfs-password: 44f1c1e2f8b99e792ceed574627a1eb0
-  sni: de1.sferavpn.pro
-  skip-cert-verify: true
-- name: 🇷🇺91@oneclickvpnkeys
-  server: 91.142.73.159
-  port: 36758
-  type: hysteria2
-  ports: 36758
-  password: 5bcodmhjtyfyyrqh
-  obfs: salamander
-  obfs-password: dzcb7hv6i2kx2zze
-  sni: cdn77.dmtr.ru
-  skip-cert-verify: true
+  type: trojan
+  password: humanity
+  sni: www.pleadcourt.org
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.pleadcourt.org
+- name: 🇮🇹France
+  server: 57.131.38.163
+  port: 2053
+  type: vless
+  tls: true
+  uuid: d4b08cd6-0903-411a-9dac-45dbdf5c9712
+  servername: www.apple.com
+  host: www.apple.com
+  path: /
+  reality-opts:
+    public-key: Ej2H5ucT7qKegYcT8wODdlxa-cLHr7F4hDVUHzAhcnc
+    short-id: "5b8a942318178e7b"
+  client-fingerprint: random
+- name: 🇳🇱⚙️8@oneclickvpnkeys
+  server: 158.173.20.208
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: 🇸🇬Join+Telegram:@Farah_VPN 🇸🇬
+  server: 149.88.23.207
+  port: 18000
+  type: vmess
+  uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
+  alterId: 0
+  cipher: auto
+  tls: false
+- name: 🇺🇸United States
+  server: 198.98.53.130
+  port: 443
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: eDfN7SODQceIOmIAbtJJtK
 - name: 🇩🇪(7)
   server: 169.40.42.179
   port: 443
@@ -1058,17 +1036,6 @@ proxies:
   password: zhangyang
   sni: dash.cloudflare.com
   skip-cert-verify: true
-- name: 🇺🇸_US_美国_2
-  server: guanwang.awsno.com
-  port: 443
-  type: vmess
-  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: true
-  servername: gw.alicdn.com
-  udp: true
 - name: 🇬🇧NL_1|2.5MB/s
   server: 82.38.31.57
   port: 443
@@ -1142,12 +1109,6 @@ proxies:
   type: ss
   cipher: chacha20-ietf-poly1305
   password: oZIoA69Q8yhcQV8ka3Pa3A
-- name: 🇸🇬SG-103.36.91.32-0143
-  server: 103.36.91.32
-  port: 8388
-  type: ss
-  cipher: chacha20-ietf
-  password: asd123456
 - name: 🇭🇰HK-185.244.208.176-0173
   server: eternal-swift.rooster465.autos
   port: 443
@@ -1639,7 +1600,7 @@ proxies:
   type: trojan
   password: ND91608427
   sni: tidy-gelding.rooster465.autos
-- name: 🇺🇸US_1|4.2MB/s
+- name: 🇭🇰US_1|4.2MB/s
   server: v29.hdacd.com
   port: 30829
   type: vmess
@@ -1677,31 +1638,12 @@ proxies:
   type: ss
   cipher: chacha20-ietf-poly1305
   password: PWpjPo3tqhPN4yRZ
-- name: 🇫🇷FR-162.19.192.89-0528
-  server: planb.mojcn.com.linuxlh.xin
-  port: 16632
-  type: vmess
-  uuid: cefbe234-bcc6-4558-ab7b-1030e331e6a5
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: d052c66d50dcf7c3cfab75ed7f8e8322.mobgslb.tbcache.com
 - name: 🇫🇷FR-95.170.13.47-0122
   server: 95.170.13.47
   port: 65443
   type: ss
   cipher: aes-256-cfb
   password: 7eadc6dbe2ae
-- name: 🇮🇹IT-194.87.47.204-0113
-  server: 194.87.47.204
-  port: 10901
-  type: ss
-  cipher: aes-256-gcm
-  password: d1fa2f4b98a38bc8
 - name: 🇺🇸US-144.31.243.2-0172
   server: 144.31.243.2
   port: 16015
@@ -1781,36 +1723,12 @@ proxies:
   cipher: aes-256-cfb
   password: amazonskr05
   udp: true
-- name: 🇺🇸_NL_荷兰_1
-  server: 31.76.61.232
-  port: 443
-  type: vless
-  tls: true
-  uuid: 791a171e-c0af-4bd7-b8ce-43541c7585db
-  servername: policies.google.com
-  path: /
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: CMTA5uuaIVIeqHslZMT3CbFwP8F5ysMLii72ybsTlyY
-    short-id: "e2a4c6b8"
-  client-fingerprint: random
-  skip-cert-verify: true
 - name: 🇨🇳_CN_中国->🇯🇵_JP_日本
   server: 121.46.230.137
   port: 65443
   type: ss
   cipher: aes-256-cfb
   password: 7eadc6dbe2ae
-  udp: true
-- name: 🇺🇸_US_美国_3
-  server: 192.227.247.27
-  port: 443
-  type: vmess
-  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: true
   udp: true
 - name: 🇯🇵JP-45.32.16.53-5104
   server: 45.32.16.53
@@ -1835,19 +1753,6 @@ proxies:
   port: 2174
   type: trojan
   password: tripitropa444
-- name: 🇫🇷FR-162.19.192.89-2109
-  server: planb.mojcn.com.linuxlh.xin
-  port: 16626
-  type: vmess
-  uuid: cefbe234-bcc6-4558-ab7b-1030e331e6a5
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: d052c66d50dcf7c3cfab75ed7f8e8322.mobgslb.tbcache.com
 - name: 🇹🇼TW-36.224.151.80-0152
   server: r3mrcg00129437x.cybervena.com
   port: 50099
@@ -1868,14 +1773,6 @@ proxies:
   ports: 1933
   password: 19f72087-4591-4d72-930b-2697078ec2be
   sni: sg1.xiaoliyu.cyou
-  skip-cert-verify: true
-- name: 🇺🇸GB
-  server: 31.76.22.210
-  port: 443
-  type: hysteria2
-  ports: 443
-  password: 8674df07-56b3-43ea-b687-aef2b1a20137
-  sni: crt.ultimagamest.com
   skip-cert-verify: true
 - name: 🇨🇦加拿大
   server: vpn-ca-001.fastervpn.world
@@ -1935,13 +1832,6 @@ proxies:
   obfs-password: 44f1c1e2f8b99e792ceed574627a1eb0
   sni: nl1.sferavpn.pro
   skip-cert-verify: true
-- name: 🇩🇪DE
-  server: de1.apexvpn.space
-  port: 443
-  type: hysteria2
-  ports: 443
-  password: dffb4c3d-1e84-4938-8881-cad917e8efb2
-  sni: de1.apexvpn.space
 - name: '🇫🇮英国 #2'
   server: 138.124.0.168
   port: 8080
@@ -1992,16 +1882,6 @@ proxies:
   password: YutbgyXL1mGaSlBXDoEucWvYbrDCINgUcQ6R6_At5Pjr2xCc
   sni: admin.wwwinternetvideo.click
   skip-cert-verify: true
-- name: 🇺🇸[🇷🇺]t.me/ConfigV2RayNG
-  server: 144.31.49.138
-  port: 443
-  type: hysteria2
-  ports: 443
-  password: cd74c0a406664a5bc0bac098220a2468
-  obfs: salamander
-  obfs-password: 44f1c1e2f8b99e792ceed574627a1eb0
-  sni: ru1.sferavpn.pro
-  skip-cert-verify: false
 - name: 🇺🇸⛑️78@oneclickvpnkeys
   server: 64.188.98.171
   port: 443
@@ -2010,18 +1890,6 @@ proxies:
   password: mkL3AfdSZIpTWRB9TcWPn9vywPGN89MRHg3ToRDj
   sni: germany3.h2corp.local
   skip-cert-verify: true
-- name: SG_1|3.7MB/s
-  server: 8.35.211.115
-  port: 2087
-  type: vless
-  tls: true
-  uuid: 1e49ee8c-33be-4db8-8445-7203f18aecfa
-  servername: mysheep.dpdns.org
-  network: ws
-  ws-opts:
-    path: /fp=chrome
-    headers:
-      Host: mysheep.dpdns.org
 - name: 🇺🇸NL_3|2.1MB/s
   server: 85.209.157.209
   port: 29367
@@ -2042,12 +1910,6 @@ proxies:
   password: 9Me_Jx935gnHx13_Nx45M_NYXe037js_Be4z
   sni: hopp-germany-new.ddnsguru.com
   skip-cert-verify: true
-- name: 🇨🇦CA_1|1.9MB/s
-  server: 166.88.130.218
-  port: 8011
-  type: ss
-  cipher: aes-256-gcm
-  password: fbcec76953a2d173
 - name: 🇨🇦CA_2|3.9MB/s
   server: 35.183.81.172
   port: 443
@@ -2060,6 +1922,280 @@ proxies:
   type: ss
   cipher: aes-256-cfb
   password: amazonskr05
+- name: 🇨🇦CA-35.182.118.89-0401
+  server: 35.182.118.89
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+- name: 🇨🇦CA-51.79.85.185-0404
+  server: 51.79.85.185
+  port: 8118
+  type: ss
+  cipher: aes-256-gcm
+  password: cdBIDV42DCwnfIN
+- name: 🇭🇰HK-103.141.221.124-4680
+  server: 103.141.221.124
+  port: 8388
+  type: ss
+  cipher: chacha20-ietf
+  password: asd123456
+- name: 🇨🇦CA-3.97.16.160-0115
+  server: 3.97.16.160
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+- name: 🇨🇳CN-121.46.230.233-0150
+  server: 121.46.230.233
+  port: 65443
+  type: ss
+  cipher: aes-256-cfb
+  password: 7eadc6dbe2ae
+- name: 🇰🇷KR-54.180.239.104-0153
+  server: tough-hermit.rooster465.autos
+  port: 443
+  type: trojan
+  password: AE62539071
+- name: 🇰🇷KR-54.180.128.171-0185
+  server: accurate-cat.rooster465.autos
+  port: 443
+  type: trojan
+  password: NQ26071394
+- name: 🇨🇳CN-121.46.230.138-0202
+  server: 121.46.230.138
+  port: 65443
+  type: ss
+  cipher: aes-256-cfb
+  password: 7eadc6dbe2ae
+- name: 🇸🇬SG-91.243.81.39-0223
+  server: harmless-lab.rooster465.autos
+  port: 443
+  type: trojan
+  password: CF68213490
+- name: 🇸🇬SG-81.28.13.69-0242
+  server: quiet-condor.rooster465.autos
+  port: 443
+  type: trojan
+  password: NQ26071394
+- name: _HK_中国香港
+  server: 156.226.183.181
+  port: 54321
+  type: vmess
+  uuid: d3bcc1f1-6294-4f68-bcf3-c3bcb2001520
+  alterId: 0
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  udp: true
+- name: 🇭🇰_HK_中国香港_1
+  server: v33.hdacd.com
+  port: 30833
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: none
+  tls: false
+  skip-cert-verify: true
+  udp: true
+- name: 🇺🇸_RU_俄罗斯->🇩🇪_DE_德国#2
+  server: rrr.windconnect.pro
+  port: 443
+  type: vless
+  tls: true
+  uuid: af00e0c4-decf-48f2-9013-56abe9c9efcd
+  servername: rrr.windconnect.pro
+  host: rrr.windconnect.pro
+  path: /
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: BsFRd4pZgH2hK2AmVf6Mv7z2QGmV2LPYbqkT1UqZX30
+    short-id: "4da5d1853f04af6d"
+  client-fingerprint: random
+  skip-cert-verify: true
+- name: 🇭🇰_HK_中国香港_2#2
+  server: v10.zgtfqs.click
+  port: 30807
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: none
+  tls: false
+  skip-cert-verify: true
+  udp: true
+- name: 🇭🇰_HK_中国香港->🇬🇧_GB_英国
+  server: v36.hdacd.com
+  port: 30836
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  udp: true
+- name: 🇨🇳_CN_中国
+  server: 112.132.215.108
+  port: 50002
+  type: vmess
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  alterId: 64
+  cipher: auto
+  tls: false
+  skip-cert-verify: true
+  udp: true
+- name: 美国 CloudFlare节点 3
+  server: 104.18.42.54
+  port: 443
+  type: vless
+  tls: true
+  uuid: 77777777-8a3e-6666-b6d1-a9c5f0e8b3a2
+  servername: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: faxf32gkfzoxqv.fx6hsv0.ccwu.cc
+- name: 🇷🇺欧盟 V2CROSS.COM
+  server: ru05.abvpn.ru
+  port: 443
+  type: vless
+  tls: true
+  uuid: a289a3d3-5833-4b28-8809-ae72898a98d0
+  servername: ru05.abvpn.ru
+  network: ws
+  ws-opts:
+    path: /websocket
+    headers:
+      Host: ru05.abvpn.ru
+- name: 🇺🇸美国 V2CROSS.COM
+  server: go.wwwinternetvideo.click
+  port: 443
+  type: hysteria2
+  ports: 443
+  password: YutbgyXL1mGaSlBXDoEucWvYbrDCINgUcQ6R6_At5Pjr2xCc
+  sni: admin.wwwinternetvideo.click
+  skip-cert-verify: true
+- name: 美国 CloudFlare节点 8
+  server: 172.67.213.31
+  port: 443
+  type: vless
+  tls: true
+  uuid: 7893b302-3882-4c38-9ab6-6313f1575d1a
+  servername: cf.udpid.org
+  network: ws
+  ws-opts:
+    path: /@zyzzzoao
+    headers:
+      Host: cf.udpid.org
+  skip-cert-verify: false
+- name: 🇰🇷韩国
+  server: 132.226.226.189
+  port: 50160
+  type: hysteria2
+  ports: 50160
+  password: 1671a252e2a97dc2bda4e515475931da
+  sni: www.bing.com
+  skip-cert-verify: true
+- name: 🇯🇵日本
+  server: 138.3.208.26
+  port: 50160
+  type: hysteria2
+  ports: 50160
+  password: 184cdec28da5a09450803c8debcd2cc9
+  sni: www.bing.com
+  skip-cert-verify: true
+- name: 🇫🇷法国
+  server: 35.181.169.140
+  port: 443
+  type: hysteria2
+  ports: 443
+  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
+  sni: 35.181.169.140
+  skip-cert-verify: true
+- name: '🇦🇺澳大利亚 #1'
+  server: vpn-au-002.fastervpn.world
+  port: 443
+  type: hysteria2
+  ports: 443
+  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
+  sni: css.rbxcdn.com
+  skip-cert-verify: true
+- name: 🇳🇱☺️37@oneclickvpnkeys
+  server: 72.56.102.31
+  port: 443
+  type: hysteria2
+  ports: 443
+  password: BWAFlp8g53
+  skip-cert-verify: true
+- name: 🇱🇻96@oneclickvpnkeys
+  server: 85.159.228.22
+  port: 443
+  type: hysteria2
+  ports: 443
+  password: GSPOBvG-ZwYcBFMr0ekFGO_Zga3wK6v_
+  sni: hy2-latvia2.unlimited-access.ru
+- name: 🇨🇿☺️29@oneclickvpnkeys
+  server: 195.133.24.124
+  port: 443
+  type: hysteria2
+  ports: 443
+  password: OD6gGbGU9a
+  sni: hys26.wba-pn.ru
+- name: 🇷🇴18@oneclickvpnkeys
+  server: 205.237.109.166
+  port: 8443
+  type: hysteria2
+  ports: 8443
+  password: Oz_Kx9342gefwJ89x3_M9z32kzf9KJq003_s
+  sni: hopp-netherland-new.dynuddns.net
+- name: 🇷🇴20@oneclickvpnkeys
+  server: 205.237.109.168
+  port: 8443
+  type: hysteria2
+  ports: 8443
+  password: Oz_Kx9342gefwJ89x3_M9z32kzf9KJq003_s
+  sni: hopp-netherland-new.dynuddns.net
+  skip-cert-verify: true
+- name: 🇳🇱☺️84@oneclickvpnkeys
+  server: hys1.wba-pn.ru
+  port: 443
+  type: hysteria2
+  ports: 443
+  password: kVfzhSpshc
+- name: 🇳🇱19@oneclickvpnkeys
+  server: 46.229.243.149
+  port: 8443
+  type: hysteria2
+  ports: 8443
+  password: s0_sdK93x9wer_D02Lz9cvK3_Sa014Oakl_C2z
+  sni: grape-turbo-fr.roxa.org
+  skip-cert-verify: true
+- name: 🇮🇪IE_1|2.9MB/s
+  server: 54.229.177.209
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+- name: 🇬🇧GB_1|3.7MB/s
+  server: 35.179.119.76
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+- name: 🇮🇪IE_2|4.6MB/s
+  server: 52.210.185.41
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+- name: 🇭🇰
+  server: v35.hdacd.com
+  port: 30835
+  type: vmess
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  alterId: 2
+  cipher: auto
+  tls: false
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -2067,12 +2203,8 @@ proxy-groups:
   - ♻️ 自动选择
   - DIRECT
   - 🇭🇰香港
-  - '@Shh_Proxy-New⁸'
-  - 🇮🇹France
-  - 🇫🇷
-  - 🇳🇱⚙️8@oneclickvpnkeys
-  - 🇸🇬Join+Telegram:@Farah_VPN 🇸🇬
-  - 🇺🇸United States
+  - 🇺🇸@FreakConfig
+  - 🇩🇪(@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
   - 🇩🇪德国-001 |1.6MB/s
   - 🇩🇪德国-002 |594KB/s
   - 🇦🇺澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
@@ -2081,8 +2213,8 @@ proxy-groups:
   - 🇷🇴罗马尼亚-003 |1.4MB/s
   - 🇷🇴罗马尼亚-004 |1.3MB/s
   - 🇷🇴罗马尼亚-005 |1.2MB/s
-  - 🇷🇴罗马尼亚-006 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
-  - 🇷🇴罗马尼亚-007 |1.1MB/s
+  - 🇷🇴罗马尼亚-006 |1.1MB/s
+  - 🇷🇴罗马尼亚-007 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 🇷🇴罗马尼亚-008 |1.0MB/s
   - 🇷🇴罗马尼亚-009 |1.0MB/s
   - 🇷🇴罗马尼亚-010 |1020KB/s
@@ -2096,13 +2228,13 @@ proxy-groups:
   - 🇷🇴罗马尼亚-018 |586KB/s
   - 🇷🇴罗马尼亚-019 |557KB/s
   - 🇷🇴罗马尼亚-020 |554KB/s
-  - 🇺🇸美国-002 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 🇺🇸美国-003 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 🇺🇸美国-004 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 🇺🇸美国-005 |1.0MB/s|TK-US|GPT⁺-US
+  - 🇺🇸美国-001 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 🇺🇸美国-002 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 🇺🇸美国-003 |1.0MB/s|TK-US|GPT⁺-US
+  - 🇺🇸美国-005 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 🇳🇱荷兰-001 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 🇳🇱荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 🇳🇱荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
+  - 🇳🇱荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL
+  - 🇳🇱荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 🇳🇱荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 🇸🇬其他-006 |554KB/s
   - 🇰🇷韩国-001 |3.9MB/s
@@ -2116,7 +2248,6 @@ proxy-groups:
   - 🇺🇸美国 718
   - 🇬🇧美国 719
   - 🇺🇸美国 720
-  - 🇺🇸美国 721
   - 🇺🇸美国 723
   - 🇰🇷韩国 016
   - 🇺🇸美国 1648
@@ -2128,8 +2259,11 @@ proxy-groups:
   - 🇺🇸美国-024 |2.0MB/s|TK-US|YT-US|GPT⁺-US
   - 🇳🇱荷兰-001 |2.5MB/s|GPT⁺-NL
   - 🇪🇸西班牙-001 |1.6MB/s|TK-ES|GPT⁺-ES|GM-ES
-  - 🇩🇪(@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
-  - 🇷🇺91@oneclickvpnkeys
+  - '@Shh_Proxy-New⁸'
+  - 🇮🇹France
+  - 🇳🇱⚙️8@oneclickvpnkeys
+  - 🇸🇬Join+Telegram:@Farah_VPN 🇸🇬
+  - 🇺🇸United States
   - 🇩🇪(7)
   - 🇩🇪Join+Telegram:@Farah_VPN 🇺🇸
   - 🇰🇷韩国-002
@@ -2213,7 +2347,6 @@ proxy-groups:
   - 🇦🇺AU-82.117.225.216-0504
   - 🇺🇸_US_美国_1
   - 🇩🇪18@oneclickvpnkeys
-  - 🇺🇸_US_美国_2
   - 🇬🇧NL_1|2.5MB/s
   - 🇺🇸4🟢@oneclickvpnkeys
   - 🇬🇧GB-82.38.31.214-6280
@@ -2226,7 +2359,6 @@ proxy-groups:
   - 🇬🇧GB-82.38.31.36-0089
   - 🇬🇧GB-82.38.31.46-0068
   - 🇬🇧GB-82.38.31.49-0073
-  - 🇸🇬SG-103.36.91.32-0143
   - 🇭🇰HK-185.244.208.176-0173
   - 🇭🇰HK-185.14.47.56-0174
   - 🇳🇱NL-193.169.239.146-0176
@@ -2299,15 +2431,13 @@ proxy-groups:
   - 🇰🇷KR-43.201.56.44-6237
   - 🇰🇷KR-3.36.59.34-6221
   - 🇩🇪SG-54.255.35.23-6228
-  - 🇺🇸US_1|4.2MB/s
+  - 🇭🇰US_1|4.2MB/s
   - 🇬🇧GB-82.38.31.212-0072
   - 🇬🇧GB-82.38.31.180-0087
   - 🇯🇵JP-176.97.73.215-0107
   - 🇬🇧GB-141.98.101.181-0108
   - 🇩🇪DE-8.209.74.72-0109
-  - 🇫🇷FR-162.19.192.89-0528
   - 🇫🇷FR-95.170.13.47-0122
-  - 🇮🇹IT-194.87.47.204-0113
   - 🇺🇸US-144.31.243.2-0172
   - 🇺🇸US-37.19.198.243-0130
   - 🇨🇳CN-121.46.230.232-0132
@@ -2319,18 +2449,14 @@ proxy-groups:
   - 🇭🇰HK-156.245.232.239-0150
   - 🇺🇸_RU_俄罗斯->🇩🇪_DE_德国
   - 🇬🇧_GB_英国
-  - 🇺🇸_NL_荷兰_1
   - 🇨🇳_CN_中国->🇯🇵_JP_日本
-  - 🇺🇸_US_美国_3
   - 🇯🇵JP-45.32.16.53-5104
   - 🇨🇦CA-15.223.120.129-2117
   - 🇨🇦CA-3.96.144.93-2119
   - 🇬🇧GB-45.85.88.194-2115
-  - 🇫🇷FR-162.19.192.89-2109
   - 🇹🇼TW-36.224.151.80-0152
   - 🇮🇪_IE_爱尔兰
   - '🇸🇬新加坡 #1'
-  - 🇺🇸GB
   - 🇨🇦加拿大
   - 🇮🇳印度
   - 🇬🇧GB_8|4.8MB/s
@@ -2338,32 +2464,59 @@ proxy-groups:
   - 🇷🇴⛑️88@oneclickvpnkeys
   - 🇷🇴⛑️85@oneclickvpnkeys
   - '🇺🇸美国 #2'
-  - 🇩🇪DE
   - '🇫🇮英国 #2'
   - '🇺🇸美国 #3'
   - '🇺🇸德国 #4'
   - 🇫🇮✅  @vistav2ray  👈👈کانال ما ✅
   - 🇰🇷160755 | ⚡️Telegram - t.me/S...
   - 🇺🇸160750 | ⚡️Telegram - t.me/S...
-  - 🇺🇸[🇷🇺]t.me/ConfigV2RayNG
   - 🇺🇸⛑️78@oneclickvpnkeys
-  - SG_1|3.7MB/s
   - 🇺🇸NL_3|2.1MB/s
   - 🇬🇧GB_1|2.6MB/s
   - 🇷🇴RO_3|3.4MB/s
-  - 🇨🇦CA_1|1.9MB/s
   - 🇨🇦CA_2|3.9MB/s
   - 🇮🇪IE_1|3.6MB/s
+  - 🇨🇦CA-35.182.118.89-0401
+  - 🇨🇦CA-51.79.85.185-0404
+  - 🇭🇰HK-103.141.221.124-4680
+  - 🇨🇦CA-3.97.16.160-0115
+  - 🇨🇳CN-121.46.230.233-0150
+  - 🇰🇷KR-54.180.239.104-0153
+  - 🇰🇷KR-54.180.128.171-0185
+  - 🇨🇳CN-121.46.230.138-0202
+  - 🇸🇬SG-91.243.81.39-0223
+  - 🇸🇬SG-81.28.13.69-0242
+  - _HK_中国香港
+  - 🇭🇰_HK_中国香港_1
+  - 🇺🇸_RU_俄罗斯->🇩🇪_DE_德国#2
+  - 🇭🇰_HK_中国香港_2#2
+  - 🇭🇰_HK_中国香港->🇬🇧_GB_英国
+  - 🇨🇳_CN_中国
+  - 美国 CloudFlare节点 3
+  - 🇷🇺欧盟 V2CROSS.COM
+  - 🇺🇸美国 V2CROSS.COM
+  - 美国 CloudFlare节点 8
+  - 🇰🇷韩国
+  - 🇯🇵日本
+  - 🇫🇷法国
+  - '🇦🇺澳大利亚 #1'
+  - 🇳🇱☺️37@oneclickvpnkeys
+  - 🇱🇻96@oneclickvpnkeys
+  - 🇨🇿☺️29@oneclickvpnkeys
+  - 🇷🇴18@oneclickvpnkeys
+  - 🇷🇴20@oneclickvpnkeys
+  - 🇳🇱☺️84@oneclickvpnkeys
+  - 🇳🇱19@oneclickvpnkeys
+  - 🇮🇪IE_1|2.9MB/s
+  - 🇬🇧GB_1|3.7MB/s
+  - 🇮🇪IE_2|4.6MB/s
+  - 🇭🇰
 - name: ♻️ 自动选择
   type: url-test
   proxies:
   - 🇭🇰香港
-  - '@Shh_Proxy-New⁸'
-  - 🇮🇹France
-  - 🇫🇷
-  - 🇳🇱⚙️8@oneclickvpnkeys
-  - 🇸🇬Join+Telegram:@Farah_VPN 🇸🇬
-  - 🇺🇸United States
+  - 🇺🇸@FreakConfig
+  - 🇩🇪(@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
   - 🇩🇪德国-001 |1.6MB/s
   - 🇩🇪德国-002 |594KB/s
   - 🇦🇺澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
@@ -2372,8 +2525,8 @@ proxy-groups:
   - 🇷🇴罗马尼亚-003 |1.4MB/s
   - 🇷🇴罗马尼亚-004 |1.3MB/s
   - 🇷🇴罗马尼亚-005 |1.2MB/s
-  - 🇷🇴罗马尼亚-006 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
-  - 🇷🇴罗马尼亚-007 |1.1MB/s
+  - 🇷🇴罗马尼亚-006 |1.1MB/s
+  - 🇷🇴罗马尼亚-007 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 🇷🇴罗马尼亚-008 |1.0MB/s
   - 🇷🇴罗马尼亚-009 |1.0MB/s
   - 🇷🇴罗马尼亚-010 |1020KB/s
@@ -2387,13 +2540,13 @@ proxy-groups:
   - 🇷🇴罗马尼亚-018 |586KB/s
   - 🇷🇴罗马尼亚-019 |557KB/s
   - 🇷🇴罗马尼亚-020 |554KB/s
-  - 🇺🇸美国-002 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 🇺🇸美国-003 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 🇺🇸美国-004 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 🇺🇸美国-005 |1.0MB/s|TK-US|GPT⁺-US
+  - 🇺🇸美国-001 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 🇺🇸美国-002 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 🇺🇸美国-003 |1.0MB/s|TK-US|GPT⁺-US
+  - 🇺🇸美国-005 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 🇳🇱荷兰-001 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 🇳🇱荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 🇳🇱荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
+  - 🇳🇱荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL
+  - 🇳🇱荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 🇳🇱荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 🇸🇬其他-006 |554KB/s
   - 🇰🇷韩国-001 |3.9MB/s
@@ -2407,7 +2560,6 @@ proxy-groups:
   - 🇺🇸美国 718
   - 🇬🇧美国 719
   - 🇺🇸美国 720
-  - 🇺🇸美国 721
   - 🇺🇸美国 723
   - 🇰🇷韩国 016
   - 🇺🇸美国 1648
@@ -2419,8 +2571,11 @@ proxy-groups:
   - 🇺🇸美国-024 |2.0MB/s|TK-US|YT-US|GPT⁺-US
   - 🇳🇱荷兰-001 |2.5MB/s|GPT⁺-NL
   - 🇪🇸西班牙-001 |1.6MB/s|TK-ES|GPT⁺-ES|GM-ES
-  - 🇩🇪(@VmessProtocol)برای خرید و اتصال دائمی جوین شو🇩🇪
-  - 🇷🇺91@oneclickvpnkeys
+  - '@Shh_Proxy-New⁸'
+  - 🇮🇹France
+  - 🇳🇱⚙️8@oneclickvpnkeys
+  - 🇸🇬Join+Telegram:@Farah_VPN 🇸🇬
+  - 🇺🇸United States
   - 🇩🇪(7)
   - 🇩🇪Join+Telegram:@Farah_VPN 🇺🇸
   - 🇰🇷韩国-002
@@ -2504,7 +2659,6 @@ proxy-groups:
   - 🇦🇺AU-82.117.225.216-0504
   - 🇺🇸_US_美国_1
   - 🇩🇪18@oneclickvpnkeys
-  - 🇺🇸_US_美国_2
   - 🇬🇧NL_1|2.5MB/s
   - 🇺🇸4🟢@oneclickvpnkeys
   - 🇬🇧GB-82.38.31.214-6280
@@ -2517,7 +2671,6 @@ proxy-groups:
   - 🇬🇧GB-82.38.31.36-0089
   - 🇬🇧GB-82.38.31.46-0068
   - 🇬🇧GB-82.38.31.49-0073
-  - 🇸🇬SG-103.36.91.32-0143
   - 🇭🇰HK-185.244.208.176-0173
   - 🇭🇰HK-185.14.47.56-0174
   - 🇳🇱NL-193.169.239.146-0176
@@ -2590,15 +2743,13 @@ proxy-groups:
   - 🇰🇷KR-43.201.56.44-6237
   - 🇰🇷KR-3.36.59.34-6221
   - 🇩🇪SG-54.255.35.23-6228
-  - 🇺🇸US_1|4.2MB/s
+  - 🇭🇰US_1|4.2MB/s
   - 🇬🇧GB-82.38.31.212-0072
   - 🇬🇧GB-82.38.31.180-0087
   - 🇯🇵JP-176.97.73.215-0107
   - 🇬🇧GB-141.98.101.181-0108
   - 🇩🇪DE-8.209.74.72-0109
-  - 🇫🇷FR-162.19.192.89-0528
   - 🇫🇷FR-95.170.13.47-0122
-  - 🇮🇹IT-194.87.47.204-0113
   - 🇺🇸US-144.31.243.2-0172
   - 🇺🇸US-37.19.198.243-0130
   - 🇨🇳CN-121.46.230.232-0132
@@ -2610,18 +2761,14 @@ proxy-groups:
   - 🇭🇰HK-156.245.232.239-0150
   - 🇺🇸_RU_俄罗斯->🇩🇪_DE_德国
   - 🇬🇧_GB_英国
-  - 🇺🇸_NL_荷兰_1
   - 🇨🇳_CN_中国->🇯🇵_JP_日本
-  - 🇺🇸_US_美国_3
   - 🇯🇵JP-45.32.16.53-5104
   - 🇨🇦CA-15.223.120.129-2117
   - 🇨🇦CA-3.96.144.93-2119
   - 🇬🇧GB-45.85.88.194-2115
-  - 🇫🇷FR-162.19.192.89-2109
   - 🇹🇼TW-36.224.151.80-0152
   - 🇮🇪_IE_爱尔兰
   - '🇸🇬新加坡 #1'
-  - 🇺🇸GB
   - 🇨🇦加拿大
   - 🇮🇳印度
   - 🇬🇧GB_8|4.8MB/s
@@ -2629,22 +2776,53 @@ proxy-groups:
   - 🇷🇴⛑️88@oneclickvpnkeys
   - 🇷🇴⛑️85@oneclickvpnkeys
   - '🇺🇸美国 #2'
-  - 🇩🇪DE
   - '🇫🇮英国 #2'
   - '🇺🇸美国 #3'
   - '🇺🇸德国 #4'
   - 🇫🇮✅  @vistav2ray  👈👈کانال ما ✅
   - 🇰🇷160755 | ⚡️Telegram - t.me/S...
   - 🇺🇸160750 | ⚡️Telegram - t.me/S...
-  - 🇺🇸[🇷🇺]t.me/ConfigV2RayNG
   - 🇺🇸⛑️78@oneclickvpnkeys
-  - SG_1|3.7MB/s
   - 🇺🇸NL_3|2.1MB/s
   - 🇬🇧GB_1|2.6MB/s
   - 🇷🇴RO_3|3.4MB/s
-  - 🇨🇦CA_1|1.9MB/s
   - 🇨🇦CA_2|3.9MB/s
   - 🇮🇪IE_1|3.6MB/s
+  - 🇨🇦CA-35.182.118.89-0401
+  - 🇨🇦CA-51.79.85.185-0404
+  - 🇭🇰HK-103.141.221.124-4680
+  - 🇨🇦CA-3.97.16.160-0115
+  - 🇨🇳CN-121.46.230.233-0150
+  - 🇰🇷KR-54.180.239.104-0153
+  - 🇰🇷KR-54.180.128.171-0185
+  - 🇨🇳CN-121.46.230.138-0202
+  - 🇸🇬SG-91.243.81.39-0223
+  - 🇸🇬SG-81.28.13.69-0242
+  - _HK_中国香港
+  - 🇭🇰_HK_中国香港_1
+  - 🇺🇸_RU_俄罗斯->🇩🇪_DE_德国#2
+  - 🇭🇰_HK_中国香港_2#2
+  - 🇭🇰_HK_中国香港->🇬🇧_GB_英国
+  - 🇨🇳_CN_中国
+  - 美国 CloudFlare节点 3
+  - 🇷🇺欧盟 V2CROSS.COM
+  - 🇺🇸美国 V2CROSS.COM
+  - 美国 CloudFlare节点 8
+  - 🇰🇷韩国
+  - 🇯🇵日本
+  - 🇫🇷法国
+  - '🇦🇺澳大利亚 #1'
+  - 🇳🇱☺️37@oneclickvpnkeys
+  - 🇱🇻96@oneclickvpnkeys
+  - 🇨🇿☺️29@oneclickvpnkeys
+  - 🇷🇴18@oneclickvpnkeys
+  - 🇷🇴20@oneclickvpnkeys
+  - 🇳🇱☺️84@oneclickvpnkeys
+  - 🇳🇱19@oneclickvpnkeys
+  - 🇮🇪IE_1|2.9MB/s
+  - 🇬🇧GB_1|3.7MB/s
+  - 🇮🇪IE_2|4.6MB/s
+  - 🇭🇰
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
