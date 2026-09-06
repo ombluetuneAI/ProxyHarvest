@@ -18,6 +18,22 @@ dns:
     geoip: true
     geoip-code: CN
 proxies:
+- name: 其他-013
+  type: vless
+  network: ws
+  uuid: 395d040e-a04a-43d7-a1e9-8635f545879a
+  server: 188.114.97.6
+  servername: shalana.xyz
+  port: 2096
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  ws-opts:
+    headers:
+      Host: shalana.xyz
+    path: /shalana
+  client-fingerprint: unsafe
 - name: 德国-001 |1.6MB/s
   type: hysteria
   server: 5.83.129.90
@@ -484,6 +500,7 @@ proxy-groups:
   proxies:
   - ♻️ 自动选择
   - DIRECT
+  - 其他-013
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
   - 澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
@@ -543,6 +560,7 @@ proxy-groups:
 - name: ♻️ 自动选择
   type: url-test
   proxies:
+  - 其他-013
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
   - 澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
