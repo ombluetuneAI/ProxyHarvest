@@ -18,7 +18,7 @@ dns:
     geoip: true
     geoip-code: CN
 proxies:
-- name: 其他-003
+- name: 其他-001
   type: vmess
   network: tcp
   uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
@@ -27,22 +27,6 @@ proxies:
   skip-cert-verify: true
   alterId: 2
   cipher: auto
-- name: 其他-015
-  type: vless
-  network: ws
-  uuid: 395d040e-a04a-43d7-a1e9-8635f545879a
-  server: 188.114.97.6
-  servername: shalana.xyz
-  port: 2096
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  ws-opts:
-    headers:
-      Host: shalana.xyz
-    path: /shalana
-  client-fingerprint: unsafe
 - name: 德国-001 |1.6MB/s
   type: hysteria
   server: 5.83.129.90
@@ -123,14 +107,14 @@ proxies:
   sni: www.bing.com
 - name: 罗马尼亚-008 |1.0MB/s
   type: http
-  server: 193.176.84.23
+  server: 193.176.84.26
   port: 9002
   skip-cert-verify: true
   tls: true
   sni: www.bing.com
 - name: 罗马尼亚-009 |1.0MB/s
   type: http
-  server: 193.176.84.26
+  server: 193.176.84.23
   port: 9002
   skip-cert-verify: true
   tls: true
@@ -212,25 +196,25 @@ proxies:
   skip-cert-verify: true
   tls: true
   sni: www.bing.com
-- name: 美国-002 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+- name: 美国-001 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   type: http
   server: 138.199.35.215
   port: 9002
   skip-cert-verify: true
   tls: true
-- name: 美国-003 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+- name: 美国-002 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   type: http
   server: 38.28.193.188
   port: 443
   skip-cert-verify: true
   tls: true
-- name: 美国-004 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+- name: 美国-003 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   type: http
   server: 209.148.53.153
   port: 8090
   skip-cert-verify: true
   tls: true
-- name: 美国-005 |1.0MB/s|TK-US|GPT⁺-US
+- name: 美国-004 |1.0MB/s|TK-US|GPT⁺-US
   type: http
   server: 138.199.35.198
   port: 9002
@@ -503,8 +487,7 @@ proxy-groups:
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - 其他-003
-  - 其他-015
+  - 其他-001
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
   - 罗马尼亚-001 |3.3MB/s|TK-RO|GPT⁺-RO|GM-RO
@@ -527,10 +510,10 @@ proxy-groups:
   - 罗马尼亚-018 |586KB/s
   - 罗马尼亚-019 |557KB/s
   - 罗马尼亚-020 |554KB/s
-  - 美国-002 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-003 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-004 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-005 |1.0MB/s|TK-US|GPT⁺-US
+  - 美国-001 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 美国-002 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 美国-003 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 美国-004 |1.0MB/s|TK-US|GPT⁺-US
   - 荷兰-001 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL
   - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
@@ -563,8 +546,7 @@ proxy-groups:
 - name: ♻️ 自动选择
   type: url-test
   proxies:
-  - 其他-003
-  - 其他-015
+  - 其他-001
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
   - 罗马尼亚-001 |3.3MB/s|TK-RO|GPT⁺-RO|GM-RO
@@ -587,10 +569,10 @@ proxy-groups:
   - 罗马尼亚-018 |586KB/s
   - 罗马尼亚-019 |557KB/s
   - 罗马尼亚-020 |554KB/s
-  - 美国-002 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-003 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-004 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-005 |1.0MB/s|TK-US|GPT⁺-US
+  - 美国-001 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 美国-002 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 美国-003 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 美国-004 |1.0MB/s|TK-US|GPT⁺-US
   - 荷兰-001 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL
   - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
