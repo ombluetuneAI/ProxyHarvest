@@ -55,6 +55,12 @@ proxies:
   up: 500
   down: 1000
   auth_str: dongtaiwang.com
+- name: 澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
+  type: http
+  server: 159.13.44.228
+  port: 443
+  skip-cert-verify: true
+  tls: true
 - name: 罗马尼亚-001 |3.3MB/s|TK-RO|GPT⁺-RO|GM-RO
   type: http
   server: 193.176.84.35
@@ -83,13 +89,6 @@ proxies:
   skip-cert-verify: true
   tls: true
   udp: true
-  sni: www.bing.com
-- name: 罗马尼亚-005 |1.2MB/s
-  type: http
-  server: 193.176.84.32
-  port: 9002
-  skip-cert-verify: true
-  tls: true
   sni: www.bing.com
 - name: 罗马尼亚-006 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
   type: http
@@ -244,14 +243,6 @@ proxies:
   port: 9002
   skip-cert-verify: true
   tls: true
-- name: 其他-006 |554KB/s
-  type: http
-  server: d39d6b46-ta1og0-tbnk1n-ueq.sg.oshuawei.com
-  port: 443
-  password: 91df5a86-fcdd-11ef-94aa-f23c913c8d2b
-  tls: true
-  sni: d39d6b46-ta1og0-tbnk1n-ueq.sg.oshuawei.com
-  username: 91df5a86-fcdd-11ef-94aa-f23c913c8d2b
 - name: 韩国-001 |3.9MB/s
   type: socks5
   server: 121.169.46.116
@@ -490,11 +481,11 @@ proxy-groups:
   - 其他-001
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
+  - 澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
   - 罗马尼亚-001 |3.3MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 罗马尼亚-002 |2.3MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 罗马尼亚-003 |1.4MB/s
   - 罗马尼亚-004 |1.3MB/s
-  - 罗马尼亚-005 |1.2MB/s
   - 罗马尼亚-006 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 罗马尼亚-007 |1.1MB/s
   - 罗马尼亚-008 |1.0MB/s
@@ -518,7 +509,6 @@ proxy-groups:
   - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL
   - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 其他-006 |554KB/s
   - 韩国-001 |3.9MB/s
   - 其他-057
   - 德国-002
@@ -549,11 +539,11 @@ proxy-groups:
   - 其他-001
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
+  - 澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
   - 罗马尼亚-001 |3.3MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 罗马尼亚-002 |2.3MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 罗马尼亚-003 |1.4MB/s
   - 罗马尼亚-004 |1.3MB/s
-  - 罗马尼亚-005 |1.2MB/s
   - 罗马尼亚-006 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 罗马尼亚-007 |1.1MB/s
   - 罗马尼亚-008 |1.0MB/s
@@ -577,7 +567,6 @@ proxy-groups:
   - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL
   - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 其他-006 |554KB/s
   - 韩国-001 |3.9MB/s
   - 其他-057
   - 德国-002
