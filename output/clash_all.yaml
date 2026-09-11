@@ -44,15 +44,6 @@ proxies:
       Host: a.cwvps.eu.org
     path: /ws
   client-fingerprint: chrome
-- name: 其他-005
-  type: vmess
-  network: tcp
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  server: v36.hdacd.com
-  port: 30836
-  skip-cert-verify: true
-  alterId: 2
-  cipher: auto
 - name: 德国-001 |1.6MB/s
   type: hysteria
   server: 5.83.129.90
@@ -545,7 +536,6 @@ proxy-groups:
   - DIRECT
   - 中国-001
   - 其他-004
-  - 其他-005
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
   - 日本-001
@@ -609,7 +599,6 @@ proxy-groups:
   proxies:
   - 中国-001
   - 其他-004
-  - 其他-005
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
   - 日本-001
