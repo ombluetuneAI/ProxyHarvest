@@ -18,16 +18,6 @@ dns:
     geoip: true
     geoip-code: CN
 proxies:
-- name: 中国-001
-  type: vmess
-  network: tcp
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  server: 112.132.215.108
-  servername: 112.132.215.108
-  port: 50002
-  skip-cert-verify: true
-  alterId: 64
-  cipher: auto
 - name: 俄罗斯联邦-001
   type: vmess
   network: ws
@@ -42,31 +32,6 @@ proxies:
     headers:
       Host: renderer-stream-2-62.mirra.now
     path: /api/v1/gpu-stream/socket
-- name: 其他-004
-  type: vless
-  network: ws
-  uuid: c4edb87e-8544-4fa4-bd1c-b0cda9a34b46
-  server: 141.101.122.147
-  servername: a.cwvps.eu.org
-  port: 443
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  ws-opts:
-    headers:
-      Host: a.cwvps.eu.org
-    path: /ws
-  client-fingerprint: chrome
-- name: 其他-005
-  type: vmess
-  network: tcp
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  server: v36.hdacd.com
-  port: 30836
-  skip-cert-verify: true
-  alterId: 2
-  cipher: auto
 - name: 德国-002 |1.6MB/s
   type: hysteria
   server: 5.83.129.90
@@ -95,15 +60,6 @@ proxies:
   up: 500
   down: 1000
   auth_str: dongtaiwang.com
-- name: 日本-001
-  type: vmess
-  network: http
-  uuid: ce94f204-ffa6-4fa8-a1dc-ecfccfd463cb
-  server: 38.47.121.14
-  port: 49432
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
 - name: 澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
   type: http
   server: 159.13.44.228
@@ -146,30 +102,30 @@ proxies:
   skip-cert-verify: true
   tls: true
   sni: www.bing.com
-- name: 罗马尼亚-006 |1.1MB/s
-  type: http
-  server: 193.176.84.40
-  port: 9002
-  skip-cert-verify: true
-  tls: true
-  sni: www.bing.com
-- name: 罗马尼亚-007 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
+- name: 罗马尼亚-006 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
   type: http
   server: 193.176.84.30
   port: 9002
   skip-cert-verify: true
   tls: true
   sni: www.bing.com
+- name: 罗马尼亚-007 |1.1MB/s
+  type: http
+  server: 193.176.84.40
+  port: 9002
+  skip-cert-verify: true
+  tls: true
+  sni: www.bing.com
 - name: 罗马尼亚-008 |1.0MB/s
   type: http
-  server: 193.176.84.26
+  server: 193.176.84.23
   port: 9002
   skip-cert-verify: true
   tls: true
   sni: www.bing.com
 - name: 罗马尼亚-009 |1.0MB/s
   type: http
-  server: 193.176.84.23
+  server: 193.176.84.26
   port: 9002
   skip-cert-verify: true
   tls: true
@@ -281,16 +237,16 @@ proxies:
   port: 9002
   skip-cert-verify: true
   tls: true
-- name: 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
-  type: http
-  server: 5.255.118.82
-  port: 443
-  skip-cert-verify: true
-  tls: true
-- name: 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
+- name: 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL
   type: http
   server: 51.159.225.196
   port: 23856
+  skip-cert-verify: true
+  tls: true
+- name: 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
+  type: http
+  server: 5.255.118.82
+  port: 443
   skip-cert-verify: true
   tls: true
 - name: 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
@@ -299,6 +255,50 @@ proxies:
   port: 9002
   skip-cert-verify: true
   tls: true
+- name: 中国-001
+  type: vmess
+  network: tcp
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  server: 112.132.215.108
+  servername: 112.132.215.108
+  port: 50002
+  skip-cert-verify: true
+  alterId: 64
+  cipher: auto
+- name: 其他-004#2
+  type: vless
+  network: ws
+  uuid: c4edb87e-8544-4fa4-bd1c-b0cda9a34b46
+  server: 141.101.122.147
+  servername: a.cwvps.eu.org
+  port: 443
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  ws-opts:
+    headers:
+      Host: a.cwvps.eu.org
+    path: /ws
+  client-fingerprint: chrome
+- name: 其他-005#2
+  type: vmess
+  network: tcp
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  server: v36.hdacd.com
+  port: 30836
+  skip-cert-verify: true
+  alterId: 2
+  cipher: auto
+- name: 日本-001
+  type: vmess
+  network: http
+  uuid: ce94f204-ffa6-4fa8-a1dc-ecfccfd463cb
+  server: 38.47.121.14
+  port: 49432
+  skip-cert-verify: true
+  alterId: 0
+  cipher: auto
 - name: 荷兰-005
   type: vmess
   network: ws
@@ -530,21 +530,17 @@ proxy-groups:
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - 中国-001
   - 俄罗斯联邦-001
-  - 其他-004
-  - 其他-005
   - 德国-002 |1.6MB/s
   - 德国-003 |594KB/s
-  - 日本-001
   - 澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
   - 罗马尼亚-001 |3.3MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 罗马尼亚-002 |2.3MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 罗马尼亚-003 |1.4MB/s
   - 罗马尼亚-004 |1.3MB/s
   - 罗马尼亚-005 |1.2MB/s
-  - 罗马尼亚-006 |1.1MB/s
-  - 罗马尼亚-007 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 罗马尼亚-006 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 罗马尼亚-007 |1.1MB/s
   - 罗马尼亚-008 |1.0MB/s
   - 罗马尼亚-009 |1.0MB/s
   - 罗马尼亚-010 |1020KB/s
@@ -563,9 +559,13 @@ proxy-groups:
   - 美国-004 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-005 |1.0MB/s|TK-US|GPT⁺-US
   - 荷兰-001 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
+  - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL
+  - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
+  - 中国-001
+  - 其他-004#2
+  - 其他-005#2
+  - 日本-001
   - 荷兰-005
   - 其他-057
   - 德国-002
@@ -592,21 +592,17 @@ proxy-groups:
 - name: ♻️ 自动选择
   type: url-test
   proxies:
-  - 中国-001
   - 俄罗斯联邦-001
-  - 其他-004
-  - 其他-005
   - 德国-002 |1.6MB/s
   - 德国-003 |594KB/s
-  - 日本-001
   - 澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
   - 罗马尼亚-001 |3.3MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 罗马尼亚-002 |2.3MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 罗马尼亚-003 |1.4MB/s
   - 罗马尼亚-004 |1.3MB/s
   - 罗马尼亚-005 |1.2MB/s
-  - 罗马尼亚-006 |1.1MB/s
-  - 罗马尼亚-007 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 罗马尼亚-006 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 罗马尼亚-007 |1.1MB/s
   - 罗马尼亚-008 |1.0MB/s
   - 罗马尼亚-009 |1.0MB/s
   - 罗马尼亚-010 |1020KB/s
@@ -625,9 +621,13 @@ proxy-groups:
   - 美国-004 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-005 |1.0MB/s|TK-US|GPT⁺-US
   - 荷兰-001 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
+  - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL
+  - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
+  - 中国-001
+  - 其他-004#2
+  - 其他-005#2
+  - 日本-001
   - 荷兰-005
   - 其他-057
   - 德国-002
