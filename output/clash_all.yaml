@@ -18,20 +18,31 @@ dns:
     geoip: true
     geoip-code: CN
 proxies:
-- name: 俄罗斯联邦-001
+- name: 其他-012
   type: vmess
+  network: tcp
+  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
+  server: v24.hdacd.com
+  port: 30824
+  skip-cert-verify: true
+  alterId: 2
+  cipher: auto
+- name: 台湾-001
+  type: vless
   network: ws
-  uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
-  server: 194.226.142.120
+  uuid: f1d247db-d7ce-4eb8-9c0d-7b10603cd0b4
+  server: 60.248.219.53
+  servername: ty986gfazs.cainiaohub.xyz
   port: 443
   skip-cert-verify: true
   tls: true
-  alterId: 0
-  cipher: auto
+  udp: true
+  tfo: false
   ws-opts:
     headers:
-      Host: renderer-stream-2-62.mirra.now
-    path: /api/v1/gpu-stream/socket
+      Host: ty986gfazs.cainiaohub.xyz
+    path: /81574b6b-c9d7-44a0-b83d-dad56e8cb530
+  client-fingerprint: chrome
 - name: 德国-002 |1.6MB/s
   type: hysteria
   server: 5.83.129.90
@@ -207,25 +218,25 @@ proxies:
   skip-cert-verify: true
   tls: true
   sni: www.bing.com
-- name: 美国-002 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+- name: 美国-003 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   type: http
   server: 138.199.35.215
   port: 9002
   skip-cert-verify: true
   tls: true
-- name: 美国-003 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+- name: 美国-004 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   type: http
   server: 38.28.193.188
   port: 443
   skip-cert-verify: true
   tls: true
-- name: 美国-004 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+- name: 美国-005 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   type: http
   server: 209.148.53.153
   port: 8090
   skip-cert-verify: true
   tls: true
-- name: 美国-005 |1.0MB/s|TK-US|GPT⁺-US
+- name: 美国-006 |1.0MB/s|TK-US|GPT⁺-US
   type: http
   server: 138.199.35.198
   port: 9002
@@ -255,16 +266,20 @@ proxies:
   port: 9002
   skip-cert-verify: true
   tls: true
-- name: 中国-001
+- name: 俄罗斯联邦-001
   type: vmess
-  network: tcp
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  server: 112.132.215.108
-  servername: 112.132.215.108
-  port: 50002
+  network: ws
+  uuid: db50a20e-7ff5-4e70-948f-17cc9ca7c154
+  server: 194.226.142.120
+  port: 443
   skip-cert-verify: true
-  alterId: 64
+  tls: true
+  alterId: 0
   cipher: auto
+  ws-opts:
+    headers:
+      Host: renderer-stream-2-62.mirra.now
+    path: /api/v1/gpu-stream/socket
 - name: 其他-004#2
   type: vless
   network: ws
@@ -281,16 +296,7 @@ proxies:
       Host: a.cwvps.eu.org
     path: /ws
   client-fingerprint: chrome
-- name: 其他-005#2
-  type: vmess
-  network: tcp
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  server: v36.hdacd.com
-  port: 30836
-  skip-cert-verify: true
-  alterId: 2
-  cipher: auto
-- name: 日本-001
+- name: 日本-001#2
   type: vmess
   network: http
   uuid: ce94f204-ffa6-4fa8-a1dc-ecfccfd463cb
@@ -530,7 +536,8 @@ proxy-groups:
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - 俄罗斯联邦-001
+  - 其他-012
+  - 台湾-001
   - 德国-002 |1.6MB/s
   - 德国-003 |594KB/s
   - 澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
@@ -554,18 +561,17 @@ proxy-groups:
   - 罗马尼亚-018 |586KB/s
   - 罗马尼亚-019 |557KB/s
   - 罗马尼亚-020 |554KB/s
-  - 美国-002 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-003 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-004 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-005 |1.0MB/s|TK-US|GPT⁺-US
+  - 美国-003 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 美国-004 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 美国-005 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 美国-006 |1.0MB/s|TK-US|GPT⁺-US
   - 荷兰-001 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL
   - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 中国-001
+  - 俄罗斯联邦-001
   - 其他-004#2
-  - 其他-005#2
-  - 日本-001
+  - 日本-001#2
   - 荷兰-005
   - 其他-057
   - 德国-002
@@ -592,7 +598,8 @@ proxy-groups:
 - name: ♻️ 自动选择
   type: url-test
   proxies:
-  - 俄罗斯联邦-001
+  - 其他-012
+  - 台湾-001
   - 德国-002 |1.6MB/s
   - 德国-003 |594KB/s
   - 澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
@@ -616,18 +623,17 @@ proxy-groups:
   - 罗马尼亚-018 |586KB/s
   - 罗马尼亚-019 |557KB/s
   - 罗马尼亚-020 |554KB/s
-  - 美国-002 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-003 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-004 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-005 |1.0MB/s|TK-US|GPT⁺-US
+  - 美国-003 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 美国-004 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 美国-005 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 美国-006 |1.0MB/s|TK-US|GPT⁺-US
   - 荷兰-001 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL
   - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 中国-001
+  - 俄罗斯联邦-001
   - 其他-004#2
-  - 其他-005#2
-  - 日本-001
+  - 日本-001#2
   - 荷兰-005
   - 其他-057
   - 德国-002
