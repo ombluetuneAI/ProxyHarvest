@@ -53,8 +53,16 @@ mihomo:
 # 自动探测应用数据目录；也可设置环境变量 CLASH_VERGE_APP_DIR
 clash_verge:
   app_dir: ""                    # 留空 = 自动查找
+  exe_path: ""                   # 留空 = 自动查找；或设置 CLASH_VERGE_EXE
   backup_dir: output/tmp/verge_validate
   startup_timeout: 10            # 等待 external-controller 就绪
+  launch_timeout: 60             # 自动启动 Clash Verge 后等待内核就绪
+  git_proxy_mode: rule             # 启动时若为「直连」，临时切为此模式（rule/global）
+  auto_select_name: "♻️ 自动选择"   # GitHub 不通时临时切到的策略组项
+  auto_switch_on_proxy_fail: true  # 首次探测失败后切换含该项的 Selector 并重试
+  git_selector_groups: []          # 留空=所有含 auto_select_name 的 Selector；或写组名列表
+  proxy_ready_timeout: 60        # 等待 mixed-port 可访问 GitHub（git fetch/push）
+  proxy_retry_timeout: 45        # 切换自动选择后的第二次探测超时
   reload_timeout: 20             # 重载配置后等待 API
 
 singtools:

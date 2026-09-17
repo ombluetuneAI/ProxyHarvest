@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import logging
 from dataclasses import dataclass
-from typing import Any, Optional, Tuple
+from typing import Any, Dict, Optional, Tuple
 from urllib.parse import quote
 
 logger = logging.getLogger(__name__)
@@ -109,6 +109,23 @@ class MihomoClient:
         if code != 200:
             raise ConnectionError(f"Mihomo API unreachable (HTTP {code}): {data}")
         return data if isinstance(data, dict) else {"raw": data}
+
+    def get_proxies(self) -> Dict[str, Any]:
+        code, data = self.request("GET", "/proxies")
+        if code != 200 or not isinstance(data, dict):
+            raise RuntimeError(f"Failed to list proxies (HTTP {code}): {data}")
+        proxies = data.get("proxies")
+        return proxies if isinstance(proxies, dict) else {}
+
+    def select_proxy_in_group(self, group_name: str, proxy_name: str) -> None:
+        name = quote(group_name, safe="")
+        code, body = self.request(
+            "PUT", f"/proxies/{name}", json_body={"name": proxy_name}
+        )
+        if code not in (200, 204):
+            raise RuntimeError(
+                f"Failed to select {proxy_name!r} in {group_name!r} (HTTP {code}): {body}"
+            )
 
     def test_group_delay(
         self,
