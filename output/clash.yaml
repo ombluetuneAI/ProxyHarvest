@@ -231,13 +231,6 @@ proxies:
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇸🇬其他-006 |554KB/s
-  server: d39d6b46-ta1og0-tbnk1n-ueq.sg.oshuawei.com
-  port: 443
-  type: http
-  username: 91df5a86-fcdd-11ef-94aa-f23c913c8d2b
-  password: 91df5a86-fcdd-11ef-94aa-f23c913c8d2b
-  tls: true
 - name: 🇰🇷韩国-001 |3.9MB/s
   server: 121.169.46.116
   port: 1090
@@ -254,12 +247,6 @@ proxies:
 - name: 🇱🇻拉脱维亚-001 |2.0MB/s|TK-LV|GPT⁺-LV|GM-LV
   server: 185.219.159.16
   port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇫🇷法国-003 |2.3MB/s|GPT⁺-FR
-  server: 82.96.128.175
-  port: 8090
   type: http
   tls: true
   skip-cert-verify: true
@@ -420,12 +407,6 @@ proxies:
   password: ND91608427
   sni: discrete-basilisk.rooster465.autos
   skip-cert-verify: true
-- name: 🇯🇵FR_3|3.3MB/s
-  server: great-krill.rooster465.autos
-  port: 443
-  type: trojan
-  password: QV31589740
-  skip-cert-verify: false
 - name: 🇸🇬JP_speednode_0011
   server: upright-impala.rooster465.autos
   port: 443
@@ -466,14 +447,6 @@ proxies:
   port: 443
   type: trojan
   password: ND91608427
-  skip-cert-verify: true
-  udp: true
-- name: 🇯🇵_FR_法国_1
-  server: classic-gator.rooster465.autos
-  port: 443
-  type: trojan
-  password: ND91608427
-  sni: classic-gator.rooster465.autos
   skip-cert-verify: true
   udp: true
 - name: 🇰🇷_DE_德国_1
@@ -532,12 +505,6 @@ proxies:
   type: trojan
   password: ND91608427
   sni: social-mutt.rooster465.autos
-- name: 🇯🇵JP-43.207.139.153-6238
-  server: sensible-mongrel.rooster465.autos
-  port: 443
-  type: trojan
-  password: ND91608427
-  sni: sensible-mongrel.rooster465.autos
 - name: 🇯🇵JP-52.198.25.180-6207
   server: clear-snail.rooster465.autos
   port: 443
@@ -573,6 +540,11 @@ proxies:
   type: trojan
   password: ND91608427
   sni: exotic-chow.rooster465.autos
+- name: 🇸🇬KR-43.201.103.8-5945
+  server: intimate-moray.rooster465.autos
+  port: 443
+  type: trojan
+  password: ND91608427
 - name: 🇺🇸KR-3.36.131.218-6222
   server: humorous-malamute.rooster465.autos
   port: 443
@@ -597,157 +569,11 @@ proxies:
   type: trojan
   password: ND91608427
   sni: tidy-gelding.rooster465.autos
-- name: 🇫🇷FR-162.19.192.89-0528
-  server: planb.mojcn.com.linuxlh.xin
-  port: 16632
-  type: vmess
-  uuid: cefbe234-bcc6-4558-ab7b-1030e331e6a5
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: d052c66d50dcf7c3cfab75ed7f8e8322.mobgslb.tbcache.com
-- name: 🇫🇷FR-95.170.13.47-0122
-  server: 95.170.13.47
-  port: 65443
-  type: ss
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-- name: 🇨🇳CN-121.46.230.232-0132
-  server: 121.46.230.232
-  port: 65443
-  type: ss
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-- name: 🇹🇭TH-103.169.67.34-0110
-  server: 103.169.67.34
-  port: 65443
-  type: ss
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-- name: 🇲🇾MY-118.107.222.231-0148
-  server: 118.107.222.231
-  port: 65443
-  type: ss
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
 - name: 🇰🇷KR-43.201.249.3-4637
   server: magical-prawn.rooster465.autos
   port: 443
   type: trojan
   password: NQ26071394
-- name: 🇺🇸_RU_俄罗斯->🇩🇪_DE_德国
-  server: 31.76.71.140
-  port: 443
-  type: vless
-  tls: true
-  uuid: af00e0c4-decf-48f2-9013-56abe9c9efcd
-  servername: rrr.windconnect.pro
-  path: /
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: BsFRd4pZgH2hK2AmVf6Mv7z2QGmV2LPYbqkT1UqZX30
-    short-id: "4da5d1853f04af6d"
-  client-fingerprint: random
-  skip-cert-verify: true
-- name: 🇬🇧_GB_英国
-  server: 13.40.94.70
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: 🇺🇸_NL_荷兰_1
-  server: 31.76.61.232
-  port: 443
-  type: vless
-  tls: true
-  uuid: 791a171e-c0af-4bd7-b8ce-43541c7585db
-  servername: policies.google.com
-  path: /
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: CMTA5uuaIVIeqHslZMT3CbFwP8F5ysMLii72ybsTlyY
-    short-id: "e2a4c6b8"
-  client-fingerprint: random
-  skip-cert-verify: true
-- name: 🇨🇳_CN_中国->🇯🇵_JP_日本
-  server: 121.46.230.137
-  port: 65443
-  type: ss
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-  udp: true
-- name: 🇫🇷FR-162.19.192.89-2109
-  server: planb.mojcn.com.linuxlh.xin
-  port: 16626
-  type: vmess
-  uuid: cefbe234-bcc6-4558-ab7b-1030e331e6a5
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: d052c66d50dcf7c3cfab75ed7f8e8322.mobgslb.tbcache.com
-- name: 🇮🇪_IE_爱尔兰
-  server: 3.252.205.48
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: 🇮🇳印度
-  server: vpn-in-001.fastervpn.world
-  port: 443
-  type: hysteria2
-  ports: 443
-  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
-  sni: vpn-in-001.fastervpn.world
-  skip-cert-verify: true
-- name: 🇬🇧GB_8|4.8MB/s
-  server: vpn-uk-001.fastervpn.world
-  port: 443
-  type: hysteria2
-  ports: 443
-  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
-  sni: vpn-uk-001.fastervpn.world
-  skip-cert-verify: true
-- name: 🇩🇪DE
-  server: de1.apexvpn.space
-  port: 443
-  type: hysteria2
-  ports: 443
-  password: dffb4c3d-1e84-4938-8881-cad917e8efb2
-  sni: de1.apexvpn.space
-- name: 🇺🇸NL_3|2.1MB/s
-  server: 85.209.157.209
-  port: 29367
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 3hSrBrmKmrgNGsD97RSGOS5p+XIFqEVk6Zo4AHbsRhg=
-- name: 🇨🇦CA_1|1.9MB/s
-  server: 166.88.130.218
-  port: 8011
-  type: ss
-  cipher: aes-256-gcm
-  password: fbcec76953a2d173
-- name: 🇨🇦CA_2|3.9MB/s
-  server: 35.183.81.172
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-- name: 🇮🇪IE_1|3.6MB/s
-  server: 54.246.193.66
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -786,11 +612,9 @@ proxy-groups:
   - 🇳🇱荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 🇳🇱荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
   - 🇳🇱荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 🇸🇬其他-006 |554KB/s
   - 🇰🇷韩国-001 |3.9MB/s
   - 🇺🇸香港-021 |819KB/s
   - 🇱🇻拉脱维亚-001 |2.0MB/s|TK-LV|GPT⁺-LV|GM-LV
-  - 🇫🇷法国-003 |2.3MB/s|GPT⁺-FR
   - 🇺🇸美国-017 |3.1MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 🇺🇸美国-018 |3.0MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 🇺🇸美国-022 |2.4MB/s|TK-US|YT-US|GPT-US|GM-US
@@ -818,14 +642,12 @@ proxy-groups:
   - 🇯🇵JP-18.179.203.229-0203
   - 🇸🇬JP_3|2.3MB/s
   - 🇵🇱LU_1|2.6MB/s
-  - 🇯🇵FR_3|3.3MB/s
   - 🇸🇬JP_speednode_0011
   - 🇸🇬KR_speednode_0012
   - 🇺🇸KR_speednode_0013
   - 🇸🇬KR-13.125.239.182-0519
   - 🇯🇵_US_美国 3
   - 🇰🇷_FR_法国#2
-  - 🇯🇵_FR_法国_1
   - 🇰🇷_DE_德国_1
   - 🇰🇷_DE_德国_2
   - 🇰🇷_DE_德国_3
@@ -834,36 +656,18 @@ proxy-groups:
   - 🇸🇬JP-13.231.232.184-6020
   - 🇯🇵JP-3.113.1.131-6203
   - 🇰🇷JP-54.249.34.120-6213
-  - 🇯🇵JP-43.207.139.153-6238
   - 🇯🇵JP-52.198.25.180-6207
   - 🇸🇬JP-13.230.118.96-6204
   - 🇸🇬JP-18.181.175.120-6214
   - 🇯🇵JP-52.196.121.8-6211
   - 🇸🇬KR-54.180.228.238-6082
   - 🇯🇵KR-43.201.46.108-6243
+  - 🇸🇬KR-43.201.103.8-5945
   - 🇺🇸KR-3.36.131.218-6222
   - 🇰🇷KR-43.201.56.44-6237
   - 🇰🇷KR-3.36.59.34-6221
   - 🇩🇪SG-54.255.35.23-6228
-  - 🇫🇷FR-162.19.192.89-0528
-  - 🇫🇷FR-95.170.13.47-0122
-  - 🇨🇳CN-121.46.230.232-0132
-  - 🇹🇭TH-103.169.67.34-0110
-  - 🇲🇾MY-118.107.222.231-0148
   - 🇰🇷KR-43.201.249.3-4637
-  - 🇺🇸_RU_俄罗斯->🇩🇪_DE_德国
-  - 🇬🇧_GB_英国
-  - 🇺🇸_NL_荷兰_1
-  - 🇨🇳_CN_中国->🇯🇵_JP_日本
-  - 🇫🇷FR-162.19.192.89-2109
-  - 🇮🇪_IE_爱尔兰
-  - 🇮🇳印度
-  - 🇬🇧GB_8|4.8MB/s
-  - 🇩🇪DE
-  - 🇺🇸NL_3|2.1MB/s
-  - 🇨🇦CA_1|1.9MB/s
-  - 🇨🇦CA_2|3.9MB/s
-  - 🇮🇪IE_1|3.6MB/s
 - name: ♻️ 自动选择
   type: url-test
   proxies:
@@ -899,11 +703,9 @@ proxy-groups:
   - 🇳🇱荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 🇳🇱荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
   - 🇳🇱荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 🇸🇬其他-006 |554KB/s
   - 🇰🇷韩国-001 |3.9MB/s
   - 🇺🇸香港-021 |819KB/s
   - 🇱🇻拉脱维亚-001 |2.0MB/s|TK-LV|GPT⁺-LV|GM-LV
-  - 🇫🇷法国-003 |2.3MB/s|GPT⁺-FR
   - 🇺🇸美国-017 |3.1MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 🇺🇸美国-018 |3.0MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 🇺🇸美国-022 |2.4MB/s|TK-US|YT-US|GPT-US|GM-US
@@ -931,14 +733,12 @@ proxy-groups:
   - 🇯🇵JP-18.179.203.229-0203
   - 🇸🇬JP_3|2.3MB/s
   - 🇵🇱LU_1|2.6MB/s
-  - 🇯🇵FR_3|3.3MB/s
   - 🇸🇬JP_speednode_0011
   - 🇸🇬KR_speednode_0012
   - 🇺🇸KR_speednode_0013
   - 🇸🇬KR-13.125.239.182-0519
   - 🇯🇵_US_美国 3
   - 🇰🇷_FR_法国#2
-  - 🇯🇵_FR_法国_1
   - 🇰🇷_DE_德国_1
   - 🇰🇷_DE_德国_2
   - 🇰🇷_DE_德国_3
@@ -947,36 +747,18 @@ proxy-groups:
   - 🇸🇬JP-13.231.232.184-6020
   - 🇯🇵JP-3.113.1.131-6203
   - 🇰🇷JP-54.249.34.120-6213
-  - 🇯🇵JP-43.207.139.153-6238
   - 🇯🇵JP-52.198.25.180-6207
   - 🇸🇬JP-13.230.118.96-6204
   - 🇸🇬JP-18.181.175.120-6214
   - 🇯🇵JP-52.196.121.8-6211
   - 🇸🇬KR-54.180.228.238-6082
   - 🇯🇵KR-43.201.46.108-6243
+  - 🇸🇬KR-43.201.103.8-5945
   - 🇺🇸KR-3.36.131.218-6222
   - 🇰🇷KR-43.201.56.44-6237
   - 🇰🇷KR-3.36.59.34-6221
   - 🇩🇪SG-54.255.35.23-6228
-  - 🇫🇷FR-162.19.192.89-0528
-  - 🇫🇷FR-95.170.13.47-0122
-  - 🇨🇳CN-121.46.230.232-0132
-  - 🇹🇭TH-103.169.67.34-0110
-  - 🇲🇾MY-118.107.222.231-0148
   - 🇰🇷KR-43.201.249.3-4637
-  - 🇺🇸_RU_俄罗斯->🇩🇪_DE_德国
-  - 🇬🇧_GB_英国
-  - 🇺🇸_NL_荷兰_1
-  - 🇨🇳_CN_中国->🇯🇵_JP_日本
-  - 🇫🇷FR-162.19.192.89-2109
-  - 🇮🇪_IE_爱尔兰
-  - 🇮🇳印度
-  - 🇬🇧GB_8|4.8MB/s
-  - 🇩🇪DE
-  - 🇺🇸NL_3|2.1MB/s
-  - 🇨🇦CA_1|1.9MB/s
-  - 🇨🇦CA_2|3.9MB/s
-  - 🇮🇪IE_1|3.6MB/s
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
