@@ -18,17 +18,7 @@ dns:
     geoip: true
     geoip-code: CN
 proxies:
-- name: 中国-001
-  type: vmess
-  network: tcp
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  server: 112.132.215.108
-  servername: 112.132.215.108
-  port: 50002
-  skip-cert-verify: true
-  alterId: 64
-  cipher: auto
-- name: 其他-001
+- name: 其他-002
   type: vmess
   network: ws
   uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
@@ -42,23 +32,7 @@ proxies:
     headers:
       Host: guanwang.awsno.com
     path: /hls/cctv5phd.m3u8
-- name: 其他-002
-  type: vless
-  network: ws
-  uuid: V2XNET
-  server: 188.114.98.0
-  servername: or.mirikhan.dpdns.org
-  port: 443
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  ws-opts:
-    headers:
-      Host: or.mirikhan.dpdns.org
-    path: /xvpnws/
-  client-fingerprint: chrome
-- name: 其他-006
+- name: 其他-007
   type: vmess
   network: tcp
   uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
@@ -67,7 +41,7 @@ proxies:
   skip-cert-verify: true
   alterId: 2
   cipher: auto
-- name: 德国-002 |1.6MB/s
+- name: 德国-003 |1.6MB/s
   type: hysteria
   server: 5.83.129.90
   port: 54177
@@ -81,7 +55,7 @@ proxies:
   down: 1000
   protocol: udp
   up: 500
-- name: 德国-003 |594KB/s
+- name: 德国-004 |594KB/s
   type: hysteria
   server: 5.83.129.153
   port: 20088
@@ -153,14 +127,14 @@ proxies:
   sni: www.bing.com
 - name: 罗马尼亚-008 |1.0MB/s
   type: http
-  server: 193.176.84.26
+  server: 193.176.84.23
   port: 9002
   skip-cert-verify: true
   tls: true
   sni: www.bing.com
 - name: 罗马尼亚-009 |1.0MB/s
   type: http
-  server: 193.176.84.23
+  server: 193.176.84.26
   port: 9002
   skip-cert-verify: true
   tls: true
@@ -290,6 +264,23 @@ proxies:
   port: 9002
   skip-cert-verify: true
   tls: true
+- name: 香港-001
+  type: vless
+  network: ws
+  uuid: d342d11e-d424-4583-b36e-524ab1f0afa4
+  server: 23.249.18.144
+  servername: cdn8848.776676.xyz
+  port: 8581
+  skip-cert-verify: true
+  tls: true
+  ws-opts:
+    headers:
+      Host: cdn8848.776676.xyz
+    path: /channels/act?ed=2560
+  client-fingerprint: chrome
+  ech-opts:
+    enable: true
+    query-server-name: cloudflare-ech.com
 - name: 韩国-001 |3.9MB/s
   type: socks5
   server: 121.169.46.116
@@ -313,7 +304,7 @@ proxies:
     headers:
       Host: v2ray1.dozapp.xyz
     path: /lMnsZUN4/
-- name: 德国-002
+- name: 德国-002#2
   type: vmess
   network: tcp
   uuid: d13fc2f5-3e05-4795-81eb-44143a09e552
@@ -519,12 +510,10 @@ proxy-groups:
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - 中国-001
-  - 其他-001
   - 其他-002
-  - 其他-006
-  - 德国-002 |1.6MB/s
-  - 德国-003 |594KB/s
+  - 其他-007
+  - 德国-003 |1.6MB/s
+  - 德国-004 |594KB/s
   - 澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
   - 罗马尼亚-001 |3.3MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 罗马尼亚-002 |2.3MB/s|TK-RO|GPT⁺-RO|GM-RO
@@ -554,9 +543,10 @@ proxy-groups:
   - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
   - 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
+  - 香港-001
   - 韩国-001 |3.9MB/s
   - 其他-057
-  - 德国-002
+  - 德国-002#2
   - 德国-006
   - 德国-008 |1.9MB/s
   - 香港-021 |819KB/s
@@ -580,12 +570,10 @@ proxy-groups:
 - name: ♻️ 自动选择
   type: url-test
   proxies:
-  - 中国-001
-  - 其他-001
   - 其他-002
-  - 其他-006
-  - 德国-002 |1.6MB/s
-  - 德国-003 |594KB/s
+  - 其他-007
+  - 德国-003 |1.6MB/s
+  - 德国-004 |594KB/s
   - 澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
   - 罗马尼亚-001 |3.3MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 罗马尼亚-002 |2.3MB/s|TK-RO|GPT⁺-RO|GM-RO
@@ -615,9 +603,10 @@ proxy-groups:
   - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
   - 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
+  - 香港-001
   - 韩国-001 |3.9MB/s
   - 其他-057
-  - 德国-002
+  - 德国-002#2
   - 德国-006
   - 德国-008 |1.9MB/s
   - 香港-021 |819KB/s
