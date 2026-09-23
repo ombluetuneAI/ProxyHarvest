@@ -28,21 +28,6 @@ proxies:
   skip-cert-verify: true
   alterId: 64
   cipher: auto
-- name: 乌克兰-001
-  type: vless
-  network: ws
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  server: 213.111.148.137
-  servername: shuma.ccwu.cc
-  port: 443
-  skip-cert-verify: true
-  tls: true
-  udp: true
-  ws-opts:
-    headers:
-      Host: shuma.ccwu.cc
-    path: /
-  client-fingerprint: chrome
 - name: 其他-002
   type: vmess
   network: ws
@@ -57,20 +42,21 @@ proxies:
     headers:
       Host: guanwang.awsno.com
     path: /hls/cctv5phd.m3u8
-- name: 德国-001
+- name: 印度-001
   type: vless
   network: ws
-  uuid: c18b978e-1c4e-415c-8bea-07942b563a64
-  server: 109.176.202.20
-  servername: shuma.ccwu.cc
+  uuid: c92e12ca-ea66-4785-8675-652b35134117
+  server: 139.84.156.127
+  servername: thus-k.netnode.cc.cd
   port: 443
-  skip-cert-verify: true
+  skip-cert-verify: false
   tls: true
   udp: true
+  tfo: false
   ws-opts:
     headers:
-      Host: shuma.ccwu.cc
-    path: /
+      Host: thus-k.netnode.cc.cd
+    path: /t.me/daily_free_vpn
   client-fingerprint: chrome
 - name: 德国-002 |1.6MB/s
   type: hysteria
@@ -534,9 +520,8 @@ proxy-groups:
   - ♻️ 自动选择
   - DIRECT
   - 中国-001
-  - 乌克兰-001
   - 其他-002
-  - 德国-001
+  - 印度-001
   - 德国-002 |1.6MB/s
   - 德国-003 |594KB/s
   - 澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
@@ -596,9 +581,8 @@ proxy-groups:
   type: url-test
   proxies:
   - 中国-001
-  - 乌克兰-001
   - 其他-002
-  - 德国-001
+  - 印度-001
   - 德国-002 |1.6MB/s
   - 德国-003 |594KB/s
   - 澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
