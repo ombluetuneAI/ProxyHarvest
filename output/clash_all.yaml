@@ -264,15 +264,6 @@ proxies:
   skip-cert-verify: true
   alterId: 2
   cipher: auto
-- name: 韩国-001 |3.9MB/s
-  type: socks5
-  server: 121.169.46.116
-  port: 1090
-  skip-cert-verify: true
-  tls: false
-  udp: true
-  client-fingerprint: chrome
-  username: T2clM0QlM0Q6
 - name: 其他-057
   type: vmess
   network: ws
@@ -388,15 +379,6 @@ proxies:
   server: 67.220.95.3
   port: 18000
   uuid: f8c8dc3d-0d37-46b0-8b34-a7232882fcfe
-  skip-cert-verify: true
-  alterId: 0
-  cipher: auto
-- name: 美国 719
-  type: vmess
-  network: tcp
-  server: 66.163.117.58
-  port: 22324
-  uuid: 04621bae-ab36-11ec-b909-0242ac120002
   skip-cert-verify: true
   alterId: 0
   cipher: auto
@@ -526,7 +508,6 @@ proxy-groups:
   - 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 其他-002
   - 其他-007
-  - 韩国-001 |3.9MB/s
   - 其他-057
   - 德国-002#2
   - 德国-006
@@ -536,7 +517,6 @@ proxy-groups:
   - 美国 090
   - 以色列 002
   - 美国 718
-  - 美国 719
   - 美国 720
   - 美国 721
   - 美国 723
@@ -585,7 +565,6 @@ proxy-groups:
   - 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 其他-002
   - 其他-007
-  - 韩国-001 |3.9MB/s
   - 其他-057
   - 德国-002#2
   - 德国-006
@@ -595,7 +574,6 @@ proxy-groups:
   - 美国 090
   - 以色列 002
   - 美国 718
-  - 美国 719
   - 美国 720
   - 美国 721
   - 美国 723
