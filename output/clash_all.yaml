@@ -18,23 +18,16 @@ dns:
     geoip: true
     geoip-code: CN
 proxies:
-- name: 其他-002
-  type: vless
-  network: ws
-  uuid: 2e305ebe-f6e6-4689-b32f-cd04ab5ff541
-  server: 188.114.96.9
-  servername: idb8onmvbntuyt5t7t6cejfw8vlrb.pages.dev
-  port: 443
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  ws-opts:
-    headers:
-      Host: idb8onmvbntuyt5t7t6cejfw8vlrb.pages.dev
-    path: /vl/9yvcoLdzdOXLUYfH7r5gwJhu1CHrj
-  client-fingerprint: chrome
-- name: 其他-004
+- name: 中国-001
+  type: vmess
+  network: tcp
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  server: 112.132.215.108
+  port: 50002
+  skip-cert-verify: true
+  alterId: 64
+  cipher: auto
+- name: 其他-003
   type: vless
   network: ws
   uuid: bc5ec86c-3e65-4272-994c-59a924c72a68
@@ -50,22 +43,6 @@ proxies:
       Host: fbsv6.guardora.pro
     path: /ws
   client-fingerprint: firefox
-- name: 印度-001
-  type: vless
-  network: ws
-  uuid: c92e12ca-ea66-4785-8675-652b35134117
-  server: 139.84.156.127
-  servername: thus-k.netnode.cc.cd
-  port: 443
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  ws-opts:
-    headers:
-      Host: thus-k.netnode.cc.cd
-    path: /t.me/daily_free_vpn
-  client-fingerprint: chrome
 - name: 德国-001 |1.6MB/s
   type: hysteria
   server: 5.83.129.90
@@ -136,16 +113,16 @@ proxies:
   skip-cert-verify: true
   tls: true
   sni: www.bing.com
-- name: 罗马尼亚-006 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
+- name: 罗马尼亚-006 |1.1MB/s
   type: http
-  server: 193.176.84.30
+  server: 193.176.84.40
   port: 9002
   skip-cert-verify: true
   tls: true
   sni: www.bing.com
-- name: 罗马尼亚-007 |1.1MB/s
+- name: 罗马尼亚-007 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
   type: http
-  server: 193.176.84.40
+  server: 193.176.84.30
   port: 9002
   skip-cert-verify: true
   tls: true
@@ -241,16 +218,6 @@ proxies:
   skip-cert-verify: true
   tls: true
   sni: www.bing.com
-- name: 美国-001
-  type: vless
-  network: ws
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  server: 63.141.128.30
-  port: 8880
-  ws-opts:
-    headers:
-      Host: vms.lifetime42.workers.dev
-    path: /
 - name: 美国-002 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   type: http
   server: 138.199.35.215
@@ -481,9 +448,8 @@ proxy-groups:
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - 其他-002
-  - 其他-004
-  - 印度-001
+  - 中国-001
+  - 其他-003
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
   - 澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
@@ -492,8 +458,8 @@ proxy-groups:
   - 罗马尼亚-003 |1.4MB/s
   - 罗马尼亚-004 |1.3MB/s
   - 罗马尼亚-005 |1.2MB/s
-  - 罗马尼亚-006 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
-  - 罗马尼亚-007 |1.1MB/s
+  - 罗马尼亚-006 |1.1MB/s
+  - 罗马尼亚-007 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 罗马尼亚-008 |1.0MB/s
   - 罗马尼亚-009 |1.0MB/s
   - 罗马尼亚-010 |1020KB/s
@@ -507,7 +473,6 @@ proxy-groups:
   - 罗马尼亚-018 |586KB/s
   - 罗马尼亚-019 |557KB/s
   - 罗马尼亚-020 |554KB/s
-  - 美国-001
   - 美国-002 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-003 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-004 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
@@ -538,9 +503,8 @@ proxy-groups:
 - name: ♻️ 自动选择
   type: url-test
   proxies:
-  - 其他-002
-  - 其他-004
-  - 印度-001
+  - 中国-001
+  - 其他-003
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
   - 澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
@@ -549,8 +513,8 @@ proxy-groups:
   - 罗马尼亚-003 |1.4MB/s
   - 罗马尼亚-004 |1.3MB/s
   - 罗马尼亚-005 |1.2MB/s
-  - 罗马尼亚-006 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
-  - 罗马尼亚-007 |1.1MB/s
+  - 罗马尼亚-006 |1.1MB/s
+  - 罗马尼亚-007 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 罗马尼亚-008 |1.0MB/s
   - 罗马尼亚-009 |1.0MB/s
   - 罗马尼亚-010 |1020KB/s
@@ -564,7 +528,6 @@ proxy-groups:
   - 罗马尼亚-018 |586KB/s
   - 罗马尼亚-019 |557KB/s
   - 罗马尼亚-020 |554KB/s
-  - 美国-001
   - 美国-002 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-003 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-004 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
