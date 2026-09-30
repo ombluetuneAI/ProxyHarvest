@@ -18,7 +18,7 @@ dns:
     geoip: true
     geoip-code: CN
 proxies:
-- name: 中国-001
+- name: 中国-002
   type: vmess
   network: tcp
   uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
@@ -129,14 +129,14 @@ proxies:
   sni: www.bing.com
 - name: 罗马尼亚-008 |1.0MB/s
   type: http
-  server: 193.176.84.23
+  server: 193.176.84.26
   port: 9002
   skip-cert-verify: true
   tls: true
   sni: www.bing.com
 - name: 罗马尼亚-009 |1.0MB/s
   type: http
-  server: 193.176.84.26
+  server: 193.176.84.23
   port: 9002
   skip-cert-verify: true
   tls: true
@@ -218,46 +218,30 @@ proxies:
   skip-cert-verify: true
   tls: true
   sni: www.bing.com
-- name: 美国-002 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+- name: 美国-001 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   type: http
   server: 138.199.35.215
   port: 9002
   skip-cert-verify: true
   tls: true
-- name: 美国-003 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+- name: 美国-002 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   type: http
   server: 38.28.193.188
   port: 443
   skip-cert-verify: true
   tls: true
-- name: 美国-004 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+- name: 美国-003 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   type: http
   server: 209.148.53.153
   port: 8090
   skip-cert-verify: true
   tls: true
-- name: 美国-005 |1.0MB/s|TK-US|GPT⁺-US
+- name: 美国-004 |1.0MB/s|TK-US|GPT⁺-US
   type: http
   server: 138.199.35.198
   port: 9002
   skip-cert-verify: true
   tls: true
-- name: 英国-001
-  type: vless
-  network: ws
-  uuid: 6e59d5c5-7aa3-4c36-a4c4-e3b899525ed2
-  server: 91.193.58.108
-  servername: free-server.techsonic.dev
-  port: 2096
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  ws-opts:
-    headers:
-      Host: free-server.techsonic.dev
-    path: /free-server.techsonic.dev
-  client-fingerprint: chrome
 - name: 荷兰-001 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
   type: http
   server: 84.17.47.150
@@ -282,6 +266,22 @@ proxies:
   port: 9002
   skip-cert-verify: true
   tls: true
+- name: 英国-001
+  type: vless
+  network: ws
+  uuid: 6e59d5c5-7aa3-4c36-a4c4-e3b899525ed2
+  server: 91.193.58.108
+  servername: free-server.techsonic.dev
+  port: 2096
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  ws-opts:
+    headers:
+      Host: free-server.techsonic.dev
+    path: /free-server.techsonic.dev
+  client-fingerprint: chrome
 - name: 其他-007
   type: vmess
   network: tcp
@@ -331,21 +331,6 @@ proxies:
       User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.31 (KHTML, like
         Gecko) Chrome/26.0.1410.64 Safari/537.31
     path: /vws/
-- name: 美国 090
-  type: trojan
-  network: ws
-  server: 104.18.152.210
-  port: 443
-  password: humanity
-  udp: true
-  sni: www.ignitelimit.com
-  client-fingerprint: chrome
-  ws-opts:
-    headers:
-      Host: www.ignitelimit.com
-      User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like
-        Gecko) Chrome/70.0.3538.67 Safari/537.36
-    path: /assignment
 - name: 以色列 002
   type: vmess
   network: tcp
@@ -436,19 +421,13 @@ proxies:
   port: 9002
   skip-cert-verify: true
   tls: true
-- name: 西班牙-001 |1.6MB/s|TK-ES|GPT⁺-ES|GM-ES
-  type: http
-  server: 45.147.251.19
-  port: 8443
-  skip-cert-verify: true
-  tls: true
 proxy-groups:
 - name: 🚀 节点选择
   type: select
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - 中国-001
+  - 中国-002
   - 其他-003
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
@@ -473,20 +452,19 @@ proxy-groups:
   - 罗马尼亚-018 |586KB/s
   - 罗马尼亚-019 |557KB/s
   - 罗马尼亚-020 |554KB/s
-  - 美国-002 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-003 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-004 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-005 |1.0MB/s|TK-US|GPT⁺-US
-  - 英国-001
+  - 美国-001 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 美国-002 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 美国-003 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 美国-004 |1.0MB/s|TK-US|GPT⁺-US
   - 荷兰-001 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
   - 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
+  - 英国-001
   - 其他-007
   - 其他-057
   - 香港-021 |819KB/s
   - 法国 002
-  - 美国 090
   - 以色列 002
   - 美国 718
   - 美国 720
@@ -499,11 +477,10 @@ proxy-groups:
   - 美国-022 |2.4MB/s|TK-US|YT-US|GPT-US|GM-US
   - 美国-024 |2.0MB/s|TK-US|YT-US|GPT⁺-US
   - 荷兰-001 |2.5MB/s|GPT⁺-NL
-  - 西班牙-001 |1.6MB/s|TK-ES|GPT⁺-ES|GM-ES
 - name: ♻️ 自动选择
   type: url-test
   proxies:
-  - 中国-001
+  - 中国-002
   - 其他-003
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
@@ -528,20 +505,19 @@ proxy-groups:
   - 罗马尼亚-018 |586KB/s
   - 罗马尼亚-019 |557KB/s
   - 罗马尼亚-020 |554KB/s
-  - 美国-002 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-003 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-004 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-005 |1.0MB/s|TK-US|GPT⁺-US
-  - 英国-001
+  - 美国-001 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 美国-002 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 美国-003 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 美国-004 |1.0MB/s|TK-US|GPT⁺-US
   - 荷兰-001 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
   - 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
+  - 英国-001
   - 其他-007
   - 其他-057
   - 香港-021 |819KB/s
   - 法国 002
-  - 美国 090
   - 以色列 002
   - 美国 718
   - 美国 720
@@ -554,7 +530,6 @@ proxy-groups:
   - 美国-022 |2.4MB/s|TK-US|YT-US|GPT-US|GM-US
   - 美国-024 |2.0MB/s|TK-US|YT-US|GPT⁺-US
   - 荷兰-001 |2.5MB/s|GPT⁺-NL
-  - 西班牙-001 |1.6MB/s|TK-ES|GPT⁺-ES|GM-ES
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
