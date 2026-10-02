@@ -257,22 +257,6 @@ proxies:
   port: 9002
   skip-cert-verify: true
   tls: true
-- name: 英国-001
-  type: vless
-  network: ws
-  uuid: 6e59d5c5-7aa3-4c36-a4c4-e3b899525ed2
-  server: 91.193.58.108
-  servername: free-server.techsonic.dev
-  port: 2096
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  ws-opts:
-    headers:
-      Host: free-server.techsonic.dev
-    path: /free-server.techsonic.dev
-  client-fingerprint: chrome
 - name: 其他-007
   type: vmess
   network: tcp
@@ -450,7 +434,6 @@ proxy-groups:
   - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
   - 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 英国-001
   - 其他-007
   - 其他-057
   - 香港-021 |819KB/s
@@ -502,7 +485,6 @@ proxy-groups:
   - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
   - 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 英国-001
   - 其他-007
   - 其他-057
   - 香港-021 |819KB/s
