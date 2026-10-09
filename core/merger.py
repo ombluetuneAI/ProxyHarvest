@@ -171,7 +171,7 @@ def _dedup_key(proxy: Dict[str, Any]) -> str:
         # For unknown types, use server+port+type as key
         pass
 
-    return "|".join(parts)
+    return "|".join(str(part) for part in parts)
 
 
 def _ws_opts_key(ws_opts: Any) -> str:
