@@ -18,15 +18,6 @@ dns:
     geoip: true
     geoip-code: CN
 proxies:
-- name: 中国-002
-  type: vmess
-  network: tcp
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  server: 112.132.215.108
-  port: 50002
-  skip-cert-verify: true
-  alterId: 64
-  cipher: auto
 - name: 德国-001 |1.6MB/s
   type: hysteria
   server: 5.83.129.90
@@ -369,7 +360,6 @@ proxy-groups:
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - 中国-002
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
   - 澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
@@ -419,7 +409,6 @@ proxy-groups:
 - name: ♻️ 自动选择
   type: url-test
   proxies:
-  - 中国-002
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
   - 澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
