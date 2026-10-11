@@ -18,6 +18,15 @@ dns:
     geoip: true
     geoip-code: CN
 proxies:
+- name: 中国-002
+  type: vmess
+  network: tcp
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  server: 112.132.215.108
+  port: 50002
+  skip-cert-verify: true
+  alterId: 64
+  cipher: auto
 - name: 德国-001 |1.6MB/s
   type: hysteria
   server: 5.83.129.90
@@ -241,15 +250,6 @@ proxies:
   port: 9002
   skip-cert-verify: true
   tls: true
-- name: 韩国-001 |3.9MB/s
-  type: socks5
-  server: 121.169.46.116
-  port: 1090
-  skip-cert-verify: true
-  tls: false
-  udp: true
-  client-fingerprint: chrome
-  username: T2clM0QlM0Q6
 - name: 香港-021 |819KB/s
   type: http
   server: 154.26.192.123
@@ -360,6 +360,7 @@ proxy-groups:
   proxies:
   - ♻️ 自动选择
   - DIRECT
+  - 中国-002
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
   - 澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
@@ -391,7 +392,6 @@ proxy-groups:
   - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
   - 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 韩国-001 |3.9MB/s
   - 香港-021 |819KB/s
   - 以色列 002
   - 美国 718
@@ -409,6 +409,7 @@ proxy-groups:
 - name: ♻️ 自动选择
   type: url-test
   proxies:
+  - 中国-002
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
   - 澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
@@ -440,7 +441,6 @@ proxy-groups:
   - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
   - 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 韩国-001 |3.9MB/s
   - 香港-021 |819KB/s
   - 以色列 002
   - 美国 718
