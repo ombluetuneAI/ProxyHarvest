@@ -27,6 +27,20 @@ proxies:
   cipher: auto
   tls: false
   skip-cert-verify: false
+- name: '🇫🇮Channel : @Daily_Configs 2'
+  server: fi.pythonsetupbib.online
+  port: 443
+  type: vless
+  tls: true
+  uuid: f8d52ece-fad4-478d-875d-df6eed3befa7
+  servername: fi.pythonsetupbib.online
+  host: fi.pythonsetupbib.online
+  path: /
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: ZqVz1kWNxh_5zQ5PPkoPHoaXQOvppM0ZyIo8uKp2dCg
+    short-id: "bdf5852d1423e694"
+  client-fingerprint: random
 - name: 🇩🇪Germany
   server: vpn-de-002.fastervpn.world
   port: 443
@@ -54,39 +68,19 @@ proxies:
   password: H7mP2xY9kJ4nQ9wR5tF6vB3z
   sni: vpn-kr-002.fastervpn.world
   skip-cert-verify: true
-- name: 🇳🇱⚙️8@oneclickvpnkeys
-  server: 158.173.20.208
-  port: 443
-  type: ss
-  cipher: aes-128-gcm
-  password: shadowsocks
-- name: 🇫🇮42@oneclickvpnkeys
-  server: 65.108.3.59
+- name: 🇱🇻@FarazV2ray 3
+  server: 216.173.71.43
   port: 443
   type: vless
   tls: true
-  uuid: 8df2e661-6f46-471b-9133-7fc13a0daa35
-  servername: web.eitaa.com
-  host: web.eitaa.com
+  uuid: ee18d188-14cc-417e-beb1-70e4add6d023
+  servername: lv.nztvpn.com
+  host: lv.nztvpn.com
   path: /
   flow: xtls-rprx-vision
   reality-opts:
-    public-key: jDoORbrtDrvAlFSo19CJbc99C4ev8SAo1MwczSUt9no
-    short-id: "90ec9bba2019"
-  client-fingerprint: random
-- name: 🇩🇪Telegram👉@v2rayNG_Matsuri
-  server: 169.40.42.182
-  port: 443
-  type: vless
-  tls: true
-  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
-  servername: yahoo.com
-  host: yahoo.com
-  path: /
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
-    short-id: "c39cc7310a"
+    public-key: miDhSALrcCvSfc38VjCDYlzNh5M61NMR5IkUli7IN08
+    short-id: "0da7e14db353e7d0"
   client-fingerprint: random
 - name: 🇩🇪𝗝𝗼𝗶𝗻 ➠ @vpnplusee_free | 🇺🇸
   server: 169.40.42.35
@@ -158,7 +152,7 @@ proxies:
     public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
     short-id: "c39cc7310a"
   client-fingerprint: random
-- name: 🇩🇪𝗝𝗼𝗶𝗻 ➠ @vpnplusee_free | 🇺🇸 5
+- name: 🇩🇪𝗝𝗼𝗶𝗻 ➠ @vpnplusee_free | 🇺🇸 6
   server: 169.40.42.95
   port: 443
   type: vless
@@ -172,7 +166,7 @@ proxies:
     public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
     short-id: "c39cc7310a"
   client-fingerprint: random
-- name: 🇩🇪𝗝𝗼𝗶𝗻 ➠ @vpnplusee_free | 🇺🇸 6
+- name: 🇩🇪𝗝𝗼𝗶𝗻 ➠ @vpnplusee_free | 🇺🇸 7
   server: 169.40.42.212
   port: 443
   type: vless
@@ -186,22 +180,8 @@ proxies:
     public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
     short-id: "c39cc7310a"
   client-fingerprint: random
-- name: 🇩🇪𝗝𝗼𝗶𝗻 ➠ @vpnplusee_free | 🇺🇸 7
-  server: 169.40.42.235
-  port: 443
-  type: vless
-  tls: true
-  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
-  servername: yahoo.com
-  host: yahoo.com
-  path: /
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
-    short-id: "c39cc7310a"
-  client-fingerprint: random
 - name: 🇩🇪𝗝𝗼𝗶𝗻 ➠ @vpnplusee_free | 🇺🇸 8
-  server: 169.40.42.202
+  server: 169.40.42.235
   port: 443
   type: vless
   tls: true
@@ -228,52 +208,22 @@ proxies:
     public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
     short-id: "c39cc7310a"
   client-fingerprint: random
+- name: 🇩🇪☺️89@oneclickvpnkeys
+  server: 169.40.42.182
+  port: 443
+  type: vless
+  tls: true
+  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
+  servername: yahoo.com
+  host: yahoo.com
+  path: /
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
+    short-id: "c39cc7310a"
+  client-fingerprint: random
 - name: 🇩🇪88@oneclickvpnkeys
   server: 169.40.42.104
-  port: 443
-  type: vless
-  tls: true
-  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
-  servername: yahoo.com
-  host: yahoo.com
-  path: /
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
-    short-id: "c39cc7310a"
-  client-fingerprint: random
-- name: 🇩🇪@mon_proxys کانالمون
-  server: 169.40.42.16
-  port: 443
-  type: vless
-  tls: true
-  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
-  servername: yahoo.com
-  host: yahoo.com
-  path: /
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
-    short-id: "c39cc7310a"
-  client-fingerprint: random
-  skip-cert-verify: true
-- name: 🇩🇪United States 3
-  server: 169.40.42.231
-  port: 443
-  type: vless
-  tls: true
-  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
-  servername: yahoo.com
-  host: yahoo.com
-  path: /
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
-    short-id: "c39cc7310a"
-  client-fingerprint: random
-  skip-cert-verify: true
-- name: '🇩🇪اگه میخوای قطع نشی جوین شو : @farsiproxy'
-  server: 169.40.42.232
   port: 443
   type: vless
   tls: true
@@ -314,21 +264,7 @@ proxies:
     public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
     short-id: "c39cc7310a"
   client-fingerprint: random
-- name: 🇩🇪telegram➠@v2rayNG_Matsuri 3
-  server: 169.40.42.179
-  port: 443
-  type: vless
-  tls: true
-  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
-  servername: yahoo.com
-  host: yahoo.com
-  path: /
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
-    short-id: "c39cc7310a"
-  client-fingerprint: random
-- name: '🇩🇪اگه میخوای قطع نشی جوین شو : @farsiproxy 2'
+- name: '🇩🇪اگه میخوای قطع نشی جوین شو : @farsiproxy'
   server: 169.40.42.184
   port: 443
   type: vless
@@ -342,7 +278,29 @@ proxies:
     public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
     short-id: "c39cc7310a"
   client-fingerprint: random
-- name: 🇺🇸United States 4
+- name: '🇩🇪اگه میخوای قطع نشی جوین شو : @farsiproxy 3'
+  server: 169.40.42.232
+  port: 443
+  type: vless
+  tls: true
+  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
+  servername: yahoo.com
+  alpn:
+  - channel%40networld_vpn-channel%40networld_vpn-channel%40networld_vpn-channel%40networld_vpn-channel%40networld_vpn-channel%40networld_vpn-
+  host: yahoo.com
+  path: /
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
+    short-id: "c39cc7310a"
+  client-fingerprint: random
+- name: 🇳🇱⚙️8@oneclickvpnkeys
+  server: 158.173.20.208
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: 🇺🇸United States
   server: 198.98.53.130
   port: 443
   type: ss
@@ -354,15 +312,6 @@ proxies:
   type: ss
   cipher: chacha20-ietf-poly1305
   password: aduB9HGxQHjA2SBMRjkHX6
-- name: 🇨🇳中国-002
-  server: 112.132.215.108
-  port: 50002
-  type: vmess
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  alterId: 64
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
 - name: 其他-001
   server: 188.114.96.9
   port: 443
@@ -593,11 +542,6 @@ proxies:
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇰🇷韩国-001 |3.9MB/s
-  server: 121.169.46.116
-  port: 1090
-  type: socks5
-  username: T2clM0QlM0Q6
 - name: 🇺🇸香港-021 |819KB/s
   server: 154.26.192.123
   port: 10988
@@ -702,6 +646,83 @@ proxies:
   type: http
   tls: true
   skip-cert-verify: true
+- name: 🇫🇮42@oneclickvpnkeys
+  server: 65.108.3.59
+  port: 443
+  type: vless
+  tls: true
+  uuid: 8df2e661-6f46-471b-9133-7fc13a0daa35
+  servername: web.eitaa.com
+  host: web.eitaa.com
+  path: /
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: jDoORbrtDrvAlFSo19CJbc99C4ev8SAo1MwczSUt9no
+    short-id: "90ec9bba2019"
+  client-fingerprint: random
+- name: 🇩🇪𝗝𝗼𝗶𝗻 ➠ @vpnplusee_free | 🇺🇸 8#2
+  server: 169.40.42.202
+  port: 443
+  type: vless
+  tls: true
+  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
+  servername: yahoo.com
+  host: yahoo.com
+  path: /
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
+    short-id: "c39cc7310a"
+  client-fingerprint: random
+- name: 🇩🇪@mon_proxys کانالمون
+  server: 169.40.42.16
+  port: 443
+  type: vless
+  tls: true
+  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
+  servername: yahoo.com
+  host: yahoo.com
+  path: /
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
+    short-id: "c39cc7310a"
+  client-fingerprint: random
+  skip-cert-verify: true
+- name: 🇩🇪United States 3
+  server: 169.40.42.231
+  port: 443
+  type: vless
+  tls: true
+  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
+  servername: yahoo.com
+  host: yahoo.com
+  path: /
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
+    short-id: "c39cc7310a"
+  client-fingerprint: random
+  skip-cert-verify: true
+- name: 🇩🇪telegram➠@v2rayNG_Matsuri 3
+  server: 169.40.42.179
+  port: 443
+  type: vless
+  tls: true
+  uuid: d65cc14c-f53f-4fe2-b262-97856601319c
+  servername: yahoo.com
+  host: yahoo.com
+  path: /
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: e2RLf57Li_-MDZGE9ss1BWPgP54mqRb5PfXhW2jcVVg
+    short-id: "c39cc7310a"
+  client-fingerprint: random
+- name: 🇰🇷韩国-001 |3.9MB/s
+  server: 121.169.46.116
+  port: 1090
+  type: socks5
+  username: T2clM0QlM0Q6
 - name: 🇩🇪𝗝𝗼𝗶𝗻 ➠ @vpnplusee_free | 🇺🇸 4#2
   server: 169.40.42.52
   port: 443
@@ -2258,13 +2279,6 @@ proxies:
   obfs-password: c1b4086fea89914496c7e10967a419216566
   sni: hy2-new.aspidnet.xyz
   skip-cert-verify: false
-- name: 🇸🇬191042 | ⚡️Telegram - t.me/S...
-  server: 43.156.36.253
-  port: 8443
-  type: hysteria2
-  password: WvH8ooM9hom4KOOJHFJz1x5umE0aV4R0
-  sni: tx-hy2
-  skip-cert-verify: true
 - name: 🇨🇿91@oneclickvpnkeys
   server: cz.h2.cleanersaz.help
   port: 443
@@ -2588,14 +2602,6 @@ proxies:
     path: /
     headers:
       Host: ccc.010304.xyz
-- name: '🇬🇧[www.v2nodes.com] vless-GB-1... #5'
-  server: node-uk.connectsuite.org
-  port: 8443
-  type: vless
-  tls: true
-  uuid: c08f0056-7a6d-4931-813b-aaa3cdd00aed
-  host: node-uk.connectsuite.org
-  path: /
 - name: '🇬🇧[www.v2nodes.com] vless-GB-1... #7'
   server: 186.190.211.188
   port: 443
@@ -2740,15 +2746,6 @@ proxies:
     path: /
     headers:
       Host: ccc.010304.xyz
-  skip-cert-verify: false
-- name: 🇵🇱[www.v2nodes.com] vless-PL-1...
-  server: 95.85.253.241
-  port: 2083
-  type: vless
-  tls: true
-  uuid: ee0a38e3-d148-48ac-ba99-5133446c2377
-  servername: 95.85.253.241
-  path: /
   skip-cert-verify: false
 - name: '🇵🇱[www.v2nodes.com] vless-PL-1... #1'
   server: pl.flen-vpn.xyz
@@ -3423,11 +3420,6 @@ proxies:
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇲🇽MX_1|1.6MB/s
-  server: 189.51.168.165
-  port: 999
-  type: http
-  tls: false
 - name: 🇩🇪DE_5|2.1MB/s
   server: 158.173.154.2
   port: 9002
@@ -3617,12 +3609,6 @@ proxies:
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇳🇱NL_12|3.0MB/s
-  server: 157.22.183.72
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
 - name: 🇫🇷法国 | FRA
   server: ip5.934618.xyz
   port: 30099
@@ -3642,19 +3628,6 @@ proxies:
     path: /tyxyws
     headers:
       Host: jp3.yohototo.top
-- name: 🇯🇵土耳其 | TUR
-  server: 8l3bf3ca.zf-mix.9999231.xyz
-  port: 1010
-  type: anytls
-  password: a7c5d30b-ce9b-4e34-b5cb-66f8308790ef
-  sni: tr-house.9999231.xyz
-  skip-cert-verify: true
-- name: '🇺🇸美国 | USA #12'
-  server: rb1211-4.vatilon.cc
-  port: 10004
-  type: hysteria2
-  password: aec8e5e3-bb81-4b22-8802-0b88c54997b3
-  skip-cert-verify: true
 - name: '🇺🇸CN_127 #1'
   server: cn42.vatilon.cc
   port: 10003
@@ -3711,32 +3684,6 @@ proxies:
   type: http
   password: None
   tls: true
-- name: 🇷🇺德国 | DEU
-  server: 45.144.179.112
-  port: 443
-  type: vless
-  tls: true
-  uuid: 86096188-0ece-41af-922d-792c5f96c3ad
-  servername: ru.caloribro.uno
-  path: /
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 8cN2ldJOVJ_ulUORM3mblWMg1etGrTruJoAtYyhE5h8
-    short-id: "73cd09c320ca209d"
-  client-fingerprint: random
-- name: 🇺🇸德国 | DEU 3
-  server: 193.23.195.37
-  port: 8443
-  type: vless
-  tls: true
-  uuid: 9ebf4fda-7395-4800-b42f-b2dda649880a
-  servername: ya.ru
-  path: /
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
-    short-id: "d2061bb1"
-  client-fingerprint: random
 - name: 🇩🇪德国 | DEU 5
   server: 179.254.166.40
   port: 443
@@ -3764,20 +3711,6 @@ proxies:
   reality-opts:
     public-key: FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0
     short-id: "457fab2ac885dbe0"
-  client-fingerprint: random
-- name: 🇺🇸德国 | DEU 8
-  server: gw2.edgemedia.lol
-  port: 8443
-  type: vless
-  tls: true
-  uuid: 8ff3db5a-5f41-4f25-a8a4-7fbf00f1c319
-  servername: ya.ru
-  host: gw2.edgemedia.lol
-  path: /
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 1MLoHw7RVkGefh7XUyuGg4ndxwv4vDU9en-f9JxpXRQ
-    short-id: "d2061bb1"
   client-fingerprint: random
 - name: 🇩🇪德国 | DEU 10
   server: 177.1.187.251
@@ -4221,14 +4154,6 @@ proxies:
     path: /assignment
     headers:
       Host: www.calmlunch.com
-- name: 🇭🇰
-  server: v35.hdacd.com
-  port: 30835
-  type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
-  cipher: auto
-  tls: false
 - name: 🇬🇧GB-82.38.31.181-5584
   server: 82.38.31.181
   port: 8080
@@ -4294,13 +4219,6 @@ proxies:
     path: /assignment
     headers:
       Host: www.volumeroot.com
-- name: 🇰🇷美国 V2CROSS.COM
-  server: 150-230-252-217.liao.kdns.fr
-  port: 50160
-  type: hysteria2
-  ports: 50160
-  password: 9cfc9458e48c028ec03ff86ebc71c744
-  sni: 150-230-252-217.liao.kdns.fr
 - name: '🇦🇪[www.v2nodes.com] vless-AE-1... #1'
   server: 147.78.0.186
   port: 8443
@@ -4438,7 +4356,7 @@ proxies:
     path: /assignment
     headers:
       Host: www.trusteeforward.com
-- name: 德国 | DEU 8
+- name: 德国 | DEU 8 2
   server: 45.80.111.7
   port: 443
   type: trojan
@@ -4471,6 +4389,357 @@ proxies:
     path: /arki
     headers:
       Host: 47.244.120.197
+- name: 🇮🇹IT-66.245.207.70-0440
+  server: 66.245.207.70
+  port: 8388
+  type: ss
+  cipher: aes-256-gcm
+  password: qMvJmCbMduKUoeHq
+- name: 🇫🇮FI-185.103.110.66-0431
+  server: 185.103.110.66
+  port: 18280
+  type: ss
+  cipher: aes-128-gcm
+  password: f9300a9bf39ae0347c3a3bfbc4dd7754
+- name: 🇺🇸US-172.96.160.250-0580
+  server: ruot.ayucloudservices.nl
+  port: 22073
+  type: ss
+  cipher: aes-256-gcm
+  password: bd962c9a-d6f2-4561-bd80-34206c4d5279
+- name: 🇮🇪IE-3.253.106.233-0472
+  server: 3.253.106.233
+  port: 443
+  type: trojan
+  password: UX82473651
+  sni: loved-shark.rooster465.autos
+- name: 🇺🇸US-172.96.160.250-0579
+  server: ruot.ayucloudservices.nl
+  port: 22069
+  type: ss
+  cipher: aes-256-gcm
+  password: bd962c9a-d6f2-4561-bd80-34206c4d5279
+- name: 🇰🇷KR-141.164.45.187-0254
+  server: 141.164.45.187
+  port: 6679
+  type: ss
+  cipher: aes-256-gcm
+  password: TEzjfAYq2IjtuoS
+- name: 🇷🇺@V2ray_Alpha🧳 5
+  server: 77.232.139.128
+  port: 11592
+  type: hysteria2
+  ports: 11592
+  password: 033dc6b532
+  obfs: salamander
+  obfs-password: eba1b4766d2a26d6c167e2d2e9efabf4
+  sni: srv-8718e6.frd21.ru
+  skip-cert-verify: false
+- name: 🇩🇪39@oneclickvpnkeys
+  server: 3.123.42.12
+  port: 443
+  type: hysteria2
+  ports: 443
+  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
+  sni: vpn-de-002.fastervpn.world
+  skip-cert-verify: true
+- name: 🇭🇰@FreakConfig
+  server: nas.aizhzo.com
+  port: 5010
+  type: hysteria2
+  ports: 5010
+  password: eBTe6Ax2pUts8oMEWoYVDfnSlHfkLffQ
+  obfs: salamander
+  obfs-password: 7M4RXPFcQyQEGbkxBPfXo4bilMhCW2U9
+  sni: nas.aizhzo.com
+  skip-cert-verify: false
+- name: '🇦🇪[www.v2nodes.com] vless-AE-1... #1#2'
+  server: 147.78.0.186
+  port: 2053
+  type: vless
+  tls: true
+  uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
+  servername: free.cndyw.ggff.net
+  network: ws
+  ws-opts:
+    path: pyip=bpb.yousef.isegaro.comfp=chrome
+    headers:
+      Host: free.cndyw.ggff.net
+- name: '[www.v2nodes.com] vless-SG#3'
+  server: cf.090227.xyz
+  port: 443
+  type: vless
+  tls: true
+  uuid: d342d11e-d224-4463-b982-532309285094
+  servername: ccc.010304.xyz
+  network: ws
+  ws-opts:
+    path: /fp=chromesecurity=tls
+    headers:
+      Host: ccc.010304.xyz
+- name: '🇦🇷[www.v2nodes.com] vless-CL-1... #6'
+  server: 131.255.6.88
+  port: 443
+  type: vless
+  tls: true
+  uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
+  servername: free.cndyw.ggff.net
+  network: ws
+  ws-opts:
+    path: pyip=bpb.yousef.isegaro.comfp=chrome
+    headers:
+      Host: free.cndyw.ggff.net
+- name: '🇦🇷[www.v2nodes.com] vless-CL-1... #7'
+  server: 131.255.6.88
+  port: 443
+  type: vless
+  tls: true
+  uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
+  servername: free.cndyw.ggff.net
+  network: ws
+  ws-opts:
+    path: pyip=bpb.yousef.isegaro.comfp=randomsecurity=tls
+    headers:
+      Host: free.cndyw.ggff.net
+- name: 🇦🇪[www.v2nodes.com] vless-ES-5...
+  server: 31.57.190.49
+  port: 443
+  type: vless
+  tls: true
+  uuid: e6df2095-a73c-4043-8693-8d5a03686870
+  servername: lucasjow.us.ci
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /cart/docs/www/proxyip=108.160.132.132fp=unsafe
+    headers:
+      Host: lucasjow.us.ci
+- name: '🇫🇮[www.v2nodes.com] vless-FI-1... #1'
+  server: 170.168.4.59
+  port: 17170
+  type: vless
+  tls: true
+  uuid: 3eec23c1-2a0d-4d53-afa5-62745a1f5ffe
+  servername: northerntrail.gazette.help
+  alpn:
+  - h2
+  network: grpc
+  grpc-opts:
+    grpc-mode: gun
+    grpc-service-name: trail-grpc
+  skip-cert-verify: false
+- name: '🇸🇪[www.v2nodes.com] vless-FI-1... #14#3'
+  server: 109.120.134.243
+  port: 443
+  type: vless
+  tls: true
+  uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
+  servername: free.cndyw.ggff.net
+  network: ws
+  ws-opts:
+    path: pyip=bpb.yousef.isegaro.comfp=randomsecurity=tls
+    headers:
+      Host: free.cndyw.ggff.net
+- name: '🇸🇪[www.v2nodes.com] vless-FI-1... #16'
+  server: 77.110.97.245
+  port: 443
+  type: vless
+  tls: true
+  uuid: d342d11e-d224-4463-b982-532309285094
+  servername: ccc.010304.xyz
+  network: ws
+  ws-opts:
+    path: /fp=chromesecurity=tls
+    headers:
+      Host: ccc.010304.xyz
+- name: '🇸🇪[www.v2nodes.com] vless-FI-1... #17'
+  server: 109.120.134.243
+  port: 443
+  type: vless
+  tls: true
+  uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
+  servername: free.cndyw.ggff.net
+  network: ws
+  ws-opts:
+    path: pyip=bpb.yousef.isegaro.comfp=chromesecurity=tls
+    headers:
+      Host: free.cndyw.ggff.net
+- name: 🇫🇷法国 | FRA 2
+  server: 37.49.230.85
+  port: 8443
+  type: vless
+  tls: true
+  uuid: c6db98c5-9959-425e-9340-300779fc4e4b
+  servername: fr5.sodahub.online
+  alpn:
+  - h2
+  network: grpc
+  grpc-opts:
+    grpc-mode: gun
+    grpc-service-name: fr5grpc
+- name: '🇬🇧[www.v2nodes.com] vless-GB-1... #11'
+  server: 159.65.51.189
+  port: 443
+  type: vless
+  tls: true
+  uuid: d342d11e-d224-4463-b982-532309285094
+  servername: ccc.010304.xyz
+  network: ws
+  ws-opts:
+    path: /fpsecurity=tls
+    headers:
+      Host: ccc.010304.xyz
+  skip-cert-verify: false
+- name: 🇭🇺[www.v2nodes.com] vless-HU-6...#4
+  server: 37.221.210.113
+  port: 8443
+  type: vless
+  tls: true
+  uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
+  servername: free.cndyw.ggff.net
+  network: ws
+  ws-opts:
+    path: pyip=bpb.yousef.isegaro.comfp=chrome
+    headers:
+      Host: free.cndyw.ggff.net
+- name: '🇰🇷[www.v2nodes.com] vless-KR-1... #1'
+  server: 119.205.235.58
+  port: 443
+  type: vless
+  tls: true
+  uuid: 51a0af77-a60c-4d9b-81a4-f50e1b38d90b
+  servername: cf3.schzyc.cc.cd
+  network: ws
+  ws-opts:
+    path: /proxyip=ProxyIP.CMLiussss.netfp=chrome
+    headers:
+      Host: cf3.schzyc.cc.cd
+- name: '[www.v2nodes.com] vless-PL-4...#3'
+  server: 157.22.128.7
+  port: 443
+  type: vless
+  tls: true
+  uuid: 04c808e2-0b59-47b0-a54b-32fc7ef1c902
+  servername: free.cndyw.ggff.net
+  network: ws
+  ws-opts:
+    path: pyip=bpb.yousef.isegaro.comfp=randomsecurity=tls
+    headers:
+      Host: free.cndyw.ggff.net
+- name: '🇪🇪[www.v2nodes.com] vless-SE-1... #1'
+  server: 5.189.254.168
+  port: 2053
+  type: vless
+  tls: true
+  uuid: 51a0af77-a60c-4d9b-81a4-f50e1b38d90b
+  servername: cf3.schzyc.cc.cd
+  network: ws
+  ws-opts:
+    path: /proxyip=ProxyIP.CMLiussss.netfp=chrome
+    headers:
+      Host: cf3.schzyc.cc.cd
+- name: 🇺🇦[www.v2nodes.com] vless-UA-4...
+  server: 213.111.148.137
+  port: 443
+  type: vless
+  tls: true
+  uuid: 40af9131-d540-448a-bc56-5bba147a1dc3
+  servername: proxy-1cu.pages.dev
+  network: ws
+  ws-opts:
+    path: /fp=android
+    headers:
+      Host: proxy-1cu.pages.dev
+- name: 🇰🇷[www.v2nodes.com] ss-KR-1594...
+  server: 43.155.223.71
+  port: 8388
+  type: ss
+  cipher: aes-256-gcm
+  password: UsIv5aKJabiqnYtY8IfWd6FfgjzrJlfZ
+- name: 🇹🇭[www.v2nodes.com] ss-TH-1591...
+  server: 103.107.52.106
+  port: 52351
+  type: ss
+  cipher: aes-256-gcm
+  password: sxajCTwrlK0zl+zmHpX0p0jXIfatnzlLzWlSQ950L1c=
+- name: 🇺🇸[www.v2nodes.com] ss-US-1594...
+  server: 66.23.206.124
+  port: 16619
+  type: ss
+  cipher: aes-128-gcm
+  password: 2607008ac896b3443be9419d73d544d9
+- name: '[www.v2nodes.com] trojan-SG'
+  server: 104.18.153.182
+  port: 443
+  type: trojan
+  password: 19877587-ed94-4033-88cd-4ac50a5e8718
+  sni: dimskiee.biz.id
+  network: ws
+  ws-opts:
+    path: /WangCai-8
+    headers:
+      Host: dimskiee.biz.id
+- name: '[www.v2nodes.com] trojan-ID-...'
+  server: 104.18.32.87
+  port: 443
+  type: trojan
+  password: 018b8e7b-7813-4dcb-84a5-3c98f1521e00
+  sni: id1.nathaya.web.id
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /trojan
+    headers:
+      Host: id1.nathaya.web.id
+- name: '🇬🇧英国 | GBR #1'
+  server: 13.40.25.145
+  port: 443
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
+- name: '🇭🇰香港 | HKG #1'
+  server: 8.217.254.88
+  port: 443
+  type: vmess
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  alterId: 0
+  cipher: auto
+  tls: true
+  servername: 2b9hwy8ocx7q74nm.v.3dns.vip
+  network: ws
+  ws-opts:
+    path: /ws-vmess
+    headers:
+      Host: 2b9hwy8ocx7q74nm.v.3dns.vip
+- name: '🇭🇰香港 | HKG #4'
+  server: 93ucrn4i0pffuabk.v.3dns.vip
+  port: 443
+  type: vmess
+  uuid: f23bb427-c1f9-4373-876c-2f43e9f790f3
+  alterId: 0
+  cipher: auto
+  tls: true
+  servername: 93ucrn4i0pffuabk.v.3dns.vip
+  network: ws
+  ws-opts:
+    path: /ws-vmess
+    headers:
+      Host: 93ucrn4i0pffuabk.v.3dns.vip
+- name: '🇹🇼🇨🇳 台湾 | TWN #1'
+  server: 654168416355441.d6f54hd1j.cc
+  port: 443
+  type: vmess
+  uuid: ecdc303d-bcbf-4129-bc02-dd67703f7081
+  alterId: 0
+  cipher: auto
+  tls: true
+  servername: 654168416355441.d6f54hd1j.cc
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: 654168416355441.d6f54hd1j.cc
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -4478,33 +4747,29 @@ proxy-groups:
   - ♻️ 自动选择
   - DIRECT
   - 🇭🇰香港
+  - '🇫🇮Channel : @Daily_Configs 2'
   - 🇩🇪Germany
   - 'Telegram: @Daily_Configs'
   - 🇰🇷South Korea
-  - 🇳🇱⚙️8@oneclickvpnkeys
-  - 🇫🇮42@oneclickvpnkeys
-  - 🇩🇪Telegram👉@v2rayNG_Matsuri
+  - 🇱🇻@FarazV2ray 3
   - 🇩🇪𝗝𝗼𝗶𝗻 ➠ @vpnplusee_free | 🇺🇸
   - 🇩🇪𝗝𝗼𝗶𝗻 ➠ @vpnplusee_free | 🇺🇸 2
   - 🇩🇪𝗝𝗼𝗶𝗻 ➠ @vpnplusee_free | 🇺🇸 3
   - 🇩🇪𝗝𝗼𝗶𝗻 ➠ @vpnplusee_free | 🇺🇸 4
   - '🇩🇪 '
-  - 🇩🇪𝗝𝗼𝗶𝗻 ➠ @vpnplusee_free | 🇺🇸 5
   - 🇩🇪𝗝𝗼𝗶𝗻 ➠ @vpnplusee_free | 🇺🇸 6
   - 🇩🇪𝗝𝗼𝗶𝗻 ➠ @vpnplusee_free | 🇺🇸 7
   - 🇩🇪𝗝𝗼𝗶𝗻 ➠ @vpnplusee_free | 🇺🇸 8
   - 🇩🇪@i10VPN🌕
+  - 🇩🇪☺️89@oneclickvpnkeys
   - 🇩🇪88@oneclickvpnkeys
-  - 🇩🇪@mon_proxys کانالمون
-  - 🇩🇪United States 3
-  - '🇩🇪اگه میخوای قطع نشی جوین شو : @farsiproxy'
   - 🇩🇪96@oneclickvpnkeys
   - 🇩🇪telegram➠@v2rayNG_Matsuri 2
-  - 🇩🇪telegram➠@v2rayNG_Matsuri 3
-  - '🇩🇪اگه میخوای قطع نشی جوین شو : @farsiproxy 2'
-  - 🇺🇸United States 4
+  - '🇩🇪اگه میخوای قطع نشی جوین شو : @farsiproxy'
+  - '🇩🇪اگه میخوای قطع نشی جوین شو : @farsiproxy 3'
+  - 🇳🇱⚙️8@oneclickvpnkeys
+  - 🇺🇸United States
   - 🇿🇦@
-  - 🇨🇳中国-002
   - 其他-001
   - 其他-002
   - 🇩🇪德国-001 |1.6MB/s
@@ -4538,7 +4803,6 @@ proxy-groups:
   - 🇳🇱荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 🇳🇱荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
   - 🇳🇱荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 🇰🇷韩国-001 |3.9MB/s
   - 🇺🇸香港-021 |819KB/s
   - 🇸🇬以色列 002
   - 🇺🇸美国 718
@@ -4553,6 +4817,12 @@ proxy-groups:
   - 🇺🇸美国-022 |2.4MB/s|TK-US|YT-US|GPT-US|GM-US
   - 🇺🇸美国-024 |2.0MB/s|TK-US|YT-US|GPT⁺-US
   - 🇳🇱荷兰-001 |2.5MB/s|GPT⁺-NL
+  - 🇫🇮42@oneclickvpnkeys
+  - 🇩🇪𝗝𝗼𝗶𝗻 ➠ @vpnplusee_free | 🇺🇸 8#2
+  - 🇩🇪@mon_proxys کانالمون
+  - 🇩🇪United States 3
+  - 🇩🇪telegram➠@v2rayNG_Matsuri 3
+  - 🇰🇷韩国-001 |3.9MB/s
   - 🇩🇪𝗝𝗼𝗶𝗻 ➠ @vpnplusee_free | 🇺🇸 4#2
   - 🇳🇱@Daily_Configs
   - 🇮🇹France
@@ -4791,7 +5061,6 @@ proxy-groups:
   - 🇩🇪✈️38@oneclickvpnkeys
   - 🇷🇺✈️35@oneclickvpnkeys
   - '🇷🇴@FarazV2ray #1'
-  - 🇸🇬191042 | ⚡️Telegram - t.me/S...
   - 🇨🇿91@oneclickvpnkeys
   - 🇷🇺✈️39@oneclickvpnkeys
   - 🇸🇬99@oneclickvpnkeys
@@ -4822,7 +5091,6 @@ proxy-groups:
   - '🇸🇪[www.v2nodes.com] vless-FI-1... #13'
   - '🇸🇪[www.v2nodes.com] vless-FI-1... #14'
   - 🇮🇪[www.v2nodes.com] vless-IE-2...
-  - '🇬🇧[www.v2nodes.com] vless-GB-1... #5'
   - '🇬🇧[www.v2nodes.com] vless-GB-1... #7'
   - 🇬🇷[www.v2nodes.com] vless-GR-3...
   - 🇭🇰[www.v2nodes.com] vless-HK-1...
@@ -4835,7 +5103,6 @@ proxy-groups:
   - 🇲🇩[www.v2nodes.com] vless-MD-4...
   - 🇲🇽[www.v2nodes.com] vless-MX-1...
   - 🇲🇾[www.v2nodes.com] vless-MY-5...
-  - 🇵🇱[www.v2nodes.com] vless-PL-1...
   - '🇵🇱[www.v2nodes.com] vless-PL-1... #1'
   - '[www.v2nodes.com] vless-PL-4...'
   - '🇩🇪[www.v2nodes.com] vless-SE-1... #1'
@@ -4928,7 +5195,6 @@ proxy-groups:
   - 🇱🇻LV_1|1.9MB/s
   - 🇳🇱NL_9|3.0MB/s
   - 🇩🇪DE_4|2.3MB/s
-  - 🇲🇽MX_1|1.6MB/s
   - 🇩🇪DE_5|2.1MB/s
   - 🇷🇺RU_1|1.9MB/s
   - 🇨🇦CA_3|1.9MB/s
@@ -4960,11 +5226,8 @@ proxy-groups:
   - 🇳🇱NL_10|2.4MB/s
   - 🇷🇴RO_8|2.1MB/s
   - 🇩🇪DE_7|3.2MB/s
-  - 🇳🇱NL_12|3.0MB/s
   - 🇫🇷法国 | FRA
   - '🇭🇰日本 | JPN #2'
-  - 🇯🇵土耳其 | TUR
-  - '🇺🇸美国 | USA #12'
   - '🇺🇸CN_127 #1'
   - 🇳🇱NL_speednode_0004
   - 🇳🇱NL_speednode_0007
@@ -4974,11 +5237,8 @@ proxy-groups:
   - 🇺🇸US_speednode_0133
   - 🇺🇸US_speednode_0134
   - 🇺🇸US_speednode_0140
-  - 🇷🇺德国 | DEU
-  - 🇺🇸德国 | DEU 3
   - 🇩🇪德国 | DEU 5
   - 🇷🇺德国 | DEU 6
-  - 🇺🇸德国 | DEU 8
   - 🇩🇪德国 | DEU 10
   - 🇦🇪德国 | DEU 13
   - 🇵🇱ProxyPool | 🇫🇷 法国 | FRA
@@ -5015,7 +5275,6 @@ proxy-groups:
   - '[www.v2nodes.com] trojan-FR-... #8#2'
   - '🇺🇸[www.v2nodes.com] trojan-FR-... #9#2'
   - '🇦🇹[www.v2nodes.com] trojan-FR-... #10#2'
-  - 🇭🇰
   - 🇬🇧GB-82.38.31.181-5584
   - 🇬🇧GB-82.38.31.171-2599
   - 🇰🇷KR-43.203.120.240-0801
@@ -5026,7 +5285,6 @@ proxy-groups:
   - 🇭🇰HK-103.149.182.79-5533
   - 🇬🇧GB-158.173.24.73-0123
   - 美国 CloudFlare节点
-  - 🇰🇷美国 V2CROSS.COM
   - '🇦🇪[www.v2nodes.com] vless-AE-1... #1'
   - 🇦🇪[www.v2nodes.com] vless-AL-1...#3
   - '[www.v2nodes.com] vless-AT-3...'
@@ -5040,40 +5298,70 @@ proxy-groups:
   - '🇯🇵日本 | JPN #1'
   - '🇯🇵[www.v2nodes.com] trojan-JP-... #1#2'
   - 荷兰 | NLD 8
-  - 德国 | DEU 8
+  - 德国 | DEU 8 2
   - 🇭🇰香港 | HKG 4
   - '🇭🇰香港 | HKG #6'
+  - 🇮🇹IT-66.245.207.70-0440
+  - 🇫🇮FI-185.103.110.66-0431
+  - 🇺🇸US-172.96.160.250-0580
+  - 🇮🇪IE-3.253.106.233-0472
+  - 🇺🇸US-172.96.160.250-0579
+  - 🇰🇷KR-141.164.45.187-0254
+  - 🇷🇺@V2ray_Alpha🧳 5
+  - 🇩🇪39@oneclickvpnkeys
+  - 🇭🇰@FreakConfig
+  - '🇦🇪[www.v2nodes.com] vless-AE-1... #1#2'
+  - '[www.v2nodes.com] vless-SG#3'
+  - '🇦🇷[www.v2nodes.com] vless-CL-1... #6'
+  - '🇦🇷[www.v2nodes.com] vless-CL-1... #7'
+  - 🇦🇪[www.v2nodes.com] vless-ES-5...
+  - '🇫🇮[www.v2nodes.com] vless-FI-1... #1'
+  - '🇸🇪[www.v2nodes.com] vless-FI-1... #14#3'
+  - '🇸🇪[www.v2nodes.com] vless-FI-1... #16'
+  - '🇸🇪[www.v2nodes.com] vless-FI-1... #17'
+  - 🇫🇷法国 | FRA 2
+  - '🇬🇧[www.v2nodes.com] vless-GB-1... #11'
+  - 🇭🇺[www.v2nodes.com] vless-HU-6...#4
+  - '🇰🇷[www.v2nodes.com] vless-KR-1... #1'
+  - '[www.v2nodes.com] vless-PL-4...#3'
+  - '🇪🇪[www.v2nodes.com] vless-SE-1... #1'
+  - 🇺🇦[www.v2nodes.com] vless-UA-4...
+  - 🇰🇷[www.v2nodes.com] ss-KR-1594...
+  - 🇹🇭[www.v2nodes.com] ss-TH-1591...
+  - 🇺🇸[www.v2nodes.com] ss-US-1594...
+  - '[www.v2nodes.com] trojan-SG'
+  - '[www.v2nodes.com] trojan-ID-...'
+  - '🇬🇧英国 | GBR #1'
+  - '🇭🇰香港 | HKG #1'
+  - '🇭🇰香港 | HKG #4'
+  - '🇹🇼🇨🇳 台湾 | TWN #1'
 - name: ♻️ 自动选择
   type: url-test
   proxies:
   - 🇭🇰香港
+  - '🇫🇮Channel : @Daily_Configs 2'
   - 🇩🇪Germany
   - 'Telegram: @Daily_Configs'
   - 🇰🇷South Korea
-  - 🇳🇱⚙️8@oneclickvpnkeys
-  - 🇫🇮42@oneclickvpnkeys
-  - 🇩🇪Telegram👉@v2rayNG_Matsuri
+  - 🇱🇻@FarazV2ray 3
   - 🇩🇪𝗝𝗼𝗶𝗻 ➠ @vpnplusee_free | 🇺🇸
   - 🇩🇪𝗝𝗼𝗶𝗻 ➠ @vpnplusee_free | 🇺🇸 2
   - 🇩🇪𝗝𝗼𝗶𝗻 ➠ @vpnplusee_free | 🇺🇸 3
   - 🇩🇪𝗝𝗼𝗶𝗻 ➠ @vpnplusee_free | 🇺🇸 4
   - '🇩🇪 '
-  - 🇩🇪𝗝𝗼𝗶𝗻 ➠ @vpnplusee_free | 🇺🇸 5
   - 🇩🇪𝗝𝗼𝗶𝗻 ➠ @vpnplusee_free | 🇺🇸 6
   - 🇩🇪𝗝𝗼𝗶𝗻 ➠ @vpnplusee_free | 🇺🇸 7
   - 🇩🇪𝗝𝗼𝗶𝗻 ➠ @vpnplusee_free | 🇺🇸 8
   - 🇩🇪@i10VPN🌕
+  - 🇩🇪☺️89@oneclickvpnkeys
   - 🇩🇪88@oneclickvpnkeys
-  - 🇩🇪@mon_proxys کانالمون
-  - 🇩🇪United States 3
-  - '🇩🇪اگه میخوای قطع نشی جوین شو : @farsiproxy'
   - 🇩🇪96@oneclickvpnkeys
   - 🇩🇪telegram➠@v2rayNG_Matsuri 2
-  - 🇩🇪telegram➠@v2rayNG_Matsuri 3
-  - '🇩🇪اگه میخوای قطع نشی جوین شو : @farsiproxy 2'
-  - 🇺🇸United States 4
+  - '🇩🇪اگه میخوای قطع نشی جوین شو : @farsiproxy'
+  - '🇩🇪اگه میخوای قطع نشی جوین شو : @farsiproxy 3'
+  - 🇳🇱⚙️8@oneclickvpnkeys
+  - 🇺🇸United States
   - 🇿🇦@
-  - 🇨🇳中国-002
   - 其他-001
   - 其他-002
   - 🇩🇪德国-001 |1.6MB/s
@@ -5107,7 +5395,6 @@ proxy-groups:
   - 🇳🇱荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 🇳🇱荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
   - 🇳🇱荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 🇰🇷韩国-001 |3.9MB/s
   - 🇺🇸香港-021 |819KB/s
   - 🇸🇬以色列 002
   - 🇺🇸美国 718
@@ -5122,6 +5409,12 @@ proxy-groups:
   - 🇺🇸美国-022 |2.4MB/s|TK-US|YT-US|GPT-US|GM-US
   - 🇺🇸美国-024 |2.0MB/s|TK-US|YT-US|GPT⁺-US
   - 🇳🇱荷兰-001 |2.5MB/s|GPT⁺-NL
+  - 🇫🇮42@oneclickvpnkeys
+  - 🇩🇪𝗝𝗼𝗶𝗻 ➠ @vpnplusee_free | 🇺🇸 8#2
+  - 🇩🇪@mon_proxys کانالمون
+  - 🇩🇪United States 3
+  - 🇩🇪telegram➠@v2rayNG_Matsuri 3
+  - 🇰🇷韩国-001 |3.9MB/s
   - 🇩🇪𝗝𝗼𝗶𝗻 ➠ @vpnplusee_free | 🇺🇸 4#2
   - 🇳🇱@Daily_Configs
   - 🇮🇹France
@@ -5360,7 +5653,6 @@ proxy-groups:
   - 🇩🇪✈️38@oneclickvpnkeys
   - 🇷🇺✈️35@oneclickvpnkeys
   - '🇷🇴@FarazV2ray #1'
-  - 🇸🇬191042 | ⚡️Telegram - t.me/S...
   - 🇨🇿91@oneclickvpnkeys
   - 🇷🇺✈️39@oneclickvpnkeys
   - 🇸🇬99@oneclickvpnkeys
@@ -5391,7 +5683,6 @@ proxy-groups:
   - '🇸🇪[www.v2nodes.com] vless-FI-1... #13'
   - '🇸🇪[www.v2nodes.com] vless-FI-1... #14'
   - 🇮🇪[www.v2nodes.com] vless-IE-2...
-  - '🇬🇧[www.v2nodes.com] vless-GB-1... #5'
   - '🇬🇧[www.v2nodes.com] vless-GB-1... #7'
   - 🇬🇷[www.v2nodes.com] vless-GR-3...
   - 🇭🇰[www.v2nodes.com] vless-HK-1...
@@ -5404,7 +5695,6 @@ proxy-groups:
   - 🇲🇩[www.v2nodes.com] vless-MD-4...
   - 🇲🇽[www.v2nodes.com] vless-MX-1...
   - 🇲🇾[www.v2nodes.com] vless-MY-5...
-  - 🇵🇱[www.v2nodes.com] vless-PL-1...
   - '🇵🇱[www.v2nodes.com] vless-PL-1... #1'
   - '[www.v2nodes.com] vless-PL-4...'
   - '🇩🇪[www.v2nodes.com] vless-SE-1... #1'
@@ -5497,7 +5787,6 @@ proxy-groups:
   - 🇱🇻LV_1|1.9MB/s
   - 🇳🇱NL_9|3.0MB/s
   - 🇩🇪DE_4|2.3MB/s
-  - 🇲🇽MX_1|1.6MB/s
   - 🇩🇪DE_5|2.1MB/s
   - 🇷🇺RU_1|1.9MB/s
   - 🇨🇦CA_3|1.9MB/s
@@ -5529,11 +5818,8 @@ proxy-groups:
   - 🇳🇱NL_10|2.4MB/s
   - 🇷🇴RO_8|2.1MB/s
   - 🇩🇪DE_7|3.2MB/s
-  - 🇳🇱NL_12|3.0MB/s
   - 🇫🇷法国 | FRA
   - '🇭🇰日本 | JPN #2'
-  - 🇯🇵土耳其 | TUR
-  - '🇺🇸美国 | USA #12'
   - '🇺🇸CN_127 #1'
   - 🇳🇱NL_speednode_0004
   - 🇳🇱NL_speednode_0007
@@ -5543,11 +5829,8 @@ proxy-groups:
   - 🇺🇸US_speednode_0133
   - 🇺🇸US_speednode_0134
   - 🇺🇸US_speednode_0140
-  - 🇷🇺德国 | DEU
-  - 🇺🇸德国 | DEU 3
   - 🇩🇪德国 | DEU 5
   - 🇷🇺德国 | DEU 6
-  - 🇺🇸德国 | DEU 8
   - 🇩🇪德国 | DEU 10
   - 🇦🇪德国 | DEU 13
   - 🇵🇱ProxyPool | 🇫🇷 法国 | FRA
@@ -5584,7 +5867,6 @@ proxy-groups:
   - '[www.v2nodes.com] trojan-FR-... #8#2'
   - '🇺🇸[www.v2nodes.com] trojan-FR-... #9#2'
   - '🇦🇹[www.v2nodes.com] trojan-FR-... #10#2'
-  - 🇭🇰
   - 🇬🇧GB-82.38.31.181-5584
   - 🇬🇧GB-82.38.31.171-2599
   - 🇰🇷KR-43.203.120.240-0801
@@ -5595,7 +5877,6 @@ proxy-groups:
   - 🇭🇰HK-103.149.182.79-5533
   - 🇬🇧GB-158.173.24.73-0123
   - 美国 CloudFlare节点
-  - 🇰🇷美国 V2CROSS.COM
   - '🇦🇪[www.v2nodes.com] vless-AE-1... #1'
   - 🇦🇪[www.v2nodes.com] vless-AL-1...#3
   - '[www.v2nodes.com] vless-AT-3...'
@@ -5609,9 +5890,43 @@ proxy-groups:
   - '🇯🇵日本 | JPN #1'
   - '🇯🇵[www.v2nodes.com] trojan-JP-... #1#2'
   - 荷兰 | NLD 8
-  - 德国 | DEU 8
+  - 德国 | DEU 8 2
   - 🇭🇰香港 | HKG 4
   - '🇭🇰香港 | HKG #6'
+  - 🇮🇹IT-66.245.207.70-0440
+  - 🇫🇮FI-185.103.110.66-0431
+  - 🇺🇸US-172.96.160.250-0580
+  - 🇮🇪IE-3.253.106.233-0472
+  - 🇺🇸US-172.96.160.250-0579
+  - 🇰🇷KR-141.164.45.187-0254
+  - 🇷🇺@V2ray_Alpha🧳 5
+  - 🇩🇪39@oneclickvpnkeys
+  - 🇭🇰@FreakConfig
+  - '🇦🇪[www.v2nodes.com] vless-AE-1... #1#2'
+  - '[www.v2nodes.com] vless-SG#3'
+  - '🇦🇷[www.v2nodes.com] vless-CL-1... #6'
+  - '🇦🇷[www.v2nodes.com] vless-CL-1... #7'
+  - 🇦🇪[www.v2nodes.com] vless-ES-5...
+  - '🇫🇮[www.v2nodes.com] vless-FI-1... #1'
+  - '🇸🇪[www.v2nodes.com] vless-FI-1... #14#3'
+  - '🇸🇪[www.v2nodes.com] vless-FI-1... #16'
+  - '🇸🇪[www.v2nodes.com] vless-FI-1... #17'
+  - 🇫🇷法国 | FRA 2
+  - '🇬🇧[www.v2nodes.com] vless-GB-1... #11'
+  - 🇭🇺[www.v2nodes.com] vless-HU-6...#4
+  - '🇰🇷[www.v2nodes.com] vless-KR-1... #1'
+  - '[www.v2nodes.com] vless-PL-4...#3'
+  - '🇪🇪[www.v2nodes.com] vless-SE-1... #1'
+  - 🇺🇦[www.v2nodes.com] vless-UA-4...
+  - 🇰🇷[www.v2nodes.com] ss-KR-1594...
+  - 🇹🇭[www.v2nodes.com] ss-TH-1591...
+  - 🇺🇸[www.v2nodes.com] ss-US-1594...
+  - '[www.v2nodes.com] trojan-SG'
+  - '[www.v2nodes.com] trojan-ID-...'
+  - '🇬🇧英国 | GBR #1'
+  - '🇭🇰香港 | HKG #1'
+  - '🇭🇰香港 | HKG #4'
+  - '🇹🇼🇨🇳 台湾 | TWN #1'
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
