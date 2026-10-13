@@ -18,15 +18,33 @@ dns:
     geoip: true
     geoip-code: CN
 proxies:
-- name: 中国-002
+- name: 其他-001
   type: vmess
-  network: tcp
-  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
-  server: 112.132.215.108
-  port: 50002
+  network: ws
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  server: guanwang.awsno.com
+  port: 443
   skip-cert-verify: true
-  alterId: 64
+  tls: true
+  alterId: 0
   cipher: auto
+  ws-opts:
+    headers:
+      Host: guanwang.awsno.com
+    path: /hls/cctv5phd.m3u8
+- name: 其他-002
+  type: vless
+  network: ws
+  uuid: 3ee10440-225e-4cbc-83ed-3c80b90bcb07
+  server: 188.114.99.0
+  port: 8880
+  tls: false
+  udp: true
+  ws-opts:
+    headers:
+      Host: ovh-gr1.mahkhorshidi.ir
+    path: /notls
+  encryption: mlkem768x25519plus.native.0rtt.BheP3zTPlA3cijplJnfrJSIp9rYlrGqnqEOnYD-wA20
 - name: 德国-001 |1.6MB/s
   type: hysteria
   server: 5.83.129.90
@@ -214,34 +232,38 @@ proxies:
   port: 443
   skip-cert-verify: true
   tls: true
-- name: 美国-003 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  type: http
-  server: 209.148.53.153
-  port: 8090
-  skip-cert-verify: true
-  tls: true
 - name: 美国-004 |1.0MB/s|TK-US|GPT⁺-US
   type: http
   server: 138.199.35.198
   port: 9002
   skip-cert-verify: true
   tls: true
+- name: 美国-005
+  type: vless
+  network: ws
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  server: 63.141.128.30
+  port: 8880
+  ws-opts:
+    headers:
+      Host: vms.lifetime42.workers.dev
+    path: /
 - name: 荷兰-001 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
   type: http
   server: 84.17.47.150
   port: 9002
   skip-cert-verify: true
   tls: true
-- name: 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
-  type: http
-  server: 5.255.118.82
-  port: 443
-  skip-cert-verify: true
-  tls: true
-- name: 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
+- name: 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL
   type: http
   server: 51.159.225.196
   port: 23856
+  skip-cert-verify: true
+  tls: true
+- name: 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
+  type: http
+  server: 5.255.118.82
+  port: 443
   skip-cert-verify: true
   tls: true
 - name: 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
@@ -250,6 +272,15 @@ proxies:
   port: 9002
   skip-cert-verify: true
   tls: true
+- name: 中国-002
+  type: vmess
+  network: tcp
+  uuid: 418048af-a293-4b99-9b0c-98ca3580dd24
+  server: 112.132.215.108
+  port: 50002
+  skip-cert-verify: true
+  alterId: 64
+  cipher: auto
 - name: 香港-021 |819KB/s
   type: http
   server: 154.26.192.123
@@ -360,7 +391,8 @@ proxy-groups:
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - 中国-002
+  - 其他-001
+  - 其他-002
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
   - 澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
@@ -386,12 +418,13 @@ proxy-groups:
   - 罗马尼亚-020 |554KB/s
   - 美国-001 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-002 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-003 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-004 |1.0MB/s|TK-US|GPT⁺-US
+  - 美国-005
   - 荷兰-001 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
+  - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL
+  - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
+  - 中国-002
   - 香港-021 |819KB/s
   - 以色列 002
   - 美国 718
@@ -409,7 +442,8 @@ proxy-groups:
 - name: ♻️ 自动选择
   type: url-test
   proxies:
-  - 中国-002
+  - 其他-001
+  - 其他-002
   - 德国-001 |1.6MB/s
   - 德国-002 |594KB/s
   - 澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
@@ -435,12 +469,13 @@ proxy-groups:
   - 罗马尼亚-020 |554KB/s
   - 美国-001 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-002 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-003 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-004 |1.0MB/s|TK-US|GPT⁺-US
+  - 美国-005
   - 荷兰-001 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
+  - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL
+  - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
+  - 中国-002
   - 香港-021 |819KB/s
   - 以色列 002
   - 美国 718
