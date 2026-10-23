@@ -7,8 +7,10 @@ exposes the same REST API via ``external-controller-pipe`` instead.
 from __future__ import annotations
 
 import json
+import os
 import socket
-from typing import Any, Dict, Optional, Tuple
+import sys
+from typing import Any, Dict, List, Optional, Tuple
 from urllib.parse import urlencode
 
 def normalize_ipc_path(ipc_path: str) -> str:
@@ -58,6 +60,29 @@ def _build_http_request(
     return ("\r\n".join(lines) + "\r\n" + body).encode("utf-8")
 
 
+def _decode_chunked(body: bytes) -> bytes:
+    """Decode a chunked-transfer-encoded body; return input if malformed."""
+    out = bytearray()
+    rest = body
+    while True:
+        line_end = rest.find(b"\r\n")
+        if line_end < 0:
+            break
+        size_str = rest[:line_end].split(b";", 1)[0].strip()
+        try:
+            size = int(size_str, 16)
+        except ValueError:
+            return bytes(body)  # not chunk-encoded after all
+        if size == 0:
+            break
+        chunk = rest[line_end + 2 : line_end + 2 + size]
+        out.extend(chunk)
+        rest = rest[line_end + 2 + size :]
+        if rest.startswith(b"\r\n"):
+            rest = rest[2:]
+    return bytes(out)
+
+
 def _parse_http_response(raw: bytes) -> Tuple[int, Any]:
     if not raw:
         return 0, ""
@@ -70,6 +95,8 @@ def _parse_http_response(raw: bytes) -> Tuple[int, Any]:
         status = int(status_line.split(b" ", 2)[1])
     except (IndexError, ValueError):
         status = 0
+    if b"transfer-encoding: chunked" in header_blob.lower():
+        body = _decode_chunked(body)
     if not body:
         return status, {}
     try:
@@ -118,8 +145,22 @@ def _windows_pipe_exchange(pipe_path: str, request: bytes, timeout: float) -> by
             raise TimeoutError(f"命名管道连接超时 ({pipe_path})")
 
         win32file.WriteFile(handle, request)
-        _, data = win32file.ReadFile(handle, 65536)
-        return data or b""
+        # Read until the server closes the pipe: responses (e.g. GET /proxies
+        # with many nodes) span multiple reads of unpredictable size, and a
+        # short read does NOT mean the response is complete.
+        chunks: list[bytes] = []
+        while True:
+            try:
+                _, data = win32file.ReadFile(handle, 65536)
+            except pywintypes.error as exc:
+                # ERROR_BROKEN_PIPE: server closed after full response
+                if exc.winerror == 109:
+                    break
+                raise
+            if not data:
+                break
+            chunks.append(data)
+        return b"".join(chunks)
     finally:
         if handle is not None:
             win32file.CloseHandle(handle)
@@ -193,3 +234,57 @@ def resolve_verge_ipc_path(config: Dict[str, Any], app_dir: Optional[str] = None
                 return normalize_ipc_path(str(pipe))
         return str(Path(app_dir) / DEFAULT_UNIX_SOCKET)
     return ""
+
+
+def list_windows_pipes() -> List[str]:
+    """Enumerate named pipes on Windows; returns [] on other platforms/errors."""
+    if not sys.platform.startswith("win"):
+        return []
+    try:
+        return os.listdir(r"\\.\pipe")
+    except OSError:
+        return []
+
+
+def discover_verge_ipc_paths(
+    config: Dict[str, Any],
+    app_dir: Optional[str] = None,
+) -> List[str]:
+    """Return candidate Mihomo IPC pipe paths, most likely first.
+
+    The pipe name recorded in config.yaml can go stale after a Clash Verge
+    upgrade or core channel switch (e.g. ``release`` -> ``production``), so
+    also scan the Windows named-pipe namespace for ``verge-mihomo-*`` pipes.
+    Pipes sharing the trailing hash with the configured name rank first.
+    """
+    candidates: List[str] = []
+    configured = resolve_verge_ipc_path(config, app_dir)
+    if configured:
+        candidates.append(configured)
+
+    pipes = list_windows_pipes()
+    if not pipes:
+        return candidates
+
+    configured_lower = configured.lower()
+    hash_part = ""
+    if "verge-mihomo-" in configured_lower:
+        hash_part = configured_lower.rsplit("-", 1)[-1]
+
+    def _rank(name: str) -> int:
+        lowered = name.lower()
+        if hash_part and lowered.endswith(f"-{hash_part}"):
+            return 0
+        return 10
+
+    seen = {c.lower() for c in candidates}
+    discovered = sorted(
+        (p for p in pipes if p.lower().startswith("verge-mihomo-")),
+        key=_rank,
+    )
+    for name in discovered:
+        pipe = normalize_ipc_path(f"\\\\.\\pipe\\{name}")
+        if pipe.lower() not in seen:
+            seen.add(pipe.lower())
+            candidates.append(pipe)
+    return candidates

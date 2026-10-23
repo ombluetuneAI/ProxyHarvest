@@ -23,7 +23,7 @@ import yaml
 from .config_loader import PROJECT_ROOT, get_path
 from .converter import dump_clash_yaml
 from .mihomo_client import AUTO_SELECT_GROUP, MihomoClient, DEFAULT_TEST_URL
-from .mihomo_ipc import ipc_available, resolve_verge_ipc_path
+from .mihomo_ipc import discover_verge_ipc_paths, ipc_available
 from .mihomo_manager import MihomoManager
 from .platform_utils import IS_LINUX, IS_MACOS, IS_WINDOWS, ensure_dir
 
@@ -124,7 +124,6 @@ def verge_core_ready(config: Dict[str, Any], app_dir: str, settings: dict) -> bo
     host, port, secret, test_url, timeout_ms = parse_controller_from_config(
         config, settings
     )
-    ipc_path = resolve_verge_ipc_path(config, app_dir)
 
     if host and port:
         try:
@@ -142,8 +141,9 @@ def verge_core_ready(config: Dict[str, Any], app_dir: str, settings: dict) -> bo
         except Exception:
             pass
 
-    if ipc_path and ipc_available(ipc_path):
-        return True
+    for ipc_path in discover_verge_ipc_paths(config, app_dir):
+        if ipc_available(ipc_path):
+            return True
     return False
 
 
@@ -639,7 +639,7 @@ class VergeManager:
         startup_timeout = int(self.cfg.get("startup_timeout", 10))
         assert self.app_dir is not None
 
-        ipc_path = resolve_verge_ipc_path(config, str(self.app_dir))
+        ipc_candidates = discover_verge_ipc_paths(config, str(self.app_dir))
         use_http = False
         if host and port:
             try:
@@ -656,29 +656,46 @@ class VergeManager:
                 test_url=test_url,
                 timeout_ms=timeout_ms,
             )
-        elif ipc_path and ipc_available(ipc_path):
-            logger.info("Clash Verge API via IPC %s", ipc_path)
-            # Pipe IPC does not validate secret; keep empty to match mihomo behaviour.
-            client = MihomoClient.for_ipc(
-                ipc_path,
-                secret="",
-                test_url=test_url,
-                timeout_ms=timeout_ms,
-            )
-        elif ipc_path and IS_WINDOWS:
-            raise ConnectionError(
-                f"Clash Verge 内核 API 未就绪。\n"
-                f"HTTP {host}:{port} 未监听（外部控制器可能已关闭），"
-                f"命名管道 {ipc_path} 也无法连接。\n"
-                "请启动 Clash Verge 并确保 verge-mihomo 内核正在运行；"
-                "或在设置中开启「外部控制器」。"
-            )
         else:
-            raise ConnectionError(
-                f"Clash Verge 内核 API 未就绪 ({host}:{port})。\n"
-                f"已等待 {startup_timeout}s。请启动 Clash Verge 并确保内核正在运行，"
-                "或在设置中开启「外部控制器」。"
-            )
+            ipc_client = None
+            ipc_errors: List[str] = []
+            for ipc_path in ipc_candidates:
+                if not ipc_available(ipc_path):
+                    ipc_errors.append(str(ipc_path))
+                    continue
+                logger.info("Clash Verge API via IPC %s", ipc_path)
+                # Pipe IPC does not validate secret; keep empty to match mihomo behaviour.
+                ipc_client = MihomoClient.for_ipc(
+                    ipc_path,
+                    secret="",
+                    test_url=test_url,
+                    timeout_ms=timeout_ms,
+                )
+                break
+            if ipc_client is not None:
+                client = ipc_client
+            elif ipc_candidates:
+                raise ConnectionError(
+                    f"Clash Verge 内核 API 未就绪。\n"
+                    f"HTTP {host}:{port} 未监听（外部控制器可能已关闭），"
+                    f"命名管道也无法连接，已尝试:\n  " + "\n  ".join(ipc_candidates) + "\n"
+                    "请启动 Clash Verge 并确保 verge-mihomo 内核正在运行；"
+                    "或在设置中开启「外部控制器」。"
+                )
+            elif IS_WINDOWS:
+                raise ConnectionError(
+                    f"Clash Verge 内核 API 未就绪。\n"
+                    f"HTTP {host}:{port} 未监听（外部控制器可能已关闭），"
+                    f"且系统中未发现 verge-mihomo 命名管道。\n"
+                    "请启动 Clash Verge 并确保 verge-mihomo 内核正在运行；"
+                    "或在设置中开启「外部控制器」。"
+                )
+            else:
+                raise ConnectionError(
+                    f"Clash Verge 内核 API 未就绪 ({host}:{port})。\n"
+                    f"已等待 {startup_timeout}s。请启动 Clash Verge 并确保内核正在运行，"
+                    "或在设置中开启「外部控制器」。"
+                )
 
         client.get_version()
         return client
@@ -716,9 +733,26 @@ class VergeManager:
             params={"force": "true"},
             json_body={"path": path_str, "payload": ""},
         )
-        if code not in (200, 204):
-            raise RuntimeError(f"重载 Clash Verge 配置失败 (HTTP {code}): {data}")
-        logger.info("Clash Verge config reloaded: %s", path_str)
+        if code in (200, 204):
+            logger.info("Clash Verge config reloaded: %s", path_str)
+            return
+
+        # A core started by clash-verge-service rejects file paths outside its
+        # own runtime directory (mihomo safe-path check, HTTP 400). Fall back
+        # to pushing the config content inline, which bypasses path checks.
+        with open(config_path, "r", encoding="utf-8") as f:
+            payload = f.read()
+        code, data = client.request(
+            "PUT",
+            "/configs",
+            params={"force": "true"},
+            json_body={"path": "", "payload": payload},
+        )
+        if code in (200, 204):
+            logger.info("Clash Verge config reloaded via inline payload")
+            return
+
+        raise RuntimeError(f"重载 Clash Verge 配置失败 (HTTP {code}): {data}")
 
     def start_validation(self, proxies: List[Dict[str, Any]]) -> MihomoClient:
         """Backup merged runtime config, load validate config, reload core."""
