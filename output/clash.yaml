@@ -18,15 +18,62 @@ dns:
     geoip: true
     geoip-code: CN
 proxies:
-- name: 🇭🇰香港
-  server: v10.hdacd.com
-  port: 30807
+- name: 🇮🇹@appsooner کانال تلگرام 🕊️
+  server: 202.50.253.18
+  port: 19999
+  type: ss
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: 🇮🇹YFZ 117 @Outline_Vpn
+  server: 202.50.253.27
+  port: 19999
+  type: ss
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: '🇮🇹Channel : @Daily_Configs 2'
+  server: 202.50.253.45
+  port: 19999
+  type: ss
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: 🇮🇹@FarazV2ray 2
+  server: 202.50.253.54
+  port: 19999
+  type: ss
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: 🇮🇹@FarazV2ray 3
+  server: 202.50.253.81
+  port: 19999
+  type: ss
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: 🇮🇹@FarazV2ray 4
+  server: 202.50.253.36
+  port: 19999
+  type: ss
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: 🇮🇹@FarazV2ray 5
+  server: 202.50.253.72
+  port: 19999
+  type: ss
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: 其他-002
+  server: guanwang.awsno.com
+  port: 443
   type: vmess
-  uuid: cbb3f877-d1fb-344c-87a9-d153bffd5484
-  alterId: 2
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  alterId: 0
   cipher: auto
-  tls: false
-  skip-cert-verify: false
+  tls: true
+  skip-cert-verify: true
+  network: ws
+  ws-opts:
+    path: /hls/cctv5phd.m3u8
+    headers:
+      Host: guanwang.awsno.com
 - name: 🇩🇪德国-001 |1.6MB/s
   server: 5.83.129.90
   port: 54177
@@ -42,21 +89,14 @@ proxies:
   skip-cert-verify: true
   alpn:
   - h3
-- name: 🇩🇪德国-002 |594KB/s
-  server: 5.83.129.153
-  port: 20088
-  type: hysteria
-  protocol: udp
-  up: 500 Mbps
-  up-speed: 500
-  down: 1000 Mbps
-  down-speed: 1000
-  auth-str: dongtaiwang.com
-  auth: ZG9uZ3RhaXdhbmcuY29t
-  sni: apple.com
+- name: 🇯🇵日本-001
+  server: 45.32.52.173
+  port: 8886
+  type: trojan
+  password: e26a229d-e8f2-4ff9-8c7d-58a9d83ee437
+  sni: 45.32.52.173
   skip-cert-verify: true
-  alpn:
-  - h3
+  udp: true
 - name: 🇦🇺澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
   server: 159.13.44.228
   port: 443
@@ -106,13 +146,13 @@ proxies:
   tls: true
   skip-cert-verify: true
 - name: 🇷🇴罗马尼亚-008 |1.0MB/s
-  server: 193.176.84.26
+  server: 193.176.84.23
   port: 9002
   type: http
   tls: true
   skip-cert-verify: true
 - name: 🇷🇴罗马尼亚-009 |1.0MB/s
-  server: 193.176.84.23
+  server: 193.176.84.26
   port: 9002
   type: http
   tls: true
@@ -183,25 +223,25 @@ proxies:
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇺🇸美国-002 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+- name: 🇺🇸美国-001 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   server: 138.199.35.215
   port: 9002
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇺🇸美国-003 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+- name: 🇺🇸美国-002 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   server: 38.28.193.188
   port: 443
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇺🇸美国-004 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+- name: 🇺🇸美国-003 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   server: 209.148.53.153
   port: 8090
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇺🇸美国-005 |1.0MB/s|TK-US|GPT⁺-US
+- name: 🇺🇸美国-004 |1.0MB/s|TK-US|GPT⁺-US
   server: 138.199.35.198
   port: 9002
   type: http
@@ -231,18 +271,19 @@ proxies:
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇸🇬其他-006 |554KB/s
-  server: d39d6b46-ta1og0-tbnk1n-ueq.sg.oshuawei.com
+- name: 🇺🇸美国-005
+  server: 200.165.231.209
   port: 443
-  type: http
-  username: 91df5a86-fcdd-11ef-94aa-f23c913c8d2b
-  password: 91df5a86-fcdd-11ef-94aa-f23c913c8d2b
+  type: vless
   tls: true
-- name: 🇰🇷韩国-001 |3.9MB/s
-  server: 121.169.46.116
-  port: 1090
-  type: socks5
-  username: T2clM0QlM0Q6
+  uuid: ff0b6ba8-bed0-4c4d-bbc9-23af47582615
+  servername: wstg.datasynctrue.online
+  network: ws
+  ws-opts:
+    path: /api/connect
+    headers:
+      Host: wstg.datasynctrue.online
+  skip-cert-verify: false
 - name: 🇺🇸香港-021 |819KB/s
   server: 154.26.192.123
   port: 10988
@@ -293,126 +334,69 @@ proxies:
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇪🇸西班牙-001 |1.6MB/s|TK-ES|GPT⁺-ES|GM-ES
-  server: 45.147.251.19
-  port: 8443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇳🇱NL-193.169.239.76-0162
-  server: renewed-chigger.rooster465.autos
+- name: '@mehrosaboran'
+  server: 188.114.97.6
   port: 443
   type: trojan
-  password: XG59623478
-- name: 🇦🇺AU-82.117.225.56-0507
-  server: stirring-dane.rooster465.autos
+  password: humanity
+  sni: www.pleadcourt.org
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment?ed#Telegram---mehrosaboran
+    headers:
+      Host: www.pleadcourt.org
+- name: '@FarazV2ray 2 2'
+  server: 188.114.97.6
   port: 443
   type: trojan
-  password: XG59623478
-  sni: stirring-dane.rooster465.autos
-- name: 🇭🇰HK-194.99.79.214-6331
-  server: growing-oyster.rooster465.autos
+  password: humanity
+  sni: www.pleadcourt.org
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment?ed#Telegram---pirozi_ArGaP---
+    headers:
+      Host: www.pleadcourt.org
+- name: '@iranping24'
+  server: 188.114.97.6
   port: 443
   type: trojan
-  password: XG59623478
-- name: 🇦🇺AU-82.117.225.216-0504
-  server: concise-buck.rooster465.autos
+  password: humanity
+  sni: www.calmlunch.com
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment?ed#Telegram---MTMVPN---MTMVPN---MTMVPN---MTMVPN
+    headers:
+      Host: www.calmlunch.com
+- name: 'Telegram : @Daily_Configs 2'
+  server: 188.114.97.6
   port: 443
   type: trojan
-  password: XG59623478
-  sni: concise-buck.rooster465.autos
-- name: 🇭🇰HK-185.244.208.176-0173
-  server: eternal-swift.rooster465.autos
+  password: humanity
+  sni: www.calmlunch.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+- name: 'Channel : @Daily_Configs 2'
+  server: 188.114.97.6
   port: 443
   type: trojan
-  password: IQ68037294
-  sni: eternal-swift.rooster465.autos
-- name: 🇭🇰HK-185.14.47.56-0174
-  server: kind-unicorn.rooster465.autos
-  port: 443
-  type: trojan
-  password: NQ26071394
-- name: 🇳🇱NL-193.169.239.146-0176
-  server: legible-possum.rooster465.autos
-  port: 443
-  type: trojan
-  password: KV63147582
-  sni: legible-possum.rooster465.autos
-- name: 🇭🇰HK-185.244.208.69-0177
-  server: strong-haddock.rooster465.autos
-  port: 443
-  type: trojan
-  password: ON38567014
-  sni: strong-haddock.rooster465.autos
-- name: 🇳🇱NL-89.39.70.120-0178
-  server: pro-crane.rooster465.autos
-  port: 443
-  type: trojan
-  password: PD07395842
-- name: 🇵🇱PL-202.78.163.172-0180
-  server: more-trout.rooster465.autos
-  port: 443
-  type: trojan
-  password: KV63147582
-  sni: more-trout.rooster465.autos
-- name: 🇭🇰HK-185.244.208.210-0181
-  server: upright-hamster.rooster465.autos
-  port: 443
-  type: trojan
-  password: PI36027154
-  sni: upright-hamster.rooster465.autos
-- name: 🇳🇱NL-79.133.126.235-0182
-  server: fast-ghost.rooster465.autos
-  port: 443
-  type: trojan
-  password: PD07395842
-  sni: fast-ghost.rooster465.autos
-- name: 🇵🇱PL-202.78.163.47-0184
-  server: patient-gannet.rooster465.autos
-  port: 443
-  type: trojan
-  password: IQ68037294
-  sni: patient-gannet.rooster465.autos
-- name: 🇦🇺AU-87.121.33.14-0186
-  server: true-pony.rooster465.autos
-  port: 443
-  type: trojan
-  password: PD07395842
-- name: 🇵🇱PL-202.78.163.237-0187
-  server: cheerful-swan.rooster465.autos
-  port: 443
-  type: trojan
-  password: IQ68037294
-  sni: cheerful-swan.rooster465.autos
-- name: 🇭🇰HK-185.14.47.101-0213
-  server: ideal-robin.rooster465.autos
-  port: 443
-  type: trojan
-  password: OD90375861
-  sni: ideal-robin.rooster465.autos
-- name: 🇵🇱PL-202.78.163.164-0214
-  server: pretty-mollusk.rooster465.autos
-  port: 443
-  type: trojan
-  password: NQ26071394
-  sni: pretty-mollusk.rooster465.autos
-- name: 🇳🇱NL-89.39.70.9-0222
-  server: whole-woodcock.rooster465.autos
-  port: 443
-  type: trojan
-  password: IQ68037294
+  password: humanity
+  sni: www.pleadcourt.org
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.pleadcourt.org
 - name: 🇯🇵JP-18.179.203.229-0203
   server: v2jp.k1.ssnss.live
   port: 44184
   type: trojan
   password: d050aca3-9df2-4461-90ec-92373c1d7636
-- name: 🇸🇬JP_3|2.3MB/s
-  server: stunning-mite.rooster465.autos
-  port: 443
-  type: trojan
-  password: ND91608427
-  sni: stunning-mite.rooster465.autos
-  skip-cert-verify: true
 - name: 🇵🇱LU_1|2.6MB/s
   server: discrete-basilisk.rooster465.autos
   port: 443
@@ -420,343 +404,598 @@ proxies:
   password: ND91608427
   sni: discrete-basilisk.rooster465.autos
   skip-cert-verify: true
-- name: 🇯🇵FR_3|3.3MB/s
-  server: great-krill.rooster465.autos
+- name: 🇺🇸US_8|2.5MB/s
+  server: 138.199.35.219
+  port: 9002
+  type: http
+  username: 'null'
+  password: 'null'
+  tls: true
+  skip-cert-verify: true
+- name: 🇩🇪DE_1|1.0MB/s
+  server: 79.76.126.155
   port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇷🇴RO_speednode_0041
+  server: 193.176.84.33
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇺🇸US_4|4.1MB/s
+  server: 138.199.35.201
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇺🇸US_6|1.6MB/s
+  server: 138.199.35.206
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇺🇸US_25|2.3MB/s
+  server: 138.199.35.200
+  port: 9002
+  type: http
+  username: 'null'
+  password: None
+  tls: true
+  skip-cert-verify: true
+- name: 🇳🇱NL_6|2.9MB/s
+  server: 152.53.107.196
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇺🇸US_10|3.3MB/s
+  server: 138.199.35.220
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+- name: 🇺🇸US_12|1.2MB/s
+  server: 44.229.69.166
+  port: 8443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇳🇱NL_7|3.4MB/s
+  server: 84.17.47.124
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇺🇸US_13|3.8MB/s
+  server: 138.199.35.213
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+- name: 🇺🇸US_14|1.2MB/s
+  server: 138.199.35.205
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+- name: 🇺🇸US_15|3.6MB/s
+  server: 23.133.176.14
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇫🇷FR_3|3.1MB/s
+  server: 82.65.162.76
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇩🇪DE_3|3.2MB/s
+  server: 158.173.154.1
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇱🇻LV_1|1.9MB/s
+  server: 185.219.159.15
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇳🇱NL_9|3.0MB/s
+  server: 51.159.225.197
+  port: 19362
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇩🇪DE_5|2.1MB/s
+  server: 158.173.154.2
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇩🇪DE_6|2.6MB/s
+  server: 158.173.154.5
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇫🇷FR_5|2.6MB/s
+  server: 31.32.19.111
+  port: 8081
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇺🇸US_22|2.7MB/s
+  server: 148.135.10.80
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇳🇱NL_10|2.4MB/s
+  server: 5.255.125.187
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: '🇺🇸CN_127 #1'
+  server: cn42.vatilon.cc
+  port: 10003
   type: trojan
-  password: QV31589740
+  password: aec8e5e3-bb81-4b22-8802-0b88c54997b3
+  sni: cn42.vatilon.cc
+  skip-cert-verify: true
+- name: 🇳🇱NL_speednode_0004
+  server: 84.17.47.125
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇳🇱NL_speednode_0007
+  server: 84.17.47.148
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇳🇱NL_speednode_0009
+  server: 84.17.47.146
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇳🇱NL_speednode_0010
+  server: 84.17.47.149
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇺🇸US_speednode_0131
+  server: 138.199.35.216
+  port: 9002
+  type: http
+  username: 'null'
+  password: 'null'
+  tls: true
+  skip-cert-verify: true
+- name: 🇫🇷https://github.com/*********-*...
+  server: 62.210.70.191
+  port: 24667
+  type: hysteria
+  protocol: udp
+  up: 11 Mbps
+  up-speed: 389739824
+  down: 55 Mbps
+  down-speed: 389961856
+  auth-str: dongtaiwang.com
+  auth: ZG9uZ3RhaXdhbmcuY29t
+  sni: bing.com
+  skip-cert-verify: true
+  alpn:
+  - h3
+- name: '[www.v2nodes.com] vless-IT-1... #1'
+  server: 188.114.97.6
+  port: 443
+  type: vless
+  tls: true
+  uuid: e6df2095-a73c-4043-8693-8d5a03686870
+  servername: lucasjow.us.ci
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /cart/docs/www/proxyip=108.160.132.132?ed#Telegram---DailyConfigs
+    headers:
+      Host: lucasjow.us.ci
   skip-cert-verify: false
-- name: 🇸🇬JP_speednode_0011
-  server: upright-impala.rooster465.autos
-  port: 443
-  type: trojan
-  password: ND91608427
-  sni: upright-impala.rooster465.autos
-  skip-cert-verify: true
-- name: 🇸🇬KR_speednode_0012
-  server: definite-malamute.rooster465.autos
-  port: 443
-  type: trojan
-  password: ND91608427
-  sni: definite-malamute.rooster465.autos
-  skip-cert-verify: true
-- name: 🇺🇸KR_speednode_0013
-  server: moved-meerkat.rooster465.autos
-  port: 443
-  type: trojan
-  password: ND91608427
-  sni: moved-meerkat.rooster465.autos
-  skip-cert-verify: true
-- name: 🇸🇬KR-13.125.239.182-0519
-  server: saving-octopus.rooster465.autos
-  port: 443
-  type: trojan
-  password: ND91608427
-  sni: saving-octopus.rooster465.autos
-- name: 🇯🇵_US_美国 3
-  server: devoted-tapir.rooster465.autos
-  port: 443
-  type: trojan
-  password: ND91608427
-  sni: devoted-tapir.rooster465.autos
-  skip-cert-verify: true
-  udp: true
-- name: 🇰🇷_FR_法国#2
-  server: careful-tadpole.rooster465.autos
-  port: 443
-  type: trojan
-  password: ND91608427
-  skip-cert-verify: true
-  udp: true
-- name: 🇯🇵_FR_法国_1
-  server: classic-gator.rooster465.autos
-  port: 443
-  type: trojan
-  password: ND91608427
-  sni: classic-gator.rooster465.autos
-  skip-cert-verify: true
-  udp: true
-- name: 🇰🇷_DE_德国_1
-  server: next-turkey.rooster465.autos
-  port: 443
-  type: trojan
-  password: ND91608427
-  sni: next-turkey.rooster465.autos
-  skip-cert-verify: true
-  udp: true
-- name: 🇰🇷_DE_德国_2
-  server: gentle-raptor.rooster465.autos
-  port: 443
-  type: trojan
-  password: ND91608427
-  sni: gentle-raptor.rooster465.autos
-  skip-cert-verify: true
-  udp: true
-- name: 🇰🇷_DE_德国_3
-  server: rapid-firefly.rooster465.autos
-  port: 443
-  type: trojan
-  password: ND91608427
-  sni: rapid-firefly.rooster465.autos
-  skip-cert-verify: true
-  udp: true
-- name: 🇯🇵_US_美国_4 2
-  server: fleet-bonefish.rooster465.autos
-  port: 443
-  type: trojan
-  password: ND91608427
-  sni: fleet-bonefish.rooster465.autos
-  skip-cert-verify: true
-  udp: true
-- name: 🇰🇷IE_speednode_0009
-  server: skilled-lioness.rooster465.autos
-  port: 443
-  type: trojan
-  password: ND91608427
-  sni: skilled-lioness.rooster465.autos
-  skip-cert-verify: true
-- name: 🇸🇬JP-13.231.232.184-6020
-  server: better-molly.rooster465.autos
-  port: 443
-  type: trojan
-  password: ND91608427
-- name: 🇯🇵JP-3.113.1.131-6203
-  server: perfect-slug.rooster465.autos
-  port: 443
-  type: trojan
-  password: ND91608427
-  sni: perfect-slug.rooster465.autos
-- name: 🇰🇷JP-54.249.34.120-6213
-  server: social-mutt.rooster465.autos
-  port: 443
-  type: trojan
-  password: ND91608427
-  sni: social-mutt.rooster465.autos
-- name: 🇯🇵JP-43.207.139.153-6238
-  server: sensible-mongrel.rooster465.autos
-  port: 443
-  type: trojan
-  password: ND91608427
-  sni: sensible-mongrel.rooster465.autos
-- name: 🇯🇵JP-52.198.25.180-6207
-  server: clear-snail.rooster465.autos
-  port: 443
-  type: trojan
-  password: ND91608427
-  sni: clear-snail.rooster465.autos
-- name: 🇸🇬JP-13.230.118.96-6204
-  server: real-werewolf.rooster465.autos
-  port: 443
-  type: trojan
-  password: ND91608427
-  sni: real-werewolf.rooster465.autos
-- name: 🇸🇬JP-18.181.175.120-6214
-  server: sure-humpback.rooster465.autos
-  port: 443
-  type: trojan
-  password: ND91608427
-  sni: sure-humpback.rooster465.autos
-- name: 🇯🇵JP-52.196.121.8-6211
-  server: thankful-mustang.rooster465.autos
-  port: 443
-  type: trojan
-  password: ND91608427
-  sni: thankful-mustang.rooster465.autos
-- name: 🇸🇬KR-54.180.228.238-6082
-  server: pure-ram.rooster465.autos
-  port: 443
-  type: trojan
-  password: ND91608427
-- name: 🇯🇵KR-43.201.46.108-6243
-  server: exotic-chow.rooster465.autos
-  port: 443
-  type: trojan
-  password: ND91608427
-  sni: exotic-chow.rooster465.autos
-- name: 🇺🇸KR-3.36.131.218-6222
-  server: humorous-malamute.rooster465.autos
-  port: 443
-  type: trojan
-  password: ND91608427
-  sni: humorous-malamute.rooster465.autos
-- name: 🇰🇷KR-43.201.56.44-6237
-  server: distinct-llama.rooster465.autos
-  port: 443
-  type: trojan
-  password: ND91608427
-  sni: distinct-llama.rooster465.autos
-- name: 🇰🇷KR-3.36.59.34-6221
-  server: select-ferret.rooster465.autos
-  port: 443
-  type: trojan
-  password: ND91608427
-  sni: select-ferret.rooster465.autos
-- name: 🇩🇪SG-54.255.35.23-6228
-  server: tidy-gelding.rooster465.autos
-  port: 443
-  type: trojan
-  password: ND91608427
-  sni: tidy-gelding.rooster465.autos
-- name: 🇫🇷FR-162.19.192.89-0528
-  server: planb.mojcn.com.linuxlh.xin
-  port: 16632
-  type: vmess
-  uuid: cefbe234-bcc6-4558-ab7b-1030e331e6a5
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: d052c66d50dcf7c3cfab75ed7f8e8322.mobgslb.tbcache.com
-- name: 🇫🇷FR-95.170.13.47-0122
-  server: 95.170.13.47
-  port: 65443
-  type: ss
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-- name: 🇨🇳CN-121.46.230.232-0132
-  server: 121.46.230.232
-  port: 65443
-  type: ss
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-- name: 🇹🇭TH-103.169.67.34-0110
-  server: 103.169.67.34
-  port: 65443
-  type: ss
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-- name: 🇲🇾MY-118.107.222.231-0148
-  server: 118.107.222.231
-  port: 65443
-  type: ss
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-- name: 🇰🇷KR-43.201.249.3-4637
-  server: magical-prawn.rooster465.autos
-  port: 443
-  type: trojan
-  password: NQ26071394
-- name: 🇺🇸_RU_俄罗斯->🇩🇪_DE_德国
-  server: 31.76.71.140
+- name: '[www.v2nodes.com] vless-IT-2... #2'
+  server: 188.114.97.6
   port: 443
   type: vless
   tls: true
-  uuid: af00e0c4-decf-48f2-9013-56abe9c9efcd
-  servername: rrr.windconnect.pro
-  path: /
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: BsFRd4pZgH2hK2AmVf6Mv7z2QGmV2LPYbqkT1UqZX30
-    short-id: "4da5d1853f04af6d"
-  client-fingerprint: random
+  uuid: e6df2095-a73c-4043-8693-8d5a03686870
+  servername: lucasjow.us.ci
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /cart/docs/www/proxyip=108.160.132.132?ed#
+    headers:
+      Host: lucasjow.us.ci
+  skip-cert-verify: false
+- name: 🇳🇱NL_1|2.3MB/s
+  server: 84.17.47.126
+  port: 9002
+  type: http
+  tls: true
   skip-cert-verify: true
-- name: 🇬🇧_GB_英国
-  server: 13.40.94.70
+- name: 🇺🇸US_8|3.8MB/s
+  server: 138.199.35.209
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+- name: 🇺🇸US_11|3.2MB/s
+  server: 138.199.35.210
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇺🇸US_12|2.8MB/s
+  server: 138.199.35.199
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+- name: 🇺🇸US_13|3.4MB/s
+  server: 44.248.167.117
+  port: 8443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇺🇸US_14|2.2MB/s
+  server: 138.199.35.196
+  port: 9002
+  type: http
+  username: 'null'
+  password: 'null'
+  tls: true
+  skip-cert-verify: true
+- name: 🇫🇷FR_1|1.6MB/s
+  server: 82.66.235.221
   port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: 🇺🇸_NL_荷兰_1
-  server: 31.76.61.232
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇮🇪IE_2|1.3MB/s
+  server: 18.200.158.139
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇫🇷FR_2|3.2MB/s
+  server: 87.98.174.157
+  port: 6103
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇺🇸US_15|1.5MB/s
+  server: 138.199.35.203
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇷🇴RO_3|1.8MB/s
+  server: 193.176.84.18
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇮🇹IT_1|1.6MB/s
+  server: 95.229.15.89
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇫🇷FR_4|2.2MB/s
+  server: 51.210.167.149
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇩🇪DE_6|2.7MB/s
+  server: 193.233.75.115
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇸🇪SE_2|2.1MB/s
+  server: 217.210.129.243
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇺🇸US_19|1.6MB/s
+  server: 64.98.50.100
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇩🇪DE_8|3.8MB/s
+  server: 213.109.163.119
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇺🇸US_22|1.2MB/s
+  server: 44.217.145.28
+  port: 8443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇳🇱NL_12|2.2MB/s
+  server: 5.2.73.112
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: '[www.v2nodes.com] vless-IT-2...#2'
+  server: 188.114.97.6
   port: 443
   type: vless
   tls: true
-  uuid: 791a171e-c0af-4bd7-b8ce-43541c7585db
-  servername: policies.google.com
-  path: /
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: CMTA5uuaIVIeqHslZMT3CbFwP8F5ysMLii72ybsTlyY
-    short-id: "e2a4c6b8"
-  client-fingerprint: random
-  skip-cert-verify: true
-- name: 🇨🇳_CN_中国->🇯🇵_JP_日本
-  server: 121.46.230.137
-  port: 65443
-  type: ss
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-  udp: true
-- name: 🇫🇷FR-162.19.192.89-2109
-  server: planb.mojcn.com.linuxlh.xin
-  port: 16626
-  type: vmess
-  uuid: cefbe234-bcc6-4558-ab7b-1030e331e6a5
-  alterId: 0
-  cipher: auto
-  tls: false
+  uuid: e6df2095-a73c-4043-8693-8d5a03686870
+  servername: lucasjow.us.ci
+  alpn:
+  - http/1.1
   network: ws
   ws-opts:
-    path: /
+    path: /cart/docs/www/proxyip=108.160.132.132
     headers:
-      Host: d052c66d50dcf7c3cfab75ed7f8e8322.mobgslb.tbcache.com
-- name: 🇮🇪_IE_爱尔兰
-  server: 3.252.205.48
-  port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-  udp: true
-- name: 🇮🇳印度
-  server: vpn-in-001.fastervpn.world
-  port: 443
-  type: hysteria2
-  ports: 443
-  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
-  sni: vpn-in-001.fastervpn.world
+      Host: lucasjow.us.ci
+  skip-cert-verify: false
+- name: 🇷🇺RU_1|3.2MB/s
+  server: 46.29.166.134
+  port: 1446
+  type: http
+  tls: true
   skip-cert-verify: true
-- name: 🇬🇧GB_8|4.8MB/s
-  server: vpn-uk-001.fastervpn.world
+- name: 🇳🇱NL_6|4.6MB/s
+  server: 51.158.243.91
   port: 443
-  type: hysteria2
-  ports: 443
-  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
-  sni: vpn-uk-001.fastervpn.world
+  type: http
+  username: 'null'
+  password: 'null'
+  tls: true
   skip-cert-verify: true
-- name: 🇩🇪DE
-  server: de1.apexvpn.space
+- name: 🇺🇸US_5|3.1MB/s
+  server: 138.199.35.218
+  port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇷🇴RO_9|2.6MB/s
+  server: 193.176.84.16
+  port: 9002
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+- name: 🇷🇺DE_10|3.4MB/s
+  server: 188.120.225.125
+  port: 8443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇪🇸ES_2|1.7MB/s
+  server: 80.24.34.107
+  port: 8090
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇺🇸US_10|1.1MB/s
+  server: 104.168.249.36
+  port: 1080
+  type: socks5
+  username: test123
+  password: test123
+- name: 🇺🇸US_13|1.7MB/s
+  server: 138.199.35.212
+  port: 9002
+  type: http
+  username: 'null'
+  password: 'null'
+  tls: true
+  skip-cert-verify: true
+- name: 🇺🇸US_15|2.2MB/s
+  server: 147.182.216.4
   port: 443
-  type: hysteria2
-  ports: 443
-  password: dffb4c3d-1e84-4938-8881-cad917e8efb2
-  sni: de1.apexvpn.space
-- name: 🇺🇸NL_3|2.1MB/s
-  server: 85.209.157.209
-  port: 29367
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 3hSrBrmKmrgNGsD97RSGOS5p+XIFqEVk6Zo4AHbsRhg=
-- name: 🇨🇦CA_1|1.9MB/s
-  server: 166.88.130.218
-  port: 8011
+  type: http
+  username: testuser1
+  password: e4b72b531a2d10900519
+  tls: true
+  skip-cert-verify: true
+- name: '[www.v2nodes.com] vless-IT-2...#3'
+  server: 188.114.97.6
+  port: 443
+  type: vless
+  tls: true
+  uuid: e6df2095-a73c-4043-8693-8d5a03686870
+  servername: lucasjow.us.ci
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /cart/docs/www/proxyip=108.160.132.132fp=chrome
+    headers:
+      Host: lucasjow.us.ci
+  skip-cert-verify: false
+- name: 美国 CloudFlare节点 3
+  server: 104.16.111.102
+  port: 443
+  type: vless
+  tls: true
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+  servername: jp3.yohototo.top
+  network: ws
+  ws-opts:
+    path: /tyxyws
+    headers:
+      Host: jp3.yohototo.top
+- name: '[www.v2nodes.com] vless-ES-2...'
+  server: 188.114.97.6
+  port: 443
+  type: vless
+  tls: true
+  uuid: e6df2095-a73c-4043-8693-8d5a03686870
+  servername: lucasjow.us.ci
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /cart/docs/www/proxyip=108.160.132.132fp=chromesecurity=tls
+    headers:
+      Host: lucasjow.us.ci
+  skip-cert-verify: false
+- name: 🇯🇵JP-154.36.158.197-0426
+  server: 154.36.158.197
+  port: 8388
   type: ss
   cipher: aes-256-gcm
-  password: fbcec76953a2d173
-- name: 🇨🇦CA_2|3.9MB/s
-  server: 35.183.81.172
+  password: BeaUf9c0AEWH40Pu
+- name: '[www.v2nodes.com] vless- #7'
+  server: 188.114.97.6
   port: 443
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
-- name: 🇮🇪IE_1|3.6MB/s
-  server: 54.246.193.66
+  type: vless
+  tls: true
+  uuid: e6df2095-a73c-4043-8693-8d5a03686870
+  servername: lucasjow.us.ci
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /cart/docs/www/proxyipfp=chrome
+    headers:
+      Host: lucasjow.us.ci
+  skip-cert-verify: false
+- name: '🇦🇹[www.v2nodes.com] trojan-FR-... #12'
+  server: 212.183.88.136
   port: 443
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.calmlunch.com
+- name: '[www.v2nodes.com] vless-PL-7...'
+  server: 188.114.97.6
+  port: 443
+  type: vless
+  tls: true
+  uuid: e6df2095-a73c-4043-8693-8d5a03686870
+  servername: lucasjow.us.ci
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /fp=chrome
+    headers:
+      Host: lucasjow.us.ci
+  skip-cert-verify: false
+- name: '🇮🇹意大利 | ITA #2'
+  server: 202.50.253.90
+  port: 19999
   type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: 🇮🇹[www.v2nodes.com] ss-IT-1602...
+  server: 202.50.253.63
+  port: 19999
+  type: ss
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: '🇮🇹意大利 | ITA #1'
+  server: 202.50.253.99
+  port: 19999
+  type: ss
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: 美国 CloudFlare节点#5
+  server: 108.162.194.134
+  port: 443
+  type: trojan
+  password: humanity
+  sni: www.pleadcourt.org
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+    headers:
+      Host: www.pleadcourt.org
+- name: 🇳🇱美国 V2CROSS.COM
+  server: 144.31.34.146
+  port: 2096
+  type: vless
+  tls: true
+  uuid: 6e05822a-e9da-4135-a9db-71aa07a944af
+  servername: fi1.merky.one
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /mky-ws-4f19c8a7
+    headers:
+      Host: fi1.merky.one
+  skip-cert-verify: false
+- name: '🇩🇪Telegram@vpnjey #1'
+  server: 179.61.138.145
+  port: 36264
+  type: hysteria2
+  ports: 36264
+  password: Telegram-vpnjey
+  obfs: salamander
+  obfs-password: Telegram@vpnjey
+  sni: de2.jey.cc.cd
+  skip-cert-verify: true
+- name: '[www.v2nodes.com] vless-HK #1'
+  server: 188.114.97.6
+  port: 443
+  type: vless
+  tls: true
+  uuid: e6df2095-a73c-4043-8693-8d5a03686870
+  servername: lucasjow.us.ci
+  alpn:
+  - http/1.1
+  network: ws
+  ws-opts:
+    path: /cart/docs/www/proxyipfp=chromesecurity=tls
+    headers:
+      Host: lucasjow.us.ci
+  skip-cert-verify: false
 proxy-groups:
 - name: 🚀 节点选择
   type: select
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - 🇭🇰香港
+  - 🇮🇹@appsooner کانال تلگرام 🕊️
+  - 🇮🇹YFZ 117 @Outline_Vpn
+  - '🇮🇹Channel : @Daily_Configs 2'
+  - 🇮🇹@FarazV2ray 2
+  - 🇮🇹@FarazV2ray 3
+  - 🇮🇹@FarazV2ray 4
+  - 🇮🇹@FarazV2ray 5
+  - 其他-002
   - 🇩🇪德国-001 |1.6MB/s
-  - 🇩🇪德国-002 |594KB/s
+  - 🇯🇵日本-001
   - 🇦🇺澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
   - 🇷🇴罗马尼亚-001 |3.3MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 🇷🇴罗马尼亚-002 |2.3MB/s|TK-RO|GPT⁺-RO|GM-RO
@@ -778,16 +1017,15 @@ proxy-groups:
   - 🇷🇴罗马尼亚-018 |586KB/s
   - 🇷🇴罗马尼亚-019 |557KB/s
   - 🇷🇴罗马尼亚-020 |554KB/s
-  - 🇺🇸美国-002 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 🇺🇸美国-003 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 🇺🇸美国-004 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 🇺🇸美国-005 |1.0MB/s|TK-US|GPT⁺-US
+  - 🇺🇸美国-001 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 🇺🇸美国-002 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 🇺🇸美国-003 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 🇺🇸美国-004 |1.0MB/s|TK-US|GPT⁺-US
   - 🇳🇱荷兰-001 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 🇳🇱荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 🇳🇱荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
   - 🇳🇱荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 🇸🇬其他-006 |554KB/s
-  - 🇰🇷韩国-001 |3.9MB/s
+  - 🇺🇸美国-005
   - 🇺🇸香港-021 |819KB/s
   - 🇱🇻拉脱维亚-001 |2.0MB/s|TK-LV|GPT⁺-LV|GM-LV
   - 🇫🇷法国-003 |2.3MB/s|GPT⁺-FR
@@ -796,80 +1034,100 @@ proxy-groups:
   - 🇺🇸美国-022 |2.4MB/s|TK-US|YT-US|GPT-US|GM-US
   - 🇺🇸美国-024 |2.0MB/s|TK-US|YT-US|GPT⁺-US
   - 🇳🇱荷兰-001 |2.5MB/s|GPT⁺-NL
-  - 🇪🇸西班牙-001 |1.6MB/s|TK-ES|GPT⁺-ES|GM-ES
-  - 🇳🇱NL-193.169.239.76-0162
-  - 🇦🇺AU-82.117.225.56-0507
-  - 🇭🇰HK-194.99.79.214-6331
-  - 🇦🇺AU-82.117.225.216-0504
-  - 🇭🇰HK-185.244.208.176-0173
-  - 🇭🇰HK-185.14.47.56-0174
-  - 🇳🇱NL-193.169.239.146-0176
-  - 🇭🇰HK-185.244.208.69-0177
-  - 🇳🇱NL-89.39.70.120-0178
-  - 🇵🇱PL-202.78.163.172-0180
-  - 🇭🇰HK-185.244.208.210-0181
-  - 🇳🇱NL-79.133.126.235-0182
-  - 🇵🇱PL-202.78.163.47-0184
-  - 🇦🇺AU-87.121.33.14-0186
-  - 🇵🇱PL-202.78.163.237-0187
-  - 🇭🇰HK-185.14.47.101-0213
-  - 🇵🇱PL-202.78.163.164-0214
-  - 🇳🇱NL-89.39.70.9-0222
+  - '@mehrosaboran'
+  - '@FarazV2ray 2 2'
+  - '@iranping24'
+  - 'Telegram : @Daily_Configs 2'
+  - 'Channel : @Daily_Configs 2'
   - 🇯🇵JP-18.179.203.229-0203
-  - 🇸🇬JP_3|2.3MB/s
   - 🇵🇱LU_1|2.6MB/s
-  - 🇯🇵FR_3|3.3MB/s
-  - 🇸🇬JP_speednode_0011
-  - 🇸🇬KR_speednode_0012
-  - 🇺🇸KR_speednode_0013
-  - 🇸🇬KR-13.125.239.182-0519
-  - 🇯🇵_US_美国 3
-  - 🇰🇷_FR_法国#2
-  - 🇯🇵_FR_法国_1
-  - 🇰🇷_DE_德国_1
-  - 🇰🇷_DE_德国_2
-  - 🇰🇷_DE_德国_3
-  - 🇯🇵_US_美国_4 2
-  - 🇰🇷IE_speednode_0009
-  - 🇸🇬JP-13.231.232.184-6020
-  - 🇯🇵JP-3.113.1.131-6203
-  - 🇰🇷JP-54.249.34.120-6213
-  - 🇯🇵JP-43.207.139.153-6238
-  - 🇯🇵JP-52.198.25.180-6207
-  - 🇸🇬JP-13.230.118.96-6204
-  - 🇸🇬JP-18.181.175.120-6214
-  - 🇯🇵JP-52.196.121.8-6211
-  - 🇸🇬KR-54.180.228.238-6082
-  - 🇯🇵KR-43.201.46.108-6243
-  - 🇺🇸KR-3.36.131.218-6222
-  - 🇰🇷KR-43.201.56.44-6237
-  - 🇰🇷KR-3.36.59.34-6221
-  - 🇩🇪SG-54.255.35.23-6228
-  - 🇫🇷FR-162.19.192.89-0528
-  - 🇫🇷FR-95.170.13.47-0122
-  - 🇨🇳CN-121.46.230.232-0132
-  - 🇹🇭TH-103.169.67.34-0110
-  - 🇲🇾MY-118.107.222.231-0148
-  - 🇰🇷KR-43.201.249.3-4637
-  - 🇺🇸_RU_俄罗斯->🇩🇪_DE_德国
-  - 🇬🇧_GB_英国
-  - 🇺🇸_NL_荷兰_1
-  - 🇨🇳_CN_中国->🇯🇵_JP_日本
-  - 🇫🇷FR-162.19.192.89-2109
-  - 🇮🇪_IE_爱尔兰
-  - 🇮🇳印度
-  - 🇬🇧GB_8|4.8MB/s
-  - 🇩🇪DE
-  - 🇺🇸NL_3|2.1MB/s
-  - 🇨🇦CA_1|1.9MB/s
-  - 🇨🇦CA_2|3.9MB/s
-  - 🇮🇪IE_1|3.6MB/s
+  - 🇺🇸US_8|2.5MB/s
+  - 🇩🇪DE_1|1.0MB/s
+  - 🇷🇴RO_speednode_0041
+  - 🇺🇸US_4|4.1MB/s
+  - 🇺🇸US_6|1.6MB/s
+  - 🇺🇸US_25|2.3MB/s
+  - 🇳🇱NL_6|2.9MB/s
+  - 🇺🇸US_10|3.3MB/s
+  - 🇺🇸US_12|1.2MB/s
+  - 🇳🇱NL_7|3.4MB/s
+  - 🇺🇸US_13|3.8MB/s
+  - 🇺🇸US_14|1.2MB/s
+  - 🇺🇸US_15|3.6MB/s
+  - 🇫🇷FR_3|3.1MB/s
+  - 🇩🇪DE_3|3.2MB/s
+  - 🇱🇻LV_1|1.9MB/s
+  - 🇳🇱NL_9|3.0MB/s
+  - 🇩🇪DE_5|2.1MB/s
+  - 🇩🇪DE_6|2.6MB/s
+  - 🇫🇷FR_5|2.6MB/s
+  - 🇺🇸US_22|2.7MB/s
+  - 🇳🇱NL_10|2.4MB/s
+  - '🇺🇸CN_127 #1'
+  - 🇳🇱NL_speednode_0004
+  - 🇳🇱NL_speednode_0007
+  - 🇳🇱NL_speednode_0009
+  - 🇳🇱NL_speednode_0010
+  - 🇺🇸US_speednode_0131
+  - 🇫🇷https://github.com/*********-*...
+  - '[www.v2nodes.com] vless-IT-1... #1'
+  - '[www.v2nodes.com] vless-IT-2... #2'
+  - 🇳🇱NL_1|2.3MB/s
+  - 🇺🇸US_8|3.8MB/s
+  - 🇺🇸US_11|3.2MB/s
+  - 🇺🇸US_12|2.8MB/s
+  - 🇺🇸US_13|3.4MB/s
+  - 🇺🇸US_14|2.2MB/s
+  - 🇫🇷FR_1|1.6MB/s
+  - 🇮🇪IE_2|1.3MB/s
+  - 🇫🇷FR_2|3.2MB/s
+  - 🇺🇸US_15|1.5MB/s
+  - 🇷🇴RO_3|1.8MB/s
+  - 🇮🇹IT_1|1.6MB/s
+  - 🇫🇷FR_4|2.2MB/s
+  - 🇩🇪DE_6|2.7MB/s
+  - 🇸🇪SE_2|2.1MB/s
+  - 🇺🇸US_19|1.6MB/s
+  - 🇩🇪DE_8|3.8MB/s
+  - 🇺🇸US_22|1.2MB/s
+  - 🇳🇱NL_12|2.2MB/s
+  - '[www.v2nodes.com] vless-IT-2...#2'
+  - 🇷🇺RU_1|3.2MB/s
+  - 🇳🇱NL_6|4.6MB/s
+  - 🇺🇸US_5|3.1MB/s
+  - 🇷🇴RO_9|2.6MB/s
+  - 🇷🇺DE_10|3.4MB/s
+  - 🇪🇸ES_2|1.7MB/s
+  - 🇺🇸US_10|1.1MB/s
+  - 🇺🇸US_13|1.7MB/s
+  - 🇺🇸US_15|2.2MB/s
+  - '[www.v2nodes.com] vless-IT-2...#3'
+  - 美国 CloudFlare节点 3
+  - '[www.v2nodes.com] vless-ES-2...'
+  - 🇯🇵JP-154.36.158.197-0426
+  - '[www.v2nodes.com] vless- #7'
+  - '🇦🇹[www.v2nodes.com] trojan-FR-... #12'
+  - '[www.v2nodes.com] vless-PL-7...'
+  - '🇮🇹意大利 | ITA #2'
+  - 🇮🇹[www.v2nodes.com] ss-IT-1602...
+  - '🇮🇹意大利 | ITA #1'
+  - 美国 CloudFlare节点#5
+  - 🇳🇱美国 V2CROSS.COM
+  - '🇩🇪Telegram@vpnjey #1'
+  - '[www.v2nodes.com] vless-HK #1'
 - name: ♻️ 自动选择
   type: url-test
   proxies:
-  - 🇭🇰香港
+  - 🇮🇹@appsooner کانال تلگرام 🕊️
+  - 🇮🇹YFZ 117 @Outline_Vpn
+  - '🇮🇹Channel : @Daily_Configs 2'
+  - 🇮🇹@FarazV2ray 2
+  - 🇮🇹@FarazV2ray 3
+  - 🇮🇹@FarazV2ray 4
+  - 🇮🇹@FarazV2ray 5
+  - 其他-002
   - 🇩🇪德国-001 |1.6MB/s
-  - 🇩🇪德国-002 |594KB/s
+  - 🇯🇵日本-001
   - 🇦🇺澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
   - 🇷🇴罗马尼亚-001 |3.3MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 🇷🇴罗马尼亚-002 |2.3MB/s|TK-RO|GPT⁺-RO|GM-RO
@@ -891,16 +1149,15 @@ proxy-groups:
   - 🇷🇴罗马尼亚-018 |586KB/s
   - 🇷🇴罗马尼亚-019 |557KB/s
   - 🇷🇴罗马尼亚-020 |554KB/s
-  - 🇺🇸美国-002 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 🇺🇸美国-003 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 🇺🇸美国-004 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 🇺🇸美国-005 |1.0MB/s|TK-US|GPT⁺-US
+  - 🇺🇸美国-001 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 🇺🇸美国-002 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 🇺🇸美国-003 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 🇺🇸美国-004 |1.0MB/s|TK-US|GPT⁺-US
   - 🇳🇱荷兰-001 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 🇳🇱荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 🇳🇱荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
   - 🇳🇱荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 🇸🇬其他-006 |554KB/s
-  - 🇰🇷韩国-001 |3.9MB/s
+  - 🇺🇸美国-005
   - 🇺🇸香港-021 |819KB/s
   - 🇱🇻拉脱维亚-001 |2.0MB/s|TK-LV|GPT⁺-LV|GM-LV
   - 🇫🇷法国-003 |2.3MB/s|GPT⁺-FR
@@ -909,74 +1166,87 @@ proxy-groups:
   - 🇺🇸美国-022 |2.4MB/s|TK-US|YT-US|GPT-US|GM-US
   - 🇺🇸美国-024 |2.0MB/s|TK-US|YT-US|GPT⁺-US
   - 🇳🇱荷兰-001 |2.5MB/s|GPT⁺-NL
-  - 🇪🇸西班牙-001 |1.6MB/s|TK-ES|GPT⁺-ES|GM-ES
-  - 🇳🇱NL-193.169.239.76-0162
-  - 🇦🇺AU-82.117.225.56-0507
-  - 🇭🇰HK-194.99.79.214-6331
-  - 🇦🇺AU-82.117.225.216-0504
-  - 🇭🇰HK-185.244.208.176-0173
-  - 🇭🇰HK-185.14.47.56-0174
-  - 🇳🇱NL-193.169.239.146-0176
-  - 🇭🇰HK-185.244.208.69-0177
-  - 🇳🇱NL-89.39.70.120-0178
-  - 🇵🇱PL-202.78.163.172-0180
-  - 🇭🇰HK-185.244.208.210-0181
-  - 🇳🇱NL-79.133.126.235-0182
-  - 🇵🇱PL-202.78.163.47-0184
-  - 🇦🇺AU-87.121.33.14-0186
-  - 🇵🇱PL-202.78.163.237-0187
-  - 🇭🇰HK-185.14.47.101-0213
-  - 🇵🇱PL-202.78.163.164-0214
-  - 🇳🇱NL-89.39.70.9-0222
+  - '@mehrosaboran'
+  - '@FarazV2ray 2 2'
+  - '@iranping24'
+  - 'Telegram : @Daily_Configs 2'
+  - 'Channel : @Daily_Configs 2'
   - 🇯🇵JP-18.179.203.229-0203
-  - 🇸🇬JP_3|2.3MB/s
   - 🇵🇱LU_1|2.6MB/s
-  - 🇯🇵FR_3|3.3MB/s
-  - 🇸🇬JP_speednode_0011
-  - 🇸🇬KR_speednode_0012
-  - 🇺🇸KR_speednode_0013
-  - 🇸🇬KR-13.125.239.182-0519
-  - 🇯🇵_US_美国 3
-  - 🇰🇷_FR_法国#2
-  - 🇯🇵_FR_法国_1
-  - 🇰🇷_DE_德国_1
-  - 🇰🇷_DE_德国_2
-  - 🇰🇷_DE_德国_3
-  - 🇯🇵_US_美国_4 2
-  - 🇰🇷IE_speednode_0009
-  - 🇸🇬JP-13.231.232.184-6020
-  - 🇯🇵JP-3.113.1.131-6203
-  - 🇰🇷JP-54.249.34.120-6213
-  - 🇯🇵JP-43.207.139.153-6238
-  - 🇯🇵JP-52.198.25.180-6207
-  - 🇸🇬JP-13.230.118.96-6204
-  - 🇸🇬JP-18.181.175.120-6214
-  - 🇯🇵JP-52.196.121.8-6211
-  - 🇸🇬KR-54.180.228.238-6082
-  - 🇯🇵KR-43.201.46.108-6243
-  - 🇺🇸KR-3.36.131.218-6222
-  - 🇰🇷KR-43.201.56.44-6237
-  - 🇰🇷KR-3.36.59.34-6221
-  - 🇩🇪SG-54.255.35.23-6228
-  - 🇫🇷FR-162.19.192.89-0528
-  - 🇫🇷FR-95.170.13.47-0122
-  - 🇨🇳CN-121.46.230.232-0132
-  - 🇹🇭TH-103.169.67.34-0110
-  - 🇲🇾MY-118.107.222.231-0148
-  - 🇰🇷KR-43.201.249.3-4637
-  - 🇺🇸_RU_俄罗斯->🇩🇪_DE_德国
-  - 🇬🇧_GB_英国
-  - 🇺🇸_NL_荷兰_1
-  - 🇨🇳_CN_中国->🇯🇵_JP_日本
-  - 🇫🇷FR-162.19.192.89-2109
-  - 🇮🇪_IE_爱尔兰
-  - 🇮🇳印度
-  - 🇬🇧GB_8|4.8MB/s
-  - 🇩🇪DE
-  - 🇺🇸NL_3|2.1MB/s
-  - 🇨🇦CA_1|1.9MB/s
-  - 🇨🇦CA_2|3.9MB/s
-  - 🇮🇪IE_1|3.6MB/s
+  - 🇺🇸US_8|2.5MB/s
+  - 🇩🇪DE_1|1.0MB/s
+  - 🇷🇴RO_speednode_0041
+  - 🇺🇸US_4|4.1MB/s
+  - 🇺🇸US_6|1.6MB/s
+  - 🇺🇸US_25|2.3MB/s
+  - 🇳🇱NL_6|2.9MB/s
+  - 🇺🇸US_10|3.3MB/s
+  - 🇺🇸US_12|1.2MB/s
+  - 🇳🇱NL_7|3.4MB/s
+  - 🇺🇸US_13|3.8MB/s
+  - 🇺🇸US_14|1.2MB/s
+  - 🇺🇸US_15|3.6MB/s
+  - 🇫🇷FR_3|3.1MB/s
+  - 🇩🇪DE_3|3.2MB/s
+  - 🇱🇻LV_1|1.9MB/s
+  - 🇳🇱NL_9|3.0MB/s
+  - 🇩🇪DE_5|2.1MB/s
+  - 🇩🇪DE_6|2.6MB/s
+  - 🇫🇷FR_5|2.6MB/s
+  - 🇺🇸US_22|2.7MB/s
+  - 🇳🇱NL_10|2.4MB/s
+  - '🇺🇸CN_127 #1'
+  - 🇳🇱NL_speednode_0004
+  - 🇳🇱NL_speednode_0007
+  - 🇳🇱NL_speednode_0009
+  - 🇳🇱NL_speednode_0010
+  - 🇺🇸US_speednode_0131
+  - 🇫🇷https://github.com/*********-*...
+  - '[www.v2nodes.com] vless-IT-1... #1'
+  - '[www.v2nodes.com] vless-IT-2... #2'
+  - 🇳🇱NL_1|2.3MB/s
+  - 🇺🇸US_8|3.8MB/s
+  - 🇺🇸US_11|3.2MB/s
+  - 🇺🇸US_12|2.8MB/s
+  - 🇺🇸US_13|3.4MB/s
+  - 🇺🇸US_14|2.2MB/s
+  - 🇫🇷FR_1|1.6MB/s
+  - 🇮🇪IE_2|1.3MB/s
+  - 🇫🇷FR_2|3.2MB/s
+  - 🇺🇸US_15|1.5MB/s
+  - 🇷🇴RO_3|1.8MB/s
+  - 🇮🇹IT_1|1.6MB/s
+  - 🇫🇷FR_4|2.2MB/s
+  - 🇩🇪DE_6|2.7MB/s
+  - 🇸🇪SE_2|2.1MB/s
+  - 🇺🇸US_19|1.6MB/s
+  - 🇩🇪DE_8|3.8MB/s
+  - 🇺🇸US_22|1.2MB/s
+  - 🇳🇱NL_12|2.2MB/s
+  - '[www.v2nodes.com] vless-IT-2...#2'
+  - 🇷🇺RU_1|3.2MB/s
+  - 🇳🇱NL_6|4.6MB/s
+  - 🇺🇸US_5|3.1MB/s
+  - 🇷🇴RO_9|2.6MB/s
+  - 🇷🇺DE_10|3.4MB/s
+  - 🇪🇸ES_2|1.7MB/s
+  - 🇺🇸US_10|1.1MB/s
+  - 🇺🇸US_13|1.7MB/s
+  - 🇺🇸US_15|2.2MB/s
+  - '[www.v2nodes.com] vless-IT-2...#3'
+  - 美国 CloudFlare节点 3
+  - '[www.v2nodes.com] vless-ES-2...'
+  - 🇯🇵JP-154.36.158.197-0426
+  - '[www.v2nodes.com] vless- #7'
+  - '🇦🇹[www.v2nodes.com] trojan-FR-... #12'
+  - '[www.v2nodes.com] vless-PL-7...'
+  - '🇮🇹意大利 | ITA #2'
+  - 🇮🇹[www.v2nodes.com] ss-IT-1602...
+  - '🇮🇹意大利 | ITA #1'
+  - 美国 CloudFlare节点#5
+  - 🇳🇱美国 V2CROSS.COM
+  - '🇩🇪Telegram@vpnjey #1'
+  - '[www.v2nodes.com] vless-HK #1'
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
