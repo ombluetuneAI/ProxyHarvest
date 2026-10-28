@@ -378,12 +378,6 @@ proxies:
   port: 9002
   skip-cert-verify: true
   tls: true
-- name: 美国-022 |2.4MB/s|TK-US|YT-US|GPT-US|GM-US
-  type: http
-  server: 129.212.181.253
-  port: 8443
-  skip-cert-verify: true
-  tls: true
 - name: 美国-024 |2.0MB/s|TK-US|YT-US|GPT⁺-US
   type: http
   server: 38.28.193.1
@@ -448,7 +442,6 @@ proxy-groups:
   - 法国-003 |2.3MB/s|GPT⁺-FR
   - 美国-017 |3.1MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-018 |3.0MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-022 |2.4MB/s|TK-US|YT-US|GPT-US|GM-US
   - 美国-024 |2.0MB/s|TK-US|YT-US|GPT⁺-US
   - 荷兰-001 |2.5MB/s|GPT⁺-NL
 - name: ♻️ 自动选择
@@ -500,7 +493,6 @@ proxy-groups:
   - 法国-003 |2.3MB/s|GPT⁺-FR
   - 美国-017 |3.1MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-018 |3.0MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-022 |2.4MB/s|TK-US|YT-US|GPT-US|GM-US
   - 美国-024 |2.0MB/s|TK-US|YT-US|GPT⁺-US
   - 荷兰-001 |2.5MB/s|GPT⁺-NL
   url: http://www.gstatic.com/generate_204
