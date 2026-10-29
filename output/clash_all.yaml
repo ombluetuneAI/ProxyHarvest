@@ -19,6 +19,20 @@ dns:
     geoip-code: CN
 proxies:
 - name: 其他-001
+  type: vless
+  network: xhttp
+  uuid: abca037b-bee5-41cc-a888-0668e4c66176
+  server: 823bcb90.con.fernarchive.online
+  servername: 823bcb90.con.fernarchive.online
+  port: 443
+  tls: true
+  udp: true
+  client-fingerprint: chrome
+  xhttp-opts:
+    host: 823bcb90.con.fernarchive.online
+    mode: auto
+    path: /conv4/stream/77dd2aeeb94331fbff325bb48850392b
+- name: 其他-002
   type: vmess
   network: ws
   uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
@@ -32,17 +46,6 @@ proxies:
     headers:
       Host: guanwang.awsno.com
     path: /hls/cctv5phd.m3u8
-- name: 其他-002
-  type: trojan
-  network: ws
-  server: www.calmlunch.com
-  port: 443
-  password: humanity
-  sni: www.calmlunch.com
-  ws-opts:
-    headers:
-      Host: www.calmlunch.com
-    path: /assignment
 - name: 德国-001 |1.6MB/s
   type: hysteria
   server: 5.83.129.90
@@ -210,19 +213,19 @@ proxies:
   port: 443
   skip-cert-verify: true
   tls: true
+- name: 美国-002 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  type: http
+  server: 209.148.53.153
+  port: 8090
+  skip-cert-verify: true
+  tls: true
 - name: 美国-003 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   type: http
   server: 138.199.35.215
   port: 9002
   skip-cert-verify: true
   tls: true
-- name: 美国-004 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  type: http
-  server: 209.148.53.153
-  port: 8090
-  skip-cert-verify: true
-  tls: true
-- name: 美国-005 |1.0MB/s|TK-US|GPT⁺-US
+- name: 美国-004 |1.0MB/s|TK-US|GPT⁺-US
   type: http
   server: 138.199.35.198
   port: 9002
@@ -266,18 +269,6 @@ proxies:
   type: trojan
   network: ws
   server: 185.220.100.168
-  port: 443
-  password: humanity
-  skip-cert-verify: false
-  sni: www.calmlunch.com
-  ws-opts:
-    headers:
-      Host: www.calmlunch.com
-    path: /assignment
-- name: 其他-002#2
-  type: trojan
-  network: ws
-  server: 104.19.229.21
   port: 443
   password: humanity
   skip-cert-verify: false
@@ -421,16 +412,15 @@ proxy-groups:
   - 罗马尼亚-019 |557KB/s
   - 罗马尼亚-020 |554KB/s
   - 美国-001 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 美国-002 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-003 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-004 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-005 |1.0MB/s|TK-US|GPT⁺-US
+  - 美国-004 |1.0MB/s|TK-US|GPT⁺-US
   - 荷兰-001 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
   - 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 日本-001
   - 德国-003
-  - 其他-002#2
   - 美国-005
   - 香港-021 |819KB/s
   - 以色列 002
@@ -472,16 +462,15 @@ proxy-groups:
   - 罗马尼亚-019 |557KB/s
   - 罗马尼亚-020 |554KB/s
   - 美国-001 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 美国-002 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-003 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-004 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-005 |1.0MB/s|TK-US|GPT⁺-US
+  - 美国-004 |1.0MB/s|TK-US|GPT⁺-US
   - 荷兰-001 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
   - 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 日本-001
   - 德国-003
-  - 其他-002#2
   - 美国-005
   - 香港-021 |819KB/s
   - 以色列 002
