@@ -18,20 +18,6 @@ dns:
     geoip: true
     geoip-code: CN
 proxies:
-- name: 其他-001
-  type: vless
-  network: xhttp
-  uuid: abca037b-bee5-41cc-a888-0668e4c66176
-  server: 823bcb90.con.fernarchive.online
-  servername: 823bcb90.con.fernarchive.online
-  port: 443
-  tls: true
-  udp: true
-  client-fingerprint: chrome
-  xhttp-opts:
-    host: 823bcb90.con.fernarchive.online
-    mode: auto
-    path: /conv4/stream/77dd2aeeb94331fbff325bb48850392b
 - name: 其他-002
   type: vmess
   network: ws
@@ -387,7 +373,6 @@ proxy-groups:
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - 其他-001
   - 其他-002
   - 德国-001 |1.6MB/s
   - 澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
@@ -437,7 +422,6 @@ proxy-groups:
 - name: ♻️ 自动选择
   type: url-test
   proxies:
-  - 其他-001
   - 其他-002
   - 德国-001 |1.6MB/s
   - 澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
