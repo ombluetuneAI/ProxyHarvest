@@ -32,20 +32,6 @@ proxies:
     headers:
       Host: guanwang.awsno.com
     path: /hls/cctv5phd.m3u8
-- name: 德国-001 |1.6MB/s
-  type: hysteria
-  server: 5.83.129.90
-  port: 54177
-  skip-cert-verify: true
-  udp: true
-  sni: apple.com
-  alpn:
-  - h3
-  auth-str: dongtaiwang.com
-  auth_str: dongtaiwang.com
-  down: 1000
-  protocol: udp
-  up: 500
 - name: 澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
   type: http
   server: 159.13.44.228
@@ -374,7 +360,6 @@ proxy-groups:
   - ♻️ 自动选择
   - DIRECT
   - 其他-002
-  - 德国-001 |1.6MB/s
   - 澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
   - 罗马尼亚-001 |1020KB/s
   - 罗马尼亚-002 |3.3MB/s|TK-RO|GPT⁺-RO|GM-RO
@@ -423,7 +408,6 @@ proxy-groups:
   type: url-test
   proxies:
   - 其他-002
-  - 德国-001 |1.6MB/s
   - 澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
   - 罗马尼亚-001 |1020KB/s
   - 罗马尼亚-002 |3.3MB/s|TK-RO|GPT⁺-RO|GM-RO
