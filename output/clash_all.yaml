@@ -18,22 +18,6 @@ dns:
     geoip: true
     geoip-code: CN
 proxies:
-- name: 其他-001
-  type: vless
-  network: ws
-  uuid: 26524cce-d514-4014-a426-365fb266a14d
-  server: 172.66.133.28
-  servername: xy1ej.stream-node-us.danfeng.qzz.io
-  port: 443
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  ws-opts:
-    headers:
-      Host: xy1ej.stream-node-us.danfeng.qzz.io
-    path: /danfeng?ed=2560
-  client-fingerprint: firefox
 - name: 其他-003
   type: vless
   network: tcp
@@ -47,38 +31,7 @@ proxies:
   tfo: false
   client-fingerprint: firefox
   flow: xtls-rprx-vision
-- name: 其他-005
-  type: vless
-  network: ws
-  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
-  server: 104.16.111.202
-  servername: jp3.yohototo.top
-  port: 443
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  ws-opts:
-    headers:
-      Host: jp3.yohototo.top
-    path: /tyxyws
-- name: 其他-006
-  type: vless
-  network: ws
-  uuid: e56059f1-5a1a-4d0a-a2d0-58ecb4eb2f3f
-  server: 172.66.47.45
-  servername: ezaccess-project-f62c30.pages.dev
-  port: 443
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  ws-opts:
-    headers:
-      Host: ezaccess-project-f62c30.pages.dev
-    path: /eyJqdW5rIjoiZWlPODVjTnhnaSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0
-  client-fingerprint: chrome
-- name: 德国-002 |1.6MB/s
+- name: 德国-001 |1.6MB/s
   type: hysteria
   server: 5.83.129.90
   port: 54177
@@ -130,14 +83,21 @@ proxies:
   skip-cert-verify: true
   tls: true
   sni: www.bing.com
-- name: 罗马尼亚-002 |1.4MB/s
+- name: 罗马尼亚-002 |2.3MB/s|TK-RO|GPT⁺-RO|GM-RO
+  type: http
+  server: 193.176.84.17
+  port: 9002
+  skip-cert-verify: true
+  tls: true
+  sni: www.bing.com
+- name: 罗马尼亚-003 |1.4MB/s
   type: http
   server: 193.176.84.27
   port: 9002
   skip-cert-verify: true
   tls: true
   sni: www.bing.com
-- name: 罗马尼亚-003 |1.3MB/s
+- name: 罗马尼亚-004 |1.3MB/s
   type: http
   server: 193.176.84.36
   port: 9002
@@ -145,139 +105,16 @@ proxies:
   tls: true
   udp: true
   sni: www.bing.com
-- name: 罗马尼亚-004 |1.2MB/s
+- name: 罗马尼亚-005 |1.2MB/s
   type: http
   server: 193.176.84.32
   port: 9002
   skip-cert-verify: true
   tls: true
   sni: www.bing.com
-- name: 罗马尼亚-005 |1.1MB/s
+- name: 罗马尼亚-006 |1.1MB/s
   type: http
   server: 193.176.84.40
-  port: 9002
-  skip-cert-verify: true
-  tls: true
-  sni: www.bing.com
-- name: 罗马尼亚-006 |1.0MB/s
-  type: http
-  server: 193.176.84.26
-  port: 9002
-  skip-cert-verify: true
-  tls: true
-  sni: www.bing.com
-- name: 罗马尼亚-007 |1020KB/s
-  type: http
-  server: 193.176.84.22
-  port: 9002
-  skip-cert-verify: true
-  tls: true
-  sni: www.bing.com
-- name: 罗马尼亚-008 |943KB/s
-  type: http
-  server: 193.176.84.34
-  port: 9002
-  skip-cert-verify: true
-  tls: true
-  sni: www.bing.com
-- name: 罗马尼亚-009 |891KB/s
-  type: http
-  server: 193.176.84.31
-  port: 9002
-  skip-cert-verify: true
-  tls: true
-  sni: www.bing.com
-- name: 罗马尼亚-010 |768KB/s
-  type: http
-  server: 193.176.84.24
-  port: 9002
-  skip-cert-verify: true
-  tls: true
-  sni: www.bing.com
-- name: 罗马尼亚-011 |731KB/s
-  type: http
-  server: 193.176.84.19
-  port: 9002
-  skip-cert-verify: true
-  tls: true
-  sni: www.bing.com
-- name: 罗马尼亚-012 |586KB/s
-  type: http
-  server: 193.176.84.25
-  port: 9002
-  skip-cert-verify: true
-  tls: true
-  sni: www.bing.com
-- name: 罗马尼亚-013 |557KB/s
-  type: http
-  server: 193.176.84.39
-  port: 9002
-  skip-cert-verify: true
-  tls: true
-  sni: www.bing.com
-- name: 美国-001
-  type: vless
-  network: ws
-  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
-  server: 63.141.128.30
-  port: 8880
-  ws-opts:
-    headers:
-      Host: vms.lifetime42.workers.dev
-    path: /
-- name: 美国-002 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  type: http
-  server: 38.28.193.188
-  port: 443
-  skip-cert-verify: true
-  tls: true
-- name: 美国-003 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  type: http
-  server: 209.148.53.153
-  port: 8090
-  skip-cert-verify: true
-  tls: true
-- name: 荷兰-001 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
-  type: http
-  server: 84.17.47.150
-  port: 9002
-  skip-cert-verify: true
-  tls: true
-- name: 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL
-  type: http
-  server: 51.159.225.196
-  port: 23856
-  skip-cert-verify: true
-  tls: true
-- name: 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
-  type: http
-  server: 5.255.118.82
-  port: 443
-  skip-cert-verify: true
-  tls: true
-- name: 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
-  type: http
-  server: 84.17.47.147
-  port: 9002
-  skip-cert-verify: true
-  tls: true
-- name: 其他-002#2
-  type: vmess
-  network: ws
-  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
-  server: guanwang.awsno.com
-  port: 443
-  skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: guanwang.awsno.com
-    path: /hls/cctv5phd.m3u8
-- name: 罗马尼亚-003 |2.3MB/s|TK-RO|GPT⁺-RO|GM-RO
-  type: http
-  server: 193.176.84.17
   port: 9002
   skip-cert-verify: true
   tls: true
@@ -289,9 +126,23 @@ proxies:
   skip-cert-verify: true
   tls: true
   sni: www.bing.com
-- name: 罗马尼亚-010 |1.0MB/s
+- name: 罗马尼亚-008 |1.0MB/s
+  type: http
+  server: 193.176.84.26
+  port: 9002
+  skip-cert-verify: true
+  tls: true
+  sni: www.bing.com
+- name: 罗马尼亚-009 |1.0MB/s
   type: http
   server: 193.176.84.23
+  port: 9002
+  skip-cert-verify: true
+  tls: true
+  sni: www.bing.com
+- name: 罗马尼亚-010 |1020KB/s
+  type: http
+  server: 193.176.84.22
   port: 9002
   skip-cert-verify: true
   tls: true
@@ -299,6 +150,34 @@ proxies:
 - name: 罗马尼亚-011 |968KB/s
   type: http
   server: 193.176.84.37
+  port: 9002
+  skip-cert-verify: true
+  tls: true
+  sni: www.bing.com
+- name: 罗马尼亚-012 |943KB/s
+  type: http
+  server: 193.176.84.34
+  port: 9002
+  skip-cert-verify: true
+  tls: true
+  sni: www.bing.com
+- name: 罗马尼亚-013 |891KB/s
+  type: http
+  server: 193.176.84.31
+  port: 9002
+  skip-cert-verify: true
+  tls: true
+  sni: www.bing.com
+- name: 罗马尼亚-014 |768KB/s
+  type: http
+  server: 193.176.84.24
+  port: 9002
+  skip-cert-verify: true
+  tls: true
+  sni: www.bing.com
+- name: 罗马尼亚-015 |731KB/s
+  type: http
+  server: 193.176.84.19
   port: 9002
   skip-cert-verify: true
   tls: true
@@ -317,6 +196,20 @@ proxies:
   skip-cert-verify: true
   tls: true
   sni: www.bing.com
+- name: 罗马尼亚-018 |586KB/s
+  type: http
+  server: 193.176.84.25
+  port: 9002
+  skip-cert-verify: true
+  tls: true
+  sni: www.bing.com
+- name: 罗马尼亚-019 |557KB/s
+  type: http
+  server: 193.176.84.39
+  port: 9002
+  skip-cert-verify: true
+  tls: true
+  sni: www.bing.com
 - name: 罗马尼亚-020 |554KB/s
   type: http
   server: 193.176.84.38
@@ -324,10 +217,22 @@ proxies:
   skip-cert-verify: true
   tls: true
   sni: www.bing.com
-- name: 美国-003 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+- name: 美国-001 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   type: http
   server: 138.199.35.215
   port: 9002
+  skip-cert-verify: true
+  tls: true
+- name: 美国-002 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  type: http
+  server: 38.28.193.188
+  port: 443
+  skip-cert-verify: true
+  tls: true
+- name: 美国-003 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  type: http
+  server: 209.148.53.153
+  port: 8090
   skip-cert-verify: true
   tls: true
 - name: 美国-004 |1.0MB/s|TK-US|GPT⁺-US
@@ -336,16 +241,85 @@ proxies:
   port: 9002
   skip-cert-verify: true
   tls: true
-- name: 日本-001
-  type: trojan
-  network: tcp
-  server: 45.32.52.173
-  port: 8886
-  password: e26a229d-e8f2-4ff9-8c7d-58a9d83ee437
+- name: 美国-005
+  type: vless
+  network: ws
+  uuid: 6202b230-417c-4d8e-b624-0f71afa9c75d
+  server: 63.141.128.30
+  port: 8880
+  ws-opts:
+    headers:
+      Host: vms.lifetime42.workers.dev
+    path: /
+- name: 荷兰-001 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
+  type: http
+  server: 84.17.47.150
+  port: 9002
   skip-cert-verify: true
+  tls: true
+- name: 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
+  type: http
+  server: 5.255.118.82
+  port: 443
+  skip-cert-verify: true
+  tls: true
+- name: 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
+  type: http
+  server: 51.159.225.196
+  port: 23856
+  skip-cert-verify: true
+  tls: true
+- name: 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
+  type: http
+  server: 84.17.47.147
+  port: 9002
+  skip-cert-verify: true
+  tls: true
+- name: 其他-005
+  type: vless
+  network: ws
+  uuid: 4e4f1f70-5e56-4a76-bb9d-db087f4690c4
+  server: 104.16.111.202
+  servername: jp3.yohototo.top
+  port: 443
+  skip-cert-verify: false
+  tls: true
   udp: true
-  sni: 45.32.52.173
+  tfo: false
+  ws-opts:
+    headers:
+      Host: jp3.yohototo.top
+    path: /tyxyws
+- name: 其他-006
+  type: vless
+  network: ws
+  uuid: e56059f1-5a1a-4d0a-a2d0-58ecb4eb2f3f
+  server: 172.66.47.45
+  servername: ezaccess-project-f62c30.pages.dev
+  port: 443
+  skip-cert-verify: false
+  tls: true
+  udp: true
+  tfo: false
+  ws-opts:
+    headers:
+      Host: ezaccess-project-f62c30.pages.dev
+    path: /eyJqdW5rIjoiZWlPODVjTnhnaSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0
   client-fingerprint: chrome
+- name: 其他-002#2
+  type: vmess
+  network: ws
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  server: guanwang.awsno.com
+  port: 443
+  skip-cert-verify: true
+  tls: true
+  alterId: 0
+  cipher: auto
+  ws-opts:
+    headers:
+      Host: guanwang.awsno.com
+    path: /hls/cctv5phd.m3u8
 - name: 香港-021 |819KB/s
   type: http
   server: 154.26.192.123
@@ -435,45 +409,43 @@ proxy-groups:
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - 其他-001
   - 其他-003
-  - 其他-005
-  - 其他-006
-  - 德国-002 |1.6MB/s
+  - 德国-001 |1.6MB/s
   - 意大利-001
   - 新西兰-001
   - 澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
   - 罗马尼亚-001 |3.3MB/s|TK-RO|GPT⁺-RO|GM-RO
-  - 罗马尼亚-002 |1.4MB/s
-  - 罗马尼亚-003 |1.3MB/s
-  - 罗马尼亚-004 |1.2MB/s
-  - 罗马尼亚-005 |1.1MB/s
-  - 罗马尼亚-006 |1.0MB/s
-  - 罗马尼亚-007 |1020KB/s
-  - 罗马尼亚-008 |943KB/s
-  - 罗马尼亚-009 |891KB/s
-  - 罗马尼亚-010 |768KB/s
-  - 罗马尼亚-011 |731KB/s
-  - 罗马尼亚-012 |586KB/s
-  - 罗马尼亚-013 |557KB/s
-  - 美国-001
-  - 美国-002 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-003 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 荷兰-001 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL
-  - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 其他-002#2
-  - 罗马尼亚-003 |2.3MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 罗马尼亚-002 |2.3MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 罗马尼亚-003 |1.4MB/s
+  - 罗马尼亚-004 |1.3MB/s
+  - 罗马尼亚-005 |1.2MB/s
+  - 罗马尼亚-006 |1.1MB/s
   - 罗马尼亚-007 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
-  - 罗马尼亚-010 |1.0MB/s
+  - 罗马尼亚-008 |1.0MB/s
+  - 罗马尼亚-009 |1.0MB/s
+  - 罗马尼亚-010 |1020KB/s
   - 罗马尼亚-011 |968KB/s
+  - 罗马尼亚-012 |943KB/s
+  - 罗马尼亚-013 |891KB/s
+  - 罗马尼亚-014 |768KB/s
+  - 罗马尼亚-015 |731KB/s
   - 罗马尼亚-016 |639KB/s
   - 罗马尼亚-017 |622KB/s
+  - 罗马尼亚-018 |586KB/s
+  - 罗马尼亚-019 |557KB/s
   - 罗马尼亚-020 |554KB/s
-  - 美国-003 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 美国-001 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 美国-002 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 美国-003 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-004 |1.0MB/s|TK-US|GPT⁺-US
-  - 日本-001
+  - 美国-005
+  - 荷兰-001 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
+  - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
+  - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
+  - 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
+  - 其他-005
+  - 其他-006
+  - 其他-002#2
   - 香港-021 |819KB/s
   - 以色列 002
   - 美国 718
@@ -488,45 +460,43 @@ proxy-groups:
 - name: ♻️ 自动选择
   type: url-test
   proxies:
-  - 其他-001
   - 其他-003
-  - 其他-005
-  - 其他-006
-  - 德国-002 |1.6MB/s
+  - 德国-001 |1.6MB/s
   - 意大利-001
   - 新西兰-001
   - 澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
   - 罗马尼亚-001 |3.3MB/s|TK-RO|GPT⁺-RO|GM-RO
-  - 罗马尼亚-002 |1.4MB/s
-  - 罗马尼亚-003 |1.3MB/s
-  - 罗马尼亚-004 |1.2MB/s
-  - 罗马尼亚-005 |1.1MB/s
-  - 罗马尼亚-006 |1.0MB/s
-  - 罗马尼亚-007 |1020KB/s
-  - 罗马尼亚-008 |943KB/s
-  - 罗马尼亚-009 |891KB/s
-  - 罗马尼亚-010 |768KB/s
-  - 罗马尼亚-011 |731KB/s
-  - 罗马尼亚-012 |586KB/s
-  - 罗马尼亚-013 |557KB/s
-  - 美国-001
-  - 美国-002 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 美国-003 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 荷兰-001 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL
-  - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 其他-002#2
-  - 罗马尼亚-003 |2.3MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 罗马尼亚-002 |2.3MB/s|TK-RO|GPT⁺-RO|GM-RO
+  - 罗马尼亚-003 |1.4MB/s
+  - 罗马尼亚-004 |1.3MB/s
+  - 罗马尼亚-005 |1.2MB/s
+  - 罗马尼亚-006 |1.1MB/s
   - 罗马尼亚-007 |1.1MB/s|TK-RO|GPT⁺-RO|GM-RO
-  - 罗马尼亚-010 |1.0MB/s
+  - 罗马尼亚-008 |1.0MB/s
+  - 罗马尼亚-009 |1.0MB/s
+  - 罗马尼亚-010 |1020KB/s
   - 罗马尼亚-011 |968KB/s
+  - 罗马尼亚-012 |943KB/s
+  - 罗马尼亚-013 |891KB/s
+  - 罗马尼亚-014 |768KB/s
+  - 罗马尼亚-015 |731KB/s
   - 罗马尼亚-016 |639KB/s
   - 罗马尼亚-017 |622KB/s
+  - 罗马尼亚-018 |586KB/s
+  - 罗马尼亚-019 |557KB/s
   - 罗马尼亚-020 |554KB/s
-  - 美国-003 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 美国-001 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 美国-002 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 美国-003 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-004 |1.0MB/s|TK-US|GPT⁺-US
-  - 日本-001
+  - 美国-005
+  - 荷兰-001 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
+  - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
+  - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
+  - 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
+  - 其他-005
+  - 其他-006
+  - 其他-002#2
   - 香港-021 |819KB/s
   - 以色列 002
   - 美国 718
