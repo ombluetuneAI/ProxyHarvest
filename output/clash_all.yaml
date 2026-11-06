@@ -18,6 +18,19 @@ dns:
     geoip: true
     geoip-code: CN
 proxies:
+- name: 其他-002
+  type: vless
+  network: ws
+  uuid: 50414e45-4c5f-5a45-5553-52108a2d5224
+  server: 104.27.88.172
+  servername: web-app-nr6wpa.app-tp57xz.workers.dev
+  port: 80
+  tls: false
+  ws-opts:
+    headers:
+      Host: web-app-nr6wpa.app-tp57xz.workers.dev
+    path: /api/ws
+  encryption: none
 - name: 其他-003
   type: vless
   network: tcp
@@ -306,20 +319,6 @@ proxies:
       Host: ezaccess-project-f62c30.pages.dev
     path: /eyJqdW5rIjoiZWlPODVjTnhnaSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0
   client-fingerprint: chrome
-- name: 其他-002#2
-  type: vmess
-  network: ws
-  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
-  server: guanwang.awsno.com
-  port: 443
-  skip-cert-verify: true
-  tls: true
-  alterId: 0
-  cipher: auto
-  ws-opts:
-    headers:
-      Host: guanwang.awsno.com
-    path: /hls/cctv5phd.m3u8
 - name: 香港-021 |819KB/s
   type: http
   server: 154.26.192.123
@@ -409,6 +408,7 @@ proxy-groups:
   proxies:
   - ♻️ 自动选择
   - DIRECT
+  - 其他-002
   - 其他-003
   - 德国-001 |1.6MB/s
   - 意大利-001
@@ -445,7 +445,6 @@ proxy-groups:
   - 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 其他-005
   - 其他-006
-  - 其他-002#2
   - 香港-021 |819KB/s
   - 以色列 002
   - 美国 718
@@ -460,6 +459,7 @@ proxy-groups:
 - name: ♻️ 自动选择
   type: url-test
   proxies:
+  - 其他-002
   - 其他-003
   - 德国-001 |1.6MB/s
   - 意大利-001
@@ -496,7 +496,6 @@ proxy-groups:
   - 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 其他-005
   - 其他-006
-  - 其他-002#2
   - 香港-021 |819KB/s
   - 以色列 002
   - 美国 718
