@@ -18,6 +18,20 @@ dns:
     geoip: true
     geoip-code: CN
 proxies:
+- name: 🇮🇹意大利
+  server: 202.50.253.63
+  port: 19999
+  type: ss
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
+- name: 🇮🇹意大利2
+  server: 202.50.253.27
+  port: 19999
+  type: ss
+  cipher: aes-256-gcm
+  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+  udp: true
 - name: 🇩🇪德国-001 |1.6MB/s
   server: 5.83.129.90
   port: 54177
@@ -33,12 +47,6 @@ proxies:
   skip-cert-verify: true
   alpn:
   - h3
-- name: 🇦🇺澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
-  server: 159.13.44.228
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
 - name: 🇷🇴罗马尼亚-001 |3.3MB/s|TK-RO|GPT⁺-RO|GM-RO
   server: 193.176.84.35
   port: 9002
@@ -82,13 +90,13 @@ proxies:
   tls: true
   skip-cert-verify: true
 - name: 🇷🇴罗马尼亚-008 |1.0MB/s
-  server: 193.176.84.23
+  server: 193.176.84.26
   port: 9002
   type: http
   tls: true
   skip-cert-verify: true
 - name: 🇷🇴罗马尼亚-009 |1.0MB/s
-  server: 193.176.84.26
+  server: 193.176.84.23
   port: 9002
   type: http
   tls: true
@@ -165,21 +173,21 @@ proxies:
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇺🇸美国-002 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  server: 38.28.193.188
-  port: 443
-  type: http
-  tls: true
-  skip-cert-verify: true
-- name: 🇺🇸美国-003 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+- name: 🇺🇸美国-002 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   server: 209.148.53.153
   port: 8090
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇺🇸美国-004 |1.0MB/s|TK-US|GPT⁺-US
+- name: 🇺🇸美国-003 |1.0MB/s|TK-US|GPT⁺-US
   server: 138.199.35.198
   port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇺🇸美国-004 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  server: 38.28.193.188
+  port: 443
   type: http
   tls: true
   skip-cert-verify: true
@@ -189,15 +197,15 @@ proxies:
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇳🇱荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
-  server: 5.255.118.82
-  port: 443
+- name: 🇳🇱荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL
+  server: 51.159.225.196
+  port: 23856
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇳🇱荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
-  server: 51.159.225.196
-  port: 23856
+- name: 🇳🇱荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
+  server: 5.255.118.82
+  port: 443
   type: http
   tls: true
   skip-cert-verify: true
@@ -245,18 +253,19 @@ proxies:
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇮🇹@vpnbaz🍂
-  server: 202.50.253.63
-  port: 19999
-  type: ss
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: 🇮🇹YFZ 117 @Outline_Vpn
-  server: 202.50.253.27
-  port: 19999
-  type: ss
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
+- name: 其他-006
+  server: 172.66.47.45
+  port: 443
+  type: vless
+  tls: true
+  uuid: e56059f1-5a1a-4d0a-a2d0-58ecb4eb2f3f
+  servername: ezaccess-project-f62c30.pages.dev
+  network: ws
+  ws-opts:
+    path: /eyJqdW5rIjoiZWlPODVjTnhnaSIsInByb3RvY29sIjoidmwiLCJtb2RlIjoicHJveHlpcCIsInBhbmVsSVBzIjpbXX0
+    headers:
+      Host: ezaccess-project-f62c30.pages.dev
+  skip-cert-verify: false
 - name: '🇮🇹Channel : @Daily_Configs 4'
   server: 202.50.253.45
   port: 19999
@@ -298,6 +307,42 @@ proxies:
   port: 44184
   type: trojan
   password: d050aca3-9df2-4461-90ec-92373c1d7636
+- name: 🇨🇭CH_1|2.6MB/s|R002-260618
+  server: 37.120.213.210
+  port: 9443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇳🇱NL_2|1.8MB/s
+  server: 149.36.51.157
+  port: 9443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇫🇷FR_2|1.5MB/s
+  server: 213.139.9.142
+  port: 9443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇬🇧GB_1|2.4MB/s
+  server: 84.17.50.193
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇨🇦CA_1|1.3MB/s
+  server: 206.223.183.13
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇷🇴RO_1|2.1MB/s
+  server: 135.136.1.2
+  port: 9443
+  type: http
+  tls: true
+  skip-cert-verify: true
 - name: 🇺🇸US_8|2.5MB/s
   server: 138.199.35.219
   port: 9002
@@ -306,15 +351,100 @@ proxies:
   password: 'null'
   tls: true
   skip-cert-verify: true
+- name: 🇳🇱NL_3|3.0MB/s
+  server: 149.36.51.161
+  port: 9443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇵🇱PL_1|3.6MB/s
+  server: 37.120.156.18
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇷🇸RS_1|2.8MB/s
+  server: 146.70.221.34
+  port: 443
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+- name: 🇧🇪BE_1|3.1MB/s
+  server: 146.70.123.98
+  port: 443
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+- name: 🇪🇪EE_1|2.7MB/s
+  server: 95.153.31.66
+  port: 9443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇺🇸US_3|1.5MB/s
+  server: 12.202.180.10
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇸🇪SE_1|2.9MB/s
+  server: 146.70.242.130
+  port: 443
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
 - name: 🇷🇴RO_speednode_0041
   server: 193.176.84.33
   port: 9002
   type: http
   tls: true
   skip-cert-verify: true
+- name: 🇮🇹IT_1|1.8MB/s
+  server: 185.183.105.146
+  port: 443
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+- name: 🇬🇧GB_2|3.1MB/s
+  server: 37.120.233.18
+  port: 443
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
 - name: 🇺🇸US_4|4.1MB/s
   server: 138.199.35.201
   port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇩🇪DE_2|1.6MB/s
+  server: 149.36.50.157
+  port: 443
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+- name: 🇦🇹AT_1|2.0MB/s
+  server: 146.70.244.2
+  port: 443
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+- name: 🇺🇸US_5|3.0MB/s
+  server: 38.95.111.226
+  port: 9443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: BA_1|2.4MB/s
+  server: 185.164.35.16
+  port: 443
   type: http
   tls: true
   skip-cert-verify: true
@@ -332,11 +462,24 @@ proxies:
   password: None
   tls: true
   skip-cert-verify: true
+- name: 🇮🇪IE_1|1.5MB/s
+  server: 149.88.96.1
+  port: 443
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
 - name: 🇺🇸US_10|3.3MB/s
   server: 138.199.35.220
   port: 9002
   type: http
   password: None
+  tls: true
+  skip-cert-verify: true
+- name: 🇺🇸US_11|2.9MB/s
+  server: 12.221.146.147
+  port: 443
+  type: http
   tls: true
   skip-cert-verify: true
 - name: 🇳🇱NL_7|3.4MB/s
@@ -371,6 +514,12 @@ proxies:
   type: http
   tls: true
   skip-cert-verify: true
+- name: 🇨🇦CA_2|1.3MB/s
+  server: 198.44.157.27
+  port: 9443
+  type: http
+  tls: true
+  skip-cert-verify: true
 - name: 🇱🇻LV_1|1.9MB/s
   server: 185.219.159.15
   port: 443
@@ -383,15 +532,89 @@ proxies:
   type: http
   tls: true
   skip-cert-verify: true
+- name: 🇩🇪DE_4|2.3MB/s
+  server: 79.127.156.177
+  port: 9443
+  type: http
+  tls: true
+  skip-cert-verify: true
 - name: 🇩🇪DE_5|2.1MB/s
   server: 158.173.154.2
   port: 9002
   type: http
   tls: true
   skip-cert-verify: true
+- name: 🇨🇦CA_4|3.8MB/s
+  server: 198.44.157.19
+  port: 9443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇱🇺LU_1|1.9MB/s
+  server: 185.221.132.242
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇺🇸US_17|1.2MB/s
+  server: 149.88.21.140
+  port: 9443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇨🇭CH_2|1.6MB/s
+  server: 31.7.62.50
+  port: 443
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+- name: 🇳🇴NO_1|2.7MB/s
+  server: 146.70.170.210
+  port: 9443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇬🇧GB_3|2.2MB/s
+  server: 212.102.63.1
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
 - name: 🇩🇪DE_6|2.6MB/s
   server: 158.173.154.5
   port: 9002
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇺🇸US_20|1.0MB/s|K001-260618
+  server: 149.34.248.65
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇺🇸US_21|2.1MB/s
+  server: 149.88.21.129
+  port: 443
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
+- name: 🇬🇧GB_5|3.8MB/s
+  server: 84.17.50.214
+  port: 9443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇨🇦CA_5|1.7MB/s
+  server: 206.223.183.16
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇬🇧GB_6|2.8MB/s
+  server: 212.102.63.61
+  port: 443
   type: http
   tls: true
   skip-cert-verify: true
@@ -583,6 +806,12 @@ proxies:
   skip-cert-verify: true
 - name: 🇫🇷FR_1|1.6MB/s
   server: 82.66.235.221
+  port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇩🇪DE_5|1.7MB/s
+  server: 79.127.156.177
   port: 443
   type: http
   tls: true
@@ -904,12 +1133,6 @@ proxies:
   password: None
   tls: true
   skip-cert-verify: true
-- name: 🇷🇺DE_10|3.4MB/s
-  server: 188.120.225.125
-  port: 8443
-  type: http
-  tls: true
-  skip-cert-verify: true
 - name: 🇨🇾CY_1|1.7MB/s
   server: 213.207.130.34
   port: 443
@@ -1001,6 +1224,13 @@ proxies:
   type: http
   tls: true
   skip-cert-verify: true
+- name: BA_1|2.3MB/s
+  server: 185.164.35.16
+  port: 9443
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
 - name: 🇺🇸US_5|2.6MB/s
   server: 121.127.34.82
   port: 443
@@ -1073,6 +1303,13 @@ proxies:
   type: http
   tls: true
   skip-cert-verify: true
+- name: 🇺🇸美国 | USA 6
+  server: starlink-ft.251313.xyz
+  port: 443
+  type: hysteria2
+  password: https://xship.top
+  sni: xship.top
+  skip-cert-verify: true
 - name: 🇫🇷FR_speednode_0009
   server: 83.206.1.225
   port: 8090
@@ -1091,6 +1328,12 @@ proxies:
   type: http
   username: 'null'
   password: 'null'
+  tls: true
+  skip-cert-verify: true
+- name: 🇱🇺LU_1|3.8MB/s
+  server: 185.221.132.226
+  port: 443
+  type: http
   tls: true
   skip-cert-verify: true
 - name: 🇨🇳HK_2|3.6MB/s
@@ -1119,6 +1362,12 @@ proxies:
   password: None
   tls: true
   skip-cert-verify: true
+- name: AL_2|2.0MB/s#2
+  server: 31.171.154.66
+  port: 9443
+  type: http
+  tls: true
+  skip-cert-verify: true
 - name: 🇩🇪DE_4|2.3MB/s#2
   server: 116.202.172.99
   port: 443
@@ -1128,6 +1377,12 @@ proxies:
 - name: 🇭🇺HU_1|1.9MB/s
   server: 146.70.203.18
   port: 443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇸🇪SE_1|2.6MB/s
+  server: 146.70.242.146
+  port: 9443
   type: http
   tls: true
   skip-cert-verify: true
@@ -1198,11 +1453,26 @@ proxies:
   skip-cert-verify: true
   alpn:
   - h3
-- name: 🇺🇸US_18|1.8MB/s
-  server: 69.55.49.177
-  port: 38182
-  type: socks5
+- name: 🇷🇺EE_1|2.9MB/s|K001-260618
+  server: 192.159.101.174
+  port: 9443
+  type: http
   password: None
+  tls: true
+  skip-cert-verify: true
+- name: 🇧🇬BG_1|2.6MB/s
+  server: 169.150.237.1
+  port: 9443
+  type: http
+  tls: true
+  skip-cert-verify: true
+- name: 🇺🇸US_16|2.4MB/s
+  server: 198.44.138.27
+  port: 9443
+  type: http
+  password: None
+  tls: true
+  skip-cert-verify: true
 - name: 🇺🇸US_19|1.9MB/s
   server: 162.244.227.36
   port: 443
@@ -1216,15 +1486,6 @@ proxies:
   type: http
   tls: true
   skip-cert-verify: true
-- name: CN_1|1.5MB/s
-  server: 162.159.192.2
-  port: 500
-  type: wireguard
-  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  private-key: +AYnqJYinZIJ6yZwIjmirctmPqzfctf6H2fTqywa/XM=
-  ip: 172.16.0.2/32
-  mtu: 1280
-  udp: true
 - name: 🇺🇸_US_美国_IPV4 (3)
   server: 198.200.57.142
   port: 22335
@@ -1296,15 +1557,6 @@ proxies:
   password: None
   tls: true
   skip-cert-verify: true
-- name: CN_1|1.1MB/s
-  server: 162.159.195.4
-  port: 2371
-  type: wireguard
-  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  private-key: CBMxaub4dG7Q9W91x4+lUCqtF9eV1BN+4osBfWZNXHs=
-  ip: 172.16.0.2/32
-  mtu: 1380
-  udp: true
 - name: 🇺🇸US_21|1.8MB/s
   server: 66.153.187.90
   port: 8090
@@ -1337,15 +1589,6 @@ proxies:
   type: http
   tls: true
   skip-cert-verify: true
-- name: CN_1|1.9MB/s
-  server: 162.159.192.2
-  port: 2408
-  type: wireguard
-  public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  private-key: oDBa7PDoBqN5gYRO5pL59noH6dQpXt40AETlDNlNtl8=
-  ip: 172.16.0.2/32
-  mtu: 1280
-  udp: true
 - name: 🇸🇬SG_1|2.7MB/s|K001-260618
   server: 159.223.41.216
   port: 9090
@@ -1374,18 +1617,6 @@ proxies:
   obfs: tls1.2_ticket_auth
   protocolparam: ''
   obfsparam: ''
-- name: 🇩🇪_DE_德国_IPV4#2
-  server: 191.44.112.170.sslip.io
-  port: 443
-  type: trojan
-  password: 46d221fa-e9b4-748c-4eae-019a88e42991
-  sni: orbylume.my.to
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /tvpn-trojan/bg
-    headers:
-      Host: orbylume.my.to
 - name: 机场推荐:dafei.de 美国 15_IPV4
   server: 172.67.190.164
   port: 443
@@ -1400,7 +1631,7 @@ proxies:
     path: /hls/cctv5phd.m3u8
     headers:
       Host: guanwang.awsno.com
-- name: 🇺🇸_US_美国_IPV4
+- name: 🇺🇸_US_美国_IPV4 2
   server: 137.175.82.43
   port: 20022
   type: hysteria
@@ -1448,15 +1679,14 @@ proxies:
   port: 9090
   type: http
   tls: false
-- name: ❓Other_1|1.5MB/s
-  server: 8.6.112.5
-  port: 955
+- name: CN_1|2.4MB/s
+  server: 162.159.192.1
+  port: 500
   type: wireguard
   public-key: bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=
-  private-key: eGpcqvonUvA7/m1lcaERbf2opGESbp375ieSliLc3WU=
+  private-key: cMxekgAnVSNb+rgOySV+74ogaJhqpJtShZaECZCY6k4=
   ip: 172.16.0.2/32
-  ipv6: 2606:4700:110:8af2:447b:a9b9:b420:ebff/128
-  mtu: 1420
+  mtu: 1280
   udp: true
 - name: CN_2|1.4MB/s
   server: 8.6.112.207
@@ -1487,20 +1717,21 @@ proxies:
   ip: 172.16.0.2/32
   mtu: 1280
   udp: true
-- name: 🇨🇳CN_5|2.8MB/s
-  server: 123.121.134.141
-  port: 8888
-  type: http
-  tls: false
-  skip-cert-verify: true
+- name: 🇺🇸US-157.254.38.210-2962
+  server: sclass-b1.catcat321.com
+  port: 20028
+  type: trojan
+  password: d7563108-615c-4338-a7bd-77f359869a4a
+  sni: hk.catxstar.com
 proxy-groups:
 - name: 🚀 节点选择
   type: select
   proxies:
   - ♻️ 自动选择
   - DIRECT
+  - 🇮🇹意大利
+  - 🇮🇹意大利2
   - 🇩🇪德国-001 |1.6MB/s
-  - 🇦🇺澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
   - 🇷🇴罗马尼亚-001 |3.3MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 🇷🇴罗马尼亚-002 |2.3MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 🇷🇴罗马尼亚-003 |1.4MB/s
@@ -1522,12 +1753,12 @@ proxy-groups:
   - 🇷🇴罗马尼亚-019 |557KB/s
   - 🇷🇴罗马尼亚-020 |554KB/s
   - 🇺🇸美国-001 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 🇺🇸美国-002 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 🇺🇸美国-003 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 🇺🇸美国-004 |1.0MB/s|TK-US|GPT⁺-US
+  - 🇺🇸美国-002 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 🇺🇸美国-003 |1.0MB/s|TK-US|GPT⁺-US
+  - 🇺🇸美国-004 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 🇳🇱荷兰-001 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 🇳🇱荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 🇳🇱荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
+  - 🇳🇱荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL
+  - 🇳🇱荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 🇳🇱荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 🇺🇸香港-021 |819KB/s
   - 🇱🇻拉脱维亚-001 |2.0MB/s|TK-LV|GPT⁺-LV|GM-LV
@@ -1535,8 +1766,7 @@ proxy-groups:
   - 🇺🇸美国-018 |3.0MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 🇺🇸美国-024 |2.0MB/s|TK-US|YT-US|GPT⁺-US
   - 🇳🇱荷兰-001 |2.5MB/s|GPT⁺-NL
-  - 🇮🇹@vpnbaz🍂
-  - 🇮🇹YFZ 117 @Outline_Vpn
+  - 其他-006
   - '🇮🇹Channel : @Daily_Configs 4'
   - 🇮🇹@appsooner کانال تلگرام 🕊️
   - 🇮🇹@FarazV2ray
@@ -1544,21 +1774,55 @@ proxy-groups:
   - 🇮🇹@FarazV2ray 3
   - 🇮🇹@FarazV2ray 4
   - 🇯🇵JP-18.179.203.229-0203
+  - 🇨🇭CH_1|2.6MB/s|R002-260618
+  - 🇳🇱NL_2|1.8MB/s
+  - 🇫🇷FR_2|1.5MB/s
+  - 🇬🇧GB_1|2.4MB/s
+  - 🇨🇦CA_1|1.3MB/s
+  - 🇷🇴RO_1|2.1MB/s
   - 🇺🇸US_8|2.5MB/s
+  - 🇳🇱NL_3|3.0MB/s
+  - 🇵🇱PL_1|3.6MB/s
+  - 🇷🇸RS_1|2.8MB/s
+  - 🇧🇪BE_1|3.1MB/s
+  - 🇪🇪EE_1|2.7MB/s
+  - 🇺🇸US_3|1.5MB/s
+  - 🇸🇪SE_1|2.9MB/s
   - 🇷🇴RO_speednode_0041
+  - 🇮🇹IT_1|1.8MB/s
+  - 🇬🇧GB_2|3.1MB/s
   - 🇺🇸US_4|4.1MB/s
+  - 🇩🇪DE_2|1.6MB/s
+  - 🇦🇹AT_1|2.0MB/s
+  - 🇺🇸US_5|3.0MB/s
+  - BA_1|2.4MB/s
   - 🇺🇸US_6|1.6MB/s
   - 🇺🇸US_25|2.3MB/s
+  - 🇮🇪IE_1|1.5MB/s
   - 🇺🇸US_10|3.3MB/s
+  - 🇺🇸US_11|2.9MB/s
   - 🇳🇱NL_7|3.4MB/s
   - 🇺🇸US_13|3.8MB/s
   - 🇺🇸US_14|1.2MB/s
   - 🇺🇸US_15|3.6MB/s
   - 🇩🇪DE_3|3.2MB/s
+  - 🇨🇦CA_2|1.3MB/s
   - 🇱🇻LV_1|1.9MB/s
   - 🇳🇱NL_9|3.0MB/s
+  - 🇩🇪DE_4|2.3MB/s
   - 🇩🇪DE_5|2.1MB/s
+  - 🇨🇦CA_4|3.8MB/s
+  - 🇱🇺LU_1|1.9MB/s
+  - 🇺🇸US_17|1.2MB/s
+  - 🇨🇭CH_2|1.6MB/s
+  - 🇳🇴NO_1|2.7MB/s
+  - 🇬🇧GB_3|2.2MB/s
   - 🇩🇪DE_6|2.6MB/s
+  - 🇺🇸US_20|1.0MB/s|K001-260618
+  - 🇺🇸US_21|2.1MB/s
+  - 🇬🇧GB_5|3.8MB/s
+  - 🇨🇦CA_5|1.7MB/s
+  - 🇬🇧GB_6|2.8MB/s
   - 🇫🇷FR_5|2.6MB/s
   - AL_1|1.4MB/s
   - 🇬🇧GB_7|1.1MB/s
@@ -1588,6 +1852,7 @@ proxy-groups:
   - 🇺🇸US_13|3.4MB/s
   - 🇺🇸US_14|2.2MB/s
   - 🇫🇷FR_1|1.6MB/s
+  - 🇩🇪DE_5|1.7MB/s
   - 🇮🇪IE_2|1.3MB/s
   - 🇸🇪SE_1|3.2MB/s
   - 🇫🇷FR_2|3.2MB/s
@@ -1639,7 +1904,6 @@ proxy-groups:
   - 🇬🇪GE_1|2.6MB/s
   - 🇩🇪DE_9|3.0MB/s
   - 🇫🇷FR_3|2.5MB/s
-  - 🇷🇺DE_10|3.4MB/s
   - 🇨🇾CY_1|1.7MB/s
   - 🇳🇱NL_7|1.2MB/s
   - 🇺🇸US_10|1.1MB/s
@@ -1654,6 +1918,7 @@ proxy-groups:
   - 🇦🇹AT_3|2.4MB/s
   - 🇬🇧GB_4|2.8MB/s
   - 🇨🇭CH_2|3.0MB/s
+  - BA_1|2.3MB/s
   - 🇺🇸US_5|2.6MB/s
   - 🇬🇷GR_1|2.0MB/s
   - 🇩🇪DE_8|3.6MB/s
@@ -1665,15 +1930,19 @@ proxy-groups:
   - 🇺🇸US_14|2.9MB/s
   - 🇧🇬BG_3|1.4MB/s
   - 🇺🇸US_15|4.2MB/s
+  - 🇺🇸美国 | USA 6
   - 🇫🇷FR_speednode_0009
   - 🇮🇪IE_speednode_0013
   - 🇳🇱NL_speednode_0022
+  - 🇱🇺LU_1|3.8MB/s
   - 🇨🇳HK_2|3.6MB/s
   - 🇮🇪IE_2|2.6MB/s
   - 🇮🇹IT_2|3.3MB/s
   - 🇲🇾MY_1|2.6MB/s
+  - AL_2|2.0MB/s#2
   - 🇩🇪DE_4|2.3MB/s#2
   - 🇭🇺HU_1|1.9MB/s
+  - 🇸🇪SE_1|2.6MB/s
   - 🇺🇸US_6|3.1MB/s
   - 🇫🇷FR_4|1.7MB/s
   - 🇭🇷HR_1|2.9MB/s|K001-260618
@@ -1683,10 +1952,11 @@ proxy-groups:
   - 🇮🇩ID_1|1.2MB/s
   - 🇧🇷BR_1|2.7MB/s
   - 🇫🇷https://github.com/*********-*...#2
-  - 🇺🇸US_18|1.8MB/s
+  - 🇷🇺EE_1|2.9MB/s|K001-260618
+  - 🇧🇬BG_1|2.6MB/s
+  - 🇺🇸US_16|2.4MB/s
   - 🇺🇸US_19|1.9MB/s
   - 🇷🇺RU_1|2.1MB/s
-  - CN_1|1.5MB/s
   - 🇺🇸_US_美国_IPV4 (3)
   - 🇫🇷_FR_法国_IPV4 (2)
   - 🇺🇸US_speednode_0040
@@ -1695,34 +1965,32 @@ proxy-groups:
   - 🇺🇸US_12|3.4MB/s
   - 🇫🇷FR_4|1.1MB/s
   - 🇱🇹LT_1|3.8MB/s
-  - CN_1|1.1MB/s
   - 🇺🇸US_21|1.8MB/s
   - 🇹🇼_TW_台湾->🇺🇸_US_美国_IPV4
   - DE_4|2.1MB/s
   - DE_6|1.1MB/s
   - 🇺🇸US_3|1.8MB/s
-  - CN_1|1.9MB/s
   - 🇸🇬SG_1|2.7MB/s|K001-260618
   - 🇵🇱PL_1|3.1MB/s
   - 🇷🇺RU_2|1.1MB/s
   - "\U0001F1FA\U0001F1F8%�\x11�'��\x15T�LM\f\v�N\x0E\v��ˌL�KL\f��"
-  - 🇩🇪_DE_德国_IPV4#2
   - 机场推荐:dafei.de 美国 15_IPV4
-  - 🇺🇸_US_美国_IPV4
+  - 🇺🇸_US_美国_IPV4 2
   - 🇺🇸_US_美国_IPV4 (2)
   - 🇺🇸US_8|3.7MB/s
   - 🇨🇳JP_1|4.7MB/s
   - 🇸🇬SG_1|1.1MB/s
-  - ❓Other_1|1.5MB/s
+  - CN_1|2.4MB/s
   - CN_2|1.4MB/s
   - ❓Other_2|2.4MB/s
   - CN_4|1.8MB/s
-  - 🇨🇳CN_5|2.8MB/s
+  - 🇺🇸US-157.254.38.210-2962
 - name: ♻️ 自动选择
   type: url-test
   proxies:
+  - 🇮🇹意大利
+  - 🇮🇹意大利2
   - 🇩🇪德国-001 |1.6MB/s
-  - 🇦🇺澳大利亚-001 |3.0MB/s|TK-AU|YT-AU|GPT⁺-AU
   - 🇷🇴罗马尼亚-001 |3.3MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 🇷🇴罗马尼亚-002 |2.3MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 🇷🇴罗马尼亚-003 |1.4MB/s
@@ -1744,12 +2012,12 @@ proxy-groups:
   - 🇷🇴罗马尼亚-019 |557KB/s
   - 🇷🇴罗马尼亚-020 |554KB/s
   - 🇺🇸美国-001 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 🇺🇸美国-002 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 🇺🇸美国-003 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
-  - 🇺🇸美国-004 |1.0MB/s|TK-US|GPT⁺-US
+  - 🇺🇸美国-002 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
+  - 🇺🇸美国-003 |1.0MB/s|TK-US|GPT⁺-US
+  - 🇺🇸美国-004 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 🇳🇱荷兰-001 |2.1MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 🇳🇱荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 🇳🇱荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL
+  - 🇳🇱荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL
+  - 🇳🇱荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 🇳🇱荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 🇺🇸香港-021 |819KB/s
   - 🇱🇻拉脱维亚-001 |2.0MB/s|TK-LV|GPT⁺-LV|GM-LV
@@ -1757,8 +2025,7 @@ proxy-groups:
   - 🇺🇸美国-018 |3.0MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 🇺🇸美国-024 |2.0MB/s|TK-US|YT-US|GPT⁺-US
   - 🇳🇱荷兰-001 |2.5MB/s|GPT⁺-NL
-  - 🇮🇹@vpnbaz🍂
-  - 🇮🇹YFZ 117 @Outline_Vpn
+  - 其他-006
   - '🇮🇹Channel : @Daily_Configs 4'
   - 🇮🇹@appsooner کانال تلگرام 🕊️
   - 🇮🇹@FarazV2ray
@@ -1766,21 +2033,55 @@ proxy-groups:
   - 🇮🇹@FarazV2ray 3
   - 🇮🇹@FarazV2ray 4
   - 🇯🇵JP-18.179.203.229-0203
+  - 🇨🇭CH_1|2.6MB/s|R002-260618
+  - 🇳🇱NL_2|1.8MB/s
+  - 🇫🇷FR_2|1.5MB/s
+  - 🇬🇧GB_1|2.4MB/s
+  - 🇨🇦CA_1|1.3MB/s
+  - 🇷🇴RO_1|2.1MB/s
   - 🇺🇸US_8|2.5MB/s
+  - 🇳🇱NL_3|3.0MB/s
+  - 🇵🇱PL_1|3.6MB/s
+  - 🇷🇸RS_1|2.8MB/s
+  - 🇧🇪BE_1|3.1MB/s
+  - 🇪🇪EE_1|2.7MB/s
+  - 🇺🇸US_3|1.5MB/s
+  - 🇸🇪SE_1|2.9MB/s
   - 🇷🇴RO_speednode_0041
+  - 🇮🇹IT_1|1.8MB/s
+  - 🇬🇧GB_2|3.1MB/s
   - 🇺🇸US_4|4.1MB/s
+  - 🇩🇪DE_2|1.6MB/s
+  - 🇦🇹AT_1|2.0MB/s
+  - 🇺🇸US_5|3.0MB/s
+  - BA_1|2.4MB/s
   - 🇺🇸US_6|1.6MB/s
   - 🇺🇸US_25|2.3MB/s
+  - 🇮🇪IE_1|1.5MB/s
   - 🇺🇸US_10|3.3MB/s
+  - 🇺🇸US_11|2.9MB/s
   - 🇳🇱NL_7|3.4MB/s
   - 🇺🇸US_13|3.8MB/s
   - 🇺🇸US_14|1.2MB/s
   - 🇺🇸US_15|3.6MB/s
   - 🇩🇪DE_3|3.2MB/s
+  - 🇨🇦CA_2|1.3MB/s
   - 🇱🇻LV_1|1.9MB/s
   - 🇳🇱NL_9|3.0MB/s
+  - 🇩🇪DE_4|2.3MB/s
   - 🇩🇪DE_5|2.1MB/s
+  - 🇨🇦CA_4|3.8MB/s
+  - 🇱🇺LU_1|1.9MB/s
+  - 🇺🇸US_17|1.2MB/s
+  - 🇨🇭CH_2|1.6MB/s
+  - 🇳🇴NO_1|2.7MB/s
+  - 🇬🇧GB_3|2.2MB/s
   - 🇩🇪DE_6|2.6MB/s
+  - 🇺🇸US_20|1.0MB/s|K001-260618
+  - 🇺🇸US_21|2.1MB/s
+  - 🇬🇧GB_5|3.8MB/s
+  - 🇨🇦CA_5|1.7MB/s
+  - 🇬🇧GB_6|2.8MB/s
   - 🇫🇷FR_5|2.6MB/s
   - AL_1|1.4MB/s
   - 🇬🇧GB_7|1.1MB/s
@@ -1810,6 +2111,7 @@ proxy-groups:
   - 🇺🇸US_13|3.4MB/s
   - 🇺🇸US_14|2.2MB/s
   - 🇫🇷FR_1|1.6MB/s
+  - 🇩🇪DE_5|1.7MB/s
   - 🇮🇪IE_2|1.3MB/s
   - 🇸🇪SE_1|3.2MB/s
   - 🇫🇷FR_2|3.2MB/s
@@ -1861,7 +2163,6 @@ proxy-groups:
   - 🇬🇪GE_1|2.6MB/s
   - 🇩🇪DE_9|3.0MB/s
   - 🇫🇷FR_3|2.5MB/s
-  - 🇷🇺DE_10|3.4MB/s
   - 🇨🇾CY_1|1.7MB/s
   - 🇳🇱NL_7|1.2MB/s
   - 🇺🇸US_10|1.1MB/s
@@ -1876,6 +2177,7 @@ proxy-groups:
   - 🇦🇹AT_3|2.4MB/s
   - 🇬🇧GB_4|2.8MB/s
   - 🇨🇭CH_2|3.0MB/s
+  - BA_1|2.3MB/s
   - 🇺🇸US_5|2.6MB/s
   - 🇬🇷GR_1|2.0MB/s
   - 🇩🇪DE_8|3.6MB/s
@@ -1887,15 +2189,19 @@ proxy-groups:
   - 🇺🇸US_14|2.9MB/s
   - 🇧🇬BG_3|1.4MB/s
   - 🇺🇸US_15|4.2MB/s
+  - 🇺🇸美国 | USA 6
   - 🇫🇷FR_speednode_0009
   - 🇮🇪IE_speednode_0013
   - 🇳🇱NL_speednode_0022
+  - 🇱🇺LU_1|3.8MB/s
   - 🇨🇳HK_2|3.6MB/s
   - 🇮🇪IE_2|2.6MB/s
   - 🇮🇹IT_2|3.3MB/s
   - 🇲🇾MY_1|2.6MB/s
+  - AL_2|2.0MB/s#2
   - 🇩🇪DE_4|2.3MB/s#2
   - 🇭🇺HU_1|1.9MB/s
+  - 🇸🇪SE_1|2.6MB/s
   - 🇺🇸US_6|3.1MB/s
   - 🇫🇷FR_4|1.7MB/s
   - 🇭🇷HR_1|2.9MB/s|K001-260618
@@ -1905,10 +2211,11 @@ proxy-groups:
   - 🇮🇩ID_1|1.2MB/s
   - 🇧🇷BR_1|2.7MB/s
   - 🇫🇷https://github.com/*********-*...#2
-  - 🇺🇸US_18|1.8MB/s
+  - 🇷🇺EE_1|2.9MB/s|K001-260618
+  - 🇧🇬BG_1|2.6MB/s
+  - 🇺🇸US_16|2.4MB/s
   - 🇺🇸US_19|1.9MB/s
   - 🇷🇺RU_1|2.1MB/s
-  - CN_1|1.5MB/s
   - 🇺🇸_US_美国_IPV4 (3)
   - 🇫🇷_FR_法国_IPV4 (2)
   - 🇺🇸US_speednode_0040
@@ -1917,29 +2224,26 @@ proxy-groups:
   - 🇺🇸US_12|3.4MB/s
   - 🇫🇷FR_4|1.1MB/s
   - 🇱🇹LT_1|3.8MB/s
-  - CN_1|1.1MB/s
   - 🇺🇸US_21|1.8MB/s
   - 🇹🇼_TW_台湾->🇺🇸_US_美国_IPV4
   - DE_4|2.1MB/s
   - DE_6|1.1MB/s
   - 🇺🇸US_3|1.8MB/s
-  - CN_1|1.9MB/s
   - 🇸🇬SG_1|2.7MB/s|K001-260618
   - 🇵🇱PL_1|3.1MB/s
   - 🇷🇺RU_2|1.1MB/s
   - "\U0001F1FA\U0001F1F8%�\x11�'��\x15T�LM\f\v�N\x0E\v��ˌL�KL\f��"
-  - 🇩🇪_DE_德国_IPV4#2
   - 机场推荐:dafei.de 美国 15_IPV4
-  - 🇺🇸_US_美国_IPV4
+  - 🇺🇸_US_美国_IPV4 2
   - 🇺🇸_US_美国_IPV4 (2)
   - 🇺🇸US_8|3.7MB/s
   - 🇨🇳JP_1|4.7MB/s
   - 🇸🇬SG_1|1.1MB/s
-  - ❓Other_1|1.5MB/s
+  - CN_1|2.4MB/s
   - CN_2|1.4MB/s
   - ❓Other_2|2.4MB/s
   - CN_4|1.8MB/s
-  - 🇨🇳CN_5|2.8MB/s
+  - 🇺🇸US-157.254.38.210-2962
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
