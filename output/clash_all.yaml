@@ -235,22 +235,6 @@ proxies:
   port: 9002
   skip-cert-verify: true
   tls: true
-- name: 其他-001#2
-  type: vless
-  network: ws
-  uuid: bdde0eb9-62c6-4d30-ac96-ab10d8eb7939
-  server: 104.26.1.117
-  servername: erupencompanypdr.pages.dev
-  port: 443
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  ws-opts:
-    headers:
-      Host: erupencompanypdr.pages.dev
-    path: /ISoOMY675XVPxHG4?ed=2560
-  client-fingerprint: chrome
 - name: 其他-003
   type: vless
   network: tcp
@@ -411,7 +395,6 @@ proxy-groups:
   - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL
   - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 其他-001#2
   - 其他-003
   - 新西兰-001
   - 其他-005
@@ -459,7 +442,6 @@ proxy-groups:
   - 荷兰-002 |1.8MB/s|TK-NL|GPT⁺-NL
   - 荷兰-003 |1.8MB/s|TK-NL|GPT⁺-NL|GM-NL
   - 荷兰-004 |1.6MB/s|TK-NL|GPT⁺-NL|GM-NL
-  - 其他-001#2
   - 其他-003
   - 新西兰-001
   - 其他-005
