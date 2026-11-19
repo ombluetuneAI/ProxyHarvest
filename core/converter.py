@@ -13,6 +13,7 @@ import requests
 import yaml
 
 from .platform_utils import get_tool_path, start_subconverter, stop_subconverter, make_session
+from .yaml_sanitize import sanitize_clash_config, sanitize_yaml_scalar, dumped_yaml_has_forbidden_escapes
 
 logger = logging.getLogger(__name__)
 
@@ -44,13 +45,16 @@ def normalize_reality_short_id(value: Any) -> Optional[str]:
 
 
 def sanitize_proxy(proxy: Dict[str, Any]) -> Dict[str, Any]:
-    """Fix REALITY short-id types/values that break Go YAML parsers."""
+    """Fix REALITY short-id types/values and proxy names that break Go YAML parsers."""
+    updated = dict(proxy)
+    if "name" in updated:
+        updated["name"] = sanitize_yaml_scalar(updated.get("name", ""))
+
     opts = proxy.get("reality-opts")
     if not isinstance(opts, dict) or "short-id" not in opts:
-        return proxy
+        return updated
 
     normalized = normalize_reality_short_id(opts.get("short-id"))
-    updated = dict(proxy)
     new_opts = dict(opts)
     if normalized is None:
         new_opts.pop("short-id", None)
@@ -84,13 +88,19 @@ def dump_clash_yaml(
     allow_unicode: bool = True,
     sort_keys: bool = False,
 ) -> Optional[str]:
-    """Dump Clash YAML with REALITY short-id values safely quoted."""
+    """Dump Clash YAML with sanitized names and REALITY short-id values safely quoted."""
+    payload = sanitize_clash_config(data) if isinstance(data, dict) else data
     text = yaml.dump(
-        data,
+        payload,
         allow_unicode=allow_unicode,
         sort_keys=sort_keys,
     )
     text = _quote_reality_short_ids(text)
+    if dumped_yaml_has_forbidden_escapes(text):
+        logger.warning(
+            "Clash YAML still contains \\x/\\U escape sequences in names; "
+            "check upstream proxy name data"
+        )
     if stream is None:
         return text
     if isinstance(stream, (str, os.PathLike)):
@@ -256,9 +266,10 @@ class FormatConverter:
         """
         import copy
         config = copy.deepcopy(template)
-        config["proxies"] = sanitize_proxies(proxies)
+        clean_proxies = sanitize_proxies(proxies)
+        config["proxies"] = clean_proxies
 
-        proxy_names = [p["name"] for p in proxies]
+        proxy_names = [p["name"] for p in clean_proxies]
 
         if "proxy-groups" in config:
             for group in config["proxy-groups"]:
