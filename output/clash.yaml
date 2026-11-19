@@ -1118,7 +1118,7 @@ proxies:
   type: http
   tls: true
   skip-cert-verify: true
-- name: "\U0001F1F3\U0001F1F1%�\x11�%�P���NL-109.104.153.43-0213"
+- name: 🇳🇱%%PNL-109.104.153.43-0213
   server: 109.104.153.43
   port: 33336
   type: ssr
@@ -1819,7 +1819,7 @@ proxy-groups:
   - CN_1|1.5MB/s
   - US_23|2.2MB/s
   - 🇺🇸US_speednode_0040
-  - "\U0001F1F3\U0001F1F1%�\x11�%�P���NL-109.104.153.43-0213"
+  - 🇳🇱%%PNL-109.104.153.43-0213
   - 🇩🇪DE_4|3.5MB/s
   - 🇫🇷FR_4|1.1MB/s
   - 🇱🇹LT_1|3.8MB/s
@@ -2046,7 +2046,7 @@ proxy-groups:
   - CN_1|1.5MB/s
   - US_23|2.2MB/s
   - 🇺🇸US_speednode_0040
-  - "\U0001F1F3\U0001F1F1%�\x11�%�P���NL-109.104.153.43-0213"
+  - 🇳🇱%%PNL-109.104.153.43-0213
   - 🇩🇪DE_4|3.5MB/s
   - 🇫🇷FR_4|1.1MB/s
   - 🇱🇹LT_1|3.8MB/s
