@@ -18,33 +18,6 @@ dns:
     geoip: true
     geoip-code: CN
 proxies:
-- name: 伊朗-001
-  type: vless
-  network: tcp
-  uuid: 667016ca-f02e-4b5f-bfc3-3d8ed81e9bec
-  server: 194.60.228.97
-  servername: base.hosamobenl.co.uk
-  port: 443
-  tls: true
-  ws-opts:
-    path: /
-  client-fingerprint: chrome
-- name: 德国-001
-  type: vless
-  network: ws
-  uuid: 313b84fa-b922-500f-9b65-acb67c040cc0
-  server: 185.197.193.137
-  servername: us2.v2less.site
-  port: 443
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  ws-opts:
-    headers:
-      Host: us2.v2less.site
-    path: /vless
-  client-fingerprint: chrome
 - name: 德国-002 |1.6MB/s
   type: hysteria
   server: 5.83.129.90
@@ -393,8 +366,6 @@ proxy-groups:
   proxies:
   - ♻️ 自动选择
   - DIRECT
-  - 伊朗-001
-  - 德国-001
   - 德国-002 |1.6MB/s
   - 罗马尼亚-001 |3.3MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 罗马尼亚-002 |2.3MB/s|TK-RO|GPT⁺-RO|GM-RO
@@ -442,8 +413,6 @@ proxy-groups:
 - name: ♻️ 自动选择
   type: url-test
   proxies:
-  - 伊朗-001
-  - 德国-001
   - 德国-002 |1.6MB/s
   - 罗马尼亚-001 |3.3MB/s|TK-RO|GPT⁺-RO|GM-RO
   - 罗马尼亚-002 |2.3MB/s|TK-RO|GPT⁺-RO|GM-RO
