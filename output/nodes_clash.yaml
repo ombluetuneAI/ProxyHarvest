@@ -33,18 +33,11 @@ proxies:
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
   udp: true
 - name: 🇭🇰香港2
-  server: 116.213.43.43
-  port: 11107
-  type: vless
-  tls: true
-  uuid: 08a37d1f-7bf1-4b5d-a2ec-5ced6a633d7f
-  servername: www.apple.com
-  path: /
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 6GRzkPbs12fKBdBBFzs5dmtmbSHCXMngUCBKLrXYm3U
-    short-id: "e2ccd8eedcbee2ce"
-  client-fingerprint: random
+  server: ibsdsf.df6h451rh.xin
+  port: 443
+  type: anytls
+  password: 2902c46c8493
+  sni: docs.microsoft.com
   skip-cert-verify: true
 - name: 🇭🇰台湾
   server: 116.213.43.43
@@ -60,61 +53,40 @@ proxies:
     short-id: "ed571d022f7bc3bf"
   client-fingerprint: random
   skip-cert-verify: true
-- name: 🇺🇸美国
-  server: 103.119.15.175
+- name: 🇹🇼台湾2
+  server: a54ge.df6h451rh.xin
   port: 443
-  type: vless
-  tls: true
-  uuid: 89be587f-0e93-4c67-822e-98ad0a56c29e
-  servername: www.amazon.com
-  path: /
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: vQgrNIQTmbTIqtauDixzp2ePvd-aK_zlTctIDRPk3wQ
-    short-id: "ce90a4459f024897"
-  client-fingerprint: random
+  type: anytls
+  password: 0324fbc29561
+  sni: docs.microsoft.com
   skip-cert-verify: true
-- name: 🇩🇪德国
-  server: 189.24.82.30
+- name: 🇺🇸越南
+  server: xvxn1hkzf.mateflora.com
   port: 443
-  type: vless
-  tls: true
-  uuid: b354463f-ac84-422e-9a26-556c81ba001c
-  servername: www.apple.com
-  path: /
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 77HTpkO_F3cUfA5Trka3eSh8V18atRMLyclGqZ__8C8
-    short-id: "b73c53b18b65dd90"
-  client-fingerprint: random
+  type: trojan
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  sni: xvxn1hkzf.mateflora.com
   skip-cert-verify: true
-- name: 🇭🇰美国2
-  server: 116.213.43.43
-  port: 11105
+  udp: true
+- name: 🇭🇰香港4
+  server: 206.237.18.145
+  port: 8443
   type: vless
   tls: true
-  uuid: 31d5b95e-aff2-4ffb-8160-b5ae941b46f6
-  servername: www.apple.com
-  path: /
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: ghxoNrFX488_gXprrfDt-03Lkxj3YFqS2q-DDw-m6yE
-    short-id: "d9180a5730e950d2"
-  client-fingerprint: random
+  uuid: b69cf773-da16-486e-afce-a45b94f998b3
+  servername: senflarelink-node-m3bfbn.pages.dev
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: senflarelink-node-m3bfbn.pages.dev
   skip-cert-verify: true
-- name: 🇭🇰日本
-  server: 116.213.43.43
-  port: 11101
-  type: vless
-  tls: true
-  uuid: ca69a29d-60ef-433a-91bc-27537be993c8
-  servername: www.apple.com
-  path: /
-  flow: xtls-rprx-vision
-  reality-opts:
-    public-key: 2eUT-b2e2lghUKWM3qf8uI3_Dphg9whKrQ08o4S-bzw
-    short-id: "82f99830e7b834e2"
-  client-fingerprint: random
+- name: 🇭🇰香港
+  server: 5641sdds.df6h451rh.xin
+  port: 443
+  type: anytls
+  password: 0324fbc29561
+  sni: images.ctfassets.net
   skip-cert-verify: true
 - name: 🇩🇪@MTproxy22_v2ray
   server: 185.176.204.18
@@ -122,8 +94,8 @@ proxies:
   type: ss
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: 🇫🇷Paris, IDF, France
-  server: 107.161.160.28
+- name: 🇨🇦Canada
+  server: 184.107.106.77
   port: 8388
   type: ss
   cipher: aes-256-gcm
@@ -134,7 +106,7 @@ proxies:
   type: ss
   cipher: aes-256-gcm
   password: itzvpn@321
-- name: 🇦🇹%F0%9F%87%A6%F0%9F%87%B9AT_10_@Surfboardv2ray
+- name: 🇦🇹𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢⫸@𝙫𝟮𝙧𝙖𝙮𝙉𝙂_𝙈𝙖𝙩𝙨𝙪𝙧𝙞
   server: 154.47.19.225
   port: 1270
   type: vmess
@@ -403,15 +375,6 @@ proxies:
   cipher: auto
   tls: false
   skip-cert-verify: true
-- name: 🇰🇷韩国 016
-  server: 140.238.2.250
-  port: 443
-  type: vmess
-  uuid: 41a7089a-040b-4538-8b8d-010902405bde
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
 - name: 🇱🇻拉脱维亚-001 |2.0MB/s|TK-LV|GPT⁺-LV|GM-LV
   server: 185.219.159.16
   port: 443
@@ -442,7 +405,77 @@ proxies:
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇯🇵日本2
+- name: 🇭🇰香港2#2
+  server: 116.213.43.43
+  port: 11107
+  type: vless
+  tls: true
+  uuid: 08a37d1f-7bf1-4b5d-a2ec-5ced6a633d7f
+  servername: www.apple.com
+  path: /
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 6GRzkPbs12fKBdBBFzs5dmtmbSHCXMngUCBKLrXYm3U
+    short-id: "e2ccd8eedcbee2ce"
+  client-fingerprint: random
+  skip-cert-verify: true
+- name: 🇺🇸美国#2
+  server: 103.119.15.175
+  port: 443
+  type: vless
+  tls: true
+  uuid: 89be587f-0e93-4c67-822e-98ad0a56c29e
+  servername: www.amazon.com
+  path: /
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: vQgrNIQTmbTIqtauDixzp2ePvd-aK_zlTctIDRPk3wQ
+    short-id: "ce90a4459f024897"
+  client-fingerprint: random
+  skip-cert-verify: true
+- name: 🇩🇪德国
+  server: 189.24.82.30
+  port: 443
+  type: vless
+  tls: true
+  uuid: b354463f-ac84-422e-9a26-556c81ba001c
+  servername: www.apple.com
+  path: /
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 77HTpkO_F3cUfA5Trka3eSh8V18atRMLyclGqZ__8C8
+    short-id: "b73c53b18b65dd90"
+  client-fingerprint: random
+  skip-cert-verify: true
+- name: 🇭🇰美国2
+  server: 116.213.43.43
+  port: 11105
+  type: vless
+  tls: true
+  uuid: 31d5b95e-aff2-4ffb-8160-b5ae941b46f6
+  servername: www.apple.com
+  path: /
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: ghxoNrFX488_gXprrfDt-03Lkxj3YFqS2q-DDw-m6yE
+    short-id: "d9180a5730e950d2"
+  client-fingerprint: random
+  skip-cert-verify: true
+- name: 🇭🇰日本
+  server: 116.213.43.43
+  port: 11101
+  type: vless
+  tls: true
+  uuid: ca69a29d-60ef-433a-91bc-27537be993c8
+  servername: www.apple.com
+  path: /
+  flow: xtls-rprx-vision
+  reality-opts:
+    public-key: 2eUT-b2e2lghUKWM3qf8uI3_Dphg9whKrQ08o4S-bzw
+    short-id: "82f99830e7b834e2"
+  client-fingerprint: random
+  skip-cert-verify: true
+- name: 🇯🇵日本2#2
   server: v2jp.k1.ssnss.live
   port: 44184
   type: trojan
@@ -1963,37 +1996,6 @@ proxies:
   ws-opts:
     path: /arki
   udp: true
-- name: ProxyPool | 🇺🇸 美国 | USA
-  server: cf.0sm.com
-  port: 80
-  type: vmess
-  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
-  alterId: 0
-  cipher: auto
-  tls: false
-  skip-cert-verify: true
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: vmess.lbw666.dpdns.org
-  udp: true
-- name: 美国 | USA 7
-  server: 172.66.203.67
-  port: 443
-  type: vmess
-  uuid: 0cf6d970-3f1d-4aae-a989-92a8f76ae3db
-  alterId: 0
-  cipher: auto
-  tls: true
-  skip-cert-verify: true
-  servername: vmess.lbw666.dpdns.org
-  network: ws
-  ws-opts:
-    path: /ws
-    headers:
-      Host: vmess.lbw666.dpdns.org
-  udp: true
 - name: 美国 CloudFlare节点#2
   server: 104.16.10.185
   port: 443
@@ -2171,18 +2173,6 @@ proxies:
   type: hysteria2
   ports: 443
   password: d4ca9415f0eac7897472e1e5b86d2e96
-- name: '[www.v2nodes.com] vless- #2'
-  server: 104.18.47.140
-  port: 2096
-  type: vless
-  tls: true
-  uuid: 341832cc-ba98-425b-8225-b3db621a0da3
-  servername: rainfall0705.cc.cd
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: rainfall0705.cc.cd
 - name: '[www.v2nodes.com] vless-JP-1... #5'
   server: 104.18.42.98
   port: 443
@@ -2368,18 +2358,6 @@ proxies:
     path: /vl/KSPdmco70dfoXFS292o2Nv6yPt?ed=2560#Telegram---PLANB_NET---PLANB_NET---PLANB_NET---PLANB_NET
     headers:
       Host: 6qwoom7kdrcoan3ui4ra5dy.pages.dev
-- name: '[www.v2nodes.com] vless- #2#2'
-  server: 104.18.47.140
-  port: 2096
-  type: vless
-  tls: true
-  uuid: 341832cc-ba98-425b-8225-b3db621a0da3
-  servername: rainfall0705.cc.cd
-  network: ws
-  ws-opts:
-    path: /fp=chrome
-    headers:
-      Host: rainfall0705.cc.cd
 - name: 🇺🇸US-216.152.155.54-0568
   server: 216.152.155.54
   port: 443
@@ -2434,18 +2412,6 @@ proxies:
   type: trojan
   password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
   sni: connectwithemployerstohireyouridealteam.com
-- name: '[www.v2nodes.com] vless- #3#3'
-  server: 172.64.144.240
-  port: 443
-  type: vless
-  tls: true
-  uuid: 87c467e9-f0af-4b03-8fbd-65fd375d3a26
-  servername: pmpmppm.pages.dev
-  network: ws
-  ws-opts:
-    path: /?ed=2048fp=randomized
-    headers:
-      Host: pmpmppm.pages.dev
 - name: '[www.v2nodes.com] vless-JP-1... #5#2'
   server: 104.16.10.63
   port: 443
@@ -2607,30 +2573,6 @@ proxies:
   password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
   sni: api.searchnationwidecareerchangehelperandguidancetoday.com
   skip-cert-verify: false
-- name: '🇩🇪德国 | DEU #10'
-  server: 3.69.232.199
-  port: 443
-  type: hysteria2
-  ports: 443
-  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
-  sni: vpn-de-002.fastervpn.world
-  skip-cert-verify: true
-- name: 🇩🇪204155 | ⚡️Telegram - t.me/S...
-  server: 18.193.79.104
-  port: 443
-  type: hysteria2
-  ports: 443
-  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
-  sni: 18.193.79.104
-  skip-cert-verify: true
-- name: 🇩🇪204269 | ⚡️Telegram - t.me/S...
-  server: 3.76.221.4
-  port: 443
-  type: hysteria2
-  ports: 443
-  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
-  sni: 3.76.221.4
-  skip-cert-verify: true
 - name: '🇪🇸[www.v2nodes.com] trojan-ES-... #1'
   server: 66.163.118.251
   port: 443
@@ -2650,12 +2592,6 @@ proxies:
   type: trojan
   password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
   sni: courses.connectingpeoplewithgreatjobs.com
-- name: 🇨🇦CA-216.152.147.152-3167
-  server: 216.152.147.152
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: learn.connectingpeoplewithgreatjobs.com
 - name: 🇫🇷https://github.com/*********-*...#2
   server: 62.210.28.175
   port: 24667
@@ -2846,12 +2782,6 @@ proxies:
   type: hysteria2
   password: H7mP2xY9kJ4nQ8wR5tF6vB3z
   sni: https://t.me/clashv8🇨🇳
-  skip-cert-verify: true
-- name: 🇺🇸US_speednode_0040
-  server: 38.247.141.135
-  port: 443
-  type: http
-  tls: true
   skip-cert-verify: true
 - name: ProxyPool | 🇺🇸 美国 | USA 6
   server: www.speedtest.net
@@ -3093,12 +3023,6 @@ proxies:
   type: ss
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: 🇩🇪DE-193.108.119.3-2405
-  server: 193.108.119.3
-  port: 19999
-  type: ss
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
 - name: 🇺🇸US-38.121.43.225-2466
   server: 38.121.43.225
   port: 19999
@@ -3129,12 +3053,6 @@ proxies:
   type: ss
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: 🇩🇪DE-23.157.88.43-2406
-  server: 23.157.88.43
-  port: 19999
-  type: ss
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
 - name: 🇸🇬SG-149.88.107.74-2459
   server: 149.88.107.74
   port: 19999
@@ -3143,12 +3061,6 @@ proxies:
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
 - name: 🇺🇸US-162.251.62.31-2471
   server: 162.251.62.31
-  port: 19999
-  type: ss
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: 🇩🇪DE-193.108.119.2-2407
-  server: 193.108.119.2
   port: 19999
   type: ss
   cipher: aes-256-gcm
@@ -3243,12 +3155,6 @@ proxies:
   type: ss
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: 🇺🇸US-167.88.62.203-2462
-  server: 167.88.62.203
-  port: 19999
-  type: ss
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
 - name: 🇪🇸ES-79.127.139.242-2410
   server: 79.127.139.242
   port: 19999
@@ -3261,12 +3167,6 @@ proxies:
   type: ss
   cipher: aes-256-gcm
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: 🇨🇱CL-64.176.7.205-0546
-  server: 64.176.7.205
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: advanceyouremploymentskillsandcareerdevelopmenthub.com
 - name: 🇸🇬SG-15.235.182.183-2456
   server: 15.235.182.183
   port: 19999
@@ -3275,12 +3175,6 @@ proxies:
   password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
 - name: 🇺🇸US-38.22.17.219-2467
   server: 38.22.17.219
-  port: 19999
-  type: ss
-  cipher: aes-256-gcm
-  password: ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=
-- name: 🇸🇬SG-51.79.228.131-2455
-  server: 51.79.228.131
   port: 19999
   type: ss
   cipher: aes-256-gcm
@@ -3348,18 +3242,6 @@ proxies:
     path: /ws
     headers:
       Host: vmess.lbw666.dpdns.org
-- name: '[www.v2nodes.com] vless-SG #1#3'
-  server: 172.64.147.154
-  port: 443
-  type: vless
-  tls: true
-  uuid: 5dc15e15-f285-4a9d-959b-0e4fbdd77b63
-  servername: powered-by-surena.configfarsi695fcfe8a2e58.workers.dev
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: powered-by-surena.configfarsi695fcfe8a2e58.workers.dev
 - name: DE_4|2.1MB/s
   server: 172.64.69.89
   port: 443
@@ -3389,18 +3271,6 @@ proxies:
     headers:
       Host: vmess.lbw666.dpdns.org
   udp: true
-- name: '[www.v2nodes.com] vless-SG #1#4'
-  server: 172.64.147.154
-  port: 443
-  type: vless
-  tls: true
-  uuid: 5dc15e15-f285-4a9d-959b-0e4fbdd77b63
-  servername: powered-by-surena.configfarsi695fcfe8a2e58.workers.dev
-  network: ws
-  ws-opts:
-    path: /fp=chrome
-    headers:
-      Host: powered-by-surena.configfarsi695fcfe8a2e58.workers.dev
 - name: 🇳🇱[www.v2nodes.com] ss-NL-1616...
   server: 77.221.132.206
   port: 24759
@@ -3459,39 +3329,6 @@ proxies:
   type: http
   tls: true
   skip-cert-verify: true
-- name: 🇩🇪德国 | DEU#2
-  server: 3.76.203.180
-  port: 443
-  type: hysteria2
-  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
-  sni: vpn-de-002.fastervpn.world
-  skip-cert-verify: true
-- name: '[www.v2nodes.com] vless-CA-1...'
-  server: 172.64.145.94
-  port: 443
-  type: vless
-  tls: true
-  uuid: 5dc15e15-f285-4a9d-959b-0e4fbdd77b63
-  servername: powered-by-surena.configfarsi695fd01a94fe7.workers.dev
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: powered-by-surena.configfarsi695fd01a94fe7.workers.dev
-- name: '[www.v2nodes.com] vless-CA-1... #2'
-  server: 188.114.98.0
-  port: 443
-  type: vless
-  tls: true
-  uuid: 341832cc-ba98-425b-8225-b3db621a0da3
-  servername: rainfall0705.cc.cd
-  alpn:
-  - http/1.1
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: rainfall0705.cc.cd
 - name: '🇰🇷[www.v2nodes.com] vless-JP-1... #3'
   server: 168.107.36.135
   port: 443
@@ -3518,32 +3355,6 @@ proxies:
   password: b0917015b656b3dd2286b5633af0c5c1
   sni: www.bing.com%23%e9%a6%83%e5%9a%9f%e9%a6%83%e5%9a%a2%7chk%7c%40wxgqlfx%7c147
   skip-cert-verify: true
-- name: '[www.v2nodes.com] vless-CA-1...#2'
-  server: 172.64.145.94
-  port: 443
-  type: vless
-  tls: true
-  uuid: 5dc15e15-f285-4a9d-959b-0e4fbdd77b63
-  servername: powered-by-surena.configfarsi695fd01a94fe7.workers.dev
-  network: ws
-  ws-opts:
-    path: /fp=chrome
-    headers:
-      Host: powered-by-surena.configfarsi695fd01a94fe7.workers.dev
-- name: '[www.v2nodes.com] vless-CA-1... #2#2'
-  server: 188.114.98.0
-  port: 443
-  type: vless
-  tls: true
-  uuid: 341832cc-ba98-425b-8225-b3db621a0da3
-  servername: rainfall0705.cc.cd
-  alpn:
-  - http/1.1
-  network: ws
-  ws-opts:
-    path: /fp=unsafe
-    headers:
-      Host: rainfall0705.cc.cd
 - name: 🇸🇬SG-149.88.106.73-5766
   server: 149.88.106.73
   port: 19999
@@ -3564,20 +3375,6 @@ proxies:
     path: /hls/cctv5phd.m3u8
     headers:
       Host: guanwang.awsno.com
-- name: '[www.v2nodes.com] vless-CA-1... #2#3'
-  server: 104.25.0.1
-  port: 2096
-  type: vless
-  tls: true
-  uuid: 341832cc-ba98-425b-8225-b3db621a0da3
-  servername: rainfall0705.cc.cd
-  alpn:
-  - http/1.1
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: rainfall0705.cc.cd
 - name: '🇳🇱[www.v2nodes.com] trojan- #1'
   server: 66.163.127.225
   port: 443
@@ -3651,20 +3448,6 @@ proxies:
   grpc-opts:
     grpc-mode: gun
     grpc-service-name: mobile.api.Event
-- name: '[www.v2nodes.com] vless-CA-1... #2#4'
-  server: 104.25.0.1
-  port: 2096
-  type: vless
-  tls: true
-  uuid: 341832cc-ba98-425b-8225-b3db621a0da3
-  servername: rainfall0705.cc.cd
-  alpn:
-  - http/1.1
-  network: ws
-  ws-opts:
-    path: /fp=chrome
-    headers:
-      Host: rainfall0705.cc.cd
 - name: 🇷🇺俄罗斯 | RUS
   server: vps3.nemnogogo.com
   port: 443
@@ -3678,12 +3461,6 @@ proxies:
   grpc-opts:
     grpc-mode: gun
     grpc-service-name: mobile.api.Event
-- name: 🇰🇷KR-158.247.253.243-0185
-  server: 158.247.253.243
-  port: 443
-  type: trojan
-  password: 0ab6c98dae3b48e8b9c4a776b6c9c19a
-  sni: connectgraduateswithjobopeningsandgrowprofessionally.com
 - name: 🇺🇸US-23.230.52.119-2926
   server: 23.230.52.119
   port: 42878
@@ -3927,13 +3704,6 @@ proxies:
   type: hysteria2
   password: 549766c3-fa5f-471e-8031-ffc1f8d5064f
   sni: lakes.blog-forme.ru
-- name: 🇩🇪@V2rayNPVTConfig
-  server: 3.76.203.180
-  port: 443
-  type: hysteria2
-  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
-  sni: 127.0.0.1
-  skip-cert-verify: true
 - name: '🇺🇸[www.v2nodes.com] ss-HK-1621... #1'
   server: 209.248.57.105
   port: 8388
@@ -4082,18 +3852,6 @@ proxies:
     public-key: ZSmetD4e9QG5CiXhniHg5HJB68L4kwbgAkJmMHtVwEE
     short-id: "42426c882c5fcd41"
   client-fingerprint: random
-- name: 美国 CloudFlare节点 4#2
-  server: saas.sin.fan
-  port: 2053
-  type: vless
-  tls: true
-  uuid: 5d7b401c-78fa-4254-872e-6d42bf7e75ec
-  servername: vp11.1145678.xyz
-  network: ws
-  ws-opts:
-    path: /videos/forum
-    headers:
-      Host: vp11.1145678.xyz
 - name: 🇨🇦CA-216.152.147.85-0604
   server: 216.152.147.85
   port: 443
@@ -4142,18 +3900,6 @@ proxies:
   password: 4afd4e1b1b0edd429b10d800a1cf64a7
   sni: hysteria2.local
   skip-cert-verify: true
-- name: 🇳🇱⚕️35@oneclickvpnkeys
-  server: 195.63.128.21
-  port: 10444
-  type: hysteria2
-  password: fa937345-6d3e-4ff4-8127-1a836987a0db
-  sni: germany.cloudhouse1.ru
-- name: 🇨🇿[www.v2nodes.com] ss-NL-1622...
-  server: 194.87.233.93
-  port: 46190
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: 2Ef8X21WALqK7H6N8A78j5WYtzZ999PP8rF8DaLsb5LLyDLQpf5dGVAjdA3mj1wudigKXTt5heYU9jmaBbfxXBJJAqhPHkxe
 - name: '🇺🇸BY_01 #1'
   server: bl1.nexfile.net
   port: 4444
@@ -4211,36 +3957,12 @@ proxies:
   type: ss
   cipher: chacha20-ietf-poly1305
   password: k1dBOmOB4oqi7Ump37a1bQ
-- name: 🇨🇦CA-51.222.155.113-0177
-  server: 51.222.155.113
-  port: 5601
-  type: ss
-  cipher: aes-256-gcm
-  password: Y6R9pAtvxxzmGC
 - name: 🇪🇸ES-5.188.181.201-7379
   server: 5.188.181.201
   port: 9037
   type: ss
   cipher: aes-256-cfb
   password: TN2YqghxeFDKZfLU
-- name: 🇪🇸ES-5.188.181.201-0188
-  server: 5.188.181.201
-  port: 9027
-  type: ss
-  cipher: aes-256-cfb
-  password: EXN3S3eQpjE7EJu8
-- name: 美国 CloudFlare节点
-  server: 162.159.130.234
-  port: 443
-  type: vless
-  tls: true
-  uuid: 5d7b401c-78fa-4254-872e-6d42bf7e75ec
-  servername: vp19.1145678.xyz
-  network: ws
-  ws-opts:
-    path: /images/classify/dh
-    headers:
-      Host: vp19.1145678.xyz
 - name: 🇺🇸US-173.244.56.6-0254
   server: 173.244.56.6
   port: 443
@@ -4301,14 +4023,6 @@ proxies:
   type: ss
   cipher: aes-128-gcm
   password: shadowsocks
-- name: 🇩🇪69@oneclickvpnkeys
-  server: 18.194.242.173
-  port: 443
-  type: hysteria2
-  ports: 443
-  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
-  sni: 127.0.0.1
-  skip-cert-verify: true
 - name: 🇺🇸44@oneclickvpnkeys
   server: 179.254.191.251
   port: 4444
@@ -4316,20 +4030,6 @@ proxies:
   ports: 4444
   password: a35c508f-4d5d-4531-842e-6e9d43c762c0
   sni: bl1.nexfile.net
-- name: '🇳🇱@OutlineReleasedKey #8'
-  server: 195.63.128.21
-  port: 5443
-  type: hysteria2
-  ports: 5443
-  password: fa937345-6d3e-4ff4-8127-1a836987a0db
-  sni: germany.cloudhouse1.ru
-- name: 🇳🇱13@oneclickvpnkeys
-  server: 195.63.138.212
-  port: 10444
-  type: hysteria2
-  ports: 10444
-  password: fa937345-6d3e-4ff4-8127-1a836987a0db
-  sni: cloudehouse24.ru
 - name: 🇯🇵218802 | ⚡️Telegram - t.me/L...
   server: 129.225.181.46
   port: 8443
@@ -4338,46 +4038,6 @@ proxies:
   password: oracle_hy2_pass_2026
   sni: bing.com
   skip-cert-verify: true
-- name: '[www.v2nodes.com] vless-CA'
-  server: 27.50.48.6
-  port: 443
-  type: vless
-  tls: true
-  uuid: c98a16e4-0dc5-42f0-b3db-30f04525c123
-  servername: vless2-8vx.pages.dev
-  alpn:
-  - h3
-  network: ws
-  ws-opts:
-    path: /fp=chromesecurity=tls
-    headers:
-      Host: vless2-8vx.pages.dev
-- name: '[www.v2nodes.com] vless-SG-1... #1'
-  server: 27.50.48.6
-  port: 443
-  type: vless
-  tls: true
-  uuid: c98a16e4-0dc5-42f0-b3db-30f04525c123
-  servername: vless2-8vx.pages.dev
-  alpn:
-  - h3
-  network: ws
-  ws-opts:
-    path: /fp=chrome
-    headers:
-      Host: vless2-8vx.pages.dev
-- name: '[www.v2nodes.com] vless-SG-4...'
-  server: 104.18.35.86
-  port: 2083
-  type: vless
-  tls: true
-  uuid: a1de0630-5786-48a0-84f6-dc6f2de10d6d
-  servername: vlsovip.1d.mom
-  network: ws
-  ws-opts:
-    path: /fp=unsafe
-    headers:
-      Host: vlsovip.1d.mom
 - name: 🇺🇸US-37.19.198.160-0056
   server: 37.19.198.160
   port: 443
@@ -4449,7 +4109,7 @@ proxies:
     public-key: l-GzBDuNuhnjxoRlZqKvT7jAt_sbVAxhGFsAttO5kXs
     short-id: "361d0dd59c70516f"
   client-fingerprint: random
-- name: 🇩🇪美国 V2CROSS.COM
+- name: 🇳🇱美国 V2CROSS.COM
   server: 8a2e72t.nl20.h1clayd.shop
   port: 443
   type: vless
@@ -4496,12 +4156,6 @@ proxies:
     public-key: UoS8qZ74hP_ECcncCz55lzvlcVss3R7VA0WYZE0YQCY
     short-id: "ba2a3dce62b99092"
   client-fingerprint: random
-- name: 🇩🇪DE-2.29.210.28-0474
-  server: static.28.210.29.2.clients.your-server.de
-  port: 25565
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: C8ZJ7R4p_HHJ32cst7ilT-0Zi2F22hAc
 - name: 🇨🇦CA-51.222.200.165-0286
   server: 51.222.200.165
   port: 5000
@@ -4548,71 +4202,6 @@ proxies:
     public-key: ZSmetD4e9QG5CiXhniHg5HJB68L4kwbgAkJmMHtVwEE
     short-id: "42426c882c5fcd41"
   client-fingerprint: random
-- name: 🇰🇷KR-43.203.190.110-0535
-  server: d1eyz.xiaoyan.io
-  port: 16648
-  type: vmess
-  uuid: 904f0569-8695-466f-97cf-0de2face1b46
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: f9309cc88637c26f552a1a64fb311cae.mobgslb.tbcache.com
-- name: 🇰🇷KR-43.203.190.110-0534
-  server: afzuv.xiaoyan.io
-  port: 16648
-  type: vmess
-  uuid: 904f0569-8695-466f-97cf-0de2face1b46
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: f9309cc88637c26f552a1a64fb311cae.mobgslb.tbcache.com
-- name: 🇰🇷KR-43.203.190.110-0525
-  server: d1eyz.xiaoyan.io
-  port: 16617
-  type: vmess
-  uuid: 904f0569-8695-466f-97cf-0de2face1b46
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: f9309cc88637c26f552a1a64fb311cae.mobgslb.tbcache.com
-- name: 🇰🇷KR-43.203.190.110-0524
-  server: afzuv.xiaoyan.io
-  port: 16617
-  type: vmess
-  uuid: 904f0569-8695-466f-97cf-0de2face1b46
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: f9309cc88637c26f552a1a64fb311cae.mobgslb.tbcache.com
-- name: 🇰🇷KR-43.203.190.110-0522
-  server: afzuv.xiaoyan.io
-  port: 16616
-  type: vmess
-  uuid: 904f0569-8695-466f-97cf-0de2face1b46
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: f9309cc88637c26f552a1a64fb311cae.mobgslb.tbcache.com
 - name: 🇪🇸ES-5.188.181.201-5714
   server: 5.188.181.201
   port: 9011
@@ -4650,28 +4239,6 @@ proxies:
   password: d9064589-74af-432a-9390-5d8a9da281bf
   sni: hk.catxstar.com
   skip-cert-verify: true
-- name: 🇳🇱美国 纽约(Prudential)
-  server: 48.102.173.24
-  port: 444
-  type: vless
-  tls: true
-  uuid: ef5a57c7-84d5-4f86-b99c-875a16da485f
-  servername: neplay603.gangtype.com
-  network: ws
-  ws-opts:
-    path: /stream/updates/a66d7902
-    headers:
-      Host: neplay603.gangtype.com
-- name: 🇦🇪226762 | ⚡️Telegram - t.me/L...
-  server: dg3rb.ianai.it.com
-  port: 443
-  type: hysteria2
-  ports: 443
-  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  obfs: salamander
-  obfs-password: e3ymhs6gbzptjysj
-  sni: dg3rb.ianai.it.com
-  skip-cert-verify: true
 - name: 🇺🇸⚙️75@oneclickvpnkeys
   server: 179.254.94.184
   port: 8443
@@ -4696,14 +4263,6 @@ proxies:
   obfs-password: 6fltjteoyab7fjf1
   sni: psstatic.cdn.bcebos.com
   skip-cert-verify: true
-- name: 🇺🇸⚙️64@oneclickvpnkeys
-  server: germanyafterpool.fun
-  port: 443
-  type: hysteria2
-  ports: 443
-  password: 9a9f167d-b461-466f-be50-f0ffd598a6f8
-  sni: germanyafterpool.fun
-  skip-cert-verify: true
 - name: 🇸🇬226664 | ⚡️Telegram - t.me/L...
   server: 47.129.241.99
   port: 443
@@ -4712,18 +4271,6 @@ proxies:
   password: qQe1z5kU8kN6SlKnDt9Ru3Qp
   sni: 47.129.241.99
   skip-cert-verify: true
-- name: 🇭🇰[www.v2nodes.com] vless-HK
-  server: 45.133.73.167
-  port: 443
-  type: vless
-  tls: true
-  uuid: 0fc0ded7-32b3-4e36-a623-6e7670225247
-  servername: zmxoo.de5.net
-  network: ws
-  ws-opts:
-    path: /html/order/torrentfp=chrome
-    headers:
-      Host: zmxoo.de5.net
 - name: 🇷🇺德国 | DEU 8
   server: birchbark.gerqix.online
   port: 443
@@ -4748,43 +4295,12 @@ proxies:
   grpc-opts:
     grpc-mode: gun
     grpc-service-name: grpc-ru
-- name: 🇩🇪[www.v2nodes.com] trojan-DE-...
-  server: alireza.karamoz1.ir
-  port: 443
-  type: trojan
-  password: poimnap
-  sni: alireza.karamoz1.ir
-  skip-cert-verify: true
 - name: 🇸🇬[www.v2nodes.com] trojan-SG-...#2
   server: bgsg1.hikigo.com
   port: 443
   type: trojan
   password: 57beeeb0-03fc-4fc9-94da-7604488a7134
   sni: bgsg1.hikigo.com
-  skip-cert-verify: true
-- name: 🇯🇵日本|@ripaojiedian
-  server: nu2rb.supertoolify.com
-  port: 443
-  type: trojan
-  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  sni: nu2rb.supertoolify.com
-  skip-cert-verify: true
-- name: 🇸🇬新加坡1|@ripaojiedian
-  server: bgsg2.hikigo.com
-  port: 443
-  type: hysteria2
-  ports: 443
-  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  obfs: salamander
-  obfs-password: sj1awrdwnn5lbuno
-  sni: bgsg2.hikigo.com
-  skip-cert-verify: true
-- name: 🇺🇸越南|@ripaojiedian
-  server: xvxn1hkzf.mateflora.com
-  port: 443
-  type: trojan
-  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  sni: xvxn1hkzf.mateflora.com
   skip-cert-verify: true
 - name: 🇭🇰香港4|@ripaojiedian
   server: 206.237.18.145
@@ -4799,58 +4315,6 @@ proxies:
     headers:
       Host: senflarelink-node-m3bfbn.pages.dev
   skip-cert-verify: true
-- name: 🇹🇼台湾3|@ripaojiedian
-  server: 154.40.61.186
-  port: 8443
-  type: vless
-  tls: true
-  uuid: b69cf773-da16-486e-afce-a45b94f998b3
-  servername: senflarelink-node-wj1gsa.pages.dev
-  network: ws
-  ws-opts:
-    path: /flow=
-    headers:
-      Host: senflarelink-node-wj1gsa.pages.dev
-  skip-cert-verify: true
-- name: 🇸🇬新加坡|@ripaojiedian
-  server: 43.159.41.66
-  port: 8443
-  type: vless
-  tls: true
-  uuid: b69cf773-da16-486e-afce-a45b94f998b3
-  servername: senflarelink-node-il65vh.pages.dev
-  network: ws
-  ws-opts:
-    path: /flow=
-    headers:
-      Host: senflarelink-node-il65vh.pages.dev
-  skip-cert-verify: true
-- name: 🇸🇬新加坡4|@ripaojiedian
-  server: 43.134.187.97
-  port: 8443
-  type: vless
-  tls: true
-  uuid: b69cf773-da16-486e-afce-a45b94f998b3
-  servername: senflarelink-node-2ott2x.pages.dev
-  network: ws
-  ws-opts:
-    path: /flow=
-    headers:
-      Host: senflarelink-node-2ott2x.pages.dev
-  skip-cert-verify: true
-- name: 🇰🇷韩国2|@ripaojiedian
-  server: 14.44.19.57
-  port: 12101
-  type: vless
-  tls: true
-  uuid: b69cf773-da16-486e-afce-a45b94f998b3
-  servername: senflarelink-node-nwz76h.pages.dev
-  network: ws
-  ws-opts:
-    path: /flow=
-    headers:
-      Host: senflarelink-node-nwz76h.pages.dev
-  skip-cert-verify: true
 - name: 🇨🇿DE_15|1.0MB/s
   server: 109.248.17.252
   port: 443
@@ -4862,42 +4326,6 @@ proxies:
   grpc-opts:
     grpc-mode: gun
     grpc-service-name: v4-clequinix-globalinetforallalwaysandneverbanyoubelieveme-com
-- name: 🇩🇪德国 | DEU 5
-  server: a3de.supertoolify.com
-  port: 443
-  type: hysteria2
-  ports: 443
-  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  obfs: salamander
-  obfs-password: ivnbamaxvp0dqblk
-  sni: a3de.supertoolify.com
-  skip-cert-verify: true
-- name: 🇷🇺德国 | DEU 17
-  server: 5.129.252.33
-  port: 443
-  type: vless
-  tls: true
-  uuid: 0b6a7fe0-206b-4071-9f96-cd397d1ec01a
-  servername: rookery.moltex.click
-  alpn:
-  - h2
-  network: grpc
-  grpc-opts:
-    grpc-mode: gun
-    grpc-service-name: glush.de3.v1
-- name: '🇫🇷香港 | HKG #1'
-  server: pdmv4.xiaoyan.io
-  port: 16632
-  type: vmess
-  uuid: 904f0569-8695-466f-97cf-0de2face1b46
-  alterId: 0
-  cipher: auto
-  tls: false
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: f9309cc88637c26f552a1a64fb311cae.mobgslb.tbcache.com
 - name: '🇭🇰香港 | HKG #2'
   server: 47.244.120.197
   port: 44867
@@ -4911,32 +4339,6 @@ proxies:
     path: /arki
     headers:
       Host: 47.244.120.197
-- name: '🇭🇰香港 | HKG #3'
-  server: 64.118.130.152
-  port: 443
-  type: trojan
-  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  sni: nb1hk.hikigo.com
-  skip-cert-verify: true
-- name: '🇭🇰香港 | HKG #4'
-  server: nb1hk.hikigo.com
-  port: 443
-  type: trojan
-  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  sni: nb1hk.hikigo.com
-  skip-cert-verify: true
-- name: '荷兰 | NLD #7'
-  server: kozel.cc.cd
-  port: 443
-  type: vless
-  tls: true
-  uuid: 3b01a777-55e7-49f6-8637-d94ee69607c6
-  servername: kozel.cc.cd
-  network: ws
-  ws-opts:
-    path: /118.151.222.66=17317fp=chrome
-    headers:
-      Host: kozel.cc.cd
 - name: '🇸🇬新加坡 | SGP #1'
   server: 77.93.89.2
   port: 443
@@ -4944,41 +4346,95 @@ proxies:
   password: 57beeeb0-03fc-4fc9-94da-7604488a7134
   sni: bgsg1.hikigo.com
   skip-cert-verify: true
-- name: '🇺🇸🇨🇳 台湾 | TWN #1'
-  server: 161.114.15.215
-  port: 30502
+- name: 🇬🇧GB-141.98.101.178-0470
+  server: 141.98.101.178
+  port: 443
+  type: ss
+  cipher: aes-128-gcm
+  password: shadowsocks
+- name: 🇵🇱PL-217.30.10.70-5814
+  server: 217.30.10.70
+  port: 9045
+  type: ss
+  cipher: aes-256-cfb
+  password: Lp27rqyJq72bZsqX
+- name: 🇪🇸ES-5.188.181.201-0235
+  server: 5.188.181.201
+  port: 9040
+  type: ss
+  cipher: aes-256-cfb
+  password: p9z5BVADH2YFs3MN
+- name: 🇪🇸ES-5.188.181.201-0238
+  server: 5.188.181.201
+  port: 9005
+  type: ss
+  cipher: aes-256-cfb
+  password: ZET59LF6DvCC8KVt
+- name: 🇵🇱PL-217.30.10.70-5813
+  server: 217.30.10.70
+  port: 9059
+  type: ss
+  cipher: aes-256-cfb
+  password: 9XwYyZsK8SNzQDtY
+- name: 🇵🇱PL-217.30.10.70-5806
+  server: 217.30.10.70
+  port: 9084
+  type: ss
+  cipher: aes-256-cfb
+  password: c3NtHJ5ujV2tGDfj
+- name: 🇵🇱PL-217.30.10.70-5812
+  server: 217.30.10.70
+  port: 9018
+  type: ss
+  cipher: aes-256-cfb
+  password: fG2artUmHfNT2cX7
+- name: 🇵🇱PL-217.30.10.70-5810
+  server: 217.30.10.70
+  port: 9098
+  type: ss
+  cipher: aes-256-cfb
+  password: aLpQtfEZe445QyHk
+- name: 🇪🇸ES-5.188.181.201-5741
+  server: 5.188.181.201
+  port: 9014
+  type: ss
+  cipher: aes-256-cfb
+  password: KnJGad3FqTvjqbaX
+- name: 🇪🇸ES-5.188.181.201-5738
+  server: 5.188.181.201
+  port: 9003
+  type: ss
+  cipher: aes-256-cfb
+  password: JdmRK9gMEqFgs8nP
+- name: 🇵🇱PL-217.30.10.70-5811
+  server: 217.30.10.70
+  port: 9040
+  type: ss
+  cipher: aes-256-cfb
+  password: p9z5BVADH2YFs3MN
+- name: 🇮🇩ID-149.33.27.162-0612
+  server: i1tr.mateflora.com
+  port: 443
   type: trojan
-  password: 5KdDtpoJI58OTsoG0PwEYunqB0mkAEDm
-  sni: www.cloudflare.com
-  skip-cert-verify: true
-- name: 🇺🇸美国 | USA 8#2
-  server: dg2us.supertoolify.com
+  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
+  sni: i1tr.mateflora.com
+- name: 🇷🇺英国 伦敦南岸大学
+  server: 136.148.83.69
   port: 443
   type: hysteria2
   ports: 443
-  password: 57beeeb0-03fc-4fc9-94da-7604488a7134
-  obfs: salamander
-  obfs-password: oxaanqnluias3s61
-  sni: dg2us.supertoolify.com
+  password: 87bb2ac4-b7a1-0001-b11d-2107709ea6cb
+  sni: szqbx-ru-77dc.my-fade.cloud
   skip-cert-verify: true
-- name: 🇭🇰香港2|@ripaojiedian
-  server: ibsdsf.df6h451rh.xin
+- name: 🇷🇺英国 伦敦南岸大学 2
+  server: 136.148.83.69
   port: 443
-  type: anytls
-  password: 2902c46c8493
-  skip-cert-verify: true
-- name: 🇭🇰香港|@ripaojiedian
-  server: 5641sdds.df6h451rh.xin
-  port: 443
-  type: anytls
-  password: 0324fbc29561
-  skip-cert-verify: true
-- name: 🇹🇼台湾2|@ripaojiedian
-  server: a54ge.df6h451rh.xin
-  port: 443
-  type: anytls
-  password: 0324fbc29561
-  skip-cert-verify: true
+  type: vless
+  tls: true
+  uuid: 7dff1be7-b930-0001-a8ad-dc7850168215
+  servername: szqbx-ru-77dc.my-fade.cloud
+  host: szqbx-ru-77dc.my-fade.cloud
+  path: /
 proxy-groups:
 - name: 🚀 节点选择
   type: select
@@ -4989,14 +4445,14 @@ proxy-groups:
   - 🇮🇹意大利2
   - 🇭🇰香港2
   - 🇭🇰台湾
-  - 🇺🇸美国
-  - 🇩🇪德国
-  - 🇭🇰美国2
-  - 🇭🇰日本
+  - 🇹🇼台湾2
+  - 🇺🇸越南
+  - 🇭🇰香港4
+  - 🇭🇰香港
   - 🇩🇪@MTproxy22_v2ray
-  - 🇫🇷Paris, IDF, France
+  - 🇨🇦Canada
   - 🇮🇹Italy
-  - 🇦🇹%F0%9F%87%A6%F0%9F%87%B9AT_10_@Surfboardv2ray
+  - 🇦🇹𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢⫸@𝙫𝟮𝙧𝙖𝙮𝙉𝙂_𝙈𝙖𝙩𝙨𝙪𝙧𝙞
   - 🇺🇸95@oneclickvpnkeys
   - 🇺🇸美国-002 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 🇺🇸美国-003 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
@@ -5034,13 +4490,17 @@ proxy-groups:
   - 🇺🇸美国 718
   - 🇺🇸美国 720
   - 🇺🇸美国 723
-  - 🇰🇷韩国 016
   - 🇱🇻拉脱维亚-001 |2.0MB/s|TK-LV|GPT⁺-LV|GM-LV
   - 🇺🇸美国-017 |3.1MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 🇺🇸美国-018 |3.0MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 🇺🇸美国-024 |2.0MB/s|TK-US|YT-US|GPT⁺-US
   - 🇳🇱荷兰-001 |2.5MB/s|GPT⁺-NL
-  - 🇯🇵日本2
+  - 🇭🇰香港2#2
+  - 🇺🇸美国#2
+  - 🇩🇪德国
+  - 🇭🇰美国2
+  - 🇭🇰日本
+  - 🇯🇵日本2#2
   - 🇺🇸@ghand_sheken
   - '🇫🇷𝗷𝗼𝗶𝗻: @pstiiill'
   - 🇺🇸@ghand_sheken 2
@@ -5270,8 +4730,6 @@ proxy-groups:
   - 🇺🇸US_10|1.1MB/s
   - 🇺🇸US_13|1.7MB/s
   - 🇭🇰香港 | HKG 5
-  - ProxyPool | 🇺🇸 美国 | USA
-  - 美国 | USA 7
   - 美国 CloudFlare节点#2
   - 美国 CloudFlare节点 2
   - 🇺🇦UA-185.164.175.81-2497
@@ -5294,7 +4752,6 @@ proxy-groups:
   - 🇹🇼98@oneclickvpnkeys 2
   - 🇸🇪32@oneclickvpnkeys
   - 🇸🇪93@oneclickvpnkeys
-  - '[www.v2nodes.com] vless- #2'
   - '[www.v2nodes.com] vless-JP-1... #5'
   - '🇹🇼[www.v2nodes.com] vless-TW-1... #2'
   - 🇨🇿CZ_1|2.5MB/s
@@ -5320,7 +4777,6 @@ proxy-groups:
   - 🇮🇪IE_speednode_0013
   - 🇳🇱NL_speednode_0022
   - 美国 CloudFlare节点 2#2
-  - '[www.v2nodes.com] vless- #2#2'
   - 🇺🇸US-216.152.155.54-0568
   - 🇺🇸US-216.152.155.176-0538
   - 🇺🇸US-216.152.155.23-0540
@@ -5330,7 +4786,6 @@ proxy-groups:
   - 🇺🇸US-216.152.156.65-0537
   - 🇺🇸US-66.163.122.7-0565
   - 🇦🇺AU-45.63.30.142-0563
-  - '[www.v2nodes.com] vless- #3#3'
   - '[www.v2nodes.com] vless-JP-1... #5#2'
   - 🇱🇺LU_1|3.8MB/s
   - 🇨🇳HK_2|3.6MB/s
@@ -5353,13 +4808,9 @@ proxy-groups:
   - '🇪🇸[www.v2nodes.com] trojan-ES-... #5'
   - '🇺🇸[www.v2nodes.com] trojan-US-... #1'
   - '🇺🇸[www.v2nodes.com] trojan-US-... #11'
-  - '🇩🇪德国 | DEU #10'
-  - 🇩🇪204155 | ⚡️Telegram - t.me/S...
-  - 🇩🇪204269 | ⚡️Telegram - t.me/S...
   - '🇪🇸[www.v2nodes.com] trojan-ES-... #1'
   - 🇪🇸[www.v2nodes.com] trojan- 3
   - 🇨🇦CA-216.152.147.48-3164
-  - 🇨🇦CA-216.152.147.152-3167
   - 🇫🇷https://github.com/*********-*...#2
   - '[www.v2nodes.com] vless-JP-1... #2'
   - '🇪🇸[www.v2nodes.com] trojan-ES-... #4'
@@ -5383,7 +4834,6 @@ proxy-groups:
   - 🇹🇼205308 | ⚡️Telegram - t.me/S...
   - 🇭🇰205312 | ⚡️Telegram - t.me/S...
   - 🇭🇰205301 | ⚡️Telegram - t.me/S...
-  - 🇺🇸US_speednode_0040
   - ProxyPool | 🇺🇸 美国 | USA 6
   - '美国 | USA #6#2'
   - 🇦🇪AE-151.241.19.29-2898
@@ -5414,16 +4864,13 @@ proxy-groups:
   - 🇺🇸US-38.121.43.231-2464
   - 🇺🇸US-38.22.17.129-2478
   - 🇺🇸US-38.121.43.18-2472
-  - 🇩🇪DE-193.108.119.3-2405
   - 🇺🇸US-38.121.43.225-2466
   - 🇺🇸US-38.128.66.32-2475
   - 🇺🇸US-167.88.61.175-1386
   - 🇺🇸US-167.88.63.99-2463
   - 🇺🇸US-149.40.57.133-2468
-  - 🇩🇪DE-23.157.88.43-2406
   - 🇸🇬SG-149.88.107.74-2459
   - 🇺🇸US-162.251.62.31-2471
-  - 🇩🇪DE-193.108.119.2-2407
   - 🇫🇷FR-172.99.189.142-2416
   - 🇸🇪SE-138.199.55.243-2454
   - 🇫🇷FR-23.162.152.22-2413
@@ -5439,13 +4886,10 @@ proxy-groups:
   - 🇺🇸US-38.91.100.39-2474
   - 🇪🇸ES-66.163.118.103-2408
   - 🇨🇭CH-186.190.215.251-2402
-  - 🇺🇸US-167.88.62.203-2462
   - 🇪🇸ES-79.127.139.242-2410
   - 🇬🇧GB-198.244.202.215-2420
-  - 🇨🇱CL-64.176.7.205-0546
   - 🇸🇬SG-15.235.182.183-2456
   - 🇺🇸US-38.22.17.219-2467
-  - 🇸🇬SG-51.79.228.131-2455
   - 🇫🇷FR-167.17.64.27-2415
   - 🇫🇷FR-167.17.64.175-2417
   - 🇬🇧GB-38.114.120.221-2422
@@ -5455,11 +4899,9 @@ proxy-groups:
   - 🇬🇧GB-142.202.51.22-2421
   - 🇹🇼_TW_台湾->🇺🇸_US_美国_IPV4
   - _US_美国_IPV4
-  - '[www.v2nodes.com] vless-SG #1#3'
   - DE_4|2.1MB/s
   - DE_6|1.1MB/s
   - 美国 | USA 7#2
-  - '[www.v2nodes.com] vless-SG #1#4'
   - 🇳🇱[www.v2nodes.com] ss-NL-1616...
   - 🇺🇸[www.v2nodes.com] ss-US-1616...
   - 🇨🇦[www.v2nodes.com] trojan-CA-...
@@ -5468,17 +4910,11 @@ proxy-groups:
   - 🇷🇺[www.v2nodes.com] ss-AL-1490...
   - 🇵🇱PL_1|3.1MB/s
   - 🇷🇺RU_2|1.1MB/s
-  - 🇩🇪德国 | DEU#2
-  - '[www.v2nodes.com] vless-CA-1...'
-  - '[www.v2nodes.com] vless-CA-1... #2'
   - '🇰🇷[www.v2nodes.com] vless-JP-1... #3'
   - '🇩🇪荷兰 | NLD #1'
   - '🇭🇰香港 | HKG #1'
-  - '[www.v2nodes.com] vless-CA-1...#2'
-  - '[www.v2nodes.com] vless-CA-1... #2#2'
   - 🇸🇬SG-149.88.106.73-5766
   - 机场推荐:dafei.de 美国 15_IPV4
-  - '[www.v2nodes.com] vless-CA-1... #2#3'
   - '🇳🇱[www.v2nodes.com] trojan- #1'
   - 🇸🇬[www.v2nodes.com] trojan-SG-...
   - 🇺🇸US_8|3.7MB/s
@@ -5488,9 +4924,7 @@ proxy-groups:
   - ❓Other_2|2.4MB/s
   - 🇯🇵日本 | JPN#2
   - 🇷🇺ProxyPool | 🇷🇺 俄罗斯 | RUS
-  - '[www.v2nodes.com] vless-CA-1... #2#4'
   - 🇷🇺俄罗斯 | RUS
-  - 🇰🇷KR-158.247.253.243-0185
   - 🇺🇸US-23.230.52.119-2926
   - 🇫🇷FR-145.239.55.210-1820
   - 🇪🇸ES-5.188.181.201-0253
@@ -5516,7 +4950,6 @@ proxy-groups:
   - 机场推荐:dafei.de 美国 89_IPV4
   - 🇳🇱6@oneclickvpnkeys
   - '🇳🇱@OutlineReleasedKey #2'
-  - 🇩🇪@V2rayNPVTConfig
   - '🇺🇸[www.v2nodes.com] ss-HK-1621... #1'
   - '🇹🇼[www.v2nodes.com] trojan-CH-... #1'
   - 🇹🇼TW_2|2.7MB/s
@@ -5533,25 +4966,19 @@ proxy-groups:
   - 美国 | USA 2
   - 🇺🇸美国 | USA 8
   - 塞舌尔 V2CROSS.COM
-  - 美国 CloudFlare节点 4#2
   - 🇨🇦CA-216.152.147.85-0604
   - 🇯🇵JP-168.138.205.100-0313
   - 🇫🇷FR-54.37.131.126-0338
   - 🇷🇺216296 | ⚡️Telegram - t.me/L...
   - 🇸🇬33@oneclickvpnkeys
   - 🇺🇸97@oneclickvpnkeys
-  - 🇳🇱⚕️35@oneclickvpnkeys
-  - 🇨🇿[www.v2nodes.com] ss-NL-1622...
   - '🇺🇸BY_01 #1'
   - 🇹🇷加拿大 | CAN 2
   - 🇺🇸美国 | USA
   - 西班牙 V2CROSS.COM
   - 🇬🇧GB-82.38.31.207-0074
   - 🇬🇧GB-82.38.31.206-0232
-  - 🇨🇦CA-51.222.155.113-0177
   - 🇪🇸ES-5.188.181.201-7379
-  - 🇪🇸ES-5.188.181.201-0188
-  - 美国 CloudFlare节点
   - 🇺🇸US-173.244.56.6-0254
   - 🇬🇧GB-82.38.31.208-5227
   - 🇺🇸US-37.19.198.243-5282
@@ -5562,14 +4989,8 @@ proxy-groups:
   - 🇬🇧GB-158.173.24.73-0430
   - 🇪🇸ES-5.188.181.201-0209
   - 🇬🇧GB-141.98.101.181-0249
-  - 🇩🇪69@oneclickvpnkeys
   - 🇺🇸44@oneclickvpnkeys
-  - '🇳🇱@OutlineReleasedKey #8'
-  - 🇳🇱13@oneclickvpnkeys
   - 🇯🇵218802 | ⚡️Telegram - t.me/L...
-  - '[www.v2nodes.com] vless-CA'
-  - '[www.v2nodes.com] vless-SG-1... #1'
-  - '[www.v2nodes.com] vless-SG-4...'
   - 🇺🇸US-37.19.198.160-0056
   - 🇺🇸US-37.19.198.236-0054
   - 🇺🇸US-37.19.198.244-5709
@@ -5578,61 +4999,46 @@ proxy-groups:
   - 西班牙 V2CROSS.COM#2
   - 🇸🇪英国 伦敦南岸大学
   - 爱沙尼亚 V2CROSS.COM
-  - 🇩🇪美国 V2CROSS.COM
+  - 🇳🇱美国 V2CROSS.COM
   - 🇪🇸ES-5.188.181.201-0197
   - 爱沙尼亚 V2CROSS.COM#2
   - 西班牙 V2CROSS.COM 2
-  - 🇩🇪DE-2.29.210.28-0474
   - 🇨🇦CA-51.222.200.165-0286
   - 🇵🇱PL-217.30.10.70-7648
   - 🇨🇦CA-51.222.155.32-0465
   - 🇹🇼台湾省台北市 中华电信
   - 爱沙尼亚 V2CROSS.COM#3
-  - 🇰🇷KR-43.203.190.110-0535
-  - 🇰🇷KR-43.203.190.110-0534
-  - 🇰🇷KR-43.203.190.110-0525
-  - 🇰🇷KR-43.203.190.110-0524
-  - 🇰🇷KR-43.203.190.110-0522
   - 🇪🇸ES-5.188.181.201-5714
   - 🇪🇸ES-5.188.181.201-0216
   - 🇪🇸ES-5.188.181.201-5652
   - 🇭🇰HK-18.163.61.231-0249
   - 🇭🇰HK-18.163.61.231-0251
   - 🇭🇰美国 惠普HP
-  - 🇳🇱美国 纽约(Prudential)
-  - 🇦🇪226762 | ⚡️Telegram - t.me/L...
   - 🇺🇸⚙️75@oneclickvpnkeys
   - 🇩🇪⚙️32@oneclickvpnkeys
   - 🇬🇧66@oneclickvpnkeys
-  - 🇺🇸⚙️64@oneclickvpnkeys
   - 🇸🇬226664 | ⚡️Telegram - t.me/L...
-  - 🇭🇰[www.v2nodes.com] vless-HK
   - 🇷🇺德国 | DEU 8
   - 🇷🇺[www.v2nodes.com] vless-RU-1...
-  - 🇩🇪[www.v2nodes.com] trojan-DE-...
   - 🇸🇬[www.v2nodes.com] trojan-SG-...#2
-  - 🇯🇵日本|@ripaojiedian
-  - 🇸🇬新加坡1|@ripaojiedian
-  - 🇺🇸越南|@ripaojiedian
   - 🇭🇰香港4|@ripaojiedian
-  - 🇹🇼台湾3|@ripaojiedian
-  - 🇸🇬新加坡|@ripaojiedian
-  - 🇸🇬新加坡4|@ripaojiedian
-  - 🇰🇷韩国2|@ripaojiedian
   - 🇨🇿DE_15|1.0MB/s
-  - 🇩🇪德国 | DEU 5
-  - 🇷🇺德国 | DEU 17
-  - '🇫🇷香港 | HKG #1'
   - '🇭🇰香港 | HKG #2'
-  - '🇭🇰香港 | HKG #3'
-  - '🇭🇰香港 | HKG #4'
-  - '荷兰 | NLD #7'
   - '🇸🇬新加坡 | SGP #1'
-  - '🇺🇸🇨🇳 台湾 | TWN #1'
-  - 🇺🇸美国 | USA 8#2
-  - 🇭🇰香港2|@ripaojiedian
-  - 🇭🇰香港|@ripaojiedian
-  - 🇹🇼台湾2|@ripaojiedian
+  - 🇬🇧GB-141.98.101.178-0470
+  - 🇵🇱PL-217.30.10.70-5814
+  - 🇪🇸ES-5.188.181.201-0235
+  - 🇪🇸ES-5.188.181.201-0238
+  - 🇵🇱PL-217.30.10.70-5813
+  - 🇵🇱PL-217.30.10.70-5806
+  - 🇵🇱PL-217.30.10.70-5812
+  - 🇵🇱PL-217.30.10.70-5810
+  - 🇪🇸ES-5.188.181.201-5741
+  - 🇪🇸ES-5.188.181.201-5738
+  - 🇵🇱PL-217.30.10.70-5811
+  - 🇮🇩ID-149.33.27.162-0612
+  - 🇷🇺英国 伦敦南岸大学
+  - 🇷🇺英国 伦敦南岸大学 2
 - name: ♻️ 自动选择
   type: url-test
   proxies:
@@ -5640,14 +5046,14 @@ proxy-groups:
   - 🇮🇹意大利2
   - 🇭🇰香港2
   - 🇭🇰台湾
-  - 🇺🇸美国
-  - 🇩🇪德国
-  - 🇭🇰美国2
-  - 🇭🇰日本
+  - 🇹🇼台湾2
+  - 🇺🇸越南
+  - 🇭🇰香港4
+  - 🇭🇰香港
   - 🇩🇪@MTproxy22_v2ray
-  - 🇫🇷Paris, IDF, France
+  - 🇨🇦Canada
   - 🇮🇹Italy
-  - 🇦🇹%F0%9F%87%A6%F0%9F%87%B9AT_10_@Surfboardv2ray
+  - 🇦🇹𝙏𝙚𝙡𝙚𝙜𝙧𝙖𝙢⫸@𝙫𝟮𝙧𝙖𝙮𝙉𝙂_𝙈𝙖𝙩𝙨𝙪𝙧𝙞
   - 🇺🇸95@oneclickvpnkeys
   - 🇺🇸美国-002 |3.2MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 🇺🇸美国-003 |1.5MB/s|TK-US|YT-US|GPT⁺-US|GM-US
@@ -5685,13 +5091,17 @@ proxy-groups:
   - 🇺🇸美国 718
   - 🇺🇸美国 720
   - 🇺🇸美国 723
-  - 🇰🇷韩国 016
   - 🇱🇻拉脱维亚-001 |2.0MB/s|TK-LV|GPT⁺-LV|GM-LV
   - 🇺🇸美国-017 |3.1MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 🇺🇸美国-018 |3.0MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 🇺🇸美国-024 |2.0MB/s|TK-US|YT-US|GPT⁺-US
   - 🇳🇱荷兰-001 |2.5MB/s|GPT⁺-NL
-  - 🇯🇵日本2
+  - 🇭🇰香港2#2
+  - 🇺🇸美国#2
+  - 🇩🇪德国
+  - 🇭🇰美国2
+  - 🇭🇰日本
+  - 🇯🇵日本2#2
   - 🇺🇸@ghand_sheken
   - '🇫🇷𝗷𝗼𝗶𝗻: @pstiiill'
   - 🇺🇸@ghand_sheken 2
@@ -5921,8 +5331,6 @@ proxy-groups:
   - 🇺🇸US_10|1.1MB/s
   - 🇺🇸US_13|1.7MB/s
   - 🇭🇰香港 | HKG 5
-  - ProxyPool | 🇺🇸 美国 | USA
-  - 美国 | USA 7
   - 美国 CloudFlare节点#2
   - 美国 CloudFlare节点 2
   - 🇺🇦UA-185.164.175.81-2497
@@ -5945,7 +5353,6 @@ proxy-groups:
   - 🇹🇼98@oneclickvpnkeys 2
   - 🇸🇪32@oneclickvpnkeys
   - 🇸🇪93@oneclickvpnkeys
-  - '[www.v2nodes.com] vless- #2'
   - '[www.v2nodes.com] vless-JP-1... #5'
   - '🇹🇼[www.v2nodes.com] vless-TW-1... #2'
   - 🇨🇿CZ_1|2.5MB/s
@@ -5971,7 +5378,6 @@ proxy-groups:
   - 🇮🇪IE_speednode_0013
   - 🇳🇱NL_speednode_0022
   - 美国 CloudFlare节点 2#2
-  - '[www.v2nodes.com] vless- #2#2'
   - 🇺🇸US-216.152.155.54-0568
   - 🇺🇸US-216.152.155.176-0538
   - 🇺🇸US-216.152.155.23-0540
@@ -5981,7 +5387,6 @@ proxy-groups:
   - 🇺🇸US-216.152.156.65-0537
   - 🇺🇸US-66.163.122.7-0565
   - 🇦🇺AU-45.63.30.142-0563
-  - '[www.v2nodes.com] vless- #3#3'
   - '[www.v2nodes.com] vless-JP-1... #5#2'
   - 🇱🇺LU_1|3.8MB/s
   - 🇨🇳HK_2|3.6MB/s
@@ -6004,13 +5409,9 @@ proxy-groups:
   - '🇪🇸[www.v2nodes.com] trojan-ES-... #5'
   - '🇺🇸[www.v2nodes.com] trojan-US-... #1'
   - '🇺🇸[www.v2nodes.com] trojan-US-... #11'
-  - '🇩🇪德国 | DEU #10'
-  - 🇩🇪204155 | ⚡️Telegram - t.me/S...
-  - 🇩🇪204269 | ⚡️Telegram - t.me/S...
   - '🇪🇸[www.v2nodes.com] trojan-ES-... #1'
   - 🇪🇸[www.v2nodes.com] trojan- 3
   - 🇨🇦CA-216.152.147.48-3164
-  - 🇨🇦CA-216.152.147.152-3167
   - 🇫🇷https://github.com/*********-*...#2
   - '[www.v2nodes.com] vless-JP-1... #2'
   - '🇪🇸[www.v2nodes.com] trojan-ES-... #4'
@@ -6034,7 +5435,6 @@ proxy-groups:
   - 🇹🇼205308 | ⚡️Telegram - t.me/S...
   - 🇭🇰205312 | ⚡️Telegram - t.me/S...
   - 🇭🇰205301 | ⚡️Telegram - t.me/S...
-  - 🇺🇸US_speednode_0040
   - ProxyPool | 🇺🇸 美国 | USA 6
   - '美国 | USA #6#2'
   - 🇦🇪AE-151.241.19.29-2898
@@ -6065,16 +5465,13 @@ proxy-groups:
   - 🇺🇸US-38.121.43.231-2464
   - 🇺🇸US-38.22.17.129-2478
   - 🇺🇸US-38.121.43.18-2472
-  - 🇩🇪DE-193.108.119.3-2405
   - 🇺🇸US-38.121.43.225-2466
   - 🇺🇸US-38.128.66.32-2475
   - 🇺🇸US-167.88.61.175-1386
   - 🇺🇸US-167.88.63.99-2463
   - 🇺🇸US-149.40.57.133-2468
-  - 🇩🇪DE-23.157.88.43-2406
   - 🇸🇬SG-149.88.107.74-2459
   - 🇺🇸US-162.251.62.31-2471
-  - 🇩🇪DE-193.108.119.2-2407
   - 🇫🇷FR-172.99.189.142-2416
   - 🇸🇪SE-138.199.55.243-2454
   - 🇫🇷FR-23.162.152.22-2413
@@ -6090,13 +5487,10 @@ proxy-groups:
   - 🇺🇸US-38.91.100.39-2474
   - 🇪🇸ES-66.163.118.103-2408
   - 🇨🇭CH-186.190.215.251-2402
-  - 🇺🇸US-167.88.62.203-2462
   - 🇪🇸ES-79.127.139.242-2410
   - 🇬🇧GB-198.244.202.215-2420
-  - 🇨🇱CL-64.176.7.205-0546
   - 🇸🇬SG-15.235.182.183-2456
   - 🇺🇸US-38.22.17.219-2467
-  - 🇸🇬SG-51.79.228.131-2455
   - 🇫🇷FR-167.17.64.27-2415
   - 🇫🇷FR-167.17.64.175-2417
   - 🇬🇧GB-38.114.120.221-2422
@@ -6106,11 +5500,9 @@ proxy-groups:
   - 🇬🇧GB-142.202.51.22-2421
   - 🇹🇼_TW_台湾->🇺🇸_US_美国_IPV4
   - _US_美国_IPV4
-  - '[www.v2nodes.com] vless-SG #1#3'
   - DE_4|2.1MB/s
   - DE_6|1.1MB/s
   - 美国 | USA 7#2
-  - '[www.v2nodes.com] vless-SG #1#4'
   - 🇳🇱[www.v2nodes.com] ss-NL-1616...
   - 🇺🇸[www.v2nodes.com] ss-US-1616...
   - 🇨🇦[www.v2nodes.com] trojan-CA-...
@@ -6119,17 +5511,11 @@ proxy-groups:
   - 🇷🇺[www.v2nodes.com] ss-AL-1490...
   - 🇵🇱PL_1|3.1MB/s
   - 🇷🇺RU_2|1.1MB/s
-  - 🇩🇪德国 | DEU#2
-  - '[www.v2nodes.com] vless-CA-1...'
-  - '[www.v2nodes.com] vless-CA-1... #2'
   - '🇰🇷[www.v2nodes.com] vless-JP-1... #3'
   - '🇩🇪荷兰 | NLD #1'
   - '🇭🇰香港 | HKG #1'
-  - '[www.v2nodes.com] vless-CA-1...#2'
-  - '[www.v2nodes.com] vless-CA-1... #2#2'
   - 🇸🇬SG-149.88.106.73-5766
   - 机场推荐:dafei.de 美国 15_IPV4
-  - '[www.v2nodes.com] vless-CA-1... #2#3'
   - '🇳🇱[www.v2nodes.com] trojan- #1'
   - 🇸🇬[www.v2nodes.com] trojan-SG-...
   - 🇺🇸US_8|3.7MB/s
@@ -6139,9 +5525,7 @@ proxy-groups:
   - ❓Other_2|2.4MB/s
   - 🇯🇵日本 | JPN#2
   - 🇷🇺ProxyPool | 🇷🇺 俄罗斯 | RUS
-  - '[www.v2nodes.com] vless-CA-1... #2#4'
   - 🇷🇺俄罗斯 | RUS
-  - 🇰🇷KR-158.247.253.243-0185
   - 🇺🇸US-23.230.52.119-2926
   - 🇫🇷FR-145.239.55.210-1820
   - 🇪🇸ES-5.188.181.201-0253
@@ -6167,7 +5551,6 @@ proxy-groups:
   - 机场推荐:dafei.de 美国 89_IPV4
   - 🇳🇱6@oneclickvpnkeys
   - '🇳🇱@OutlineReleasedKey #2'
-  - 🇩🇪@V2rayNPVTConfig
   - '🇺🇸[www.v2nodes.com] ss-HK-1621... #1'
   - '🇹🇼[www.v2nodes.com] trojan-CH-... #1'
   - 🇹🇼TW_2|2.7MB/s
@@ -6184,25 +5567,19 @@ proxy-groups:
   - 美国 | USA 2
   - 🇺🇸美国 | USA 8
   - 塞舌尔 V2CROSS.COM
-  - 美国 CloudFlare节点 4#2
   - 🇨🇦CA-216.152.147.85-0604
   - 🇯🇵JP-168.138.205.100-0313
   - 🇫🇷FR-54.37.131.126-0338
   - 🇷🇺216296 | ⚡️Telegram - t.me/L...
   - 🇸🇬33@oneclickvpnkeys
   - 🇺🇸97@oneclickvpnkeys
-  - 🇳🇱⚕️35@oneclickvpnkeys
-  - 🇨🇿[www.v2nodes.com] ss-NL-1622...
   - '🇺🇸BY_01 #1'
   - 🇹🇷加拿大 | CAN 2
   - 🇺🇸美国 | USA
   - 西班牙 V2CROSS.COM
   - 🇬🇧GB-82.38.31.207-0074
   - 🇬🇧GB-82.38.31.206-0232
-  - 🇨🇦CA-51.222.155.113-0177
   - 🇪🇸ES-5.188.181.201-7379
-  - 🇪🇸ES-5.188.181.201-0188
-  - 美国 CloudFlare节点
   - 🇺🇸US-173.244.56.6-0254
   - 🇬🇧GB-82.38.31.208-5227
   - 🇺🇸US-37.19.198.243-5282
@@ -6213,14 +5590,8 @@ proxy-groups:
   - 🇬🇧GB-158.173.24.73-0430
   - 🇪🇸ES-5.188.181.201-0209
   - 🇬🇧GB-141.98.101.181-0249
-  - 🇩🇪69@oneclickvpnkeys
   - 🇺🇸44@oneclickvpnkeys
-  - '🇳🇱@OutlineReleasedKey #8'
-  - 🇳🇱13@oneclickvpnkeys
   - 🇯🇵218802 | ⚡️Telegram - t.me/L...
-  - '[www.v2nodes.com] vless-CA'
-  - '[www.v2nodes.com] vless-SG-1... #1'
-  - '[www.v2nodes.com] vless-SG-4...'
   - 🇺🇸US-37.19.198.160-0056
   - 🇺🇸US-37.19.198.236-0054
   - 🇺🇸US-37.19.198.244-5709
@@ -6229,61 +5600,46 @@ proxy-groups:
   - 西班牙 V2CROSS.COM#2
   - 🇸🇪英国 伦敦南岸大学
   - 爱沙尼亚 V2CROSS.COM
-  - 🇩🇪美国 V2CROSS.COM
+  - 🇳🇱美国 V2CROSS.COM
   - 🇪🇸ES-5.188.181.201-0197
   - 爱沙尼亚 V2CROSS.COM#2
   - 西班牙 V2CROSS.COM 2
-  - 🇩🇪DE-2.29.210.28-0474
   - 🇨🇦CA-51.222.200.165-0286
   - 🇵🇱PL-217.30.10.70-7648
   - 🇨🇦CA-51.222.155.32-0465
   - 🇹🇼台湾省台北市 中华电信
   - 爱沙尼亚 V2CROSS.COM#3
-  - 🇰🇷KR-43.203.190.110-0535
-  - 🇰🇷KR-43.203.190.110-0534
-  - 🇰🇷KR-43.203.190.110-0525
-  - 🇰🇷KR-43.203.190.110-0524
-  - 🇰🇷KR-43.203.190.110-0522
   - 🇪🇸ES-5.188.181.201-5714
   - 🇪🇸ES-5.188.181.201-0216
   - 🇪🇸ES-5.188.181.201-5652
   - 🇭🇰HK-18.163.61.231-0249
   - 🇭🇰HK-18.163.61.231-0251
   - 🇭🇰美国 惠普HP
-  - 🇳🇱美国 纽约(Prudential)
-  - 🇦🇪226762 | ⚡️Telegram - t.me/L...
   - 🇺🇸⚙️75@oneclickvpnkeys
   - 🇩🇪⚙️32@oneclickvpnkeys
   - 🇬🇧66@oneclickvpnkeys
-  - 🇺🇸⚙️64@oneclickvpnkeys
   - 🇸🇬226664 | ⚡️Telegram - t.me/L...
-  - 🇭🇰[www.v2nodes.com] vless-HK
   - 🇷🇺德国 | DEU 8
   - 🇷🇺[www.v2nodes.com] vless-RU-1...
-  - 🇩🇪[www.v2nodes.com] trojan-DE-...
   - 🇸🇬[www.v2nodes.com] trojan-SG-...#2
-  - 🇯🇵日本|@ripaojiedian
-  - 🇸🇬新加坡1|@ripaojiedian
-  - 🇺🇸越南|@ripaojiedian
   - 🇭🇰香港4|@ripaojiedian
-  - 🇹🇼台湾3|@ripaojiedian
-  - 🇸🇬新加坡|@ripaojiedian
-  - 🇸🇬新加坡4|@ripaojiedian
-  - 🇰🇷韩国2|@ripaojiedian
   - 🇨🇿DE_15|1.0MB/s
-  - 🇩🇪德国 | DEU 5
-  - 🇷🇺德国 | DEU 17
-  - '🇫🇷香港 | HKG #1'
   - '🇭🇰香港 | HKG #2'
-  - '🇭🇰香港 | HKG #3'
-  - '🇭🇰香港 | HKG #4'
-  - '荷兰 | NLD #7'
   - '🇸🇬新加坡 | SGP #1'
-  - '🇺🇸🇨🇳 台湾 | TWN #1'
-  - 🇺🇸美国 | USA 8#2
-  - 🇭🇰香港2|@ripaojiedian
-  - 🇭🇰香港|@ripaojiedian
-  - 🇹🇼台湾2|@ripaojiedian
+  - 🇬🇧GB-141.98.101.178-0470
+  - 🇵🇱PL-217.30.10.70-5814
+  - 🇪🇸ES-5.188.181.201-0235
+  - 🇪🇸ES-5.188.181.201-0238
+  - 🇵🇱PL-217.30.10.70-5813
+  - 🇵🇱PL-217.30.10.70-5806
+  - 🇵🇱PL-217.30.10.70-5812
+  - 🇵🇱PL-217.30.10.70-5810
+  - 🇪🇸ES-5.188.181.201-5741
+  - 🇪🇸ES-5.188.181.201-5738
+  - 🇵🇱PL-217.30.10.70-5811
+  - 🇮🇩ID-149.33.27.162-0612
+  - 🇷🇺英国 伦敦南岸大学
+  - 🇷🇺英国 伦敦南岸大学 2
   url: http://www.gstatic.com/generate_204
   interval: 300
   tolerance: 50
