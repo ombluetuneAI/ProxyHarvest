@@ -207,32 +207,6 @@ proxies:
   port: 9002
   skip-cert-verify: true
   tls: true
-- name: 其他-003
-  type: vless
-  network: tcp
-  uuid: 254f28cb-d0c1-41e9-a06b-f2155213ff04
-  server: ams2.shtil.io
-  servername: ams2.shtil.io
-  port: 444
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: firefox
-  flow: xtls-rprx-vision
-- name: 新西兰-001
-  type: vless
-  network: tcp
-  uuid: 254f28cb-d0c1-41e9-a06b-f2155213ff04
-  server: 177.177.215.45
-  servername: ams2.shtil.io
-  port: 444
-  skip-cert-verify: false
-  tls: true
-  udp: true
-  tfo: false
-  client-fingerprint: chrome
-  flow: xtls-rprx-vision
 - name: 其他-005
   type: vless
   network: ws
@@ -365,8 +339,6 @@ proxy-groups:
   - 罗马尼亚-020 |554KB/s
   - 美国-004 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-005 |1.0MB/s|TK-US|GPT⁺-US
-  - 其他-003
-  - 新西兰-001
   - 其他-005
   - 香港-021 |819KB/s
   - 以色列 002
@@ -410,8 +382,6 @@ proxy-groups:
   - 罗马尼亚-020 |554KB/s
   - 美国-004 |3.3MB/s|TK-US|YT-US|GPT⁺-US|GM-US
   - 美国-005 |1.0MB/s|TK-US|GPT⁺-US
-  - 其他-003
-  - 新西兰-001
   - 其他-005
   - 香港-021 |819KB/s
   - 以色列 002
